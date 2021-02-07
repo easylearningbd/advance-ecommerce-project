@@ -1,0 +1,133 @@
+
+/*===================================================================================*/
+/*  Rating CSS
+/*===================================================================================*/
+
+.rateit {
+    display: -moz-inline-box;
+    display: inline-block;
+    position: relative;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.rateit .rateit-range
+{
+    position: relative;
+    display: -moz-inline-box;
+    display: inline-block;
+    background: url(images/star.gif);
+    height: 14px;
+    outline: none;
+}
+
+.rateit-small .rateit-range
+{
+    position: relative;
+    display: -moz-inline-box;
+    display: inline-block;
+    background: url(images/star-small.png);
+    height: 14px;
+    outline: none;
+}
+
+.rateit .rateit-range * {
+    display:block;
+}
+
+/* for IE 6 */
+* html .rateit, * html .rateit .rateit-range
+{
+    display: inline;
+}
+
+/* for IE 7 */
+* + html .rateit, * + html .rateit .rateit-range
+{
+    display: inline;
+}
+
+.rateit .rateit-hover, .rateit .rateit-selected
+{
+    position: absolute;
+    left: 0px;
+}
+
+.rateit .rateit-hover-rtl, .rateit .rateit-selected-rtl
+{
+    left: auto;
+    right: 0px;
+}
+
+.rateit .rateit-hover
+{
+    background: url(images/star.gif) left -28px;
+}
+
+.rateit-small .rateit-hover
+{
+    background: url(images/star-small.png) left -328px;
+}
+
+.rateit .rateit-hover-rtl
+{
+    background-position: right -28px;
+}
+
+.rateit .rateit-selected
+{
+    background: url(images/star.gif) left -14px;
+}
+
+.rateit-small .rateit-selected
+{
+    background: url(images/star-small.png) left -14px;
+}
+
+.rateit .rateit-selected-rtl
+{
+    background-position: right -14px;
+}
+
+.rateit .rateit-preset
+{
+    background: url(images/star.gif) left -48px;
+}
+
+.rateit .rateit-preset-rtl
+{
+    background: url(images/star.gif) left -48px;
+}
+
+.rateit-small .rateit-preset
+{
+    background: url(images/star-small.png) left -48px;
+}
+
+.rateit-small .rateit-preset-rtl
+{
+    background: url(images/star-small.png) left -48px;
+}
+
+.rateit button.rateit-reset
+{
+    background: url(images/delete.gif) 0 0;
+    width: 14px;
+    height: 14px;
+    display: -moz-inline-box;
+    display: inline-block;
+    float: left;
+    outline: none;
+    border:none;
+    padding: 0;
+}
+
+.rateit button.rateit-reset:hover, .rateit button.rateit-reset:focus
+{
+    background-position: 0 -14px;
+}

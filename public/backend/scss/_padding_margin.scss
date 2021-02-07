@@ -1,0 +1,971 @@
+// Padding & margin
+
+
+/*******************
+Padding property 
+*******************/
+
+$num: 0;
+@while $num < 101 {
+    .p-#{$num} {
+        padding: $num +0px !important;
+    }
+    $num: $num +5;
+}
+
+$num: 0;
+@while $num < 101 {
+    .pt-#{$num} {
+        padding-top: $num +0px !important;
+    }
+    $num: $num +5;
+}
+
+$num: 0;
+@while $num < 101 {
+    .pb-#{$num} {
+        padding-bottom: $num +0px !important;
+    }
+    $num: $num +5;
+}
+
+$num: 0;
+@while $num < 101 {
+    .pl-#{$num} {
+        padding-left: $num +0px !important;
+    }
+    $num: $num +5;
+}
+
+$num: 0;
+@while $num < 101 {
+    .pr-#{$num} {
+        padding-right: $num +0px !important;
+    }
+    $num: $num +5;
+}
+
+$num: 0;
+@while $num < 101 {
+    .px-#{$num} {
+        padding-left: $num +0px !important;
+        padding-right: $num +0px !important;
+    }
+    $num: $num +5;
+}
+
+$num: 0;
+@while $num < 101 {
+    .py-#{$num} {
+        padding-top: $num +0px !important;
+        padding-bottom: $num +0px !important;
+    }
+    $num: $num +5;
+}
+
+@include screen-xs {
+    $num: 0;
+	@while $num < 101 {
+		.p-xs-#{$num} {
+			padding: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.pt-xs-#{$num} {
+			padding-top: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.pb-xs-#{$num} {
+			padding-bottom: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.pl-xs-#{$num} {
+			padding-left: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.pr-xs-#{$num} {
+			padding-right: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.px-xs-#{$num} {
+			padding-left: $num +0px !important;
+			padding-right: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.py-xs-#{$num} {
+			padding-top: $num +0px !important;
+			padding-bottom: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+}
+
+@include screen-sm {
+    $num: 0;
+	@while $num < 101 {
+		.p-sm-#{$num} {
+			padding: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.pt-sm-#{$num} {
+			padding-top: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.pb-sm-#{$num} {
+			padding-bottom: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.pl-sm-#{$num} {
+			padding-left: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.pr-sm-#{$num} {
+			padding-right: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.px-sm-#{$num} {
+			padding-left: $num +0px !important;
+			padding-right: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.py-sm-#{$num} {
+			padding-top: $num +0px !important;
+			padding-bottom: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+}
+
+@include screen-md {
+    $num: 0;
+	@while $num < 101 {
+		.p-md-#{$num} {
+			padding: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.pt-md-#{$num} {
+			padding-top: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.pb-md-#{$num} {
+			padding-bottom: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.pl-md-#{$num} {
+			padding-left: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.pr-md-#{$num} {
+			padding-right: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.px-md-#{$num} {
+			padding-left: $num +0px !important;
+			padding-right: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.py-md-#{$num} {
+			padding-top: $num +0px !important;
+			padding-bottom: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+}
+
+@include screen-lg {
+    $num: 0;
+	@while $num < 101 {
+		.p-lg-#{$num} {
+			padding: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.pt-lg-#{$num} {
+			padding-top: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.pb-lg-#{$num} {
+			padding-bottom: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.pl-lg-#{$num} {
+			padding-left: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.pr-lg-#{$num} {
+			padding-right: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.px-lg-#{$num} {
+			padding-left: $num +0px !important;
+			padding-right: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.py-lg-#{$num} {
+			padding-top: $num +0px !important;
+			padding-bottom: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+}
+
+@include screen-xl {
+    $num: 0;
+	@while $num < 101 {
+		.p-xl-#{$num} {
+			padding: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.pt-xl-#{$num} {
+			padding-top: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.pb-xl-#{$num} {
+			padding-bottom: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.pl-xl-#{$num} {
+			padding-left: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.pr-xl-#{$num} {
+			padding-right: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.px-xl-#{$num} {
+			padding-left: $num +0px !important;
+			padding-right: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.py-xl-#{$num} {
+			padding-top: $num +0px !important;
+			padding-bottom: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+}
+
+
+@include screen-xxl {
+    $num: 0;
+	@while $num < 101 {
+		.p-xxl-#{$num} {
+			padding: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.pt-xxl-#{$num} {
+			padding-top: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.pb-xxl-#{$num} {
+			padding-bottom: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.pl-xxl-#{$num} {
+			padding-left: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.pr-xxl-#{$num} {
+			padding-right: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.px-xxl-#{$num} {
+			padding-left: $num +0px !important;
+			padding-right: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.py-xxl-#{$num} {
+			padding-top: $num +0px !important;
+			padding-bottom: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+}
+
+@include screen-xxxl {
+    $num: 0;
+	@while $num < 101 {
+		.p-xxxl-#{$num} {
+			padding: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.pt-xxxl-#{$num} {
+			padding-top: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.pb-xxxl-#{$num} {
+			padding-bottom: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.pl-xxxl-#{$num} {
+			padding-left: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.pr-xxxl-#{$num} {
+			padding-right: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.px-xxxl-#{$num} {
+			padding-left: $num +0px !important;
+			padding-right: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.py-xxxl-#{$num} {
+			padding-top: $num +0px !important;
+			padding-bottom: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+}
+
+
+
+/*******************
+Margin property 
+*******************/
+
+$num: 0;
+@while $num < 101 {
+    .m-#{$num} {
+        margin: $num +0px !important;
+    }
+    $num: $num +5;
+}
+
+$num: 0;
+@while $num < 101 {
+    .mt-#{$num} {
+        margin-top: $num +0px !important;
+    }
+    $num: $num +5;
+}
+
+$num: 0;
+@while $num < 101 {
+    .mb-#{$num} {
+        margin-bottom: $num +0px !important;
+    }
+    $num: $num +5;
+}
+
+$num: 0;
+@while $num < 101 {
+    .ml-#{$num} {
+        margin-left: $num +0px !important;
+    }
+    $num: $num +5;
+}
+
+$num: 0;
+@while $num < 101 {
+    .mr-#{$num} {
+        margin-right: $num +0px !important;
+    }
+    $num: $num +5;
+}
+
+$num: 0;
+@while $num < 101 {
+    .mx-#{$num} {
+        margin-left: $num +0px !important;
+        margin-right: $num +0px !important;
+    }
+    $num: $num +5;
+}
+
+$num: 0;
+@while $num < 101 {
+    .my-#{$num} {
+        margin-top: $num +0px !important;
+        margin-bottom: $num +0px !important;
+    }
+    $num: $num +5;
+}
+
+@include screen-xs {
+    $num: 0;
+	@while $num < 101 {
+		.m-xs-#{$num} {
+			margin: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.mt-xs-#{$num} {
+			margin-top: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.mb-xs-#{$num} {
+			margin-bottom: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.ml-xs-#{$num} {
+			margin-left: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.mr-xs-#{$num} {
+			margin-right: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.mx-xs-#{$num} {
+			margin-left: $num +0px !important;
+			margin-right: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.my-xs-#{$num} {
+			margin-top: $num +0px !important;
+			margin-bottom: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+}
+
+@include screen-sm {
+    $num: 0;
+	@while $num < 101 {
+		.m-sm-#{$num} {
+			margin: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.mt-sm-#{$num} {
+			margin-top: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.mb-sm-#{$num} {
+			margin-bottom: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.ml-sm-#{$num} {
+			margin-left: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.mr-sm-#{$num} {
+			margin-right: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.mx-sm-#{$num} {
+			margin-left: $num +0px !important;
+			margin-right: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.my-sm-#{$num} {
+			margin-top: $num +0px !important;
+			margin-bottom: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+}
+
+@include screen-md {
+    $num: 0;
+	@while $num < 101 {
+		.m-md-#{$num} {
+			margin: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.mt-md-#{$num} {
+			margin-top: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.mb-md-#{$num} {
+			margin-bottom: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.ml-md-#{$num} {
+			margin-left: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.mr-md-#{$num} {
+			margin-right: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.mx-md-#{$num} {
+			margin-left: $num +0px !important;
+			margin-right: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.my-md-#{$num} {
+			margin-top: $num +0px !important;
+			margin-bottom: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+}
+
+@include screen-lg {
+    $num: 0;
+	@while $num < 101 {
+		.m-lg-#{$num} {
+			margin: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.mt-lg-#{$num} {
+			margin-top: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.mb-lg-#{$num} {
+			margin-bottom: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.ml-sm-#{$num} {
+			margin-left: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.mr-lg-#{$num} {
+			margin-right: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.mx-lg-#{$num} {
+			margin-left: $num +0px !important;
+			margin-right: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.my-lg-#{$num} {
+			margin-top: $num +0px !important;
+			margin-bottom: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+}
+
+@include screen-xl {
+    $num: 0;
+	@while $num < 101 {
+		.m-xl-#{$num} {
+			margin: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.mt-xl-#{$num} {
+			margin-top: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.mb-xl-#{$num} {
+			margin-bottom: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.ml-xl-#{$num} {
+			margin-left: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.mr-xl-#{$num} {
+			margin-right: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.mx-xl-#{$num} {
+			margin-left: $num +0px !important;
+			margin-right: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.my-xl-#{$num} {
+			margin-top: $num +0px !important;
+			margin-bottom: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+}
+
+
+@include screen-xxl {
+    $num: 0;
+	@while $num < 101 {
+		.m-xxl-#{$num} {
+			margin: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.mt-xxl-#{$num} {
+			margin-top: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.mb-xxl-#{$num} {
+			margin-bottom: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.ml-xxl-#{$num} {
+			margin-left: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.mr-xxl-#{$num} {
+			margin-right: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.mx-xxl-#{$num} {
+			margin-left: $num +0px !important;
+			margin-right: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.my-xxl-#{$num} {
+			margin-top: $num +0px !important;
+			margin-bottom: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+}
+
+
+@include screen-xxxl {
+    $num: 0;
+	@while $num < 101 {
+		.m-xxxl-#{$num} {
+			margin: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.mt-xxxl-#{$num} {
+			margin-top: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.mb-xxxl-#{$num} {
+			margin-bottom: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.ml-xxxl-#{$num} {
+			margin-left: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.mr-xxxl-#{$num} {
+			margin-right: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.mx-xxxl-#{$num} {
+			margin-left: $num +0px !important;
+			margin-right: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+
+	$num: 0;
+	@while $num < 101 {
+		.my-xxxl-#{$num} {
+			margin-top: $num +0px !important;
+			margin-bottom: $num +0px !important;
+		}
+		$num: $num +5;
+	}
+}

@@ -1,0 +1,214 @@
+// Variables
+
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i|Rubik:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap');
+
+$bodyfont:'IBM Plex Sans', sans-serif;
+$headingfont:'Rubik', sans-serif;
+
+$p100: 100%;
+
+$sid-bar-w: 280px;
+$hed-max: 120px;
+$main-hed-nav: 60px;
+$default-border-radius: 15px;
+$fct-border-radius: 10px;
+$border-circle: 50%;
+$mini-sid-bar-w: 60px;
+$ctrl-sid-bar-w: 300px;
+$inn-pg-sid-bar-w: 280px;
+
+// Typography
+//
+// Font-size, font-weight
+
+
+$fw-unset:unset;
+$fw-100:100;
+$fw-200: 200;
+$fw-300: 300;
+$fw-400: 400;
+$fw-500: 500;
+$fw-600: 600;
+$fw-700: 700;
+$fw-800: 800;
+$fw-900: 900;
+$fw-light: 100;
+$fw-normal: 400;
+$fw-medium: 500;
+$fw-bold: 700;
+
+$fs-0: 0;
+$fs-10: 0.7143rem;
+$fs-12: 0.8571rem;
+$fs-14: 1rem;
+$fs-16: 1.143rem;
+$fs-18: 1.286rem;
+$fs-20: 1.429rem;
+$fs-22: 1.5714285714285714rem;
+$fs-24: 1.714rem;
+$fs-26: 1.857rem;
+$fs-30: 2.143rem;
+$fs-32: 2.2857142857142856rem;
+$fs-36: 2.5714285714285716rem;
+$fs-38: 2.7142857142857144rem;
+$fs-40: 2.857rem;
+$fs-42: 3rem;
+$fs-46: 3.2857142857142856rem;
+$fs-48: 3.4285714285714284rem;
+$fs-50: 3.571rem;
+$fs-60: 4.286rem;
+$fs-70: 5rem;
+$fs-72: 5.142857142857143rem;
+$fs-76: 5.428571428571429rem;
+$fs-78: 5.571428571428571rem;
+$fs-80: 5.714rem;
+$fs-100: 7.142857142857143rem;
+$fs-140: 10rem ;
+$fs-180: 12.857142857142858rem;
+$fs-200: 14.285714285714286rem ;
+
+/*Social Media Colors*/
+$facebook: #3b5998;
+$google: #dd4b39;
+$twitter: #1da1f2;
+$linkedin: #0077b5;
+$pinterest: #bd081c;
+$git: #6cc644;
+$tumblr: #35465c;
+$vimeo: #1ab7ea;
+$youtube: #ff0000;
+$flickr: #ff0084;
+$reddit: #ff4500;
+$dribbble: #ea4c89;
+$skype: #00aff0;
+$instagram: #e1306c;
+$lastfm: #d51007;
+$behance: #1769ff;
+$rss: #f26522;
+$bitbucket: #205081;
+$dropbox: #007ee5;
+$foursquare: #2d5be3;
+$github: #4078c0;
+$vk: #45668e;
+
+/*Theme Colors*/
+
+$dark: #475f7b;
+$light:#d5dfea;
+$light2:#fafafa;
+$light3: #f2f4f4;
+$light4: #dfe3e7;
+$light5: #bac0c7;
+$light6: #eef0f8;
+$white:#ffffff;
+$black:#000000;
+$primary:#0F5EF7;
+$success:#00BC8B;
+$danger:#EF3737;
+$warning:#FFB800;
+$info:#7a15f7;
+$secondary:#475F7B;
+$mildgray: #bcc2c8;
+$dx-blue: #485e90;
+
+/*Lite color*/
+$primary-lite:#e1f0ff;
+$secondary-lite:#e9edf2;
+$info-lite:#def6ff;
+$success-lite:#caffe5;
+$warning-lite:#fff4de;
+$danger-lite:#ffe2e5;
+
+
+
+/*Theme Colors For Dark*/
+$body-dark: #1a233a;
+$dark-text: #8a99b5;
+$dark2: #566f9e;
+$dark3: #272e48;
+$dark-title: #bdd1f8;
+
+$colors: (
+  'primary':   $primary,
+  'success':   $success,
+  'info':      $info,
+  'warning':   $warning,
+  'danger':    $danger,
+  'dark':      $dark,
+  'white':     $white,
+  'black':     $black,
+  'light':     $light,
+);
+
+
+$gray-100:      #f3f6f7;
+$gray-200:      #eff2f9;
+$gray-300:      #dbe0ec;
+$gray-400:      #b6c2e4;
+$gray-500:      #8997bd;
+$gray-600:      #7081b9;
+$gray-700:      #50649c;
+$gray-800:      #435177;
+$gray-900:      #1c2d41;
+
+
+$theme-primary-primary: #0F5EF7;
+$theme-primary-secondary:#475F7B;
+$theme-primary-info: #7a15f7;
+$theme-primary-success: #00BC8B;
+$theme-primary-danger: #EF3737;
+$theme-primary-warning: #FFB800;
+
+$theme-primary-grd: linear-gradient(45deg, $theme-primary-primary, $theme-primary-info);
+$theme-primary-grd-dark: linear-gradient(45deg, darken($theme-primary-primary, 20%), darken($theme-primary-info, 20%));
+
+
+$theme-secondary-primary: #475F7B;
+$theme-secondary-secondary:#0F5EF7;
+$theme-secondary-info: #7a15f7;
+$theme-secondary-success: #00BC8B;
+$theme-secondary-danger: #EF3737;
+$theme-secondary-warning: #FFB800;
+
+$theme-secondary-grd: linear-gradient(45deg, $theme-secondary-primary, $theme-secondary-info);
+$theme-secondary-grd-dark: linear-gradient(45deg, darken($theme-secondary-primary, 20%), darken($theme-secondary-info, 20%));
+
+$theme-info-primary: #7a15f7;
+$theme-info-secondary:#475F7B;
+$theme-info-info: #0F5EF7;
+$theme-info-success: #00BC8B;
+$theme-info-danger: #EF3737;
+$theme-info-warning: #FFB800;
+
+$theme-info-grd: linear-gradient(45deg, $theme-info-primary, $theme-info-info);
+$theme-info-grd-dark: linear-gradient(45deg, darken($theme-info-primary, 20%), darken($theme-info-info, 20%));
+
+$theme-success-primary: #00BC8B;
+$theme-success-secondary:#475F7B;
+$theme-success-info: #7a15f7;
+$theme-success-success: #0F5EF7;
+$theme-success-danger: #EF3737;
+$theme-success-warning: #FFB800;
+
+$theme-success-grd: linear-gradient(45deg, $theme-success-primary, $theme-success-info);
+$theme-success-grd-dark: linear-gradient(45deg, darken($theme-success-primary, 20%), darken($theme-success-info, 20%));
+
+$theme-danger-primary: #EF3737;
+$theme-danger-secondary:#475F7B;
+$theme-danger-info: #7a15f7;
+$theme-danger-success: #00BC8B;
+$theme-danger-danger: #0F5EF7;
+$theme-danger-warning: #FFB800;
+
+$theme-danger-grd: linear-gradient(45deg, $theme-danger-primary, $theme-danger-info);
+$theme-danger-grd-dark: linear-gradient(45deg, darken($theme-danger-primary, 20%), darken($theme-danger-info, 20%));
+
+$theme-warning-primary: #FFB800;
+$theme-warning-secondary:#475F7B;
+$theme-warning-info: #7a15f7;
+$theme-warning-success: #00BC8B;
+$theme-warning-danger: #EF3737;
+$theme-warning-warning: #0F5EF7;
+
+$theme-warning-grd: linear-gradient(45deg, $theme-warning-primary, $theme-warning-info);
+$theme-warning-grd-dark: linear-gradient(45deg, darken($theme-warning-primary, 20%), darken($theme-warning-info, 20%));

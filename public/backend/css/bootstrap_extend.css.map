@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA;;;;EAIE",
+"sources": ["../scss/bootstrap_extend.scss"],
+"names": [],
+"file": "bootstrap_extend.css"
+}
