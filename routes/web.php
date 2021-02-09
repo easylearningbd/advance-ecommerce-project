@@ -107,9 +107,9 @@ Route::post('/sub/store', [SubCategoryController::class, 'SubCategoryStore'])->n
 
 Route::get('/sub/edit/{id}', [SubCategoryController::class, 'SubCategoryEdit'])->name('subcategory.edit');
 
-Route::post('/update', [CategoryController::class, 'CategoryUpdate'])->name('category.update');
+Route::post('/update', [SubCategoryController::class, 'SubCategoryUpdate'])->name('subcategory.update');
 
-Route::get('/delete/{id}', [CategoryController::class, 'CategoryDelete'])->name('category.delete');
+Route::get('/sub/delete/{id}', [SubCategoryController::class, 'SubCategoryDelete'])->name('subcategory.delete');
 
 
 
