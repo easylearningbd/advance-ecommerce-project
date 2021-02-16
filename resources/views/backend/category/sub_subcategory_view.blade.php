@@ -76,7 +76,7 @@
 					<div class="table-responsive">
 
 
- <form method="post" action="{{ route('subcategory.store') }}" >
+ <form method="post" action="{{ route('subsubcategory.store') }}" >
 	 	@csrf
 					   
 
