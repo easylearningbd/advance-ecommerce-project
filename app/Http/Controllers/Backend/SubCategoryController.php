@@ -190,7 +190,17 @@ public function SubSubCategoryStore(Request $request){
     } // end method 
 
 
+    public function SubSubCategoryDelete($id){
 
+    	SubSubCategory::findOrFail($id)->delete();
+    	 $notification = array(
+			'message' => 'Sub-SubCategory Deleted Successfully',
+			'alert-type' => 'info'
+		);
+
+		return redirect()->back()->with($notification);
+
+    }
 
 
 }

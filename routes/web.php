@@ -124,4 +124,6 @@ Route::get('/sub/sub/edit/{id}', [SubCategoryController::class, 'SubSubCategoryE
 
 Route::post('/sub/update', [SubCategoryController::class, 'SubSubCategoryUpdate'])->name('subsubcategory.update');
 
+Route::get('/sub/sub/delete/{id}', [SubCategoryController::class, 'SubSubCategoryDelete'])->name('subsubcategory.delete');
+
 });
