@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\SubCategory;
 use App\Models\Category;
+use App\Models\SubSubCategory;
 
 class SubCategoryController extends Controller
 {
@@ -99,6 +100,17 @@ class SubCategoryController extends Controller
     }
 
 
+  /////////////// That for SUB->SUBCATEGORY ////////////////
+
+ public function SubSubCategoryView(){
+
+ 	$categories = Category::orderBy('category_name_en','ASC')->get();
+    	$subsubcategory = SubSubCategory::latest()->get();
+    	return view('backend.category.sub_subcategory_view',compact('subsubcategory','categories'));
+
+     }
+
+ 
 
 
 

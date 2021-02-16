@@ -112,6 +112,9 @@ Route::post('/update', [SubCategoryController::class, 'SubCategoryUpdate'])->nam
 Route::get('/sub/delete/{id}', [SubCategoryController::class, 'SubCategoryDelete'])->name('subcategory.delete');
 
 
+// Admin Sub->Sub Category All Routes
+
+Route::get('/sub/sub/view', [SubCategoryController::class, 'SubSubCategoryView'])->name('all.subsubcategory');
 
 
 });
