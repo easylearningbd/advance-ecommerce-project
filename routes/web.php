@@ -116,5 +116,6 @@ Route::get('/sub/delete/{id}', [SubCategoryController::class, 'SubCategoryDelete
 
 Route::get('/sub/sub/view', [SubCategoryController::class, 'SubSubCategoryView'])->name('all.subsubcategory');
 
+Route::get('/subcategory/ajax/{category_id}', [SubCategoryController::class, 'GetSubCategory']);
 
 });
