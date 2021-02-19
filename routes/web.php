@@ -145,5 +145,7 @@ Route::get('/edit/{id}', [ProductController::class, 'EditProduct'])->name('produ
 Route::post('/data/update', [ProductController::class, 'ProductDataUpdate'])->name('product-update');
 
 Route::post('/image/update', [ProductController::class, 'MultiImageUpdate'])->name('update-product-image');
+
+Route::post('/thambnail/update', [ProductController::class, 'ThambnailImageUpdate'])->name('update-product-thambnail');
  
 });
