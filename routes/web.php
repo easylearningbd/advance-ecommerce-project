@@ -142,5 +142,6 @@ Route::get('/manage', [ProductController::class, 'ManageProduct'])->name('manage
 
 Route::get('/edit/{id}', [ProductController::class, 'EditProduct'])->name('product.edit');
 
+Route::post('/data/update', [ProductController::class, 'ProductDataUpdate'])->name('product-update');
  
 });
