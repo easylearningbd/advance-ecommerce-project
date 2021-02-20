@@ -168,9 +168,9 @@ Route::get('/view', [SliderController::class, 'SliderView'])->name('manage-slide
 
 Route::post('/store', [SliderController::class, 'SliderStore'])->name('slider.store');
 
-Route::get('/edit/{id}', [BrandController::class, 'BrandEdit'])->name('brand.edit');
+Route::get('/edit/{id}', [SliderController::class, 'SliderEdit'])->name('slider.edit');
 
-Route::post('/update', [BrandController::class, 'BrandUpdate'])->name('brand.update');
+Route::post('/update', [SliderController::class, 'SliderUpdate'])->name('slider.update');
 
 Route::get('/delete/{id}', [BrandController::class, 'BrandDelete'])->name('brand.delete');
 
