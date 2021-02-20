@@ -174,4 +174,8 @@ Route::post('/update', [SliderController::class, 'SliderUpdate'])->name('slider.
 
 Route::get('/delete/{id}', [SliderController::class, 'SliderDelete'])->name('slider.delete');
 
+Route::get('/inactive/{id}', [SliderController::class, 'SliderInactive'])->name('slider.inactive');
+
+Route::get('/active/{id}', [SliderController::class, 'SliderActive'])->name('slider.active');
+
 });
