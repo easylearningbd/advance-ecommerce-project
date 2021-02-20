@@ -166,7 +166,7 @@ Route::prefix('slider')->group(function(){
 
 Route::get('/view', [SliderController::class, 'SliderView'])->name('manage-slider');
 
-Route::post('/store', [BrandController::class, 'BrandStore'])->name('brand.store');
+Route::post('/store', [SliderController::class, 'SliderStore'])->name('slider.store');
 
 Route::get('/edit/{id}', [BrandController::class, 'BrandEdit'])->name('brand.edit');
 
