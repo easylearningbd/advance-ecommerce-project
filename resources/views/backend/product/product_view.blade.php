@@ -53,7 +53,7 @@
 		 	$amount = $item->selling_price - $item->discount_price;
 		 	$discount = ($amount/$item->selling_price) * 100;
 		 	@endphp
-           <span class="badge badge-pill badge-danger">{{ round($discount)  }} %</span>
+   <span class="badge badge-pill badge-danger">{{ round($discount)  }} %</span>
 
 		 	@endif
 
@@ -76,7 +76,7 @@
 
  <a href="{{ route('product.edit',$item->id) }}" class="btn btn-info" title="Edit Data"><i class="fa fa-pencil"></i> </a>
 
- <a href="{{ route('category.delete',$item->id) }}" class="btn btn-danger" title="Delete Data" id="delete">
+ <a href="{{ route('product.delete',$item->id) }}" class="btn btn-danger" title="Delete Data" id="delete">
  	<i class="fa fa-trash"></i></a>
 
 @if($item->status == 1)
