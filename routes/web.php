@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\Backend\ProductController;
+use App\Http\Controllers\Backend\SliderController;
 
 use App\Http\Controllers\Frontend\IndexController;
 
@@ -156,4 +157,21 @@ Route::get('/active/{id}', [ProductController::class, 'ProductActive'])->name('p
 
 Route::get('/delete/{id}', [ProductController::class, 'ProductDelete'])->name('product.delete');
  
+});
+
+
+// Admin Slider All Routes 
+
+Route::prefix('slider')->group(function(){
+
+Route::get('/view', [SliderController::class, 'SliderView'])->name('manage-slider');
+
+Route::post('/store', [BrandController::class, 'BrandStore'])->name('brand.store');
+
+Route::get('/edit/{id}', [BrandController::class, 'BrandEdit'])->name('brand.edit');
+
+Route::post('/update', [BrandController::class, 'BrandUpdate'])->name('brand.update');
+
+Route::get('/delete/{id}', [BrandController::class, 'BrandDelete'])->name('brand.delete');
+
 });
