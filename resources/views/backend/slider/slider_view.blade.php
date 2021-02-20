@@ -60,7 +60,7 @@
 		<td width="30%">
  <a href="{{ route('slider.edit',$item->id) }}" class="btn btn-info btn-sm" title="Edit Data"><i class="fa fa-pencil"></i> </a>
 
- <a href="{{ route('brand.delete',$item->id) }}" class="btn btn-danger btn-sm" title="Delete Data" id="delete">
+ <a href="{{ route('slider.delete',$item->id) }}" class="btn btn-danger btn-sm" title="Delete Data" id="delete">
  	<i class="fa fa-trash"></i></a>
 
 @if($item->status == 1)

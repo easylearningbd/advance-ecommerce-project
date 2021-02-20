@@ -172,6 +172,6 @@ Route::get('/edit/{id}', [SliderController::class, 'SliderEdit'])->name('slider.
 
 Route::post('/update', [SliderController::class, 'SliderUpdate'])->name('slider.update');
 
-Route::get('/delete/{id}', [BrandController::class, 'BrandDelete'])->name('brand.delete');
+Route::get('/delete/{id}', [SliderController::class, 'SliderDelete'])->name('slider.delete');
 
 });
