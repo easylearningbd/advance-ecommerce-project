@@ -157,7 +157,9 @@
           <div class="navbar-collapse collapse" id="mc-horizontal-menu-collapse">
             <div class="nav-outer">
               <ul class="nav navbar-nav">
-  <li class="active dropdown yamm-fw"> <a href="{{ url('/') }}" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">Home</a> </li>
+  <li class="active dropdown yamm-fw"> <a href="{{ url('/') }}" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">
+@if(session()->get('language') == 'hindi') घर @else Home @endif
+  </a> </li>
 
 <!--   // Get Category Table Data -->
   @php
@@ -166,7 +168,9 @@
 
 
  @foreach($categories as $category)
-  <li class="dropdown yamm mega-menu"> <a href="home.html" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">{{ $category->category_name_en }}</a>
+  <li class="dropdown yamm mega-menu"> <a href="home.html" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">
+    @if(session()->get('language') == 'hindi') {{ $category->category_name_hin }} @else {{ $category->category_name_en }} @endif
+    </a>
     <ul class="dropdown-menu container">
       <li>
         <div class="yamm-content ">
@@ -181,7 +185,9 @@
             <div class="col-xs-12 col-sm-6 col-md-2 col-menu">
 
 
-              <h2 class="title">{{ $subcategory->subcategory_name_en }}</h2>
+              <h2 class="title">
+@if(session()->get('language') == 'hindi') {{ $subcategory->subcategory_name_hin }} @else {{ $subcategory->subcategory_name_en }} @endif
+                </h2>
 
 
     <!--   // Get SubSubCategory Table Data -->
@@ -191,7 +197,9 @@
 
    @foreach($subsubcategories as $subsubcategory)
               <ul class="links">
-                <li><a href="#">{{ $subsubcategory->subsubcategory_name_en }}</a></li>
+                <li><a href="#">
+@if(session()->get('language') == 'hindi') {{ $subsubcategory->subsubcategory_name_hin }} @else {{ $subsubcategory->subsubcategory_name_en }} @endif
+                  </a></li>
                 
               </ul>
      @endforeach <!-- // End SubSubCategory Foreach -->
