@@ -8,14 +8,16 @@ use Auth;
 use App\Models\User;
 use App\Models\Category;
 use App\Models\Slider;
+use App\Models\Product;
 use Illuminate\Support\Facades\Hash;
 
 class IndexController extends Controller
 {
     public function index(){
+    	$products = Product::where('status',1)->orderBy('id','DESC')->limit(6)->get();
     	$sliders = Slider::where('status',1)->orderBy('id','DESC')->limit(3)->get();
     	$categories = Category::orderBy('category_name_en','ASC')->get();
-    	return view('frontend.index',compact('categories','sliders'));
+    	return view('frontend.index',compact('categories','sliders','products'));
 
     }
 
