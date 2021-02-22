@@ -30,11 +30,13 @@ Route::group(['prefix'=> 'admin', 'middleware'=>['admin:admin']], function(){
 });
 
 
+Route::middleware(['auth:admin'])->group(function(){
+
 
 
 Route::middleware(['auth:sanctum,admin', 'verified'])->get('/admin/dashboard', function () {
     return view('admin.index');
-})->name('dashboard');
+})->name('dashboard')->middleware('auth:admin');
 
 // Admin All Routes 
 
@@ -50,7 +52,7 @@ Route::get('/admin/change/password', [AdminProfileController::class, 'AdminChang
 
 Route::post('/update/change/password', [AdminProfileController::class, 'AdminUpdateChangePassword'])->name('update.change.password');
 
-
+});  // end Middleware admin
 
 // User ALL Routes
 
