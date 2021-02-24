@@ -1,7 +1,9 @@
 @extends('frontend.main_master')
 @section('content')
 
-
+@section('title')
+{{ $product->product_name_en }} Product Details
+@endsection
 
 
 
@@ -420,7 +422,11 @@
 </div><!-- /.gallery-holder -->        			
 					<div class='col-sm-6 col-md-7 product-info-block'>
 						<div class="product-info">
-							<h1 class="name">Floral Print Buttoned</h1>
+
+
+							<h1 class="name">
+@if(session()->get('language') == 'hindi') {{ $product->product_name_hin }} @else {{ $product->product_name_en }} @endif
+							 </h1>
 							
 							<div class="rating-reviews m-t-20">
 								<div class="row">
@@ -450,20 +456,26 @@
 								</div><!-- /.row -->	
 							</div><!-- /.stock-container -->
 
-							<div class="description-container m-t-20">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-							</div><!-- /.description-container -->
+<div class="description-container m-t-20">
+	@if(session()->get('language') == 'hindi') {{ $product->short_descp_hin }} @else {{ $product->short_descp_en }} @endif
+</div><!-- /.description-container -->
 
 							<div class="price-container info-container m-t-20">
 								<div class="row">
 									
 
-									<div class="col-sm-6">
-										<div class="price-box">
-											<span class="price">$800.00</span>
-											<span class="price-strike">$900.00</span>
-										</div>
-									</div>
+	<div class="col-sm-6">
+		<div class="price-box">
+       @if ($product->discount_price == NULL)
+       <span class="price">${{ $product->selling_price }}</span>
+       @else
+       <span class="price">${{ $product->discount_price }}</span>
+			<span class="price-strike">${{ $product->selling_price }}</span>
+       @endif
+
+			
+		</div>
+	</div>
 
 									<div class="col-sm-6">
 										<div class="favorite-button m-t-10">
@@ -532,10 +544,11 @@
 
 							<div class="tab-content">
 								
-								<div id="description" class="tab-pane in active">
-									<div class="product-tab">
-										<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br><br> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-									</div>	
+<div id="description" class="tab-pane in active">
+	<div class="product-tab">
+		<p class="text">@if(session()->get('language') == 'hindi') 
+			{!! $product->long_descp_hin !!} @else {!! $product->long_descp_en !!} @endif</p>
+	</div>	
 								</div><!-- /.tab-pane -->
 
 								<div id="review" class="tab-pane">
@@ -1017,7 +1030,7 @@
 			</div><!-- /.col -->
 			<div class="clearfix"></div>
 		</div><!-- /.row -->
-		
+
 </div>
 
 
