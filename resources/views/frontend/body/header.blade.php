@@ -184,10 +184,10 @@
   @foreach($subcategories as $subcategory)
             <div class="col-xs-12 col-sm-6 col-md-2 col-menu">
 
-
+<a href="{{ url('subcategory/product/'.$subcategory->id.'/'.$subcategory->subcategory_slug_en ) }}">
               <h2 class="title">
 @if(session()->get('language') == 'hindi') {{ $subcategory->subcategory_name_hin }} @else {{ $subcategory->subcategory_name_en }} @endif
-                </h2>
+                </h2> </a>
 
 
     <!--   // Get SubSubCategory Table Data -->
