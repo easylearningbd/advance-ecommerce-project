@@ -90,5 +90,82 @@
 </script>
 
 
+
+<!-- Add to Cart Product Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+       
+       <div class="row">
+
+        <div class="col-md-4">
+
+            <div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+            
+        </div><!-- // end col md -->
+
+
+        <div class="col-md-4">
+
+     <ul class="list-group">
+  <li class="list-group-item">An item</li>
+  <li class="list-group-item">A second item</li>
+  <li class="list-group-item">A third item</li>
+  <li class="list-group-item">A fourth item</li>
+  <li class="list-group-item">And a fifth one</li>
+</ul>
+            
+        </div><!-- // end col md -->
+
+
+        <div class="col-md-4">
+
+            <div class="form-group">
+    <label for="exampleFormControlSelect1">Example select</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+            
+        </div><!-- // end col md -->
+
+           
+       </div> <!-- // end row -->
+
+
+
+
+
+
+
+
+
+
+      </div> <!-- // end modal Body -->
+      
+    </div>
+  </div>
+</div>
+<!-- End Add to Cart Product Modal -->
+
 </body>
 </html>
