@@ -312,10 +312,24 @@ function productView(id){
   
 // End Add To Cart Product 
 
+</script>
+
+<script type="text/javascript">
+     function miniCart(){
+        $.ajax({
+            type: 'GET',
+            url: '/product/mini/cart',
+            dataType:'json',
+            success:function(response){
+                console.log(response)
+
+            }
+        })
+
+     }
 
 
 </script>
-
 
  
 
