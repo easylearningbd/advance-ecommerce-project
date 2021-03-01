@@ -338,7 +338,8 @@ function productView(id){
               <h3 class="name"><a href="index.php?page-detail">${value.name}</a></h3>
               <div class="price"> ${value.price} * ${value.qty} </div>
             </div>
-            <div class="col-xs-1 action"> <a href="#"><i class="fa fa-trash"></i></a> </div>
+            <div class="col-xs-1 action"> 
+            <button type="submit" id="${value.rowId}" onclick="miniCartRemove(this.id)"><i class="fa fa-trash"></i></button> </div>
           </div>
         </div>
         <!-- /.cart-item -->
@@ -352,6 +353,47 @@ function productView(id){
 
      }
  miniCart();
+
+ /// mini cart remove Start 
+    function miniCartRemove(rowId){
+        $.ajax({
+            type: 'GET',
+            url: '/minicart/product-remove/'+rowId,
+            dataType:'json',
+            success:function(data){
+            miniCart();
+
+             // Start Message 
+                const Toast = Swal.mixin({
+                      toast: true,
+                      position: 'top-end',
+                      icon: 'success',
+                      showConfirmButton: false,
+                      timer: 3000
+                    })
+                if ($.isEmptyObject(data.error)) {
+                    Toast.fire({
+                        type: 'success',
+                        title: data.success
+                    })
+
+                }else{
+                    Toast.fire({
+                        type: 'error',
+                        title: data.error
+                    })
+
+                }
+
+                // End Message 
+
+            }
+        });
+
+    }
+
+ //  end mini cart remove 
+
 
 </script>
 
