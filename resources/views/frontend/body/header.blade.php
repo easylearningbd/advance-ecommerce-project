@@ -96,7 +96,9 @@
         <!-- /.top-search-holder -->
         
         <div class="col-xs-12 col-sm-12 col-md-2 animate-dropdown top-cart-row"> 
-          <!-- ============================================================= SHOPPING CART DROPDOWN ============================================================= -->
+          
+
+          <!-- ===== === SHOPPING CART DROPDOWN ===== == -->
           
           <div class="dropdown dropdown-cart"> <a href="#" class="dropdown-toggle lnk-cart" data-toggle="dropdown">
             <div class="items-cart-inner">
@@ -107,21 +109,15 @@
             </a>
             <ul class="dropdown-menu">
               <li>
-                <div class="cart-item product-summary">
-                  <div class="row">
-                    <div class="col-xs-4">
-                      <div class="image"> <a href="detail.html"><img src="{{ asset('frontend/assets/images/cart.jpg') }}" alt=""></a> </div>
-                    </div>
-                    <div class="col-xs-7">
-                      <h3 class="name"><a href="index.php?page-detail">Simple Product</a></h3>
-                      <div class="price">$600.00</div>
-                    </div>
-                    <div class="col-xs-1 action"> <a href="#"><i class="fa fa-trash"></i></a> </div>
-                  </div>
-                </div>
-                <!-- /.cart-item -->
-                <div class="clearfix"></div>
-                <hr>
+         <!--   // Mini Cart Start with Ajax -->
+
+         <div id="miniCart">
+           
+         </div>
+ 
+<!--   // End Mini Cart Start with Ajax -->
+
+
                 <div class="clearfix cart-total">
                   <div class="pull-right"> <span class="text">Sub Total :</span><span class='price'>$600.00</span> </div>
                   <div class="clearfix"></div>
@@ -134,7 +130,8 @@
           </div>
           <!-- /.dropdown-cart --> 
           
-          <!-- ============================================================= SHOPPING CART DROPDOWN : END============================================================= --> </div>
+          <!-- == === SHOPPING CART DROPDOWN : END=== === --> </div>
+
         <!-- /.top-cart-row --> 
       </div>
       <!-- /.row --> 
