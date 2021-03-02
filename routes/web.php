@@ -10,7 +10,7 @@ use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\SliderController;
-
+ 
 use App\Http\Controllers\Frontend\IndexController;
 use App\Http\Controllers\Frontend\LanguageController;
 use App\Http\Controllers\Frontend\CartController;
@@ -219,3 +219,6 @@ Route::get('/product/mini/cart/', [CartController::class, 'AddMiniCart']);
 
 // Remove mini cart
 Route::get('/minicart/product-remove/{rowId}', [CartController::class, 'RemoveMiniCart']);
+
+// Add to Wishlist
+Route::post('/add-to-wishlist/{product_id}', [CartController::class, 'AddToWishlist']);
