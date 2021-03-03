@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Coupon;
 use Carbon\Carbon;
-
+ 
 class CouponController extends Controller
 {
     public function CouponView(){
