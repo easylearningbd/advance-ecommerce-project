@@ -36,6 +36,15 @@ class CartPageController extends Controller
     }
 
 
+ // Cart Increment 
+    public function CartIncrement($rowId){
+        $row = Cart::get($rowId);
+        Cart::update($rowId, $row->qty + 1);
+
+        return response()->json('increment');
+
+    } // end mehtod 
+
 
 
 } 
