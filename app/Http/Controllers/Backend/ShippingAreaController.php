@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ShipDivision;
 use Carbon\Carbon;
+use App\Models\ShipDistrict;
 
 class ShippingAreaController extends Controller
 {
@@ -84,6 +85,17 @@ public function DivisionStore(Request $request){
 
     } // end method 
 
+
+
+    //// Start Ship District 
+
+    public function DistrictView(){
+    $division = ShipDivision::orderBy('division_name','ASC')->get();
+    $district = ShipDistrict::orderBy('id','DESC')->get();
+		return view('backend.ship.district.view_district',compact('division','district'));
+    }
+
+   //// End Ship District
     
 
 
