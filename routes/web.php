@@ -305,9 +305,9 @@ Route::get('/district/delete/{id}', [ShippingAreaController::class, 'DistrictDel
 // Ship State 
 Route::get('/state/view', [ShippingAreaController::class, 'StateView'])->name('manage-state');
 
-Route::post('/district/store', [ShippingAreaController::class, 'DistrictStore'])->name('district.store');
+Route::post('/state/store', [ShippingAreaController::class, 'StateStore'])->name('state.store');
 
-Route::get('/district/edit/{id}', [ShippingAreaController::class, 'DistrictEdit'])->name('district.edit');
+Route::get('/state/edit/{id}', [ShippingAreaController::class, 'StateEdit'])->name('state.edit');
 
 Route::post('/district/update/{id}', [ShippingAreaController::class, 'DistrictUpdate'])->name('district.update');
 

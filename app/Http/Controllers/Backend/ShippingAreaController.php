@@ -181,12 +181,48 @@ public function DistrictEdit($id){
     public function StateView(){
     $division = ShipDivision::orderBy('division_name','ASC')->get();
     $district = ShipDistrict::orderBy('district_name','ASC')->get();
-    $state = ShipState::orderBy('id','DESC')->get();
+    $state = ShipState::with('division','district')->orderBy('id','DESC')->get();
 		return view('backend.ship.state.view_state',compact('division','district','state'));
     }
 
 
 
+
+    public function StateStore(Request $request){
+
+    	$request->validate([
+    		'division_id' => 'required',  
+    		'district_id' => 'required', 
+    		'state_name' => 'required', 	 
+    	 
+    	]);
+    	 
+
+	ShipState::insert([
+	 
+		'division_id' => $request->division_id,
+		'district_id' => $request->district_id,
+		'state_name' => $request->state_name,
+		'created_at' => Carbon::now(),
+
+    	]);
+
+	    $notification = array(
+			'message' => 'State Inserted Successfully',
+			'alert-type' => 'success'
+		);
+
+		return redirect()->back()->with($notification);
+
+    } // end method 
+
+
+public function StateEdit($id){
+    $division = ShipDivision::orderBy('division_name','ASC')->get();
+    $district = ShipDistrict::orderBy('district_name','ASC')->get();
+    $state = ShipState::findOrFail($id);
+		return view('backend.ship.state.edit_state',compact('division','district','state'));
+    }
 
 
     //////////////// End Ship State ////////////
