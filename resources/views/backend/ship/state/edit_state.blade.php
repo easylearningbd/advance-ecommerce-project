@@ -30,7 +30,7 @@
 					<div class="table-responsive">
 
 
- <form method="post" action="{{ route('state.store') }}" >
+ <form method="post" action="{{ route('state.update',$state->id) }}" >
 	 	@csrf
 				
 
