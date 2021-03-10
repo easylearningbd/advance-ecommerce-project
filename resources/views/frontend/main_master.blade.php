@@ -691,26 +691,38 @@ function addToWishList(product_id){
 
 
  // ---------- END CART Decrement -----///
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
 
  </script>  
 
 <!-- //End Load My cart / -->
 
 
+
+<!--  //////////////// =========== Coupon Apply Start ================= ////  -->
+<script type="text/javascript">
+  function applyCoupon(){
+    var coupon_name = $('#coupon_name').val();
+    $.ajax({
+        type: 'POST',
+        dataType: 'json',
+        data: {coupon_name:coupon_name},
+        url: "{{ url('/coupon-apply') }}",
+        success:function(data){
+
+        }
+
+    })
+  }  
+
+
+
+</script>
+
+
+
+
+<!--  //////////////// =========== End Coupon Apply Start ================= ////  -->
  
 
 

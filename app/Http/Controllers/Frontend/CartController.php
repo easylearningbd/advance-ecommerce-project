@@ -9,7 +9,7 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 use Auth;
 use App\Models\Wishlist;
 use Carbon\Carbon;
-
+ 
 class CartController extends Controller
 {
     public function AddToCart(Request $request, $id){
@@ -105,6 +105,17 @@ class CartController extends Controller
         }
 
     } // end method 
+
+
+
+
+    public function CouponApply(Request $request){
+
+    }
+
+
+
+
 
 
 }
