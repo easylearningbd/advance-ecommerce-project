@@ -16,6 +16,10 @@ use Illuminate\Support\Facades\Session;
 class CartController extends Controller
 {
     public function AddToCart(Request $request, $id){
+
+         if (Session::has('coupon')) {
+           Session::forget('coupon');
+        }
           
     	$product = Product::findOrFail($id);
 

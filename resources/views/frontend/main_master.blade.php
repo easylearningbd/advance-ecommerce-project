@@ -619,8 +619,11 @@ function addToWishList(product_id){
             url: '/user/cart-remove/'+id,
             dataType:'json',
             success:function(data){
+            couponCalculation();
             cart();
             miniCart();
+            $('#couponField').show();
+            $('#coupon_name').val('');
 
              // Start Message 
                 const Toast = Swal.mixin({
