@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Session;
 class CartController extends Controller
 {
     public function AddToCart(Request $request, $id){
-
+          
     	$product = Product::findOrFail($id);
 
     	if ($product->discount_price == NULL) {

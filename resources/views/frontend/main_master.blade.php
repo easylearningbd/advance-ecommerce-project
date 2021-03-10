@@ -664,6 +664,7 @@ function addToWishList(product_id){
             url: "/cart-increment/"+rowId,
             dataType:'json',
             success:function(data){
+                couponCalculation();
                 cart();
                 miniCart();
             }
@@ -683,6 +684,7 @@ function addToWishList(product_id){
             url: "/cart-decrement/"+rowId,
             dataType:'json',
             success:function(data){
+                couponCalculation();
                 cart();
                 miniCart();
             }
@@ -745,7 +747,7 @@ function addToWishList(product_id){
 
   function couponCalculation(){
     $.ajax({
-        type: 'GET',
+        type:'GET',
         url: "{{ url('/coupon-calculation') }}",
         dataType: 'json',
         success:function(data){
