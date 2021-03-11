@@ -1,5 +1,6 @@
 @extends('frontend.main_master')
 @section('content')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 @section('title')
 My Checkout
@@ -48,60 +49,97 @@ My Checkout
 
 
 		<div class="form-group">
-	    <label class="info-title" for="exampleInputEmail1">Shipping Name <span>*</span></label>
+	    <label class="info-title" for="exampleInputEmail1"><b>Shipping Name</b>  <span>*</span></label>
 	    <input type="text" name="shipping_name" class="form-control unicase-form-control text-input" id="exampleInputEmail1" placeholder="Full Name" value="{{ Auth::user()->name }}" required="">
 	  </div>  <!-- // end form group  -->
 	 
 
 <div class="form-group">
-	    <label class="info-title" for="exampleInputEmail1">Email <span>*</span></label>
+	    <label class="info-title" for="exampleInputEmail1"><b>Email </b> <span>*</span></label>
 	    <input type="email" name="shipping_email" class="form-control unicase-form-control text-input" id="exampleInputEmail1" placeholder="Email" value="{{ Auth::user()->email }}" required="">
 	  </div>  <!-- // end form group  -->
 
 
 <div class="form-group">
-	    <label class="info-title" for="exampleInputEmail1">Phone <span>*</span></label>
+	    <label class="info-title" for="exampleInputEmail1"><b>Phone</b>  <span>*</span></label>
 	    <input type="number" name="shipping_phone" class="form-control unicase-form-control text-input" id="exampleInputEmail1" placeholder="Phone" value="{{ Auth::user()->phone }}" required="">
 	  </div>  <!-- // end form group  -->
 
 
 	  <div class="form-group">
-	    <label class="info-title" for="exampleInputEmail1">Post Code <span>*</span></label>
+	    <label class="info-title" for="exampleInputEmail1"><b>Post Code </b> <span>*</span></label>
 	    <input type="text" name="post_code" class="form-control unicase-form-control text-input" id="exampleInputEmail1" placeholder="Post Code" required="">
 	  </div>  <!-- // end form group  -->
 
 	 
-	</form>
+	 
 				</div>	
 				<!-- guest-login -->
 
 
-
-
-
-
-
-
-
-
-
+ 
 
 
 				<!-- already-registered-login -->
 				<div class="col-md-6 col-sm-6 already-registered-login">
-					<h4 class="checkout-subtitle">Already registered?</h4>
-					<p class="text title-tag-line">Please log in below:</p>
-					<form class="register-form" role="form">
-						<div class="form-group">
-					    <label class="info-title" for="exampleInputEmail1">Email Address <span>*</span></label>
-					    <input type="email" class="form-control unicase-form-control text-input" id="exampleInputEmail1" placeholder="">
-					  </div>
-					  <div class="form-group">
-					    <label class="info-title" for="exampleInputPassword1">Password <span>*</span></label>
-					    <input type="password" class="form-control unicase-form-control text-input" id="exampleInputPassword1" placeholder="">
-					    <a href="#" class="forgot-password">Forgot your Password?</a>
-					  </div>
+					 
+
+<div class="form-group">
+	<h5><b>Division Select </b> <span class="text-danger">*</span></h5>
+	<div class="controls">
+		<select name="division_id" class="form-control" required="" >
+			<option value="" selected="" disabled="">Select Division</option>
+			@foreach($divisions as $item)
+ <option value="{{ $item->id }}">{{ $item->division_name }}</option>	
+			@endforeach
+		</select>
+		@error('division_id') 
+	 <span class="text-danger">{{ $message }}</span>
+	 @enderror 
+	 </div>
+		 </div> <!-- // end form group -->
+
+
+		 <div class="form-group">
+	<h5><b>District Select</b>  <span class="text-danger">*</span></h5>
+	<div class="controls">
+		<select name="district_id" class="form-control" required="" >
+			<option value="" selected="" disabled="">Select District</option>
+			 
+		</select>
+		@error('district_id') 
+	 <span class="text-danger">{{ $message }}</span>
+	 @enderror 
+	 </div>
+		 </div> <!-- // end form group -->
+
+
+		 <div class="form-group">
+	<h5><b>State Select</b> <span class="text-danger">*</span></h5>
+	<div class="controls">
+		<select name="state_id" class="form-control" required="" >
+			<option value="" selected="" disabled="">Select State</option>
+			 
+		</select>
+		@error('state_id') 
+	 <span class="text-danger">{{ $message }}</span>
+	 @enderror 
+	 </div>
+		 </div> <!-- // end form group -->
+				 
+					 
+    <div class="form-group">
+	 <label class="info-title" for="exampleInputEmail1">Notes <span>*</span></label>
+	     <textarea class="form-control" cols="30" rows="5" placeholder="Notes" name="notes"></textarea>
+	  </div>  <!-- // end form group  -->
+
+
+
 					  <button type="submit" class="btn-upper btn btn-primary checkout-page-button">Login</button>
+
+
+
+
 					</form>
 				</div>	
 				<!-- already-registered-login -->		
