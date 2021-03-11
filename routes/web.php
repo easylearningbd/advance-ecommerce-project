@@ -333,4 +333,6 @@ Route::get('/district-get/ajax/{division_id}', [CheckoutController::class, 'Dist
 
 Route::get('/state-get/ajax/{district_id}', [CheckoutController::class, 'StateGetAjax']);
 
+Route::post('/checkout/store', [CheckoutController::class, 'CheckoutStore'])->name('checkout.store');
+
 
