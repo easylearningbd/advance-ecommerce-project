@@ -38,7 +38,7 @@ class StripeController extends Controller
 	  // dd($charge);
 
      $order_id = Order::insertGetId([
-     	'user_id' => Auth::id();
+     	'user_id' => Auth::id(),
      	'division_id' => $request->division_id,
      	'district_id' => $request->district_id,
      	'state_id' => $request->state_id,
@@ -55,7 +55,7 @@ class StripeController extends Controller
      	'currency' => $charge->currency,
      	'amount' => $total_amount,
      	'order_number' => $charge->metadata->order_id,
-     	
+
      	'invoice_no' => 'EOS'.mt_rand(10000000,99999999),
      	'order_date' => Carbon::now()->format('d F Y'),
      	'order_month' => Carbon::now()->format('F'),
@@ -65,17 +65,40 @@ class StripeController extends Controller
 
      ]);
 
+     $carts = Cart::content();
+     foreach ($carts as $cart) {
+     	OrderItem::insert([
+     		'order_id' => $order_id, 
+     		'product_id' => $cart->id,
+     		'color' => $cart->options->color,
+     		'size' => $cart->options->size,
+     		'qty' => $cart->qty,
+     		'price' => $cart->price,
+     		'created_at' => Carbon::now(),
+
+     	]);
+     }
 
 
+     if (Session::has('coupon')) {
+     	Session::forget('coupon');
+     }
 
+     Cart::destroy();
 
+     $notification = array(
+			'message' => 'Your Order Place Successfully',
+			'alert-type' => 'success'
+		);
 
-
-
-
-
+		return redirect()->route('dashboard')->with($notification);
+ 
 
     } // end method 
+
+
+
+
  
 
 
