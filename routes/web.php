@@ -245,7 +245,9 @@ Route::get('/wishlist-remove/{id}', [WishlistController::class, 'RemoveWishlistP
 Route::post('/stripe/order', [StripeController::class, 'StripeOrder'])->name('stripe.order');
 
 Route::get('/my/orders', [AllUserController::class, 'MyOrders'])->name('my.orders');
- 
+
+Route::get('/order_details/{order_id}', [AllUserController::class, 'OrderDetails']);
+  
 
 });
 
