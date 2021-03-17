@@ -70,20 +70,26 @@
     <tr>
         <td>
           <p class="font" style="margin-left: 20px;">
-           <strong>Name:</strong> Name <br>
-           <strong>Email:</strong> Email <br>
-           <strong>Phone:</strong> Phone <br>
+           <strong>Name:</strong> {{ $order->name }}<br>
+           <strong>Email:</strong> {{ $order->email }} <br>
+           <strong>Phone:</strong> {{ $order->phone }} <br>
+
+           @php
+            $div = $order->division->division_name;
+            $dis = $order->district->district_name;
+            $state = $order->state->state_name;
+           @endphp
             
-           <strong>Address:</strong> Address <br>
-           <strong>Post Code:</strong> Post Code
+           <strong>Address:</strong> {{ $div }},{{ $dis }}.{{ $state }} <br>
+           <strong>Post Code:</strong> {{ $order->post_code }}
          </p>
         </td>
         <td>
           <p class="font">
-            <h3><span style="color: green;">Invoice:</span> #Invoice</h3>
-            Order Date: Order Date <br>
-             Delivery Date: Delivery Date <br>
-            Payment Type : Payment Type </span>
+            <h3><span style="color: green;">Invoice:</span> #{{ $order->invoice_no}}</h3>
+            Order Date: {{ $order->order_date }} <br>
+             Delivery Date: {{ $order->delivered_date }} <br>
+            Payment Type : {{ $order->payment_method }} </span>
          </p>
         </td>
     </tr>
@@ -107,21 +113,28 @@
     </thead>
     <tbody>
 
-     
+     @foreach($orderItem as $item)
       <tr class="font">
         <td align="center">
-            <img src=" " height="60px;" width="60px;" alt="">
+            <img src="{{ public_path($item->product->product_thambnail)  }}" height="60px;" width="60px;" alt="">
         </td>
-        <td align="center">product_name_en</td>
+        <td align="center"> {{ $item->product->product_name_en }}</td>
         <td align="center">
+
+          @if($item->size == NULL)
+           ----
+          @else
+            {{ $item->size }}
+          @endif
             
         </td>
-        <td align="center">color</td>
-        <td align="center">product_code</td>
-        <td align="center">qty</td>
-        <td align="center">price Tk</td>
-        <td align="center">price Tk</td>
+        <td align="center">{{ $item->color }}</td>
+        <td align="center">{{ $item->product->product_code }}</td>
+        <td align="center">{{ $item->qty }}</td>
+        <td align="center">${{ $item->price }}</td>
+        <td align="center">${{ $item->price * $item->qty }} </td>
       </tr>
+      @endforeach
       
     </tbody>
   </table>
@@ -129,8 +142,8 @@
   <table width="100%" style=" padding:0 10px 0 10px;">
     <tr>
         <td align="right" >
-            <h2><span style="color: green;">Subtotal:</span> Subtotal tk</h2>
-            <h2><span style="color: green;">Total:</span> Total tk</h2>
+            <h2><span style="color: green;">Subtotal:</span>${{ $order->amount }}</h2>
+            <h2><span style="color: green;">Total:</span> ${{ $order->amount }}</h2>
             {{-- <h2><span style="color: green;">Full Payment PAID</h2> --}}
         </td>
     </tr>
