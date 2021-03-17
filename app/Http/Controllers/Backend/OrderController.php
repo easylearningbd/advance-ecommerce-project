@@ -34,5 +34,55 @@ class OrderController extends Controller
 
 
 
+	// Confirmed Orders 
+	public function ConfirmedOrders(){
+		$orders = Order::where('status','confirmed')->orderBy('id','DESC')->get();
+		return view('backend.orders.confirmed_orders',compact('orders'));
+
+	} // end mehtod 
+
+
+	// Processing Orders 
+	public function ProcessingOrders(){
+		$orders = Order::where('status','processing')->orderBy('id','DESC')->get();
+		return view('backend.orders.processing_orders',compact('orders'));
+
+	} // end mehtod 
+
+
+		// Picked Orders 
+	public function PickedOrders(){
+		$orders = Order::where('status','picked')->orderBy('id','DESC')->get();
+		return view('backend.orders.picked_orders',compact('orders'));
+
+	} // end mehtod 
+
+
+
+			// Shipped Orders 
+	public function ShippedOrders(){
+		$orders = Order::where('status','shipped')->orderBy('id','DESC')->get();
+		return view('backend.orders.shipped_orders',compact('orders'));
+
+	} // end mehtod 
+
+
+			// Delivered Orders 
+	public function DeliveredOrders(){
+		$orders = Order::where('status','delivered')->orderBy('id','DESC')->get();
+		return view('backend.orders.delivered_orders',compact('orders'));
+
+	} // end mehtod 
+
+
+				// Cancel Orders 
+	public function CancelOrders(){
+		$orders = Order::where('status','cancel')->orderBy('id','DESC')->get();
+		return view('backend.orders.cancel_orders',compact('orders'));
+
+	} // end mehtod 
+
+
+
 }
  
