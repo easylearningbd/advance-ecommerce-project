@@ -64,6 +64,7 @@ class CashController extends Controller
      		'amount' => $total_amount,
      		'name' => $invoice->name,
      	    'email' => $invoice->email,
+     	    
      	];
 
      	Mail::to($request->email)->send(new OrderMail($data));
