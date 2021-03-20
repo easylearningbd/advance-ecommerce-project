@@ -372,6 +372,9 @@ Route::get('/delivered/orders', [OrderController::class, 'DeliveredOrders'])->na
 
 Route::get('/cancel/orders', [OrderController::class, 'CancelOrders'])->name('cancel-orders');
 
+// Update Status 
+Route::get('/pending/confirm/{order_id}', [OrderController::class, 'PendingToConfirm'])->name('pending-confirm');
+
  
  
 });
