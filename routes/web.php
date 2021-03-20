@@ -383,6 +383,7 @@ Route::get('/picked/shipped/{order_id}', [OrderController::class, 'PickedToShipp
 
 Route::get('/shipped/delivered/{order_id}', [OrderController::class, 'ShippedToDelivered'])->name('shipped.delivered');
 
+Route::get('/invoice/download/{order_id}', [OrderController::class, 'AdminInvoiceDownload'])->name('invoice.download');
 
  
  
