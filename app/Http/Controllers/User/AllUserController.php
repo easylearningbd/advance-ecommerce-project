@@ -78,5 +78,14 @@ class AllUserController extends Controller
     } // end method 
 
 
+
+    public function CancelOrders(){
+
+        $orders = Order::where('user_id',Auth::id())->where('status','cancel')->orderBy('id','DESC')->get();
+        return view('frontend.user.order.cancel_order_view',compact('orders'));
+
+    } // end method 
+
+
 }
  
