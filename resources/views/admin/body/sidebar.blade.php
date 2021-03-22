@@ -173,24 +173,24 @@
 
 
 		
-		<li class="treeview">
+		 <li class="treeview {{ ($prefix == '/reports')?'active':'' }}  ">
           <a href="#">
-            <i data-feather="credit-card"></i>
-            <span>Cards</span>
+            <i data-feather="file"></i>
+            <span>All Reports </span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-			<li><a href="card_advanced.html"><i class="ti-more"></i>Advanced Cards</a></li>
-			<li><a href="card_basic.html"><i class="ti-more"></i>Basic Cards</a></li>
-			<li><a href="card_color.html"><i class="ti-more"></i>Cards Color</a></li>
-		  </ul>
-        </li>  
-		  
-        		  
-		  
-		 
+        <li class="{{ ($route == 'all-reports')? 'active':'' }}"><a href="{{ route('all-reports') }}"><i class="ti-more"></i>All Reports</a></li>
+
+        
+          </ul>
+        </li>         
+ 
+
+
+
         
       </ul>
     </section>

@@ -13,6 +13,7 @@ use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\CouponController;
 use App\Http\Controllers\Backend\ShippingAreaController;
 use App\Http\Controllers\Backend\OrderController;
+use App\Http\Controllers\Backend\ReportController;
  
 use App\Http\Controllers\Frontend\IndexController;
 use App\Http\Controllers\Frontend\LanguageController;
@@ -395,3 +396,10 @@ Route::get('/invoice/download/{order_id}', [OrderController::class, 'AdminInvoic
  
 });
 
+// Admin Reports Routes 
+Route::prefix('reports')->group(function(){
+
+Route::get('/view', [ReportController::class, 'ReportView'])->name('all-reports');
+
+
+});
