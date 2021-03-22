@@ -401,5 +401,10 @@ Route::prefix('reports')->group(function(){
 
 Route::get('/view', [ReportController::class, 'ReportView'])->name('all-reports');
 
+Route::post('/search/by/date', [ReportController::class, 'ReportByDate'])->name('search-by-date');
+
+Route::post('/search/by/month', [ReportController::class, 'ReportByMonth'])->name('search-by-month');
+
+Route::post('/search/by/year', [ReportController::class, 'ReportByYear'])->name('search-by-year');
 
 });
