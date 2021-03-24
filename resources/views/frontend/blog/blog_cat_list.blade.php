@@ -2,7 +2,7 @@
 @section('content')
  
 @section('title')
-Blog Page 
+Blog Category Page 
 @endsection
 
  

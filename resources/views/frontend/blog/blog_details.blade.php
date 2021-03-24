@@ -126,7 +126,7 @@
 
 @foreach($blogcategory as $category)
 	    	 <ul class="list-group">
-  <li class="list-group-item">@if(session()->get('language') == 'hindi') {{ $category->blog_category_name_hin }} @else {{ $category->blog_category_name_en }} @endif</li>
+  <a href="{{ url('blog/category/post/'.$category->id) }}"><li class="list-group-item">@if(session()->get('language') == 'hindi') {{ $category->blog_category_name_hin }} @else {{ $category->blog_category_name_en }} @endif</li></a>
    
    </ul>
 @endforeach

@@ -12,10 +12,12 @@ use App\Models\Slider;
 use App\Models\Product;
 use App\Models\MultiImg;
 use Illuminate\Support\Facades\Hash;
+use App\Models\BlogPost;
 
 class IndexController extends Controller
 {
     public function index(){
+    	$blogpost = BlogPost::latest()->get();
     	$products = Product::where('status',1)->orderBy('id','DESC')->limit(6)->get();
     	$sliders = Slider::where('status',1)->orderBy('id','DESC')->limit(3)->get();
     	$categories = Category::orderBy('category_name_en','ASC')->get();
@@ -40,7 +42,7 @@ class IndexController extends Controller
     	// return $skip_category->id;
     	// die();
 
-    	return view('frontend.index',compact('categories','sliders','products','featured','hot_deals','special_offer','special_deals','skip_category_0','skip_product_0','skip_category_1','skip_product_1','skip_brand_1','skip_brand_product_1'));
+    	return view('frontend.index',compact('categories','sliders','products','featured','hot_deals','special_offer','special_deals','skip_category_0','skip_product_0','skip_category_1','skip_product_1','skip_brand_1','skip_brand_product_1','blogpost'));
 
     }
 
