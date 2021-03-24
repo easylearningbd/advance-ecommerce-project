@@ -152,14 +152,26 @@
         <li class="{{ ($route == 'list.post')? 'active':'' }}"><a href="{{ route('list.post') }}"><i class="ti-more"></i>List Blog Post</a></li>
 
          <li class="{{ ($route == 'add.post')? 'active':'' }}"><a href="{{ route('add.post') }}"><i class="ti-more"></i>Add Blog Post</a></li>
- 
-
-             
-             
+  
           </ul>
-        </li>        
+        </li>       
 
 
+
+<li class="treeview {{ ($prefix == '/setting')?'active':'' }}  ">
+          <a href="#">
+            <i data-feather="file"></i>
+            <span>Manage Setting</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+        <li class="{{ ($route == 'site.setting')? 'active':'' }}"><a href="{{ route('site.setting') }}"><i class="ti-more"></i>Site Setting</a></li>
+ 
+  
+          </ul>
+        </li>      
 
 
 		 
