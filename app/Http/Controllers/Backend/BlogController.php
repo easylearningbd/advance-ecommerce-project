@@ -130,6 +130,7 @@ public function BlogCategoryUpdate(Request $request){
 		'post_image' => $save_url,
 		'post_details_en' => $request->post_details_en,
 		'post_details_hin' => $request->post_details_hin,
+		'created_at' => Carbon::now(),
 
     	]);
 
