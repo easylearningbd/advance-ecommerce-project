@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Blog\BlogPostCategory;
 use Carbon\Carbon;
+use App\Models\BlogPost;
 
 class BlogController extends Controller
 {
@@ -86,7 +87,16 @@ public function BlogCategoryUpdate(Request $request){
 
 
 
+  ///////////////////////////// Blog Post ALL Methods //////////////////
 
+
+  public function ViewBlogPost(){
+
+    $blogcategory = BlogPostCategory::latest()->get();
+  	$blogpost = BlogPost::latest()->get();
+  	return view('backend.blog.post.post_view',compact('blogpost','blogcategory'));
+
+  }   
 
 
 

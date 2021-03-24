@@ -432,6 +432,9 @@ Route::get('/category/edit/{id}', [BlogController::class, 'BlogCategoryEdit'])->
 
 
 Route::post('/update', [BlogController::class, 'BlogCategoryUpdate'])->name('blogcategory.update');
- 
+
+// Admin View Blog Post Routes 
+
+Route::get('/view/post', [BlogController::class, 'ViewBlogPost'])->name('view.post');
 
 });
