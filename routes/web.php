@@ -19,6 +19,7 @@ use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Frontend\IndexController;
 use App\Http\Controllers\Frontend\LanguageController;
 use App\Http\Controllers\Frontend\CartController;
+use App\Http\Controllers\Frontend\HomeBlogController;
 
 use App\Http\Controllers\User\WishlistController;
 use App\Http\Controllers\User\CartPageController;
@@ -442,3 +443,7 @@ Route::get('/add/post', [BlogController::class, 'AddBlogPost'])->name('add.post'
 Route::post('/post/store', [BlogController::class, 'BlogPostStore'])->name('post-store');
 
 });
+
+//  Frontend Blog Show Routes 
+
+Route::get('/blog', [HomeBlogController::class, 'AddBlogPost'])->name('home.blog');
