@@ -30,12 +30,17 @@ Blog Page
 				@foreach($blogpost as $blog)
 					<div class="blog-post  wow fadeInUp">
 	<a href="blog-details.html"><img class="img-responsive" src="{{ asset($blog->post_image) }}" alt=""></a>
+
 	<h1><a href="blog-details.html"> @if(session()->get('language') == 'hindi') {{ $blog->post_title_hin }} @else {{ $blog->post_title_en }} @endif</a></h1>
 	 
 	<span class="date-time"> {{ Carbon\Carbon::parse($blog->created_at)->diffForHumans()  }}</span>
 
 	<p>@if(session()->get('language') == 'hindi') {!! Str::limit($blog->post_details_hin, 200 )  !!} @else {!! Str::limit($blog->post_details_en, 200 )  !!} @endif</p>
-	<a href="#" class="btn btn-upper btn-primary read-more">read more</a>
+
+
+	<a href="{{ route('post.details',$blog->id) }}" class="btn btn-upper btn-primary read-more">read more</a>
+
+
 </div>
  @endforeach
 
@@ -72,7 +77,7 @@ Blog Page
 <div class="home-banner outer-top-n outer-bottom-xs">
 <img src="{{ asset('frontend/assets/images/banners/LHS-banner.jpg') }} " alt="Image">
 </div>
-				<!-- ==============================================CATEGORY============================================== -->
+				<!-- ======== ====CATEGORY======= === -->
 <div class="sidebar-widget outer-bottom-xs wow fadeInUp">
 	<h3 class="section-title">Blog Category</h3>
 	<div class="sidebar-widget-body m-t-10">
