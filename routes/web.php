@@ -435,6 +435,10 @@ Route::post('/update', [BlogController::class, 'BlogCategoryUpdate'])->name('blo
 
 // Admin View Blog Post Routes 
 
-Route::get('/view/post', [BlogController::class, 'ViewBlogPost'])->name('view.post');
+Route::get('/list/post', [BlogController::class, 'ListBlogPost'])->name('list.post');
+
+Route::get('/add/post', [BlogController::class, 'AddBlogPost'])->name('add.post');
+
+Route::post('/post/store', [BlogController::class, 'BlogPostStore'])->name('post-store');
 
 });
