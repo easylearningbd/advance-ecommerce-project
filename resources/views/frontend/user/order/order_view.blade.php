@@ -63,12 +63,32 @@
                   <label for=""> {{ $order->invoice_no }}</label>
                 </td>
 
-                 <td class="col-md-2">
-                  <label for=""> 
-                    <span class="badge badge-pill badge-warning" style="background: #418DB9;">{{ $order->status }} </span>
+         <td class="col-md-2">
+          <label for=""> 
+            
+    @if($order->status == 'pending')        
+        <span class="badge badge-pill badge-warning" style="background: #800080;"> Pending </span>
+        @elseif($order->status == 'confirm')
+         <span class="badge badge-pill badge-warning" style="background: #0000FF;"> Confirm </span>
 
-                    </label>
-                </td>
+          @elseif($order->status == 'processing')
+         <span class="badge badge-pill badge-warning" style="background: #FFA500;"> Processing </span>
+
+          @elseif($order->status == 'picked')
+         <span class="badge badge-pill badge-warning" style="background: #808000;"> Picked </span>
+
+          @elseif($order->status == 'shipped')
+         <span class="badge badge-pill badge-warning" style="background: #808080;"> Shipped </span>
+
+          @elseif($order->status == 'delivered')
+         <span class="badge badge-pill badge-warning" style="background: #008000;"> Delivered </span>
+
+         @else
+  <span class="badge badge-pill badge-warning" style="background: #FF0000;"> Cancel </span>
+
+      @endif
+            </label>
+        </td>
 
          <td class="col-md-1">
           <a href="{{ url('user/order_details/'.$order->id ) }}" class="btn btn-sm btn-primary"><i class="fa fa-eye"></i> View</a>
