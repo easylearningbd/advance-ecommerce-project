@@ -18,7 +18,7 @@
 
 			 <div class="box">
 				<div class="box-header with-border">
-				  <h3 class="box-title">Return Orders List</h3>
+				  <h3 class="box-title">All Return Orders List</h3>
 				</div>
 				<!-- /.box-header -->
 				<div class="box-body">
@@ -53,7 +53,7 @@
 		  </td>
 
 		<td width="25%">
-  <a href="{{ route('return.approve',$item->id) }}" class="btn btn-danger">Approve </a>
+  <span class="badge badge-success">Return Success </span>
 		</td>
 							 
 	 </tr>
