@@ -16,7 +16,7 @@
 			<div class="box-body">
 			  <div class="row">
 				<div class="col">
-	 <form method="post" action="{{ route('update.sitesetting') }}" >
+	 <form method="post" action="{{ route('update.seosetting') }}" >
 	 	@csrf
 
 	 	<input type="hidden" name="id" value="{{ $seo->id }}">
@@ -44,7 +44,7 @@
 	<div class="form-group">
 		<h5>Meta Keyword <span class="text-danger">*</span></h5>
 		<div class="controls">
-	 <input type="email" name="meta_keyword" class="form-control" value="{{ $seo->meta_keyword }}"   > </div>
+	 <input type="text" name="meta_keyword" class="form-control" value="{{ $seo->meta_keyword }}"   > </div>
 	</div>
 
  <div class="form-group">
