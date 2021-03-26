@@ -16,6 +16,7 @@ use App\Http\Controllers\Backend\OrderController;
 use App\Http\Controllers\Backend\ReportController;
 use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\SiteSettingController;
+use App\Http\Controllers\Backend\ReturnController;
  
 use App\Http\Controllers\Frontend\IndexController;
 use App\Http\Controllers\Frontend\LanguageController;
@@ -464,4 +465,13 @@ Route::post('/site/update', [SiteSettingController::class, 'SiteSettingUpdate'])
 Route::get('/seo', [SiteSettingController::class, 'SeoSetting'])->name('seo.setting'); 
 
 Route::post('/seo/update', [SiteSettingController::class, 'SeoSettingUpdate'])->name('update.seosetting');
+});
+
+
+
+// Admin Return Order Routes 
+Route::prefix('return')->group(function(){
+
+Route::get('/admin/request', [ReturnController::class, 'ReturnRequest'])->name('return.request');
+ 
 });
