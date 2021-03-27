@@ -484,3 +484,15 @@ Route::get('/admin/all/request', [ReturnController::class, 'ReturnAllRequest'])-
 /// Frontend Product Review Routes
 
 Route::post('/review/store', [ReviewController::class, 'ReviewStore'])->name('review.store');
+
+
+// Admin Manage Review Routes 
+Route::prefix('review')->group(function(){
+
+Route::get('/pending', [ReviewController::class, 'PendingReview'])->name('pending.review');
+
+Route::get('/admin/approve/{id}', [ReviewController::class, 'ReviewApprove'])->name('review.approve');
+
+Route::get('/admin/all/request', [ReturnController::class, 'ReturnAllRequest'])->name('all.request');
+ 
+});
