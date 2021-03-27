@@ -493,6 +493,8 @@ Route::get('/pending', [ReviewController::class, 'PendingReview'])->name('pendin
 
 Route::get('/admin/approve/{id}', [ReviewController::class, 'ReviewApprove'])->name('review.approve');
 
-Route::get('/admin/all/request', [ReturnController::class, 'ReturnAllRequest'])->name('all.request');
+Route::get('/publish', [ReviewController::class, 'PublishReview'])->name('publish.review');
+
+Route::get('/delete/{id}', [ReviewController::class, 'DeleteReview'])->name('delete.review');
  
 });
