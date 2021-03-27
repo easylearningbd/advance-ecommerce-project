@@ -17,7 +17,7 @@ class CreateReviewsTable extends Migration
             $table->id();
             $table->unSignedBigInteger('product_id')->unsigned();
             $table->unSignedBigInteger('user_id')->unsigned();
-            $table->string('comment');
+            $table->text('comment');
             $table->string('summary');
             $table->foreign('product_id')
                     ->references('id')->on('products')
