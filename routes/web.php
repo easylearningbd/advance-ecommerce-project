@@ -524,5 +524,7 @@ Route::post('/store', [AdminUserController::class, 'StoreAdminRole'])->name('adm
 Route::get('/edit/{id}', [AdminUserController::class, 'EditAdminRole'])->name('edit.admin.user');
 
 Route::post('/update', [AdminUserController::class, 'UpdateAdminRole'])->name('admin.user.update');
+
+Route::get('/delete/{id}', [AdminUserController::class, 'DeleteAdminRole'])->name('delete.admin.user');
  
 });
