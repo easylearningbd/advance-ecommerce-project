@@ -43,14 +43,100 @@
 		<td> {{ $item->name }}  </td>
 		<td>  {{ $item->email  }}  </td>
 
-		<td>  </td>
+		<td>
+			@if($item->brand == 1)
+			<span class="badge btn-primary">Brand</span>
+			@else
+			@endif
+
+			@if($item->category == 1)
+			<span class="badge btn-secondary">Category</span>
+			@else
+			@endif
+
+
+			@if($item->product == 1)
+			<span class="badge btn-success">Product</span>
+			@else
+			@endif
+
+
+			@if($item->slider == 1)
+			<span class="badge btn-danger">Slider</span>
+			@else
+			@endif
+
+
+			@if($item->coupons == 1)
+			<span class="badge btn-warning">Coupons</span>
+			@else
+			@endif
+
+
+			@if($item->shipping == 1)
+			<span class="badge btn-info">Shipping</span>
+			@else
+			@endif
+
+
+			@if($item->blog == 1)
+			<span class="badge btn-light">Blog</span>
+			@else
+			@endif
+
+
+			@if($item->setting == 1)
+			<span class="badge btn-dark">Setting</span>
+			@else
+			@endif
+
+
+			@if($item->returnorder == 1)
+			<span class="badge btn-primary">Return Order</span>
+			@else
+			@endif
+
+
+			@if($item->review == 1)
+			<span class="badge btn-secondary">Review</span>
+			@else
+			@endif
+
+
+			@if($item->orders == 1)
+			<span class="badge btn-success">Orders</span>
+			@else
+			@endif
+
+			@if($item->stock == 1)
+			<span class="badge btn-danger">Stock</span>
+			@else
+			@endif
+
+			@if($item->reports == 1)
+			<span class="badge btn-warning">Reports</span>
+			@else
+			@endif
+
+			@if($item->alluser == 1)
+			<span class="badge btn-info">Alluser</span>
+			@else
+			@endif
+
+			@if($item->adminuserrole == 1)
+			<span class="badge btn-dark">Adminuserrole</span>
+			@else
+			@endif
+ 
+
+		  </td>
 		 
 
 		<td width="25%">
- <a href="{{ route('pending.order.details',$item->id) }}" class="btn btn-info" title="Edit Data"><i class="fa fa-eye"></i> </a>
+ <a href="{{ route('pending.order.details',$item->id) }}" class="btn btn-info" title="Edit Data"><i class="fa fa-pencil"></i> </a>
 
- <a target="_blank" href="{{ route('invoice.download',$item->id) }}" class="btn btn-danger" title="Invoice Download">
- 	<i class="fa fa-download"></i></a>
+ <a href="{{ route('invoice.download',$item->id) }}" class="btn btn-danger" title="Delete" id="delete">
+ 	<i class="fa fa-trash"></i></a>
 		</td>
 							 
 	 </tr>
