@@ -5,7 +5,7 @@ Subcategory Product
 @endsection
 
 
-
+ 
 
 
 <div class="breadcrumb">
@@ -13,7 +13,14 @@ Subcategory Product
     <div class="breadcrumb-inner">
       <ul class="list-inline list-unstyled">
         <li><a href="#">Home</a></li>
-        <li class='active'>Handbags</li>
+
+         @foreach($breadsubcat as $item)
+        <li class='active'>{{ $item->category->category_name_en }}</li>
+        @endforeach
+
+        @foreach($breadsubcat as $item)
+        <li class='active'>{{ $item->subcategory_name_en }}</li>
+        @endforeach
       </ul>
     </div>
     <!-- /.breadcrumb-inner --> 
@@ -206,7 +213,16 @@ Subcategory Product
             <!-- /.container-fluid --> 
           </div>
         </div>
+      
+       @foreach($breadsubcat as $item)
         
+ <span class="badge badge-danger" style="background: #808080">{{ $item->category->category_name_en }} </span>
+        @endforeach
+/
+        @foreach($breadsubcat as $item)
+ <span class="badge badge-danger" style="background: #FF0000">{{ $item->subcategory_name_en }} </span>
+        
+        @endforeach  
      
         <div class="clearfix filters-container m-t-10">
           <div class="row">
