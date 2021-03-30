@@ -531,3 +531,6 @@ Route::post('/update', [AdminUserController::class, 'UpdateAdminRole'])->name('a
 Route::get('/delete/{id}', [AdminUserController::class, 'DeleteAdminRole'])->name('delete.admin.user');
  
 });
+
+/// Product Search Route 
+Route::post('/search', [IndexController::class, 'ProductSearch'])->name('product.search');
