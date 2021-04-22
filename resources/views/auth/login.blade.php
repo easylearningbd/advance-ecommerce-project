@@ -31,12 +31,22 @@
 
 
         <div class="form-group">
-            <label class="info-title" for="exampleInputEmail1">Email Address <span>*</span></label>
-            <input type="email" id="email" name="email" class="form-control unicase-form-control text-input">
+            <label class="info-title" for="exampleInputEmail1">User Name <span>*</span></label>
+            <input type="text" id="name" name="name" class="form-control unicase-form-control text-input">
+             @error('name')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
         </div>
         <div class="form-group">
             <label class="info-title" for="exampleInputPassword1">Password <span>*</span></label>
             <input type="password" id="password" name="password" class="form-control unicase-form-control text-input" id="exampleInputPassword1" >
+             @error('password')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
         </div>
         <div class="radio outer-xs">
             <label>
@@ -61,8 +71,8 @@
 
          <div class="form-group">
             <label class="info-title" for="exampleInputEmail1">Name <span>*</span></label>
-            <input type="text" id="name" name="name" class="form-control unicase-form-control text-input">
-            @error('name')
+            <input type="text" id="name" name="regname" class="form-control unicase-form-control text-input">
+            @error('regname')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
             </span>
