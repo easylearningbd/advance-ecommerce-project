@@ -207,7 +207,17 @@ class IndexController extends Controller
 		$products = Product::where('product_name_en','LIKE',"%$item%")->get();
 		return view('frontend.product.search',compact('products','categories'));
 
-	}
+	} // end method 
+
+
+	///// Advance Search Options 
+
+	public function SearchProduct(Request $request){
+		return $request;
+
+
+
+	} // end method 
 
 
 

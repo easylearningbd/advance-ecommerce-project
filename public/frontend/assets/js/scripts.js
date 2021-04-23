@@ -332,7 +332,31 @@ jQuery(function () {
 /*===================================================================================*/
 jQuery("[data-toggle='tooltip']").tooltip(); 
 
+    const site_url = "http://127.0.0.1:8000/";
 
+    $("body").on("keyup", "#search", function(){
+
+        let text = $("#search").val();
+        // console.log(text);
+
+        $.ajax({
+            data: {search: text},
+            url : site_url + "search-product", 
+            method : 'post',
+            beforSend : function(request){
+                return request.setReuestHeader('X-CSRF-Token',("meta[name='csrf-token']"))
+
+            },
+            success:function(result){
+
+            }
+
+        }); // end ajax 
+
+
+
+
+    }); // end one 
 
 
 })
