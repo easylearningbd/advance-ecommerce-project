@@ -348,7 +348,7 @@ jQuery("[data-toggle='tooltip']").tooltip();
 
             },
             success:function(result){
-
+                $("#searchProducts").html(result);
             }
 
         }); // end ajax 
