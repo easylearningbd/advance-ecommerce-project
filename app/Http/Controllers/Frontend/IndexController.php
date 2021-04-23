@@ -10,7 +10,7 @@ use App\Models\Category;
 use App\Models\Brand;
 use App\Models\Slider;
 use App\Models\Product;
-use App\Models\MultiImg;
+use App\Models\MultiImg; 
 use Illuminate\Support\Facades\Hash;
 use App\Models\BlogPost;
 
@@ -198,6 +198,9 @@ class IndexController extends Controller
 
  // Product Seach 
 	public function ProductSearch(Request $request){
+
+		$request->validate(["search" => "required"]);
+
 		$item = $request->search;
 		// echo "$item";
         $categories = Category::orderBy('category_name_en','ASC')->get();
