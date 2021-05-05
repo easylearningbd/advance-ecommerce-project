@@ -118,7 +118,7 @@ class IndexController extends Controller
 
 	}// end method
 
-
+ 
 
 	public function ProductDetails($id,$slug){
 		$product = Product::findOrFail($id);

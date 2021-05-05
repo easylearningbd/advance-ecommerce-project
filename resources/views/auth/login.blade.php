@@ -29,11 +29,11 @@
     <form method="POST" action="{{ isset($guard) ? url($guard.'/login') : route('login') }}">
             @csrf 
 
-
+ 
         <div class="form-group">
-            <label class="info-title" for="exampleInputEmail1">User Name <span>*</span></label>
-            <input type="text" id="name" name="name" class="form-control unicase-form-control text-input">
-             @error('name')
+            <label class="info-title" for="exampleInputEmail1">User Email <span>*</span></label>
+            <input type="text" id="email" name="email" class="form-control unicase-form-control text-input">
+             @error('email')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
             </span>
@@ -71,12 +71,12 @@
 
          <div class="form-group">
             <label class="info-title" for="exampleInputEmail1">Name <span>*</span></label>
-            <input type="text" id="name" name="regname" class="form-control unicase-form-control text-input">
-            @error('regname')
+            <input type="text" id="name" name="name" class="form-control unicase-form-control text-input">
+            @error('name')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
             </span>
-            @enderror
+            @enderror 
         </div>
 
         <div class="form-group">
