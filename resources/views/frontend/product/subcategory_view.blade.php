@@ -576,7 +576,32 @@ Subcategory Product
 <!-- /.body-content --> 
 
 
+<script>
+    function loadmoreProduct(page){
+      $.ajax({
+        type: "get",
+        url: "?page="+page,
+        beforeSend: function(response){
 
+          $('.ajax-loadmore-product').show();
+        }
+
+      })
+
+    }
+
+
+    var page = 1;
+    $(window).scroll(function (){
+      if ($(window).scrollTop() +$(window).height() >= $(document).height()){
+        page ++;
+      }
+
+    });
+
+
+
+</script>
  
 
 
