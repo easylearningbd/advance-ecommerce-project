@@ -13,7 +13,7 @@
 
     $pending = App\Models\Order::where('status','pending')->get();
 
-@endphp
+@endphp 
 <div class="container-full">
 
 		<!-- Main content -->

@@ -59,7 +59,7 @@ class BrandController extends Controller
 
     }
 
-
+ 
     public function BrandUpdate(Request $request){
     	
     	$brand_id = $request->id;

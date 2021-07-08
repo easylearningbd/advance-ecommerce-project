@@ -513,6 +513,20 @@ Subcategory Product
         
       </div>
       <!-- /.col --> 
+
+
+
+
+    <div class="ajax-loadmore-product text-center" style="display: none;">
+      <img src="{{ asset('frontend/assets/images/loader.svg') }}" style="width: 120px; height: 120px;">
+
+    </div>
+
+
+
+
+
+
     </div>
     <!-- /.row --> 
     <!-- ============================================== BRANDS CAROUSEL ============================================== -->

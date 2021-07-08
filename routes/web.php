@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\User;
+use App\Models\User; 
  
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
@@ -18,7 +18,7 @@ use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\SiteSettingController;
 use App\Http\Controllers\Backend\ReturnController;
 use App\Http\Controllers\Backend\AdminUserController;
- 
+  
 use App\Http\Controllers\Frontend\IndexController;
 use App\Http\Controllers\Frontend\LanguageController;
 use App\Http\Controllers\Frontend\CartController;

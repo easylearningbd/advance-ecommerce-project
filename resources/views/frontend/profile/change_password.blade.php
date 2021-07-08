@@ -9,7 +9,7 @@ $user = DB::table('users')->where('id',Auth::user()->id)->first();
 		<div class="row">
       
 		 @include('frontend.common.user_sidebar')
-
+ 
 			<div class="col-md-2">
 				
 			</div> <!-- // end col md 2 -->

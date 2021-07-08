@@ -45,7 +45,7 @@
 				</div> <!-- end cold md 6 --> 
 				
 			</div>	<!-- end row 	 -->	
-
+ 
 
 	 <div class="row">
 

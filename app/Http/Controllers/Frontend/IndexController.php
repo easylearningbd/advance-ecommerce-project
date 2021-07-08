@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use Illuminate\Http\Request; 
 use Auth;
 use App\Models\User;
 use App\Models\Category;
@@ -69,7 +69,7 @@ class IndexController extends Controller
 		$data->name = $request->name;
 		$data->email = $request->email;
 		$data->phone = $request->phone;
-
+ 
 
 		if ($request->file('profile_photo_path')) {
 			$file = $request->file('profile_photo_path');
@@ -95,7 +95,7 @@ class IndexController extends Controller
     	$user = User::find($id);
     	return view('frontend.profile.change_password',compact('user'));
     }
-
+ 
 
     public function UserPasswordUpdate(Request $request){
 
@@ -155,7 +155,7 @@ class IndexController extends Controller
 
   // Subcategory wise data
 	public function SubCatWiseProduct($subcat_id,$slug){
-		$products = Product::where('status',1)->where('subcategory_id',$subcat_id)->orderBy('id','DESC')->paginate(6);
+		$products = Product::where('status',1)->where('subcategory_id',$subcat_id)->orderBy('id','DESC')->paginate(3);
 		$categories = Category::orderBy('category_name_en','ASC')->get();
 
 		$breadsubcat = SubCategory::with(['category'])->where('id',$subcat_id)->get();

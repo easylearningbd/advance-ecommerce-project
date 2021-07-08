@@ -30,9 +30,9 @@
 				<div class="box-body">
 					<div class="table-responsive">
 
-
+ 
  <form method="post" action="{{ route('brand.update',$brand->id) }}" enctype="multipart/form-data">
-	 	@csrf
+	 	@csrf 
 	 <input type="hidden" name="id" value="{{ $brand->id }}">	
 	 <input type="hidden" name="old_image" value="{{ $brand->brand_image }}">			   
 

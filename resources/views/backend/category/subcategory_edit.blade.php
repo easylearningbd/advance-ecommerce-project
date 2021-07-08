@@ -46,7 +46,7 @@
 	 <span class="text-danger">{{ $message }}</span>
 	 @enderror 
 	 </div>
-		 </div>
+		 </div> 
 
 
 	<div class="form-group">
