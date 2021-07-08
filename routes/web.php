@@ -32,6 +32,8 @@ use App\Http\Controllers\User\CashController;
 use App\Http\Controllers\User\ReviewController;
 
 use App\Http\Controllers\User\AllUserController;
+
+use App\Http\Controllers\Frontend\ShopController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -537,3 +539,7 @@ Route::post('/search', [IndexController::class, 'ProductSearch'])->name('product
 
 // Advance Search Routes 
 Route::post('search-product', [IndexController::class, 'SearchProduct']);
+
+
+// Shop Page Route 
+Route::get('/shop', [ShopController::class, 'ShopPage'])->name('shop.page');
