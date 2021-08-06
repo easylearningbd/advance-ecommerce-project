@@ -34,6 +34,16 @@ or
  - restore db_backup.sql on your mysql db from /database folder
 
 
+login in localhost:8000/login
+
+user: saber@admin.com
+pass: 1234567890
+
+then login in admin panel with localhost:8000/admin/login
+
+user:admin@admin.com
+pass:1234567890
+
 
 ## License
 

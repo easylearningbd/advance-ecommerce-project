@@ -70,6 +70,23 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2020-09-29 17:23:42',
                 'updated_at' => '2020-09-29 17:23:42',
             ),
+            3 => 
+            array (
+                'id' => 4,
+                'name' => 'saber',
+                'email' => 'saber@saber.com',
+                'phone' => '234234234',
+                'last_seen' => '2021-08-06 11:02:40',
+                'email_verified_at' => NULL,
+                'password' => '$2y$10$Ry4YCzWhWtCyfO..fdWX.uMWBjbkB58tPBtZZ5NscYmiDvIT8NNNW',
+                'two_factor_secret' => NULL,
+                'two_factor_recovery_codes' => NULL,
+                'remember_token' => NULL,
+                'current_team_id' => NULL,
+                'profile_photo_path' => NULL,
+                'created_at' => '2021-08-06 11:02:34',
+                'updated_at' => '2021-08-06 11:02:40',
+            ),
         ));
         
         
