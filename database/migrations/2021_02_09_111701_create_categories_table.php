@@ -19,8 +19,10 @@ class CreateCategoriesTable extends Migration
             $table->string('category_name_hin');
             $table->string('category_slug_en');
             $table->string('category_slug_hin');
-            $table->string('category_icon'); 
+            $table->string('category_icon');
+            $table->string('user_id')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

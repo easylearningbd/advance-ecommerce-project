@@ -13,6 +13,27 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         \App\Models\Admin::factory()->create();
+        \App\Models\Admin::factory()->create();
+        \App\Models\Seo::factory()->create();
+        $this->call(UsersTableSeeder::class);
+        $this->call(AdminsTableSeeder::class);
+        $this->call(BlogPostsTableSeeder::class);
+        $this->call(BrandsTableSeeder::class);
+        $this->call(CategoriesTableSeeder::class);
+        $this->call(CouponsTableSeeder::class);
+        $this->call(MultiImgsTableSeeder::class);
+        $this->call(OrdersTableSeeder::class);
+        $this->call(OrderItemsTableSeeder::class);
+        $this->call(ProductsTableSeeder::class);
+        $this->call(ReviewsTableSeeder::class);
+        $this->call(SeosTableSeeder::class);
+        $this->call(ShipDistrictsTableSeeder::class);
+        $this->call(ShipDivisionsTableSeeder::class);
+        $this->call(ShipStatesTableSeeder::class);
+        $this->call(SiteSettingsTableSeeder::class);
+        $this->call(SlidersTableSeeder::class);
+        $this->call(SubCategoriesTableSeeder::class);
+        $this->call(SubSubCategoriesTableSeeder::class);
+        $this->call(WishlistsTableSeeder::class);
     }
 }
