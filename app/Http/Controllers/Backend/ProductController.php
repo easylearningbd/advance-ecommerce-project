@@ -256,7 +256,11 @@ class ProductController extends Controller
     public function MultiImageDelete($id)
     {
         $oldimg = MultiImg::findOrFail($id);
-        unlink($oldimg->photo_name);
+
+        if (file_exists($oldimg)) {
+            unlink($oldimg->photo_name);
+        }
+
         MultiImg::findOrFail($id)->delete();
 
         $notification = array(
