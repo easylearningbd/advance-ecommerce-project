@@ -20,6 +20,7 @@
         "laravel/sanctum": "^2.6",
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^2.0",
+        "orangehill/iseed": "^3.0",
         "stripe/stripe-php": "^7.75"
     },
     "require-dev": {
