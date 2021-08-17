@@ -13,7 +13,7 @@ class SubCategoryController extends Controller
     public function SubCategoryView(){
 
     	$categories = Category::orderBy('category_name_en','ASC')->get();
-    	$subcategory = SubCategory::latest()->get();
+    	$subcategory = SubCategory::with('category')->latest()->get();
     	return view('backend.category.subcategory_view',compact('subcategory','categories'));
 
     }
@@ -30,7 +30,7 @@ class SubCategoryController extends Controller
     		'subcategory_name_en.required' => 'Input SubCategory English Name',
     	]);
 
-    	 
+
 
 	   SubCategory::insert([
 		'category_id' => $request->category_id,
@@ -38,7 +38,7 @@ class SubCategoryController extends Controller
 		'subcategory_name_hin' => $request->subcategory_name_hin,
 		'subcategory_slug_en' => strtolower(str_replace(' ', '-',$request->subcategory_name_en)),
 		'subcategory_slug_hin' => str_replace(' ', '-',$request->subcategory_name_hin),
-		 
+
 
     	]);
 
@@ -49,7 +49,7 @@ class SubCategoryController extends Controller
 
 		return redirect()->back()->with($notification);
 
-    } // end method 
+    } // end method
 
 
 
@@ -71,7 +71,7 @@ class SubCategoryController extends Controller
 		'subcategory_name_hin' => $request->subcategory_name_hin,
 		'subcategory_slug_en' => strtolower(str_replace(' ', '-',$request->subcategory_name_en)),
 		'subcategory_slug_hin' => str_replace(' ', '-',$request->subcategory_name_hin),
-		 
+
 
     	]);
 
@@ -105,12 +105,12 @@ class SubCategoryController extends Controller
  public function SubSubCategoryView(){
 
  	$categories = Category::orderBy('category_name_en','ASC')->get();
-    	$subsubcategory = SubSubCategory::latest()->get();
+    	$subsubcategory = SubSubCategory::with('category')->latest()->get();
     	return view('backend.category.sub_subcategory_view',compact('subsubcategory','categories'));
 
      }
 
- 
+
      public function GetSubCategory($category_id){
 
      	$subcat = SubCategory::where('category_id',$category_id)->orderBy('subcategory_name_en','ASC')->get();
@@ -138,7 +138,7 @@ public function SubSubCategoryStore(Request $request){
     		'subsubcategory_name_en.required' => 'Input SubSubCategory English Name',
     	]);
 
-    	 
+
 
 	   SubSubCategory::insert([
 		'category_id' => $request->category_id,
@@ -147,7 +147,7 @@ public function SubSubCategoryStore(Request $request){
 		'subsubcategory_name_hin' => $request->subsubcategory_name_hin,
 		'subsubcategory_slug_en' => strtolower(str_replace(' ', '-',$request->subsubcategory_name_en)),
 		'subsubcategory_slug_hin' => str_replace(' ', '-',$request->subsubcategory_name_hin),
-		 
+
 
     	]);
 
@@ -158,7 +158,7 @@ public function SubSubCategoryStore(Request $request){
 
 		return redirect()->back()->with($notification);
 
-    } // end method 
+    } // end method
 
 
 
@@ -183,7 +183,7 @@ public function SubSubCategoryStore(Request $request){
 		'subsubcategory_name_hin' => $request->subsubcategory_name_hin,
 		'subsubcategory_slug_en' => strtolower(str_replace(' ', '-',$request->subsubcategory_name_en)),
 		'subsubcategory_slug_hin' => str_replace(' ', '-',$request->subsubcategory_name_hin),
-		 
+
 
     	]);
 
@@ -194,7 +194,7 @@ public function SubSubCategoryStore(Request $request){
 
 		return redirect()->route('all.subsubcategory')->with($notification);
 
-    } // end method 
+    } // end method
 
 
     public function SubSubCategoryDelete($id){
@@ -211,4 +211,3 @@ public function SubSubCategoryStore(Request $request){
 
 
 }
- 
