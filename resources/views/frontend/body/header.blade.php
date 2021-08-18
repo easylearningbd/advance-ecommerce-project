@@ -7,22 +7,22 @@
                 <div class="cnt-account">
                     <ul class="list-unstyled">
                         <li><a href="#"><i class="icon fa fa-user"></i>
-                                @if(session()->get('language') == 'hindi') اکانت من @else My Account @endif
+                                {{ trans('site.myaccount') }}
                             </a></li>
-                        <li><a href="{{ route('wishlist') }}"><i class="icon fa fa-heart"></i>Wishlist</a></li>
-                        <li><a href="{{ route('mycart') }}"><i class="icon fa fa-shopping-cart"></i>My Cart</a></li>
-                        <li><a href="{{ route('checkout') }}"><i class="icon fa fa-check"></i>Checkout</a></li>
+                        <li><a href="{{ route('wishlist') }}"><i class="icon fa fa-heart"></i>{{ trans('site.wishlist') }}</a></li>
+                        <li><a href="{{ route('mycart') }}"><i class="icon fa fa-shopping-cart"></i>{{ trans('site.mycart') }}</a></li>
+                        <li><a href="{{ route('checkout') }}"><i class="icon fa fa-check"></i>{{ trans('site.checkout') }}</a></li>
 
                         <li><a href="" type="button" data-toggle="modal" data-target="#ordertraking"><i
-                                    class="icon fa fa-check"></i>Order Traking</a></li>
+                                    class="icon fa fa-check"></i>{{ trans('site.ordertracking') }}</a></li>
 
                         <li>
 
 
                             @auth
-                                <a href="{{ route('login') }}"><i class="icon fa fa-user"></i>User Profile</a>
+                                <a href="{{ route('login') }}"><i class="icon fa fa-user"></i>{{ trans('site.userprofile') }}</a>
                             @else
-                                <a href="{{ route('login') }}"><i class="icon fa fa-lock"></i>Login/Register</a>
+                                <a href="{{ route('login') }}"><i class="icon fa fa-lock"></i>{{ trans('site.loginregister') }}</a>
                             @endauth
 
 
@@ -34,11 +34,11 @@
                 <div class="cnt-block">
                     <ul class="list-unstyled list-inline">
                         <li class="dropdown dropdown-small"><a href="#" class="dropdown-toggle" data-hover="dropdown"
-                                                               data-toggle="dropdown"><span class="value">USD </span><b
+                                                               data-toggle="dropdown"><span class="value">تومان </span><b
                                     class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">USD</a></li>
                                 <li><a href="#">تومان</a></li>
+                                <li><a href="#">USD</a></li>
                                 <li><a href="#">ریال</a></li>
                             </ul>
                         </li>
@@ -47,14 +47,10 @@
                                                                                           data-hover="dropdown"
                                                                                           data-toggle="dropdown"><span
                                     class="value">
-@if(session()->get('language') == 'hindi') زبان @else Language @endif
+{{ trans('site.language') }}
   </span><b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                @if(session()->get('language') == 'hindi')
-                                    <li><a href="{{ route('english.language') }}">English</a></li>
-                                @else
-                                    <li><a href="{{ route('hindi.language') }}">فارسی</a></li>
-                                @endif
+                                {{ trans('site.currentlanguage') }}
                             </ul>
                         </li>
                     </ul>
@@ -99,7 +95,7 @@
                                                             href="category">{{ trans('site.categories') }} <b
                                                 class="caret"></b></a>
                                         <ul class="dropdown-menu" role="menu">
-                                            <li class="menu-header">همه</li>
+                                            <li class="menu-header">{{trans('site.all')}}</li>
                                             @php
                                                 $categories = \App\Models\Category::query()->latest()->get();
                                             @endphp
@@ -136,9 +132,12 @@
                             <div class="items-cart-inner">
                                 <div class="basket"><i class="glyphicon glyphicon-shopping-cart"></i></div>
                                 <div class="basket-item-count"><span class="count" id="cartQty"> </span></div>
-                                <div class="total-price-basket"><span class="lbl">cart -</span>
-                                    <span class="total-price"> <span class="sign">$</span>
-                <span class="value" id="cartSubTotal"> </span> </span></div>
+                                <div class="total-price-basket">
+                                    <span class="lbl">{{ trans('site.cart') }} -</span>
+                                    <span class="total-price">
+                                        <span class="value" id="cartSubTotal"> </span>
+                                        <span class="sign">{{ trans('site.currency') }}</span>
+                                    </span></div>
                             </div>
                         </a>
                         <ul class="dropdown-menu">
@@ -194,7 +193,7 @@
                             <ul class="nav navbar-nav">
                                 <li class="active dropdown yamm-fw"><a href="{{ url('/') }}" data-hover="dropdown"
                                                                        class="dropdown-toggle" data-toggle="dropdown">
-                                        @if(session()->get('language') == 'hindi') घर @else Home @endif
+                                        {{trans('site.home')}}
                                     </a></li>
 
                                 <!--   // Get Category Table Data -->
@@ -261,12 +260,13 @@
                             @endforeach <!-- // End Category Foreach -->
 
 
-                                <li><a href="{{ route('shop.page') }}">Shop</a></li>
-
-                                <li class="dropdown  navbar-right special-menu"><a href="#">Todays offer</a></li>
+                                <li><a href="{{ route('shop.page') }}">{{ trans('site.shop') }}</a></li>
 
                                 <li class="dropdown  navbar-right special-menu"><a
-                                        href="{{ route('home.blog') }}">Blog</a></li>
+                                        href="#">{{ trans('site.todaysoffer') }}</a></li>
+
+                                <li class="dropdown  navbar-right special-menu"><a
+                                        href="{{ route('home.blog') }}">{{ trans('site.blog') }}</a></li>
 
 
                             </ul>

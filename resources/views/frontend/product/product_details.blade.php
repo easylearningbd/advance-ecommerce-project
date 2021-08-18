@@ -32,25 +32,25 @@
 				<div class="sidebar-module-container">
 				<div class="home-banner outer-top-n">
 <img src="{{ asset('frontend/assets/images/banners/LHS-banner.jpg') }}" alt="Image">
-</div>		
-  
-    
-    
+</div>
+
+
+
     	<!-- ====== === HOT DEALS ==== ==== -->
    @include('frontend.common.hot_deals')
-<!-- ===== ===== HOT DEALS: END ====== ====== -->					
+<!-- ===== ===== HOT DEALS: END ====== ====== -->
 
 <!-- ============================================== NEWSLETTER ============================================== -->
 <div class="sidebar-widget newsletter wow fadeInUp outer-bottom-small outer-top-vs">
-	<h3 class="section-title">Newsletters</h3>
+	<h3 class="section-title">{{ trans('site.newsletter') }}</h3>
 	<div class="sidebar-widget-body outer-top-xs">
-		<p>Sign Up for Our Newsletter!</p>
+		<p>{{ trans('site.SignUpforOurNewsletter') }}</p>
         <form>
         	 <div class="form-group">
 			    <label class="sr-only" for="exampleInputEmail1">Email address</label>
 			    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Subscribe to our newsletter">
 			  </div>
-			<button class="btn btn-primary">Subscribe</button>
+			<button class="btn btn-primary">{{ trans('site.subscribe') }}</button>
 		</form>
 	</div><!-- /.sidebar-widget-body -->
 </div><!-- /.sidebar-widget -->
@@ -59,7 +59,7 @@
 <!-- ============================================== Testimonials============================================== -->
 <div class="sidebar-widget  wow fadeInUp outer-top-vs ">
 	<div id="advertisement" class="advertisement">
-        <div class="item"> 
+        <div class="item">
             <div class="avatar"><img src="{{ asset('frontend/assets/images/testimonials/member1.png') }} " alt="Image"></div>
 		<div class="testimonials"><em>"</em> Vtae sodales aliq uam morbi non sem lacus port mollis. Nunc condime tum metus eud molest sed consectetuer.<em>"</em></div>
 		<div class="clients_author">John Doe	<span>Abc Company</span>	</div><!-- /.container-fluid -->
@@ -68,7 +68,7 @@
          <div class="item">
          	<div class="avatar"><img src="{{ asset('frontend/assets/images/testimonials/member3.png') }} " alt="Image"></div>
 		<div class="testimonials"><em>"</em>Vtae sodales aliq uam morbi non sem lacus port mollis. Nunc condime tum metus eud molest sed consectetuer.<em>"</em></div>
-		<div class="clients_author">Stephen Doe	<span>Xperia Designs</span>	</div>    
+		<div class="clients_author">Stephen Doe	<span>Xperia Designs</span>	</div>
         </div><!-- /.item -->
 
         <div class="item">
@@ -79,17 +79,17 @@
 
     </div><!-- /.owl-carousel -->
 </div>
-    
+
 <!-- ===== ========== Testimonials: END ======== =============== -->
 
- 
+
 
 				</div>
 			</div><!-- /.sidebar -->
 			<div class='col-md-9'>
             <div class="detail-block">
 				<div class="row  wow fadeInUp">
-                
+
 					     <div class="col-xs-12 col-sm-6 col-md-5 gallery-holder">
     <div class="product-item-holder size-big single-product-gallery small-gallery">
 
@@ -102,7 +102,7 @@
                 </a>
             </div><!-- /.single-product-gallery-item -->
             @endforeach
-            
+
 
         </div><!-- /.single-product-slider -->
 
@@ -118,20 +118,20 @@
                     </a>
                 </div>
 				@endforeach
-              
+
 
 
 
             </div><!-- /#owl-single-product-thumbnails -->
 
-            
+
 
         </div><!-- /.gallery-thumbs -->
 
     </div><!-- /.single-product-gallery -->
-</div><!-- /.gallery-holder -->   
+</div><!-- /.gallery-holder -->
 
-@php 
+@php
 	$reviewcount = App\Models\Review::where('product_id',$product->id)->where('status',1)->latest()->get();
 
 	$avarage = App\Models\Review::where('product_id',$product->id)->where('status',1)->avg('rating');
@@ -146,13 +146,13 @@
 							<h1 class="name" id="pname">
 @if(session()->get('language') == 'hindi') {{ $product->product_name_hin }} @else {{ $product->product_name_en }} @endif
 							 </h1>
-							
+
 			<div class="rating-reviews m-t-20">
-				<div class="row"> 
+				<div class="row">
 					<div class="col-sm-3">
-						 
+
    @if($avarage == 0)
-   No Rating Yet 
+   No Rating Yet
    @elseif($avarage == 1 || $avarage < 2)
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star"></span>
@@ -196,7 +196,7 @@
 							<a href="#" class="lnk">({{ count($reviewcount) }} Reviews)</a>
 						</div>
 					</div>
-				</div><!-- /.row -->		
+				</div><!-- /.row -->
 			</div><!-- /.rating-reviews -->
 
 							<div class="stock-container info-container m-t-10">
@@ -204,14 +204,14 @@
 									<div class="col-sm-2">
 										<div class="stock-box">
 											<span class="label">Availability :</span>
-										</div>	
+										</div>
 									</div>
 									<div class="col-sm-9">
 										<div class="stock-box">
 											<span class="value">In Stock</span>
-										</div>	
+										</div>
 									</div>
-								</div><!-- /.row -->	
+								</div><!-- /.row -->
 							</div><!-- /.stock-container -->
 
 <div class="description-container m-t-20">
@@ -220,7 +220,7 @@
 
 							<div class="price-container info-container m-t-20">
 								<div class="row">
-									
+
 
 	<div class="col-sm-6">
 		<div class="price-box">
@@ -231,7 +231,7 @@
 			<span class="price-strike">${{ $product->selling_price }}</span>
        @endif
 
-			
+
 		</div>
 	</div>
 
@@ -256,7 +256,7 @@
  <!--     /// Add Product Color And Product Size ///// -->
 
 <div class="row">
-									
+
 
 	<div class="col-sm-6">
 
@@ -268,10 +268,10 @@
 		@foreach($product_color_en as $color)
 		<option value="{{ $color }}">{{ ucwords($color) }}</option>
 		 @endforeach
-	</select> 
+	</select>
 
 </div> <!-- // end form group -->
-		 
+
 	</div> <!-- // end col 6 -->
 
 		<div class="col-sm-6">
@@ -279,7 +279,7 @@
 <div class="form-group">
 	@if($product->product_size_en == null)
 
-	@else	
+	@else
 
 	<label class="info-title control-label">Choose Size <span> </span></label>
 	<select class="form-control unicase-form-control selectpicker" style="display: none;" id="size">
@@ -287,13 +287,13 @@
 		@foreach($product_size_en as $size)
 		<option value="{{ $size }}">{{ ucwords($size) }}</option>
 		 @endforeach
-	</select> 
+	</select>
 
 	@endif
-	
+
 </div> <!-- // end form group -->
 
-			 
+
 		</div> <!-- // end col 6 -->
 
 	 </div><!-- /.row -->
@@ -311,11 +311,11 @@
 
 	<div class="quantity-container info-container">
 		<div class="row">
-			
+
 			<div class="col-sm-2">
 				<span class="label">Qty :</span>
 			</div>
-			
+
 			<div class="col-sm-2">
 				<div class="cart-quantity">
 					<div class="quant-input">
@@ -334,23 +334,23 @@
 				<button type="submit" onclick="addToCart()" class="btn btn-primary"><i class="fa fa-shopping-cart inner-right-vs"></i> ADD TO CART</button>
 			</div>
 
-			
+
 		</div><!-- /.row -->
 	</div><!-- /.quantity-container -->
 
-							
+
 
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
      <div class="addthis_inline_share_toolbox_8tvu"></div>
-            
-							
 
-							
+
+
+
 						</div><!-- /.product-info -->
 					</div><!-- /.col-sm-7 -->
 				</div><!-- /.row -->
                 </div>
-				
+
 				<div class="product-tabs inner-bottom-xs  wow fadeInUp">
 					<div class="row">
 						<div class="col-sm-3">
@@ -363,26 +363,26 @@
 						<div class="col-sm-9">
 
 							<div class="tab-content">
-								
+
 <div id="description" class="tab-pane in active">
 	<div class="product-tab">
-		<p class="text">@if(session()->get('language') == 'hindi') 
+		<p class="text">@if(session()->get('language') == 'hindi')
 			{!! $product->long_descp_hin !!} @else {!! $product->long_descp_en !!} @endif</p>
-	</div>	
+	</div>
 								</div><!-- /.tab-pane -->
 
 <div id="review" class="tab-pane">
 	<div class="product-tab">
-												
+
 		<div class="product-reviews">
 			<h4 class="title">Customer Reviews</h4>
 
 @php
 $reviews = App\Models\Review::where('product_id',$product->id)->latest()->limit(5)->get();
-@endphp			
+@endphp
 
 	<div class="reviews">
-		 
+
 		@foreach($reviews as $item)
 		@if($item->status == 0)
 
@@ -437,8 +437,8 @@ $reviews = App\Models\Review::where('product_id',$product->id)->latest()->limit(
 			</div>
 
 			<div class="col-md-6">
-				
-			</div>			
+
+			</div>
 		</div> <!-- // end row -->
 
 
@@ -453,20 +453,20 @@ $reviews = App\Models\Review::where('product_id',$product->id)->latest()->limit(
 
 
 		</div><!-- /.product-reviews -->
-										
 
-										
+
+
 <div class="product-add-review">
 	<h4 class="title">Write your own review</h4>
 	<div class="review-table">
-		 
+
 	</div><!-- /.review-table -->
-											
+
 		<div class="review-form">
 			@guest
 <p> <b> For Add Product Review. You Need to Login First <a href="{{ route('login') }}">Login Here</a> </b> </p>
 
-			@else 
+			@else
 
 			<div class="form-container">
 
@@ -476,7 +476,7 @@ $reviews = App\Models\Review::where('product_id',$product->id)->latest()->limit(
   	<input type="hidden" name="product_id" value="{{ $product->id }}">
 
 
-<table class="table">	
+<table class="table">
 	<thead>
 		<tr>
 			<th class="cell-label">&nbsp;</th>
@@ -486,7 +486,7 @@ $reviews = App\Models\Review::where('product_id',$product->id)->latest()->limit(
 			<th>4 stars</th>
 			<th>5 stars</th>
 		</tr>
-	</thead>	
+	</thead>
 	<tbody>
 		<tr>
 			<td class="cell-label">Quality</td>
@@ -496,16 +496,16 @@ $reviews = App\Models\Review::where('product_id',$product->id)->latest()->limit(
 			<td><input type="radio" name="quality" class="radio" value="4"></td>
 			<td><input type="radio" name="quality" class="radio" value="5"></td>
 		</tr>
-		 
+
 	</tbody>
 </table>
- 
 
 
-	
+
+
 	<div class="row">
 		<div class="col-sm-6">
-			 
+
 			<div class="form-group">
 				<label for="exampleInputSummary">Summary <span class="astk">*</span></label>
 	 <input type="text" name="summary" class="form-control txt" id="exampleInputSummary" placeholder="">
@@ -519,7 +519,7 @@ $reviews = App\Models\Review::where('product_id',$product->id)->latest()->limit(
 			</div><!-- /.form-group -->
 		</div>
 	</div><!-- /.row -->
-	
+
 	<div class="action text-right">
 		<button type="submit" class="btn btn-primary btn-upper">SUBMIT REVIEW</button>
 	</div><!-- /.action -->
@@ -532,14 +532,14 @@ $reviews = App\Models\Review::where('product_id',$product->id)->latest()->limit(
 
 		</div><!-- /.review-form -->
 
-	</div><!-- /.product-add-review -->										
-	
+	</div><!-- /.product-add-review -->
+
 </div><!-- /.product-tab -->
 </div><!-- /.tab-pane -->
 
 <div id="tags" class="tab-pane">
 <div class="product-tag">
-	
+
 	<h4 class="title">Product Tags</h4>
 	<form role="form" class="form-inline form-cnt">
 		<div class="form-container">
@@ -547,7 +547,7 @@ $reviews = App\Models\Review::where('product_id',$product->id)->latest()->limit(
 			<div class="form-group">
 				<label for="exampleInputTag">Add Your Tags: </label>
 				<input type="email" id="exampleInputTag" class="form-control txt">
-				
+
 
 			</div>
 
@@ -578,20 +578,20 @@ $reviews = App\Models\Review::where('product_id',$product->id)->latest()->limit(
 
 
 		@foreach($relatedProduct as $product)
-	    	
+
 		<div class="item item-carousel">
 			<div class="products">
-				
-	<div class="product">		
+
+	<div class="product">
 		<div class="product-image">
 			<div class="image">
 				<a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en ) }}"><img  src="{{ asset($product->product_thambnail) }}" alt=""></a>
-			</div><!-- /.image -->			
+			</div><!-- /.image -->
 
-			            <div class="tag sale"><span>sale</span></div>            		   
+			            <div class="tag sale"><span>sale</span></div>
 		</div><!-- /.product-image -->
-			
-		
+
+
 		<div class="product-info text-left">
 			<h3 class="name"><a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en ) }}">
 				@if(session()->get('language') == 'hindi') {{ $product->product_name_hin }} @else {{ $product->product_name_en }} @endif</a></h3>
@@ -600,34 +600,34 @@ $reviews = App\Models\Review::where('product_id',$product->id)->latest()->limit(
 
 
  @if ($product->discount_price == NULL)
-<div class="product-price">	
+<div class="product-price">
 				<span class="price">
-					${{ $product->selling_price }}	 </span> 
+					${{ $product->selling_price }}	 </span>
 			</div><!-- /.product-price -->
  @else
 
-<div class="product-price">	
+<div class="product-price">
 				<span class="price">
 					${{ $product->discount_price }}	 </span>
-			  <span class="price-before-discount">$ {{ $product->selling_price }}</span>								
+			  <span class="price-before-discount">$ {{ $product->selling_price }}</span>
 			</div><!-- /.product-price -->
  @endif
 
 
-			
-			
+
+
 		</div><!-- /.product-info -->
 					<div class="cart clearfix animate-effect">
 				<div class="action">
 					<ul class="list-unstyled">
 						<li class="add-cart-button btn-group">
 							<button class="btn btn-primary icon" data-toggle="dropdown" type="button">
-								<i class="fa fa-shopping-cart"></i>													
+								<i class="fa fa-shopping-cart"></i>
 							</button>
 							<button class="btn btn-primary cart-btn" type="button">Add to cart</button>
-													
+
 						</li>
-	                   
+
 		                <li class="lnk wishlist">
 							<a class="add-to-cart" href="detail.html" title="Wishlist">
 								 <i class="icon fa fa-heart"></i>
@@ -643,10 +643,10 @@ $reviews = App\Models\Review::where('product_id',$product->id)->latest()->limit(
 				</div><!-- /.action -->
 			</div><!-- /.cart -->
 			</div><!-- /.product -->
-      
+
 			</div><!-- /.products -->
 		</div><!-- /.item -->
-	
+
 	 	@endforeach
 
 
@@ -656,7 +656,7 @@ $reviews = App\Models\Review::where('product_id',$product->id)->latest()->limit(
 			</div><!-- /.home-owl-carousel -->
 </section><!-- /.section -->
 <!-- ============================================== UPSELL PRODUCTS : END ============================================== -->
-			
+
 			</div><!-- /.col -->
 			<div class="clearfix"></div>
 		</div><!-- /.row -->
@@ -671,7 +671,7 @@ $reviews = App\Models\Review::where('product_id',$product->id)->latest()->limit(
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e4b85f98de5201f"></script>
 
- 
+
 
 
 @endsection
