@@ -242,18 +242,18 @@
                         <div class="panel-group">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h4 class="unicase-checkout-title">Select Payment Method</h4>
+                                    <h4 class="unicase-checkout-title">{{ trans('site.Select Payment Method') }}</h4>
                                 </div>
 
 
                                 <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-md-4" style="visibility: hidden">
                                         <label for="">Stripe</label>
                                         <input type="radio" name="payment_method" value="stripe">
                                         <img src="{{ asset('frontend/assets/images/payments/4.png') }}">
                                     </div> <!-- end col md 4 -->
 
-                                    <div class="col-md-4">
+                                    <div class="col-md-4" style="visibility: hidden">
                                         <label for="">Card</label>
                                         <input type="radio" name="payment_method" value="card">
                                         <img src="{{ asset('frontend/assets/images/payments/3.png') }}">

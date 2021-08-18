@@ -33,7 +33,7 @@ return [
     'specialsale' => 'فروش ویژه',
     'subtotal' => 'مجموع',
     'subscribe' => 'عضویت',
-    'blog' => 'وبلاگ',
+    'Select Payment Method' => 'روش پرداخت را انتخاب کنید',
     'blog' => 'وبلاگ',
     'blog' => 'وبلاگ',
     'blog' => 'وبلاگ',

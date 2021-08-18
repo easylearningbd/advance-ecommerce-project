@@ -191,7 +191,7 @@ class CartController extends Controller
             } else {
 
                 $notification = array(
-                    'message' => 'Shopping At list One Product',
+                    'message' => 'Shopping At least One Product',
                     'alert-type' => 'error'
                 );
 
