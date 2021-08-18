@@ -152,10 +152,10 @@
 
 
                                 <div class="clearfix cart-total">
-                                    <div class="pull-right"><span class="text">Sub Total :</span>
+                                    <div class="pull-right"><span class="text">{{ trans('subtotal') }} :</span>
                                         <span class='price' id="cartSubTotal">  </span></div>
                                     <div class="clearfix"></div>
-                                    <a href="checkout" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a>
+                                    <a href="/checkout" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a>
                                 </div>
                                 <!-- /.cart-total-->
 

@@ -31,7 +31,7 @@ return [
     'SignUpforOurNewsletter' => 'عضویت در خبرنامه ی ما',
     'hotdeals' => 'خرید پرسود',
     'specialsale' => 'فروش ویژه',
-    'blog' => 'وبلاگ',
+    'subtotal' => 'مجموع',
     'subscribe' => 'عضویت',
     'blog' => 'وبلاگ',
     'blog' => 'وبلاگ',
