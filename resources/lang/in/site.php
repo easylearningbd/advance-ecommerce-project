@@ -70,7 +70,7 @@ return [
     'Choose Color' => 'رنگ',
     'Choose Size' => 'اندازه',
     'Quantity' => 'تعداد',
-    'blog' => 'وبلاگ',
+    'Add to Cart' => 'اضافه به سبد خرید',
     'blog' => 'وبلاگ',
     'blog' => 'وبلاگ',
     'blog' => 'وبلاگ',
