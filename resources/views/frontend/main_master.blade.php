@@ -135,14 +135,18 @@ $seo = App\Models\Seo::find(1);
         <div class="col-md-4">
 
      <ul class="list-group">
-  <li class="list-group-item">Product Price: <strong class="text-danger"> {{trans('site.CURRENCYTYPE')}} <span id="pprice"></span></strong>
-<del id="oldprice"> {{trans('site.CURRENCYTYPE')}} </del>
-   </li>
-  <li class="list-group-item">Product Code: <strong id="pcode"></strong></li>
-  <li class="list-group-item">Category: <strong id="pcategory"></strong></li>
-  <li class="list-group-item">Brand: <strong id="pbrand"></strong></li>
-  <li class="list-group-item">Stock: <span class="badge badge-pill badge-success" id="aviable" style="background: green; color: white;"></span>
-<span class="badge badge-pill badge-danger" id="stockout" style="background: red; color: white;"></span>
+         <li class="list-group-item">{{trans('site.Product Price')}}:
+             <strong class="text-danger"><span id="pprice"></span> {{trans('site.CURRENCYTYPE')}} </strong>
+         </li>
+         <li class="list-group-item">قیمت بدون تخفیف:
+              <del id="oldprice"> </del> <del> {{trans('site.CURRENCYTYPE')}} </del>
+         </li>
+  <li class="list-group-item">{{trans('site.Product Code')}}: <strong id="pcode"></strong></li>
+  <li class="list-group-item">{{trans('site.Category')}}: <strong id="pcategory"></strong></li>
+  <li class="list-group-item">{{trans('site.Brand')}}: <strong id="pbrand"></strong></li>
+  <li class="list-group-item">
+      <span class="badge badge-pill badge-success" id="aviable" style="background: green; color: white;"></span>
+      <span class="badge badge-pill badge-danger" id="stockout" style="background: red; color: white;"></span>
 
   </li>
 </ul>
@@ -153,7 +157,7 @@ $seo = App\Models\Seo::find(1);
         <div class="col-md-4">
 
             <div class="form-group">
-    <label for="color">Choose Color</label>
+    <label for="color">{{trans('site.Choose Color')}}</label>
     <select class="form-control" id="color" name="color">
 
 
@@ -162,7 +166,7 @@ $seo = App\Models\Seo::find(1);
 
 
     <div class="form-group" id="sizeArea">
-    <label for="size">Choose Size</label>
+    <label for="size">{{trans('site.Choose Size')}}</label>
     <select class="form-control" id="size" name="size">
       <option>1</option>
 
@@ -170,12 +174,12 @@ $seo = App\Models\Seo::find(1);
   </div>  <!-- // end form group -->
 
        <div class="form-group">
-    <label for="qty">Quantity</label>
+    <label for="qty">{{trans('site.Quantity')}}</label>
     <input type="number" class="form-control" id="qty" value="1" min="1" >
   </div> <!-- // end form group -->
 
 <input type="hidden" id="product_id">
-<button type="submit" class="btn btn-primary mb-2" onclick="addToCart()" >Add to Cart</button>
+<button type="submit" class="btn btn-primary mb-2" onclick="addToCart()" >{{trans('site.Add to Cart')}}</button>
 
 
         </div><!-- // end col md -->
@@ -238,12 +242,12 @@ function productView(id){
             if (data.product.product_qty > 0) {
                 $('#aviable').text('');
                 $('#stockout').text('');
-                $('#aviable').text('aviable');
+                $('#aviable').text('موجود');
 
             }else{
                 $('#aviable').text('');
                 $('#stockout').text('');
-                $('#stockout').text('stockout');
+                $('#stockout').text('موجود نیست');
             } // end Stock Option
 
             // Color
