@@ -197,7 +197,7 @@
                                         <li>
                                             @if(Session::has('coupon'))
 
-                                                <strong>SubTotal: </strong> ${{ $cartTotal }}
+                                                <strong>{{trans('SubTotal')}}: </strong>{{ $cartTotal }} {{trans('site.CURRENCYTYPE')}}
                                                 <hr>
 
                                                 <strong>Coupon Name
@@ -216,10 +216,10 @@
 
                                             @else
 
-                                                <strong>SubTotal: </strong> ${{ $cartTotal }}
+                                                <strong>{{trans('SubTotal')}}: </strong>{{ $cartTotal }} {{trans('site.CURRENCYTYPE')}}
                                                 <hr>
 
-                                                <strong>Grand Total : </strong> ${{ $cartTotal }}
+                                                <strong>Grand Total : </strong>{{ $cartTotal }} {{trans('site.CURRENCYTYPE')}}
                                                 <hr>
 
 

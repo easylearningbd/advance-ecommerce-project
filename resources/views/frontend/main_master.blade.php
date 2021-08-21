@@ -135,8 +135,8 @@ $seo = App\Models\Seo::find(1);
         <div class="col-md-4">
 
      <ul class="list-group">
-  <li class="list-group-item">Product Price: <strong class="text-danger">$<span id="pprice"></span></strong>
-<del id="oldprice">$</del>
+  <li class="list-group-item">Product Price: <strong class="text-danger"> {{trans('site.CURRENCYTYPE')}} <span id="pprice"></span></strong>
+<del id="oldprice"> {{trans('site.CURRENCYTYPE')}} </del>
    </li>
   <li class="list-group-item">Product Code: <strong id="pcode"></strong></li>
   <li class="list-group-item">Category: <strong id="pcategory"></strong></li>
@@ -346,8 +346,8 @@ function productView(id){
               <div class="image"> <a href="detail.html"><img src="/${value.options.image}" alt=""></a> </div>
             </div>
             <div class="col-xs-7">
-              <h3 class="name"><a href="index.php?page-detail">${value.name}</a></h3>
-              <div class="price"> ${value.price} * ${value.qty} </div>
+              <h3 class="name"><a href="index.php?page-detail"> {value.name} {{trans('site.CURRENCYTYPE')}}</a></h3>
+              <div class="price"> {value.price} * ${value.qty} {{trans('site.CURRENCYTYPE')}}  </div>
             </div>
             <div class="col-xs-1 action">
             <button type="submit" id="${value.rowId}" onclick="miniCartRemove(this.id)"><i class="fa fa-trash"></i></button> </div>

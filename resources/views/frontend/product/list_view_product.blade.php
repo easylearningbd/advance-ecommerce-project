@@ -7,7 +7,7 @@
           <div class="product-image">
             <div class="image"> <img src="{{ asset($product->product_thambnail) }}" alt=""> </div>
           </div>
-          <!-- /.product-image --> 
+          <!-- /.product-image -->
         </div>
         <!-- /.col -->
         <div class="col col-sm-8 col-lg-8">
@@ -18,11 +18,11 @@
 
 
             @if ($product->discount_price == NULL)
-            <div class="product-price"> <span class="price"> ${{ $product->selling_price }} </span>  </div>
+            <div class="product-price"> <span class="price"> {{ $product->selling_price }} {{trans('site.CURRENCYTYPE')}} </span>  </div>
             @else
-<div class="product-price"> <span class="price"> ${{ $product->discount_price }} </span> <span class="price-before-discount">$ {{ $product->selling_price }}</span> </div>
+<div class="product-price"> <span class="price"> {{ $product->discount_price }} {{trans('site.CURRENCYTYPE')}} </span> <span class="price-before-discount">$ {{ $product->selling_price }}</span> </div>
             @endif
-            
+
             <!-- /.product-price -->
             <div class="description m-t-10">
             	@if(session()->get('language') == 'hindi') {{ $product->short_descp_hin }} @else {{ $product->short_descp_en }} @endif</div>
@@ -37,14 +37,14 @@
                   <li class="lnk"> <a class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal"></i> </a> </li>
                 </ul>
               </div>
-              <!-- /.action --> 
+              <!-- /.action -->
             </div>
-            <!-- /.cart --> 
-            
+            <!-- /.cart -->
+
           </div>
-          <!-- /.product-info --> 
+          <!-- /.product-info -->
         </div>
-        <!-- /.col --> 
+        <!-- /.col -->
       </div>
 
 
@@ -52,7 +52,7 @@
          @php
         $amount = $product->selling_price - $product->discount_price;
         $discount = ($amount/$product->selling_price) * 100;
-        @endphp    
+        @endphp
 
                       <!-- /.product-list-row -->
                       <div>
@@ -66,9 +66,9 @@
 
 
                     </div>
-                    <!-- /.product-list --> 
+                    <!-- /.product-list -->
                   </div>
-                  <!-- /.products --> 
+                  <!-- /.products -->
                 </div>
                 <!-- /.category-product-inner -->
     @endforeach

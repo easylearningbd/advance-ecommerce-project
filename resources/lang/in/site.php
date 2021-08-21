@@ -61,7 +61,7 @@ return [
     'Advanced Search' => 'جستجوی پیشرفته',
     'Why Choose Us' => 'چرا باید ما را انتخاب کنید',
     'Shopping Guide' => 'راهنمای خرید',
-    'blog' => 'وبلاگ',
+    'CURRENCYTYPE' => 'تومان',
     'blog' => 'وبلاگ',
     'blog' => 'وبلاگ',
     'blog' => 'وبلاگ',

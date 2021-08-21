@@ -3,16 +3,16 @@
 
 
   <!-- Content Wrapper. Contains page content -->
-  
+
 	  <div class="container-full">
 		<!-- Content Header (Page header) -->
-		 
+
 
 		<!-- Main content -->
 		<section class="content">
 		  <div class="row">
-			   
-		 
+
+
 
 			<div class="col-12">
 
@@ -32,7 +32,7 @@
 								<th>Payment </th>
 								<th>Status </th>
 								<th>Action</th>
-								 
+
 							</tr>
 						</thead>
 						<tbody>
@@ -40,7 +40,7 @@
 	 <tr>
 		<td> {{ $item->order_date }}  </td>
 		<td> {{ $item->invoice_no }}  </td>
-		<td> ${{ $item->amount }}  </td>
+		<td> {{ $item->amount }}  {{trans('site.CURRENCYTYPE')}}  </td>
 
 		<td> {{ $item->payment_method }}  </td>
 		<td> <span class="badge badge-pill badge-primary">{{ $item->status }} </span>  </td>
@@ -50,11 +50,11 @@
  <a href="{{ route('coupon.delete',$item->id) }}" class="btn btn-danger" title="Delete Data" id="delete">
  	<i class="fa fa-trash"></i></a>
 		</td>
-							 
+
 	 </tr>
 	  @endforeach
 						</tbody>
-						 
+
 					  </table>
 					</div>
 				</div>
@@ -62,22 +62,22 @@
 			  </div>
 			  <!-- /.box -->
 
-			          
+
 			</div>
 			<!-- /.col -->
 
- 
 
- 
+
+
 
 
 		  </div>
 		  <!-- /.row -->
 		</section>
 		<!-- /.content -->
-	  
+
 	  </div>
-  
+
 
 
 

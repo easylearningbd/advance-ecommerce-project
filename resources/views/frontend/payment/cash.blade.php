@@ -43,29 +43,29 @@
                                         <li>
                                             @if(Session::has('coupon'))
 
-                                                <strong>SubTotal: </strong> ${{ $cartTotal }}
+                                                <strong>{{trans('site.SubTotal')}}SubTotal: </strong> {{ $cartTotal }} {{trans('site.CURRENCYTYPE')}}
                                                 <hr>
 
-                                                <strong>Coupon Name
+                                                <strong>{{trans('site.Coupon Name')}}
                                                     : </strong> {{ session()->get('coupon')['coupon_name'] }}
                                                 ( {{ session()->get('coupon')['coupon_discount'] }} % )
                                                 <hr>
 
-                                                <strong>Coupon Discount : </strong>
+                                                <strong>{{trans('site.Coupon Discount')}} : </strong>
                                                 ${{ session()->get('coupon')['discount_amount'] }}
                                                 <hr>
 
-                                                <strong>Grand Total : </strong>
+                                                <strong>{{trans('site.Grand Total')}} : </strong>
                                                 ${{ session()->get('coupon')['total_amount'] }}
                                                 <hr>
 
 
                                             @else
 
-                                                <strong>SubTotal: </strong> ${{ $cartTotal }}
+                                                <strong>{{trans('site.SubTotal')}}: </strong> {{ $cartTotal }} {{trans('site.CURRENCYTYPE')}}
                                                 <hr>
 
-                                                <strong>Grand Total : </strong> ${{ $cartTotal }}
+                                                <strong> {{trans('site.Grand Total')}} : </strong> {{ $cartTotal }} {{trans('site.CURRENCYTYPE')}}
                                                 <hr>
 
 
