@@ -180,7 +180,7 @@ img[src="assets/images/blank.gif"] {
     line-height: 22px;
     border-radius: 0;
     padding: 6px 14px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'iranyekan-regular', 'Montserrat', sans-serif;
     border-radius: 2px
 
 }
@@ -2861,7 +2861,7 @@ header {
 }
 
 #owl-main .item .caption .slider-header {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'iranyekan-regular', 'Montserrat', sans-serif;
     font-size: 14px;
     font-weight: bold;
     text-transform: uppercase
@@ -2871,7 +2871,7 @@ header {
     font-size: 42px;
     line-height: 50px;
     text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'iranyekan-regular', 'Montserrat', sans-serif;
     padding: 0px 25px;
     background: #bbbbbb;
     color: #fff;
@@ -3197,7 +3197,7 @@ age-container #owl-main .owl-next {
     font-size: 14px;
     line-height: 21px;
     text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'iranyekan-regular', 'Montserrat', sans-serif;
     margin-top: 0px;
     font-weight: bold;
     margin-bottom: 0px;
@@ -3560,7 +3560,7 @@ age-container #owl-main .owl-next {
     color: #ff4c4c;
     margin: 0;
     text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'iranyekan-regular', 'Montserrat', sans-serif;
     font-weight: bold
 }
 
@@ -3569,12 +3569,12 @@ age-container #owl-main .owl-next {
     color: #fdd922;
     margin: 0;
     text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'iranyekan-regular', 'Montserrat', sans-serif;
     font-weight: bold
 }
 
 .cnt-strip .strip h2 .shopping-needs {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'iranyekan-regular', 'Montserrat', sans-serif;
     color: #fff;
     font-weight: normal;
     font-size: 22px
@@ -3585,14 +3585,14 @@ age-container #owl-main .owl-next {
     color: #434343;
     margin: 0;
     text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'iranyekan-regular', 'Montserrat', sans-serif;
 }
 
 .cnt-strip .strip h4 {
     font-size: 20px;
     margin: 0;
     text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'iranyekan-regular', 'Montserrat', sans-serif;
 }
 
 .cnt-strip .strip.strip-text {
