@@ -28,7 +28,7 @@ Home Easy Online Shop
         <!-- ============================================== SPECIAL OFFER ============================================== -->
 
         <div class="sidebar-widget outer-bottom-small wow fadeInUp">
-          <h3 class="section-title">Special Offer</h3>
+          <h3 class="section-title">{{ trans('site.Special Offer') }}</h3>
           <div class="sidebar-widget-body outer-top-xs">
             <div class="owl-carousel sidebar-carousel special-offer custom-carousel owl-theme outer-top-xs">
 
@@ -103,7 +103,7 @@ Home Easy Online Shop
         <!-- ============================================== SPECIAL DEALS ============================================== -->
 
         <div class="sidebar-widget outer-bottom-small wow fadeInUp">
-          <h3 class="section-title">Special Deals</h3>
+          <h3 class="section-title">{{ trans('site.Special Deals') }}</h3>
           <div class="sidebar-widget-body outer-top-xs">
             <div class="owl-carousel sidebar-carousel special-offer custom-carousel owl-theme outer-top-xs">
 
@@ -158,15 +158,15 @@ Home Easy Online Shop
         <!-- ============================================== SPECIAL DEALS : END ============================================== -->
         <!-- ============================================== NEWSLETTER ============================================== -->
         <div class="sidebar-widget newsletter wow fadeInUp outer-bottom-small">
-          <h3 class="section-title">Newsletters</h3>
+          <h3 class="section-title">{{ trans('site.Newsletters') }}</h3>
           <div class="sidebar-widget-body outer-top-xs">
-            <p>Sign Up for Our Newsletter!</p>
+            <p>{{ trans('site.Sign Up for Our Newsletter!') }}</p>
             <form>
               <div class="form-group">
-                <label class="sr-only" for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Subscribe to our newsletter">
+                <label class="sr-only" for="exampleInputEmail1">{{ trans('site.Email address') }}</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="{{ trans('site.Sign Up for Our Newsletter!') }}">
               </div>
-              <button class="btn btn-primary">Subscribe</button>
+              <button class="btn btn-primary">{{ trans('site.Subscribe') }}</button>
             </form>
           </div>
           <!-- /.sidebar-widget-body -->
@@ -286,12 +286,12 @@ Home Easy Online Shop
 
         <div id="product-tabs-slider" class="scroll-tabs outer-top-vs wow fadeInUp">
           <div class="more-info-tab clearfix ">
-            <h3 class="new-product-title pull-left">New Products</h3>
+            <h3 class="new-product-title pull-left">{{ trans('site.New Products') }}</h3>
             <ul class="nav nav-tabs nav-tab-line pull-right" id="new-products-1">
-              <li class="active"><a data-transition-type="backSlide" href="#all" data-toggle="tab">All</a></li>
+              <li class="active"><a data-transition-type="backSlide" href="#all" data-toggle="tab">{{ trans('site.All') }}</a></li>
 
               @foreach($categories as $category)
-  <li><a data-transition-type="backSlide" href="#category{{ $category->id }}" data-toggle="tab">{{ $category->category_name_en }}</a></li>
+  <li><a data-transition-type="backSlide" href="#category{{ $category->id }}" data-toggle="tab">{{ $category->category_name_hin }}</a></li>
               @endforeach
               <!-- <li><a data-transition-type="backSlide" href="#laptop" data-toggle="tab">Electronics</a></li>
 
@@ -528,7 +528,7 @@ Home Easy Online Shop
         <!-- == === FEATURED PRODUCTS == ==== -->
 
         <section class="section featured-product wow fadeInUp">
-          <h3 class="section-title">Featured products</h3>
+          <h3 class="section-title">{{ trans('site.Featured products') }}</h3>
           <div class="owl-carousel home-owl-carousel custom-carousel owl-theme outer-top-xs">
 
 
@@ -949,7 +949,7 @@ Home Easy Online Shop
         <!-- ============================================== BEST SELLER ============================================== -->
 
         <div class="best-deal wow fadeInUp outer-bottom-xs">
-          <h3 class="section-title">Best seller</h3>
+          <h3 class="section-title">{{ trans('site.Best seller') }}</h3>
           <div class="sidebar-widget-body outer-top-xs">
             <div class="owl-carousel best-seller custom-carousel owl-theme outer-top-xs">
               <div class="item">
@@ -1201,7 +1201,7 @@ Home Easy Online Shop
 
         <!-- ============================================== BLOG SLIDER ============================================== -->
         <section class="section latest-blog outer-bottom-vs wow fadeInUp">
-          <h3 class="section-title">latest form blog</h3>
+          <h3 class="section-title">{{ trans('site.latest form blog') }}</h3>
           <div class="blog-slider-container outer-top-xs">
             <div class="owl-carousel blog-slider custom-carousel">
 
@@ -1223,7 +1223,7 @@ Home Easy Online Shop
                     <p class="text">@if(session()->get('language') == 'hindi') {!! Str::limit($blog->post_details_hin, 100 )  !!} @else {!! Str::limit($blog->post_details_en, 100 )  !!} @endif</p>
 
 
-                    <a href="{{ route('post.details',$blog->id) }}" class="lnk btn btn-primary">Read more</a> </div>
+                    <a href="{{ route('post.details',$blog->id) }}" class="lnk btn btn-primary">{{ trans('site.Read more') }}</a> </div>
                   <!-- /.blog-post-info -->
 
                 </div>
@@ -1243,7 +1243,7 @@ Home Easy Online Shop
 
         <!-- ============================================== FEATURED PRODUCTS ============================================== -->
         <section class="section wow fadeInUp new-arriavls">
-          <h3 class="section-title">New Arrivals</h3>
+          <h3 class="section-title">{{ trans('site.New Arrivals') }}</h3>
           <div class="owl-carousel home-owl-carousel custom-carousel owl-theme outer-top-xs">
             <div class="item item-carousel">
               <div class="products">
