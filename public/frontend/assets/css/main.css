@@ -526,12 +526,29 @@ img[src="assets/images/blank.gif"] {
     display: block;
 }
 
-.custom-carousel .owl-controls .owl-prev {
+.custom-carousel-en .owl-controls-en .owl-prev-en {
     position: absolute;
     width: 20px;
     height: 20px;
     top: -25px;
     right: 27px;
+    -webkit-transition: all linear 0.2s;
+    -moz-transition: all linear 0.2s;
+    -ms-transition: all linear 0.2s;
+    -o-transition: all linear 0.2s;
+    transition: all linear 0.2s;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background: #dddddd;
+}
+
+.custom-carousel .owl-controls .owl-prev {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: -25px;
+    left: 27px;
     -webkit-transition: all linear 0.2s;
     -moz-transition: all linear 0.2s;
     -ms-transition: all linear 0.2s;
@@ -553,12 +570,29 @@ img[src="assets/images/blank.gif"] {
     top: 2px;
 }
 
-.custom-carousel .owl-controls .owl-next {
+.custom-carousel-en .owl-controls-en .owl-next-en {
     position: absolute;
     width: 20px;
     height: 20px;
     top: -25px;
     right: 0px;
+    -webkit-transition: all linear 0.2s;
+    -moz-transition: all linear 0.2s;
+    -ms-transition: all linear 0.2s;
+    -o-transition: all linear 0.2s;
+    transition: all linear 0.2s;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background: #dddddd;
+}
+
+.custom-carousel .owl-controls .owl-next {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: -25px;
+    left: 54px;
     -webkit-transition: all linear 0.2s;
     -moz-transition: all linear 0.2s;
     -ms-transition: all linear 0.2s;
