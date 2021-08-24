@@ -24,7 +24,9 @@ $seo = App\Models\Seo::find(1);
 
 <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('frontend/assets/css/bootstrap-rtl.min.css') }}">
+<!--
+<link rel="stylesheet" href="{{ asset('frontend/assets/css/bootstrap-rtl.min.css') }}">
+-->
 
 <!-- Customizable CSS -->
 <link rel="stylesheet" href="{{ asset('frontend/assets/css/main.css') }}">
