@@ -17,3 +17,15 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+// Products
+
+Route::prefix('products')->group(function () {
+    Route::get('/', [\App\Http\Controllers\Backend\ProductController::class, 'index'])->name('products.index');
+    Route::get('/{id}', [\App\Http\Controllers\Backend\ProductController::class, 'show'])->name('products.index');
+});
+
+Route::prefix('sliders')->group(function () {
+
+});
