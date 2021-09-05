@@ -18,6 +18,25 @@ use Image;
 class ProductController extends Controller
 {
 
+    /**
+     * @OA\Get(path="/api/products",
+     *   tags={"Products"},
+     *   summary="Returns products as json",
+     *   description="Returns products",
+     *   operationId="getProducts",
+     *   parameters={},
+     *   @OA\Response(
+     *     response=200,
+     *     description="successful operation",
+     *     @OA\Schema(
+     *       additionalProperties={
+     *         "type":"integer",
+     *         "format":"int32"
+     *       }
+     *     )
+     *   )
+     * )
+     */
     public function index(ProductFilter $filters)
     {
         [$entries, $count, $sum] = Product::filter($filters);
