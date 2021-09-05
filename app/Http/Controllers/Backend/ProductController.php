@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Filters\ProductFilter;
+use App\Http\Resources\ProductResourceCollection;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\MultiImg;
@@ -15,6 +17,13 @@ use Image;
 
 class ProductController extends Controller
 {
+
+    public function index(ProductFilter $filters)
+    {
+        [$entries, $count, $sum] = Product::filter($filters);
+        $entries = $entries->get();
+        return response(new ProductResourceCollection(['data' => $entries, 'count' => $count]));
+    }
 
     public function AddProduct()
     {
