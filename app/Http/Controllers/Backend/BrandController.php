@@ -3,12 +3,78 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Filters\BrandFilter;
+use App\Http\Resources\BrandResource;
+use App\Http\Resources\BrandResourceCollection;
 use Illuminate\Http\Request;
 use App\Models\Brand;
 use Image;
 
 class BrandController extends Controller
 {
+
+    /**
+     * @OA\Get(path="/api/brands",
+     *   tags={"Brands"},
+     *   summary="Returns brands as json",
+     *   description="Returns brands",
+     *   operationId="getBrands",
+     *   parameters={},
+     *   @OA\Response(
+     *     response=200,
+     *     description="successful operation",
+     *     @OA\Schema(
+     *       additionalProperties={
+     *         "type":"integer",
+     *         "format":"int32"
+     *       }
+     *     )
+     *   )
+     * )
+     */
+    public function index(BrandFilter $filters)
+    {
+        [$entries, $count, $sum] = Brand::filter($filters);
+        $entries = $entries->get();
+        return response(new BrandResourceCollection(['data' => $entries, 'count' => $count]));
+    }
+    /**
+     * @OA\Get(path="/api/brands/{brandId}",
+     *   tags={"Brands"},
+     *   summary="Returns Brand by id as json",
+     *   description="Returns Brand by id",
+     *   operationId="getBrandById",
+     *
+     *  @OA\Parameter(
+     *       description="ID of BlobrandgPost",
+     *       name="brandId",
+     *       required=true,
+     *       in="path",
+     *       example="1",
+     *       @OA\Schema(
+     *           type="integer",
+     *           format="int64"
+     *       )
+     *   ),
+     *
+     *   @OA\Response(
+     *     response=200,
+     *     description="successful operation",
+     *     @OA\Schema(
+     *       additionalProperties={
+     *         "type":"integer",
+     *         "format":"int32"
+     *       }
+     *     )
+     *   )
+     * )
+     */
+    public function show(int $id)
+    {
+        $entry = Brand::query()->findOrFail($id);
+        return response(new BrandResource(['data' => $entry]));
+    }
+
     public function BrandView()
     {
 

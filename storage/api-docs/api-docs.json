@@ -49,6 +49,50 @@
                 }
             }
         },
+        "/api/brands": {
+            "get": {
+                "tags": [
+                    "Brands"
+                ],
+                "summary": "Returns brands as json",
+                "description": "Returns brands",
+                "operationId": "getBrands",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/brands/{brandId}": {
+            "get": {
+                "tags": [
+                    "Brands"
+                ],
+                "summary": "Returns Brand by id as json",
+                "description": "Returns Brand by id",
+                "operationId": "getBrandById",
+                "parameters": [
+                    {
+                        "name": "brandId",
+                        "in": "path",
+                        "description": "ID of BlobrandgPost",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
         "/api/orders": {
             "get": {
                 "tags": [

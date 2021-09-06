@@ -18,7 +18,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
 // Products
 Route::prefix('products')->group(function () {
     Route::get('/', [\App\Http\Controllers\Backend\ProductController::class, 'index'])->name('products.index');
@@ -31,11 +30,16 @@ Route::prefix('orders')->group(function () {
     Route::get('/{id}', [\App\Http\Controllers\Backend\OrderController::class, 'show'])->name('orders.show');
 });
 
-
 // BlogPosts
 Route::prefix('blog-posts')->group(function () {
     Route::get('/', [\App\Http\Controllers\Backend\BlogController::class, 'index'])->name('blog.posts.index');
     Route::get('/{id}', [\App\Http\Controllers\Backend\BlogController::class, 'show'])->name('blog.posts.show');
+});
+
+// Brands
+Route::prefix('brands')->group(function () {
+    Route::get('/', [\App\Http\Controllers\Backend\BrandController::class, 'index'])->name('brands.index');
+    Route::get('/{id}', [\App\Http\Controllers\Backend\BrandController::class, 'show'])->name('brands.show');
 });
 
 Route::prefix('sliders')->group(function () {
