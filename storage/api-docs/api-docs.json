@@ -5,6 +5,50 @@
         "version": "1.0"
     },
     "paths": {
+        "/api/orders": {
+            "get": {
+                "tags": [
+                    "Orders"
+                ],
+                "summary": "Returns orders as json",
+                "description": "Returns orders",
+                "operationId": "getOrders",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/orders/{orderId}": {
+            "get": {
+                "tags": [
+                    "Orders"
+                ],
+                "summary": "Returns order by id as json",
+                "description": "Returns orders by id",
+                "operationId": "getOrdersById",
+                "parameters": [
+                    {
+                        "name": "orderId",
+                        "in": "path",
+                        "description": "ID of order",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
         "/api/products": {
             "get": {
                 "tags": [

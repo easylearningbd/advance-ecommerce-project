@@ -20,10 +20,15 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 // Products
-
 Route::prefix('products')->group(function () {
     Route::get('/', [\App\Http\Controllers\Backend\ProductController::class, 'index'])->name('products.index');
-    Route::get('/{id}', [\App\Http\Controllers\Backend\ProductController::class, 'show'])->name('products.index');
+    Route::get('/{id}', [\App\Http\Controllers\Backend\ProductController::class, 'show'])->name('products.show');
+});
+
+// Orders
+Route::prefix('orders')->group(function () {
+    Route::get('/', [\App\Http\Controllers\Backend\OrderController::class, 'index'])->name('orders.index');
+    Route::get('/{id}', [\App\Http\Controllers\Backend\OrderController::class, 'show'])->name('orders.show');
 });
 
 Route::prefix('sliders')->group(function () {
