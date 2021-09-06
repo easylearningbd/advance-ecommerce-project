@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Filters\BlogPostFilter;
+use App\Http\Resources\BlogPostResource;
+use App\Http\Resources\BlogPostResourceCollection;
 use Illuminate\Http\Request;
 use App\Models\Blog\BlogPostCategory;
 use Carbon\Carbon;
@@ -11,8 +14,70 @@ use Image;
 
 class BlogController extends Controller
 {
-    public function BlogCategory(){
 
+    /**
+     * @OA\Get(path="/api/blog-posts",
+     *   tags={"BlogPosts"},
+     *   summary="Returns BlogPost as json",
+     *   description="Returns BlogPost",
+     *   operationId="getBlogPost",
+     *   parameters={},
+     *   @OA\Response(
+     *     response=200,
+     *     description="successful operation",
+     *     @OA\Schema(
+     *       additionalProperties={
+     *         "type":"integer",
+     *         "format":"int32"
+     *       }
+     *     )
+     *   )
+     * )
+     */
+    public function index(BlogPostFilter $filters)
+    {
+        [$entries, $count, $sum] = BlogPost::filter($filters);
+        $entries = $entries->get();
+        return response(new BlogPostResourceCollection(['data' => $entries, 'count' => $count]));
+    }
+    /**
+     * @OA\Get(path="/api/blog-posts/{blogPostId}",
+     *   tags={"BlogPosts"},
+     *   summary="Returns BlogPost by id as json",
+     *   description="Returns BlogPost by id",
+     *   operationId="getBlogPostById",
+     *
+     *  @OA\Parameter(
+     *       description="ID of BlogPost",
+     *       name="blogPostId",
+     *       required=true,
+     *       in="path",
+     *       example="1",
+     *       @OA\Schema(
+     *           type="integer",
+     *           format="int64"
+     *       )
+     *   ),
+     *
+     *   @OA\Response(
+     *     response=200,
+     *     description="successful operation",
+     *     @OA\Schema(
+     *       additionalProperties={
+     *         "type":"integer",
+     *         "format":"int32"
+     *       }
+     *     )
+     *   )
+     * )
+     */
+    public function show(int $id)
+    {
+        $entry = BlogPost::query()->findOrFail($id);
+        return response(new BlogPostResource(['data' => $entry]));
+    }
+
+    public function BlogCategory(){
     	$blogcategory = BlogPostCategory::latest()->get();
     	return view('backend.blog.category.category_view',compact('blogcategory'));
     }
@@ -23,13 +88,13 @@ class BlogController extends Controller
        $request->validate([
     		'blog_category_name_en' => 'required',
     		'blog_category_name_hin' => 'required',
-    		 
+
     	],[
     		'blog_category_name_en.required' => 'Input Blog Category English Name',
     		'blog_category_name_hin.required' => 'Input Blog Category Hindi Name',
     	]);
 
-    	 
+
 
 	BlogPostCategory::insert([
 		'blog_category_name_en' => $request->blog_category_name_en,
@@ -37,7 +102,7 @@ class BlogController extends Controller
 		'blog_category_slug_en' => strtolower(str_replace(' ', '-',$request->blog_category_name_en)),
 		'blog_category_slug_hin' => str_replace(' ', '-',$request->blog_category_name_hin),
 		'created_at' => Carbon::now(),
-		 
+
 
     	]);
 
@@ -48,7 +113,7 @@ class BlogController extends Controller
 
 		return redirect()->back()->with($notification);
 
-    } // end method 
+    } // end method
 
 
 
@@ -64,7 +129,7 @@ class BlogController extends Controller
 public function BlogCategoryUpdate(Request $request){
 
        $blogcar_id = $request->id;
-    	 
+
 
 	BlogPostCategory::findOrFail($blogcar_id)->update([
 		'blog_category_name_en' => $request->blog_category_name_en,
@@ -72,7 +137,7 @@ public function BlogCategoryUpdate(Request $request){
 		'blog_category_slug_en' => strtolower(str_replace(' ', '-',$request->blog_category_name_en)),
 		'blog_category_slug_hin' => str_replace(' ', '-',$request->blog_category_name_hin),
 		'created_at' => Carbon::now(),
-		 
+
 
     	]);
 
@@ -83,7 +148,7 @@ public function BlogCategoryUpdate(Request $request){
 
 		return redirect()->route('blog.category')->with($notification);
 
-    } // end method 
+    } // end method
 
 
 
@@ -102,7 +167,7 @@ public function BlogCategoryUpdate(Request $request){
   	$blogpost = BlogPost::latest()->get();
   	return view('backend.blog.post.post_view',compact('blogpost','blogcategory'));
 
-  }   
+  }
 
 
   public function BlogPostStore(Request $request){
@@ -141,9 +206,8 @@ public function BlogCategoryUpdate(Request $request){
 
 		return redirect()->route('list.post')->with($notification);
 
-  } // end mehtod 
+  } // end mehtod
 
 
 
 }
- 

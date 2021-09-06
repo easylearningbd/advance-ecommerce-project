@@ -5,6 +5,50 @@
         "version": "1.0"
     },
     "paths": {
+        "/api/blog-posts": {
+            "get": {
+                "tags": [
+                    "BlogPosts"
+                ],
+                "summary": "Returns BlogPost as json",
+                "description": "Returns BlogPost",
+                "operationId": "getBlogPost",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/blog-posts/{blogPostId}": {
+            "get": {
+                "tags": [
+                    "BlogPosts"
+                ],
+                "summary": "Returns BlogPost by id as json",
+                "description": "Returns BlogPost by id",
+                "operationId": "getBlogPostById",
+                "parameters": [
+                    {
+                        "name": "blogPostId",
+                        "in": "path",
+                        "description": "ID of BlogPost",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
         "/api/orders": {
             "get": {
                 "tags": [

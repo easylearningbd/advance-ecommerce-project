@@ -31,6 +31,13 @@ Route::prefix('orders')->group(function () {
     Route::get('/{id}', [\App\Http\Controllers\Backend\OrderController::class, 'show'])->name('orders.show');
 });
 
+
+// BlogPosts
+Route::prefix('blog-posts')->group(function () {
+    Route::get('/', [\App\Http\Controllers\Backend\BlogController::class, 'index'])->name('blog.posts.index');
+    Route::get('/{id}', [\App\Http\Controllers\Backend\BlogController::class, 'show'])->name('blog.posts.show');
+});
+
 Route::prefix('sliders')->group(function () {
 
 });
