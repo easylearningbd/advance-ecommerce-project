@@ -42,6 +42,13 @@ Route::prefix('brands')->group(function () {
     Route::get('/{id}', [\App\Http\Controllers\Backend\BrandController::class, 'show'])->name('brands.show');
 });
 
+
+// Categories
+Route::prefix('categories')->group(function () {
+    Route::get('/', [\App\Http\Controllers\Backend\CategoryController::class, 'index'])->name('category.index');
+    Route::get('/{id}', [\App\Http\Controllers\Backend\CategoryController::class, 'show'])->name('category.show');
+});
+
 Route::prefix('sliders')->group(function () {
 
 });

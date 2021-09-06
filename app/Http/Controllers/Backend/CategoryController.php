@@ -3,11 +3,77 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Filters\CategoryFilter;
+use App\Http\Resources\CategoryResource;
+use App\Http\Resources\CategoryResourceCollection;
 use Illuminate\Http\Request;
 use App\Models\Category;
- 
+
 class CategoryController extends Controller
 {
+
+    /**
+     * @OA\Get(path="/api/categories",
+     *   tags={"Categories"},
+     *   summary="Returns categories as json",
+     *   description="Returns categories",
+     *   operationId="getCategories",
+     *   parameters={},
+     *   @OA\Response(
+     *     response=200,
+     *     description="successful operation",
+     *     @OA\Schema(
+     *       additionalProperties={
+     *         "type":"integer",
+     *         "format":"int32"
+     *       }
+     *     )
+     *   )
+     * )
+     */
+    public function index(CategoryFilter $filters)
+    {
+        [$entries, $count, $sum] = Category::filter($filters);
+        $entries = $entries->get();
+        return response(new CategoryResourceCollection(['data' => $entries, 'count' => $count]));
+    }
+    /**
+     * @OA\Get(path="/api/categories/{categoryId}",
+     *   tags={"Categories"},
+     *   summary="Returns category by id as json",
+     *   description="Returns category by id",
+     *   operationId="getCategoryById",
+     *
+     *  @OA\Parameter(
+     *       description="ID of category",
+     *       name="categoryId",
+     *       required=true,
+     *       in="path",
+     *       example="1",
+     *       @OA\Schema(
+     *           type="integer",
+     *           format="int64"
+     *       )
+     *   ),
+     *
+     *   @OA\Response(
+     *     response=200,
+     *     description="successful operation",
+     *     @OA\Schema(
+     *       additionalProperties={
+     *         "type":"integer",
+     *         "format":"int32"
+     *       }
+     *     )
+     *   )
+     * )
+     */
+    public function show(int $id)
+    {
+        $entry = Category::query()->findOrFail($id);
+        return response(new CategoryResource(['data' => $entry]));
+    }
+
     public function CategoryView(){
 
     	$category = Category::latest()->get();
@@ -25,7 +91,7 @@ class CategoryController extends Controller
     		'category_name_hin.required' => 'Input Category Hindi Name',
     	]);
 
-    	 
+
 
 	Category::insert([
 		'category_name_en' => $request->category_name_en,
@@ -43,7 +109,7 @@ class CategoryController extends Controller
 
 		return redirect()->back()->with($notification);
 
-    } // end method 
+    } // end method
 
 
     public function CategoryEdit($id){
@@ -55,7 +121,7 @@ class CategoryController extends Controller
 
     public function CategoryUpdate(Request $request ,$id){
 
-    	 
+
 
       Category::findOrFail($id)->update([
 		'category_name_en' => $request->category_name_en,
@@ -88,8 +154,7 @@ class CategoryController extends Controller
 
 		return redirect()->back()->with($notification);
 
-    } // end method 
+    } // end method
 
 
 }
- 
