@@ -19,6 +19,13 @@ run php artisan serve
 
 For swagger documentations please open : localhost:8000/api/documentation
 
+## CPANEL
+
+ - your php version should be 7.4
+ - mbstring and fileinfo installed in extension tab
+ - composer update needed if upgrade
+
+
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
