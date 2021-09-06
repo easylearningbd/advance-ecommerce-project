@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Filters\ProductFilter;
+use App\Http\Resources\ProductResource;
 use App\Http\Resources\ProductResourceCollection;
 use App\Models\Brand;
 use App\Models\Category;
@@ -11,6 +12,7 @@ use App\Models\MultiImg;
 use App\Models\Product;
 use App\Models\SubCategory;
 use App\Models\SubSubCategory;
+use Behamin\BResources\Traits\CollectionResource;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Image;
@@ -42,6 +44,42 @@ class ProductController extends Controller
         [$entries, $count, $sum] = Product::filter($filters);
         $entries = $entries->get();
         return response(new ProductResourceCollection(['data' => $entries, 'count' => $count]));
+    }
+    /**
+     * @OA\Get(path="/api/products/{productId}",
+     *   tags={"Products"},
+     *   summary="Returns product by id as json",
+     *   description="Returns products by id",
+     *   operationId="getProductsbyid",
+     *
+     *  @OA\Parameter(
+     *       description="ID of product",
+     *       name="productId",
+     *       required=true,
+     *       in="path",
+     *       example="1",
+     *       @OA\Schema(
+     *           type="integer",
+     *           format="int64"
+     *       )
+     *   ),
+     *
+     *   @OA\Response(
+     *     response=200,
+     *     description="successful operation",
+     *     @OA\Schema(
+     *       additionalProperties={
+     *         "type":"integer",
+     *         "format":"int32"
+     *       }
+     *     )
+     *   )
+     * )
+     */
+    public function show(int $id)
+    {
+        $entry = Product::query()->findOrFail($id);
+        return response(new ProductResource(['data' => $entry]));
     }
 
     public function AddProduct()
