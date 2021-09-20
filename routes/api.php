@@ -49,6 +49,14 @@ Route::prefix('categories')->group(function () {
     Route::get('/{id}', [\App\Http\Controllers\Backend\CategoryController::class, 'show'])->name('category.show');
 });
 
-Route::prefix('sliders')->group(function () {
+Route::prefix('users')->group(function () {
+    Route::prefix('reviews')->group(function () {
+        Route::get('/', [\App\Http\Controllers\User\ReviewController::class, 'productPublishedReview'])->name('reviews.me');
 
+    });
+//    Route::post('/tokens/create', function (Request $request) {
+//        $token = $request->user()->createToken($request->token_name);
+//
+//        return ['token' => $token->plainTextToken];
+//    });
 });

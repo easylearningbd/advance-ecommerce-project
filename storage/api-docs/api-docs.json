@@ -224,6 +224,22 @@
                     }
                 }
             }
+        },
+        "/api/users/reviews": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Returns reviews for current users as json",
+                "description": "Returns reviews",
+                "operationId": "getReviews",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
         }
     },
     "security": [
