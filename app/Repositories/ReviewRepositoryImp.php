@@ -16,7 +16,7 @@ class ReviewRepositoryImp implements \App\Interfaces\Repositories\ReviewReposito
         // TODO: Implement index() method.
     }
 
-    public function get(ReviewFilter $filters, array $userId)
+    public function get(ReviewFilter $filters, int $userId)
     {
         return Review::query()
             ->where('status', 1)

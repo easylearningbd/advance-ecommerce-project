@@ -24,7 +24,7 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected array $fillable = [
+    protected $fillable = [
         'name',
         'email',
         'phone',
@@ -64,7 +64,8 @@ class User extends Authenticatable
 
 
      // User Active Show
-    public function UserOnline(){
+    public function UserOnline(): bool
+    {
         return Cache::has('user-is-online' . $this->id);
     }
 

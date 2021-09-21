@@ -4,11 +4,12 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Http\Filters\ReviewFilter;
+use App\Http\Resources\ReviewResourceCollection;
 use App\Interfaces\Repositories\ReviewRepository;
-use Illuminate\Http\Request;
 use App\Models\Review;
 use Auth;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 
 
 class ReviewController extends Controller
@@ -94,9 +95,10 @@ class ReviewController extends Controller
      */
     public function productPublishedReview(ReviewFilter $filters)
     {
-//        $userId = Auth::user()->id;
-        $review = app()->make(ReviewRepository::class)->get($filters, [1]);
-        return $review;
+        $userId = request()->user()->id;
+        [$items, $count, $sum] = app()->make(ReviewRepository::class)->get($filters, $userId);
+
+        return response(new ReviewResourceCollection(['data' => $items->get(), 'count' => $count]));
     }
 
     public function DeleteReview($id)
