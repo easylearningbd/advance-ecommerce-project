@@ -14,7 +14,7 @@ class Category extends Model
     use HasFilter;
 
 
-    protected $fillable = [
+    protected array $fillable = [
         'category_name_en',
         'category_name_hin',
         'category_slug_en',

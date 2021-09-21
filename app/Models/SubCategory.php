@@ -2,14 +2,17 @@
 
 namespace App\Models;
 
+use BFilters\Traits\HasFilter;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class SubCategory extends Model
 {
     use HasFactory;
+    use HasFilter;
 
-       protected $fillable = [
+
+    protected array $fillable = [
         'category_id',
         'subcategory_name_en',
         'subcategory_name_hin',
@@ -23,4 +26,3 @@ class SubCategory extends Model
 
 
 }
- 
