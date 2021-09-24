@@ -40,13 +40,13 @@
                 $shipping = (auth()->guard('admin')->user()->shipping == 1);
                 $blog = (auth()->guard('admin')->user()->blog == 1);
                 $setting = (auth()->guard('admin')->user()->setting == 1);
-                $returnorder = (auth()->guard('admin')->user()->returnorder == 1);
+                $returnOrder = (auth()->guard('admin')->user()->returnorder == 1);
                 $review = (auth()->guard('admin')->user()->review == 1);
                 $orders = (auth()->guard('admin')->user()->orders == 1);
                 $stock = (auth()->guard('admin')->user()->stock == 1);
                 $reports = (auth()->guard('admin')->user()->reports == 1);
-                $alluser = (auth()->guard('admin')->user()->alluser == 1);
-                $adminuserrole = (auth()->guard('admin')->user()->adminuserrole == 1);
+                $allUsers = (auth()->guard('admin')->user()->alluser == 1);
+                $adminUserRole = (auth()->guard('admin')->user()->adminuserole == 1);
 
             @endphp
 
