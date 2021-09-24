@@ -12,10 +12,10 @@
     -moz-transition: -moz-transform .3s ease-in-out, width .3s ease-in-out;
     -o-transition: -o-transform .3s ease-in-out, width .3s ease-in-out;
     transition: transform .3s ease-in-out, width .3s ease-in-out;
-    
+
     .sidebar-footer {
         background-color: $white;
-    }    
+    }
 }
 .sidebar-footer{
     position: fixed;
@@ -58,7 +58,7 @@
         transform: translate(0, 0);
     }
 }
-@include screen-md {    
+@include screen-md {
     .sidebar-collapse {
         .main-sidebar {
             -webkit-transform: translate(-$sid-bar-w, 0);
@@ -84,16 +84,16 @@
     list-style: none;
     margin: 10px 10px 0;
     padding: 10px;
-    
+
     >li{
         position: relative;
-        margin: 0;        
+        margin: 0;
         border-radius: $default-border-radius;
         &.user-profile{
             @include hover-active-state{
                 >a{
                     color: $black;
-                    background-color: transparent !important; 
+                    background-color: transparent !important;
                     .email-id{
                         color: rgba($dark, .7)
                     }
@@ -102,13 +102,13 @@
             &.menu-open{
                 >a{
                     color: $black;
-                    background-color: transparent !important; 
+                    background-color: transparent !important;
                 }
             }
             >a{
                opacity: 1;
 	           padding: 25px;
-	           display:flex;  
+	           display:flex;
             }
             > .treeview-menu{
                 background-color: $dark !important;
@@ -116,14 +116,14 @@
         }
         @include hover-active-state{
             >a{
-               opacity: 1; 
+               opacity: 1;
             }
         }
-        &.treeview.menu-open{            
+        &.treeview.menu-open{
             background-color: rgba($light2, 0) !important;
             border-radius: $default-border-radius;
             >a{
-               opacity: 1; 
+               opacity: 1;
             }
         }
         >a{
@@ -153,7 +153,7 @@
         @include hover-active-state{
             >a{
                 >i{
-                   color: $dark;	 
+                   color: $dark;
                 }
             }
         }
@@ -184,7 +184,7 @@
             font-weight: 300;
         }
     }
-    li{        
+    li{
         &.nav-devider{
             height: 1px;
             background-color: rgba($dark, .13);
@@ -194,7 +194,7 @@
         &.header{
             padding: 10px 10px;
             font-size: 12px;
-            font-weight: 500;    
+            font-weight: 500;
             color: $dark;
             opacity: .7;
         }
@@ -256,7 +256,7 @@
                     transform: rotate(90deg);
                 }
             }
-        } 
+        }
     }
     .user-profile{
         .treeview-menu{
@@ -266,13 +266,13 @@
 	                opacity: 1;
                     background-color: transparent;
                     padding: 8px 5px 8px 30px;
-                } 
+                }
             }
         }
     }
     .active{
         >.treeview-menu{
-           display: block; 
+           display: block;
         }
     }
 }
@@ -285,24 +285,24 @@
                         background-color: $dark !important;
                         color: $white;
                         .email-id{
-                            color: lighten($black, 80%);    
+                            color: lighten($black, 80%);
                         }
-                    } 
+                    }
                 }
                 &.menu-open{
                     >a{
                         background-color: $dark !important;
                         color: $white;
                         .email-id{
-                            color: lighten($black, 80%);    
+                            color: lighten($black, 80%);
                         }
                     }
                 }
                 >a{
-                   display:block;   
-                }                
-            } 
-        } 
+                   display:block;
+                }
+            }
+        }
     }
 }
 .sidebar-mini{
@@ -324,7 +324,7 @@
     width: 100%;
     padding: 10px 0 10px;
     background-image: url(../../images//user-info.jpg);
-    @include before-after-state { 
+    @include before-after-state {
         content: " ";
         display: table;
     }
@@ -334,7 +334,7 @@
             max-width: 25%;
             height: auto;
             margin: 0 10px;
-            border: 2px solid rgba($dark, .13);  
+            border: 2px solid rgba($dark, .13);
         }
     }
     >.info {
@@ -365,7 +365,7 @@
             >img{
                 max-width: 50px;
                 margin: 0 0px;
-            } 
+            }
         }
     }
 }
@@ -398,7 +398,7 @@
     }
     .ulogo{
         text-align: center;
-        padding: 10px 0 12px;
+        /*padding: 10px 0 12px;*/
         font-size: $fs-18;
         min-height: 70px;
         h3{
@@ -419,7 +419,7 @@
     .user-profile{
         .profile-pic{
             padding: 5px 0;
-        }        
+        }
         .ulogo{
             -webkit-transition: all .5s ease-in-out;
             -o-transition: all .5s ease-in-out;
@@ -443,13 +443,13 @@
     .user-profile{
         .ulogo{
             a{
-               background-color: transparent; 
+               background-color: transparent;
             }
         }
         .btn-group{
             a{
                 color: $dark;
-                background-color: transparent;  
+                background-color: transparent;
             }
         }
     }
@@ -471,7 +471,7 @@
                             top: 79px;
                         }
                     }
-                }  
+                }
             }
         }
     }
@@ -482,9 +482,9 @@
             img{
                 width: 45px;
                 border-radius: 100%;
-                margin-right: 10px; 
+                margin-right: 10px;
             }
-        } 
+        }
     }
 }
 .sidebar-collapse {
@@ -492,7 +492,7 @@
         .user-profile {
             > a {
                 img {
-                    margin-right: 0px; 
+                    margin-right: 0px;
                 }
             }
         }
@@ -508,25 +508,25 @@
                         border: 1px solid rgba($black, 0.2);
                     }
                 }
-            } 
+            }
             &.menu-open{
                 >a{
                     >i{
                         border: 1px solid rgba($black, 0.2);
                     }
-                }  
+                }
             }
             >a{
                 >i{
                     border: 1px solid rgba($black, 0.2);
                 }
             }
-        }  
+        }
     }
 }
 
 
-@include screen-md { 
+@include screen-md {
     .sidebar-mini{
         &.sidebar-collapse{
             .content-wrapper{
@@ -541,7 +541,7 @@
                 margin-left: $mini-sid-bar-w;
                 z-index: 840;
             }
-            .main-sidebar{                
+            .main-sidebar{
                 -webkit-transform: translate(0, 0);
                 -ms-transform: translate(0, 0);
                 -o-transform: translate(0, 0);
@@ -552,7 +552,7 @@
                     >.info{
                         display: none !important;
                         -webkit-transform: translateZ(0);
-                    }  
+                    }
                 }
             }
             .sidebar-menu{
@@ -560,7 +560,7 @@
                     position: relative;
                     padding: 0px 0px;
                     >a{
-                       margin-right: 0; 
+                       margin-right: 0;
                         >span{
                             border-top-right-radius: 5px;
                             display: none !important;
@@ -581,7 +581,7 @@
                     >.treeview-menu{
                         padding-top: 0px;
                         padding-bottom: 5px;
-                        border-bottom-right-radius: 5px;                        
+                        border-bottom-right-radius: 5px;
                         display: none !important;
                         -webkit-transform: translateZ(0);
                     }
@@ -609,7 +609,7 @@
                                 width: $sid-bar-w;
                                 left: $mini-sid-bar-w;
                             }
-                            >span{                                
+                            >span{
                                 top: 0;
                                 margin-left: 0px;
                                 padding: 10px 5px 10px 20px;
@@ -641,23 +641,23 @@
                             top: 45px;
                             margin-left: 0;
                         }
-                    } 
+                    }
                     >li{
                         .user-profile:hover{
                             >a{
                                 >.pull-right-container{
-                                   left: 237px !important; 
-                                } 
+                                   left: 237px !important;
+                                }
                             }
                         }
                     }
                 }
             }
         }
-    } 
+    }
     .sidebar-collapse{
         .treeview-menu{
-            margin-left: 0px!important;  
+            margin-left: 0px!important;
         }
     }
     .control-sidebar-open{
@@ -692,10 +692,10 @@
         }
     }
     li{
-        >a{            
+        >a{
             position: relative;
             font-weight: 500;
-            opacity: 0.6;	
+            opacity: 0.6;
             white-space: nowrap;
             align-items: center;
             line-height: 25px;
@@ -715,14 +715,14 @@
         >li{
             &.active{
                 >a{
-                   opacity: 1; 
+                   opacity: 1;
                 }
                 >a:hover{
-                   opacity: 1; 
+                   opacity: 1;
                 }
-            }            
+            }
             >a:hover{
-               opacity: 1; 
+               opacity: 1;
             }
         }
     }
@@ -736,12 +736,12 @@
         >li{
             @include hover-active-state{
                 >a{
-                   border-radius: 0; 
+                   border-radius: 0;
                 }
             }
             &.menu-open{
                 >a{
-                   border-radius: 0; 
+                   border-radius: 0;
                 }
             }
         }
@@ -772,10 +772,10 @@
                 .icon{
                     font-size: 16px;
                 }
-            } 
+            }
             &:first-of-type{
                 >a{
-                    border-left-width: 0; 
+                    border-left-width: 0;
                     @include hover-focus-state{
                         border-left-width: 0;
                     }
@@ -792,7 +792,7 @@
                         border-bottom: none;
                     }
                 }
-            } 
+            }
         }
     }
 }
@@ -822,7 +822,7 @@
         padding: 15px 0px;
     }
     &.control-sidebar-open{
-       right: 0; 
+       right: 0;
         &.control-sidebar-bg, +.control-sidebar-bg {
             right: 0;
         }
@@ -834,7 +834,7 @@
                 padding: 10px 0px;
                 display: block;
                 font-size: 16px;
-            } 
+            }
         }
     }
     .rpanel-title {
@@ -923,19 +923,19 @@
         text-align: center;
         line-height: 35px;
     }
-    .menu-info{        
+    .menu-info{
         margin-left: 45px;
         margin-top: 3px;
         >.control-sidebar-subheading{
-           margin: 0; 
+           margin: 0;
         }
-        >p{            
+        >p{
             margin: 0;
             font-size: 11px;
         }
     }
     .progress{
-        margin: 0; 
+        margin: 0;
     }
 }
 #control-sidebar-theme-demo-options-tab{
@@ -958,17 +958,17 @@
     margin: 0;
     .treeview-menu {
         padding-left: 20px;
-    } 
+    }
     >li{
-       margin: 0; 
-        >a{            
+       margin: 0;
+        >a{
             padding: 8px 5px 8px 25px;
             display: block;
             font-size: 13px;
             >i{
                 width: 20px;
                 padding-right: 20px;
-                padding-left: 10px; 
+                padding-left: 10px;
             }
             >.fa-angle-down{
                 width: auto;
@@ -988,11 +988,11 @@
 .sidebar-collapse{
     .treeview-menu{
        >li{
-           margin: 0; 
-            >a{            
+           margin: 0;
+            >a{
                 padding: 8px 5px 8px 25px;
             }
-        } 
+        }
     }
 }
 .sidebar-menu{

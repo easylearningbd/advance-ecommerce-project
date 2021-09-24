@@ -1,36 +1,36 @@
 @php
   $prefix = Request::route()->getPrefix();
   $route = Route::current()->getName();
- 
+
 @endphp
 
 
   <aside class="main-sidebar">
     <!-- sidebar-->
-    <section class="sidebar">	
-		
+    <section class="sidebar">
+
         <div class="user-profile">
 			<div class="ulogo">
 				 <a href="index.html">
 				  <!-- logo for regular state and mobile devices -->
-					 <div class="d-flex align-items-center justify-content-center">					 	
-						  <img src="{{ asset('backend/images/logo-dark.png') }}" alt="">
-						  <h3><b>Easy</b> Shop</h3>
+					 <div class="d-flex align-items-center justify-content-center">
+						  <img style="height: 60px" src="{{ asset('backend/images/logo/green-shop-.png') }}" alt="">
+						  <h3 style="margin-top: 17px;"><b>reen</b> Shop</h3>
 					 </div>
 				</a>
 			</div>
         </div>
-      
+
       <!-- sidebar menu-->
-      <ul class="sidebar-menu" data-widget="tree">  
-		  
+      <ul class="sidebar-menu" data-widget="tree">
+
 		<li class="{{ ($route == 'dashboard')? 'active':'' }}">
           <a href="{{ url('admin/dashboard') }}">
             <i data-feather="pie-chart"></i>
-			<span>Dashboard</span>
+			<span>{{ __("admin.Dashboard") }}</span>
           </a>
-        </li>  
-		
+        </li>
+
         @php
         $brand = (auth()->guard('admin')->user()->brand == 1);
         $category = (auth()->guard('admin')->user()->category == 1);
@@ -51,7 +51,7 @@
         @endphp
 
 
-       @if($brand == true) 
+       @if($brand == true)
         <li class="treeview {{ ($prefix == '/brand')?'active':'' }}  ">
           <a href="#">
             <i data-feather="message-circle"></i>
@@ -62,12 +62,12 @@
           </a>
           <ul class="treeview-menu">
             <li class="{{ ($route == 'all.brand')? 'active':'' }}"><a href="{{ route('all.brand') }}"><i class="ti-more"></i>All Brand</a></li>
-            
+
           </ul>
-        </li> 
+        </li>
         @else
         @endif
-		  
+
        @if($category == true)
         <li class="treeview {{ ($prefix == '/category')?'active':'' }}  ">
           <a href="#">
@@ -89,7 +89,7 @@
         @endif
 
      @if($product == true)
-		
+
         <li class="treeview {{ ($prefix == '/product')?'active':'' }}  ">
           <a href="#">
             <i data-feather="file"></i>
@@ -102,9 +102,9 @@
             <li class="{{ ($route == 'add-product')? 'active':'' }}"><a href="{{ route('add-product') }}"><i class="ti-more"></i>Add Products</a></li>
 
              <li class="{{ ($route == 'manage-product')? 'active':'' }}"><a href="{{ route('manage-product') }}"><i class="ti-more"></i>Manage Products</a></li>
-             
+
           </ul>
-        </li> 		  
+        </li>
 
         @else
         @endif
@@ -123,10 +123,10 @@
           <ul class="treeview-menu">
             <li class="{{ ($route == 'manage-slider')? 'active':'' }}"><a href="{{ route('manage-slider') }}"><i class="ti-more"></i>Manage Slider</a></li>
 
-             
-             
+
+
           </ul>
-        </li>   
+        </li>
 
         @else
         @endif
@@ -144,10 +144,10 @@
           <ul class="treeview-menu">
             <li class="{{ ($route == 'manage-coupon')? 'active':'' }}"><a href="{{ route('manage-coupon') }}"><i class="ti-more"></i>Manage Coupon</a></li>
 
-             
-             
+
+
           </ul>
-        </li>      
+        </li>
         @else
         @endif
 
@@ -169,10 +169,10 @@
 
          <li class="{{ ($route == 'manage-state')? 'active':'' }}"><a href="{{ route('manage-state') }}"><i class="ti-more"></i>Ship State</a></li>
 
-             
-             
+
+
           </ul>
-        </li>        
+        </li>
         @else
         @endif
 
@@ -193,9 +193,9 @@
         <li class="{{ ($route == 'list.post')? 'active':'' }}"><a href="{{ route('list.post') }}"><i class="ti-more"></i>List Blog Post</a></li>
 
          <li class="{{ ($route == 'add.post')? 'active':'' }}"><a href="{{ route('add.post') }}"><i class="ti-more"></i>Add Blog Post</a></li>
-  
+
           </ul>
-        </li>       
+        </li>
 
         @else
         @endif
@@ -214,8 +214,8 @@
         <li class="{{ ($route == 'site.setting')? 'active':'' }}"><a href="{{ route('site.setting') }}"><i class="ti-more"></i>Site Setting</a></li>
 
         <li class="{{ ($route == 'seo.setting')? 'active':'' }}"><a href="{{ route('seo.setting') }}"><i class="ti-more"></i>Seo Setting</a></li>
- 
-  
+
+
           </ul>
         </li>
 
@@ -236,10 +236,10 @@
         <li class="{{ ($route == 'return.request')? 'active':'' }}"><a href="{{ route('return.request') }}"><i class="ti-more"></i>Return Request</a></li>
 
         <li class="{{ ($route == 'all.request')? 'active':'' }}"><a href="{{ route('all.request') }}"><i class="ti-more"></i>All Request</a></li>
- 
-  
+
+
           </ul>
-        </li>    
+        </li>
 
         @else
         @endif
@@ -259,19 +259,19 @@
         <li class="{{ ($route == 'pending.review')? 'active':'' }}"><a href="{{ route('pending.review') }}"><i class="ti-more"></i>Pending Review</a></li>
 
         <li class="{{ ($route == 'publish.review')? 'active':'' }}"><a href="{{ route('publish.review') }}"><i class="ti-more"></i>Publish Review</a></li>
- 
-  
+
+
           </ul>
-        </li>    
+        </li>
 
         @else
         @endif
 
-   
-		 
+
+
         <li class="header nav-small-cap">User Interface</li>
 
-        
+
 		    @if($orders == true)
         <li class="treeview {{ ($prefix == '/orders')?'active':'' }}  ">
           <a href="#">
@@ -293,13 +293,13 @@
       <li class="{{ ($route == 'shipped-orders')? 'active':'' }}"><a href="{{ route('shipped-orders') }}"><i class="ti-more"></i> Shipped Orders</a></li>
 
      <li class="{{ ($route == 'delivered-orders')? 'active':'' }}"><a href="{{ route('delivered-orders') }}"><i class="ti-more"></i> Delivered Orders</a></li>
-  
+
   <li class="{{ ($route == 'cancel-orders')? 'active':'' }}"><a href="{{ route('cancel-orders') }}"><i class="ti-more"></i> Cancel Orders</a></li>
 
-             
-             
+
+
           </ul>
-        </li>         
+        </li>
         @else
         @endif
 
@@ -317,9 +317,9 @@
           <ul class="treeview-menu">
         <li class="{{ ($route == 'product.stock')? 'active':'' }}"><a href="{{ route('product.stock') }}"><i class="ti-more"></i>Product Stock</a></li>
 
-        
+
           </ul>
-        </li>    
+        </li>
 
 		    @else
         @endif
@@ -337,10 +337,10 @@
           <ul class="treeview-menu">
         <li class="{{ ($route == 'all-reports')? 'active':'' }}"><a href="{{ route('all-reports') }}"><i class="ti-more"></i>All Reports</a></li>
 
-        
+
           </ul>
-        </li>         
- 
+        </li>
+
 
         @else
         @endif
@@ -358,9 +358,9 @@
           <ul class="treeview-menu">
         <li class="{{ ($route == 'all-users')? 'active':'' }}"><a href="{{ route('all-users') }}"><i class="ti-more"></i>All Users</a></li>
 
-        
+
           </ul>
-        </li>    
+        </li>
         @else
         @endif
 
@@ -378,17 +378,17 @@
           <ul class="treeview-menu">
         <li class="{{ ($route == 'all.admin.user')? 'active':'' }}"><a href="{{ route('all.admin.user') }}"><i class="ti-more"></i>All Admin User </a></li>
 
-        
+
           </ul>
-        </li>    
+        </li>
 
         @else
         @endif
 
-        
+
       </ul>
     </section>
-	
+
 	<div class="sidebar-footer">
 		<!-- item-->
 		<a href="javascript:void(0)" class="link" data-toggle="tooltip" title="" data-original-title="Settings" aria-describedby="tooltip92529"><i class="ti-settings"></i></a>
