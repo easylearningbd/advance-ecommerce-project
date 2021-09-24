@@ -12,7 +12,7 @@ class SubCategory extends Model
     use HasFilter;
 
 
-    protected array $fillable = [
+    protected $fillable = [
         'category_id',
         'subcategory_name_en',
         'subcategory_name_hin',

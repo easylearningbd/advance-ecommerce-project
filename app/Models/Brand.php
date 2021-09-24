@@ -12,7 +12,7 @@ class Brand extends Model
     use HasFilter;
 
 
-    protected array $fillable = [
+    protected $fillable = [
         'brand_name_en',
         'brand_name_hin',
         'brand_slug_en',
