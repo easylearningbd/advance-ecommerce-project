@@ -289,7 +289,7 @@
             @else
             @endif
 
-            @if($returnorder == true)
+            @if($returnOrder == true)
 
                 <li class="treeview {{ ($prefix == '/return')?'active':'' }}  ">
                     <a href="#">
@@ -481,7 +481,7 @@
             @else
             @endif
 
-            @if($alluser == true)
+            @if($allUsers == true)
 
                 <li class="treeview {{ ($prefix == '/alluser')?'active':'' }}  ">
                     <a href="#">
@@ -505,7 +505,7 @@
             @else
             @endif
 
-            @if($adminuserrole == true)
+            @if($adminUserRole == true)
                 <li class="treeview {{ ($prefix == '/adminuserrole')?'active':'' }}  ">
                     <a href="#">
                         <i data-feather="file"></i>
