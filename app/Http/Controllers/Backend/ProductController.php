@@ -45,6 +45,7 @@ class ProductController extends Controller
         $entries = $entries->get();
         return response(new ProductResourceCollection(['data' => $entries, 'count' => $count]));
     }
+
     /**
      * @OA\Get(path="/api/products/{productId}",
      *   tags={"Products"},

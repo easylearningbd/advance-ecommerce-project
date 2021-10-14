@@ -57,18 +57,18 @@ Route::middleware('auth:sanctum')->group(function () {
 
         Route::get('/profile/me', [AuthenticationController::class, 'myProfile']);
 
-        Route::post('/sign-out', [AuthenticationController::class, 'signOut']);
+        Route::post('/logout', [AuthenticationController::class, 'logout']);
 
-        Route::post('/tokens/create', [AuthenticationController::class, 'tokensCreate']);
+        Route::post('/token/refresh', [AuthenticationController::class, 'refreshToken']);
     });
 });
 
 
-Route::post('/login/email', [AuthenticationController::class, 'loginEmail']);
+Route::post('/login', [AuthenticationController::class, 'loginEmail']);
 //register new user
-Route::post('/create-account', [AuthenticationController::class, 'createAccount']);
+Route::post('/register', [AuthenticationController::class, 'register']);
 //login user
-Route::post('/sign-in', [AuthenticationController::class, 'signIn']);
+Route::post('/login', [AuthenticationController::class, 'login']);
 
 
 
