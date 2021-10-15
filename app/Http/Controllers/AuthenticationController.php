@@ -45,29 +45,18 @@ class AuthenticationController extends Controller
 
     /**
      * @OA\Post (
-     *      path="/api/sample2",
-     *      operationId="getSample",
-     *      tags={"Sample"},
-     *      summary="get sample",
-     *      description="return sample",
+     *      path="/api/users/token/refresh",
+     *      operationId="refresh token",
+     *      tags={"User Management"},
+     *      summary="refresh token",
+     *      description="refresh token",
      *
      *      @OA\RequestBody(
      *          required=true,
-     *          @OA\JsonContent(ref="#/components/schemas/LoginRequest")
+     *          @OA\JsonContent(ref="#/components/schemas/RefreshTokenRequest")
      *      ),
      *
-     *     @OA\Parameter(
-     *          name="department",
-     *          required=true,
-     *          in="header",
-     *          example=1,
-     *          ),
-     *
-     *      @OA\Response(
-     *          response=200,
-     *          description="Successful operation",
-     *          @OA\JsonContent(ref="#/components/schemas/LoginRequest")
-     *       ),
+     *      security={ {"bearer": {} }},
      *
      *      @OA\Response(
      *          response=400,
@@ -84,8 +73,9 @@ class AuthenticationController extends Controller
      *          description="Forbidden"
      *      )
      * )
+     *
+     * @throws \Illuminate\Validation\ValidationException
      */
-
     public function refreshToken(Request $request): array
     {
         $token = $request->user()->createToken($request->token_name);
@@ -207,6 +197,35 @@ class AuthenticationController extends Controller
         ]);
     }
 
+
+    /**
+     * @OA\Post (
+     *      path="/api/logout",
+     *      operationId="logout",
+     *      tags={"User Management"},
+     *      summary="logout with token",
+     *      description="logout with token",
+
+     *      security={ {"bearer": {} }},
+     *
+     *      @OA\Response(
+     *          response=400,
+     *          description="Bad Request"
+     *      ),
+     *
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *      ),
+     *
+     *      @OA\Response(
+     *          response=403,
+     *          description="Forbidden"
+     *      )
+     * )
+     *
+     * @throws \Illuminate\Validation\ValidationException
+     */
     // this method signs out users by removing tokens
     public function logout(): array
     {
