@@ -182,7 +182,10 @@ class AdminUserController extends Controller
 
  		$adminimg = Admin::findOrFail($id);
  		$img = $adminimg->profile_photo_path;
- 		unlink($img);
+
+        if (file_exists($img)) {
+            unlink($img);
+        }
 
  		Admin::findOrFail($id)->delete();
 

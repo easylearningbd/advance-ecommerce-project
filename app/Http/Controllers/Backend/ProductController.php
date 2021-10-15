@@ -264,7 +264,10 @@ class ProductController extends Controller
 
         foreach ($imgs as $id => $img) {
             $imgDel = MultiImg::findOrFail($id);
-            unlink($imgDel->photo_name);
+
+            if (file_exists($imgDel->photo_name)) {
+                unlink($imgDel->photo_name);
+            }
 
             $make_name = hexdec(uniqid()) . '.' . $img->getClientOriginalExtension();
             Image::make($img)->resize(917, 1000)->save('upload/products/multi-image/' . $make_name);
@@ -366,12 +369,19 @@ class ProductController extends Controller
     public function ProductDelete($id)
     {
         $product = Product::findOrFail($id);
-        unlink($product->product_thambnail);
+
+        if (file_exists($product->product_thambnail)) {
+            unlink($product->product_thambnail);
+        }
+
         Product::findOrFail($id)->delete();
 
         $images = MultiImg::where('product_id', $id)->get();
         foreach ($images as $img) {
-            unlink($img->photo_name);
+            if (file_exists($img->photo_name)) {
+                unlink($img->photo_name);
+            }
+
             MultiImg::where('product_id', $id)->delete();
         }
 

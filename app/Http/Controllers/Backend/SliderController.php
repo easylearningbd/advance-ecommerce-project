@@ -110,7 +110,11 @@ class SliderController extends Controller
     {
         $slider = Slider::findOrFail($id);
         $img = $slider->slider_img;
-        unlink($img);
+
+        if (file_exists($img)) {
+            unlink($img);
+        }
+
         Slider::findOrFail($id)->delete();
 
         $notification = array(
