@@ -123,6 +123,37 @@
                 }
             }
         },
+        "/api/register": {
+            "post": {
+                "tags": [
+                    "User Management"
+                ],
+                "summary": "register with email",
+                "description": "register with email",
+                "operationId": "register",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RegisterRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
         "/api/blog-posts": {
             "get": {
                 "tags": [
@@ -374,6 +405,25 @@
                 "example": {
                     "email": "saber.tabataba@gmail.com",
                     "password": "adminadmin",
+                    "device_name": "flutter"
+                }
+            },
+            "RegisterRequest": {
+                "title": "RegisterRequest",
+                "description": "Register Request",
+                "required": [
+                    "name",
+                    "email",
+                    "password",
+                    "password_confirmation",
+                    "device_name"
+                ],
+                "type": "object",
+                "example": {
+                    "name": "saber.tabataba@gmail.com",
+                    "email": "saber.tabataba@gmail.com",
+                    "password": "adminadmin",
+                    "password_confirmation": "adminadmin",
                     "device_name": "flutter"
                 }
             }

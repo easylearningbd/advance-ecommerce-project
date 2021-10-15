@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 
-use App\Http\Requests\RegisterRequest;
 use App\Http\Requests\User\LoginRequest;
+use App\Http\Requests\User\RegisterRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
@@ -140,6 +140,37 @@ class AuthenticationController extends Controller
         ]);
     }
 
+    /**
+     * @OA\Post (
+     *      path="/api/register",
+     *      operationId="register",
+     *      tags={"User Management"},
+     *      summary="register with email",
+     *      description="register with email",
+     *
+     *      @OA\RequestBody(
+     *          required=true,
+     *          @OA\JsonContent(ref="#/components/schemas/RegisterRequest")
+     *      ),
+     *
+     *      @OA\Response(
+     *          response=400,
+     *          description="Bad Request"
+     *      ),
+     *
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *      ),
+     *
+     *      @OA\Response(
+     *          response=403,
+     *          description="Forbidden"
+     *      )
+     * )
+     *
+     * @throws \Illuminate\Validation\ValidationException
+     */
     //this method adds new users
     public function register(RegisterRequest $request)
     {
