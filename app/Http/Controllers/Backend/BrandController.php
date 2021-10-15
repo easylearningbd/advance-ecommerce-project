@@ -117,7 +117,7 @@ class BrandController extends Controller
 
         return redirect()->back()->with($notification);
 
-    } // end method
+    }
 
 
     public function BrandEdit($id)
@@ -178,7 +178,7 @@ class BrandController extends Controller
             return redirect()->route('all.brand')->with($notification);
 
         } // end else
-    } // end method
+    }
 
 
     public function BrandDelete($id)
@@ -197,7 +197,7 @@ class BrandController extends Controller
 
         return redirect()->back()->with($notification);
 
-    } // end method
+    }
 
 
 }

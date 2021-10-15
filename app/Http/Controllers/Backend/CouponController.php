@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Coupon;
 use Carbon\Carbon;
- 
+
 class CouponController extends Controller
 {
     public function CouponView(){
@@ -22,14 +22,14 @@ class CouponController extends Controller
     		'coupon_name' => 'required',
     		'coupon_discount' => 'required',
     		'coupon_validity' => 'required',
-    	 
+
     	]);
 
-    	 
+
 
 	Coupon::insert([
 		'coupon_name' => strtoupper($request->coupon_name),
-		'coupon_discount' => $request->coupon_discount, 
+		'coupon_discount' => $request->coupon_discount,
 		'coupon_validity' => $request->coupon_validity,
 		'created_at' => Carbon::now(),
 
@@ -42,7 +42,7 @@ class CouponController extends Controller
 
 		return redirect()->back()->with($notification);
 
-    } // end method 
+    }
 
 
 
@@ -56,7 +56,7 @@ class CouponController extends Controller
 
       Coupon::findOrFail($id)->update([
 		'coupon_name' => strtoupper($request->coupon_name),
-		'coupon_discount' => $request->coupon_discount, 
+		'coupon_discount' => $request->coupon_discount,
 		'coupon_validity' => $request->coupon_validity,
 		'created_at' => Carbon::now(),
 
@@ -70,7 +70,7 @@ class CouponController extends Controller
 		return redirect()->route('manage-coupon')->with($notification);
 
 
-    } // end mehtod 
+    }
 
 
     public function CouponDelete($id){
@@ -88,4 +88,3 @@ class CouponController extends Controller
 
 
 }
- 

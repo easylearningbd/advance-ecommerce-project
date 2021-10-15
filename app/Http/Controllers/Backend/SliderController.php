@@ -47,7 +47,7 @@ class SliderController extends Controller
 
         return redirect()->back()->with($notification);
 
-    } // end method
+    }
 
 
     public function SliderEdit($id)
@@ -103,7 +103,7 @@ class SliderController extends Controller
             return redirect()->route('manage-slider')->with($notification);
 
         } // end else
-    } // end method
+    }
 
 
     public function SliderDelete($id)
@@ -120,7 +120,7 @@ class SliderController extends Controller
 
         return redirect()->back()->with($notification);
 
-    } // end method
+    }
 
 
     public function SliderInactive($id)
@@ -134,7 +134,7 @@ class SliderController extends Controller
 
         return redirect()->back()->with($notification);
 
-    } // end method
+    }
 
 
     public function SliderActive($id)
@@ -148,7 +148,7 @@ class SliderController extends Controller
 
         return redirect()->back()->with($notification);
 
-    } // end method
+    }
 
 
 }

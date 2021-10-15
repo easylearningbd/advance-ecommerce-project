@@ -18,13 +18,13 @@ class SiteSettingController extends Controller
 
 
    public function SiteSettingUpdate(Request $request){
-    	
+
     	$setting_id = $request->id;
-    	 
+
 
     	if ($request->file('logo')) {
 
-    	 
+
     	$image = $request->file('logo');
     	$name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
     	Image::make($image)->resize(139,36)->save('upload/logo/'.$name_gen);
@@ -63,7 +63,7 @@ class SiteSettingController extends Controller
 		'twitter' => $request->twitter,
 		'linkedin' => $request->linkedin,
 		'youtube' => $request->youtube,
-		
+
 
     	]);
 
@@ -74,8 +74,8 @@ class SiteSettingController extends Controller
 
 		return redirect()->back()->with($notification);
 
-    	} // end else 
-    } // end method 
+    	} // end else
+    }
 
 
 
@@ -84,7 +84,7 @@ class SiteSettingController extends Controller
     	$seo = Seo::find(1);
     	return view('backend.setting.seo_update',compact('seo'));
     }
- 
+
 
     public function SeoSettingUpdate(Request $request){
 
@@ -95,7 +95,7 @@ class SiteSettingController extends Controller
 		'meta_author' => $request->meta_author,
 		'meta_keyword' => $request->meta_keyword,
 		'meta_description' => $request->meta_description,
-		'google_analytics' => $request->google_analytics,		 
+		'google_analytics' => $request->google_analytics,
 
     	]);
 
@@ -106,10 +106,9 @@ class SiteSettingController extends Controller
 
 		return redirect()->back()->with($notification);
 
-    } // end mehtod 
+    }
 
 
 
 
 }
- 

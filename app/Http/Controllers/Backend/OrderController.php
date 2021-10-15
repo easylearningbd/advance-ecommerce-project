@@ -83,7 +83,7 @@ class OrderController extends Controller
 		$orders = Order::where('status','pending')->orderBy('id','DESC')->get();
 		return view('backend.orders.pending_orders',compact('orders'));
 
-	} // end mehtod
+	}
 
 
 	// Pending Order Details
@@ -93,7 +93,7 @@ class OrderController extends Controller
     	$orderItem = OrderItem::with('product')->where('order_id',$order_id)->orderBy('id','DESC')->get();
     	return view('backend.orders.pending_orders_details',compact('order','orderItem'));
 
-	} // end method
+	}
 
 
 
@@ -102,7 +102,7 @@ class OrderController extends Controller
 		$orders = Order::where('status','confirm')->orderBy('id','DESC')->get();
 		return view('backend.orders.confirmed_orders',compact('orders'));
 
-	} // end mehtod
+	}
 
 
 	// Processing Orders
@@ -110,7 +110,7 @@ class OrderController extends Controller
 		$orders = Order::where('status','processing')->orderBy('id','DESC')->get();
 		return view('backend.orders.processing_orders',compact('orders'));
 
-	} // end mehtod
+	}
 
 
 		// Picked Orders
@@ -118,7 +118,7 @@ class OrderController extends Controller
 		$orders = Order::where('status','picked')->orderBy('id','DESC')->get();
 		return view('backend.orders.picked_orders',compact('orders'));
 
-	} // end mehtod
+	}
 
 
 
@@ -127,7 +127,7 @@ class OrderController extends Controller
 		$orders = Order::where('status','shipped')->orderBy('id','DESC')->get();
 		return view('backend.orders.shipped_orders',compact('orders'));
 
-	} // end mehtod
+	}
 
 
 			// Delivered Orders
@@ -135,7 +135,7 @@ class OrderController extends Controller
 		$orders = Order::where('status','delivered')->orderBy('id','DESC')->get();
 		return view('backend.orders.delivered_orders',compact('orders'));
 
-	} // end mehtod
+	}
 
 
 				// Cancel Orders
@@ -143,7 +143,7 @@ class OrderController extends Controller
 		$orders = Order::where('status','cancel')->orderBy('id','DESC')->get();
 		return view('backend.orders.cancel_orders',compact('orders'));
 
-	} // end mehtod
+	}
 
 
 
@@ -160,7 +160,7 @@ class OrderController extends Controller
 		return redirect()->route('pending-orders')->with($notification);
 
 
-	} // end method
+	}
 
 
 
@@ -178,7 +178,7 @@ class OrderController extends Controller
 		return redirect()->route('confirmed-orders')->with($notification);
 
 
-	} // end method
+	}
 
 
 
@@ -194,7 +194,7 @@ class OrderController extends Controller
 		return redirect()->route('processing-orders')->with($notification);
 
 
-	} // end method
+	}
 
 
 	 public function PickedToShipped($order_id){
@@ -209,7 +209,7 @@ class OrderController extends Controller
 		return redirect()->route('picked-orders')->with($notification);
 
 
-	} // end method
+	}
 
 
 	 public function ShippedToDelivered($order_id){
@@ -230,7 +230,7 @@ class OrderController extends Controller
 		return redirect()->route('shipped-orders')->with($notification);
 
 
-	} // end method
+	}
 
 
 	public function AdminInvoiceDownload($order_id){
@@ -244,7 +244,7 @@ class OrderController extends Controller
 		]);
 		return $pdf->download('invoice.pdf');
 
-	} // end method
+	}
 
 
 

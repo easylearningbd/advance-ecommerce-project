@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\Category;
-use App\Models\Brand; 
+use App\Models\Brand;
 use App\Models\Product;
 
 
@@ -30,12 +30,12 @@ class ShopController extends Controller
              $products = Product::where('status',1)->orderBy('id','DESC')->paginate(3);
         }
 
- 
+
         $brands = Brand::orderBy('brand_name_en','ASC')->get();
         $categories = Category::orderBy('category_name_en','ASC')->get();
         return view('frontend.shop.shop_page',compact('products','categories','brands'));
 
-    } // end Method 
+    }
 
 
 
@@ -54,11 +54,11 @@ class ShopController extends Controller
                   }else{
                     $catUrl .= ','.$category;
                   }
-               } // end foreach condition
-            } // end if condition 
+               }
+            }
 
 
- // Filter Brand 
+ // Filter Brand
 
         $brandUrl = "";
             if (!empty($data['brand'])) {
@@ -68,17 +68,16 @@ class ShopController extends Controller
                   }else{
                     $brandUrl .= ','.$brand;
                   }
-               } // end foreach condition
-            } // end if condition 
+               }
+            }
 
 
 
             return redirect()->route('shop.page',$catUrl.$brandUrl);
 
-    } // end Method 
+    }
 
 
 
 
 }
- 

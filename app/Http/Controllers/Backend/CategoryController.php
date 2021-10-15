@@ -109,7 +109,7 @@ class CategoryController extends Controller
 
 		return redirect()->back()->with($notification);
 
-    } // end method
+    }
 
 
     public function CategoryEdit($id){
@@ -140,7 +140,7 @@ class CategoryController extends Controller
 		return redirect()->route('all.category')->with($notification);
 
 
-    } // end method
+    }
 
 
     public function CategoryDelete($id){
@@ -154,7 +154,7 @@ class CategoryController extends Controller
 
 		return redirect()->back()->with($notification);
 
-    } // end method
+    }
 
 
 }

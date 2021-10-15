@@ -180,7 +180,7 @@ class ProductController extends Controller
         return redirect()->route('manage-product')->with($notification);
 
 
-    } // end method
+    }
 
 
     public function ManageProduct()
@@ -254,7 +254,7 @@ class ProductController extends Controller
         return redirect()->route('manage-product')->with($notification);
 
 
-    } // end method
+    }
 
 
 /// Multiple Image Update
@@ -273,10 +273,8 @@ class ProductController extends Controller
             MultiImg::where('id', $id)->update([
                 'photo_name' => $uploadPath,
                 'updated_at' => Carbon::now(),
-
             ]);
-
-        } // end foreach
+        }
 
         $notification = array(
             'message' => 'Product Image Updated Successfully',
@@ -285,7 +283,7 @@ class ProductController extends Controller
 
         return redirect()->back()->with($notification);
 
-    } // end mehtod
+    }
 
 
     /// Product Main Thambnail Update ///
@@ -316,7 +314,7 @@ class ProductController extends Controller
 
         return redirect()->back()->with($notification);
 
-    } // end method
+    }
 
 
     //// Multi Image Delete ////
@@ -337,7 +335,7 @@ class ProductController extends Controller
 
         return redirect()->back()->with($notification);
 
-    } // end method
+    }
 
 
     public function ProductInactive($id)

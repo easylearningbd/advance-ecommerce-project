@@ -10,7 +10,7 @@ use App\Models\Order;
 use App\Models\OrderItem;
 use Illuminate\Support\Facades\Session;
 use Auth;
-use Carbon\Carbon; 
+use Carbon\Carbon;
 
 use Illuminate\Support\Facades\Mail;
 use App\Mail\OrderMail;
@@ -25,10 +25,10 @@ class StripeController extends Controller
     	}else{
     		$total_amount = round(Cart::total());
     	}
- 
+
 	\Stripe\Stripe::setApiKey('sk_test_51IUTWzALc6pn5BvMjaRW9STAvY4pLiq1dNViHoh5KtqJc9Bx7d4WKlCcEdHOJdg3gCcC2F19cDxUmCBJekGSZXte00RN2Fc4vm');
 
-	 
+
 	$token = $_POST['stripeToken'];
 	$charge = \Stripe\Charge::create([
 	  'amount' => $total_amount*100,
@@ -64,11 +64,11 @@ class StripeController extends Controller
      	'order_month' => Carbon::now()->format('F'),
      	'order_year' => Carbon::now()->format('Y'),
      	'status' => 'pending',
-     	'created_at' => Carbon::now(),	 
+     	'created_at' => Carbon::now(),
 
      ]);
 
-     // Start Send Email 
+     // Start Send Email
      $invoice = Order::findOrFail($order_id);
      	$data = [
      		'invoice_no' => $invoice->invoice_no,
@@ -79,13 +79,13 @@ class StripeController extends Controller
 
      	Mail::to($request->email)->send(new OrderMail($data));
 
-     // End Send Email 
+     // End Send Email
 
 
      $carts = Cart::content();
      foreach ($carts as $cart) {
      	OrderItem::insert([
-     		'order_id' => $order_id, 
+     		'order_id' => $order_id,
      		'product_id' => $cart->id,
      		'color' => $cart->options->color,
      		'size' => $cart->options->size,
@@ -109,16 +109,15 @@ class StripeController extends Controller
 		);
 
 		return redirect()->route('dashboard')->with($notification);
- 
-
-    } // end method 
 
 
+    }
 
 
- 
+
+
+
 
 
 
 }
- 
