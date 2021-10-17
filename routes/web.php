@@ -167,6 +167,10 @@ Route::prefix('product')->group(function () {
     Route::post('/store', [ProductController::class, 'StoreProduct'])->name('product-store');
     Route::get('/manage', [ProductController::class, 'ManageProduct'])->name('manage-product');
 
+    Route::get('/edit/{id}/upload-video', [ProductController::class, 'EditProductMedia'])->name('product.edit.media');
+    Route::post('/media/update', [ProductController::class, 'MultiImageUpdate'])->name('update-product-media');
+    Route::get('/multiMedia/delete/{id}', [ProductController::class, 'MultiMediaDelete'])->name('product.multiMedia.delete');
+
     Route::get('/edit/{id}', [ProductController::class, 'EditProduct'])->name('product.edit');
 
     Route::post('/data/update', [ProductController::class, 'ProductDataUpdate'])->name('product-update');

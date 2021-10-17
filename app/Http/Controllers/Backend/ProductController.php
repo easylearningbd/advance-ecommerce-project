@@ -178,14 +178,11 @@ class ProductController extends Controller
         );
 
         return redirect()->route('manage-product')->with($notification);
-
-
     }
 
 
     public function ManageProduct()
     {
-
         $products = Product::latest()->get();
         return view('backend.product.product_view', compact('products'));
     }
@@ -193,16 +190,27 @@ class ProductController extends Controller
 
     public function EditProduct($id)
     {
-
         $multiImgs = MultiImg::where('product_id', $id)->get();
 
         $categories = Category::latest()->get();
         $brands = Brand::latest()->get();
         $subcategory = SubCategory::latest()->get();
-        $subsubcategory = SubSubCategory::latest()->get();
+        $subSubCategory = SubSubCategory::latest()->get();
         $products = Product::findOrFail($id);
-        return view('backend.product.product_edit', compact('categories', 'brands', 'subcategory', 'subsubcategory', 'products', 'multiImgs'));
+        return view('backend.product.product_edit', compact('categories', 'brands', 'subcategory', 'subSubCategory', 'products', 'multiImgs'));
+    }
 
+
+    public function EditProductMedia($id)
+    {
+        $multiImgs = MultiImg::where('product_id', $id)->get();
+
+        $categories = Category::latest()->get();
+        $brands = Brand::latest()->get();
+        $subcategory = SubCategory::latest()->get();
+        $subSubCategory = SubSubCategory::latest()->get();
+        $products = Product::findOrFail($id);
+        return view('backend.product.product_edit_media', compact( 'multiImgs'));
     }
 
 
@@ -252,8 +260,6 @@ class ProductController extends Controller
         );
 
         return redirect()->route('manage-product')->with($notification);
-
-
     }
 
 

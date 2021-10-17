@@ -3,16 +3,16 @@
 
 
   <!-- Content Wrapper. Contains page content -->
-  
+
 	  <div class="container-full">
 		<!-- Content Header (Page header) -->
-		 
+
 
 		<!-- Main content -->
 		<section class="content">
 		  <div class="row">
-			   
-		 
+
+
 
 			<div class="col-12">
 
@@ -33,7 +33,7 @@
 								<th>Discount </th>
 								<th>Status </th>
 								<th>Action</th>
-								 
+
 							</tr>
 						</thead>
 						<tbody>
@@ -44,7 +44,7 @@
 		 <td>{{ $item->selling_price }} $</td>
 		 <td>{{ $item->product_qty }} Pic</td>
 
-		 <td> 
+		 <td>
 		 	@if($item->discount_price == NULL)
 		 	<span class="badge badge-pill badge-danger">No Discount</span>
 
@@ -74,7 +74,9 @@
 		<td width="30%">
  <a href="{{ route('product.edit',$item->id) }}" class="btn btn-primary" title="Product Details Data"><i class="fa fa-eye"></i> </a>
 
- <a href="{{ route('product.edit',$item->id) }}" class="btn btn-info" title="Edit Data"><i class="fa fa-pencil"></i> </a>
+            <a href="{{ route('product.edit',$item->id) }}" class="btn btn-info" title="Edit Data"><i class="fa fa-pencil"></i> </a>
+
+            <a href="{{ route('product.edit.media',$item->id) }}" class="btn btn-info" title="Edit Media"><i class="fa fa-youtube"></i> </a>
 
  <a href="{{ route('product.delete',$item->id) }}" class="btn btn-danger" title="Delete Data" id="delete">
  	<i class="fa fa-trash"></i></a>
@@ -89,11 +91,11 @@
 
 
 		</td>
-							 
+
 	 </tr>
 	  @endforeach
 						</tbody>
-						 
+
 					  </table>
 					</div>
 				</div>
@@ -101,21 +103,21 @@
 			  </div>
 			  <!-- /.box -->
 
-			          
+
 			</div>
 			<!-- /.col -->
 
- 
- 
+
+
 
 
 		  </div>
 		  <!-- /.row -->
 		</section>
 		<!-- /.content -->
-	  
+
 	  </div>
-  
+
 
 
 
