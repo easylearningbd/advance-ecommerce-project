@@ -98,6 +98,7 @@ Route::get('/user/change/password', [IndexController::class, 'UserChangePassword
 Route::post('/user/password/update', [IndexController::class, 'UserPasswordUpdate'])->name('user.password.update');
 
 
+Route::middleware(['auth:admin'])->group(function () {
 // Admin Brand All Routes
 
 Route::prefix('brand')->group(function () {
@@ -210,6 +211,7 @@ Route::prefix('slider')->group(function () {
 
 });
 
+});
 
 //// Frontend All Routes /////
 /// Multi Language All Routes ////
