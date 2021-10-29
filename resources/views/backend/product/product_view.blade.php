@@ -76,7 +76,7 @@
 
             <a href="{{ route('product.edit',$item->id) }}" class="btn btn-info" title="Edit Data"><i class="fa fa-pencil"></i> </a>
 
-            <a href="{{ route('product.edit.media',$item->id) }}" class="btn btn-info" title="Edit Media"><i class="fa fa-youtube"></i> </a>
+            <a href="{{ route('product.view.video.lessons.list',$item->id) }}" class="btn btn-info" title="View List of Video Lessons"><i class="fa fa-youtube"></i> </a>
 
  <a href="{{ route('product.delete',$item->id) }}" class="btn btn-danger" title="Delete Data" id="delete">
  	<i class="fa fa-trash"></i></a>

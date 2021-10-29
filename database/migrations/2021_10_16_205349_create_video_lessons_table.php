@@ -28,6 +28,7 @@ class CreateVideoLessonsTable extends Migration
             $table->integer('downloads')->default(0);
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

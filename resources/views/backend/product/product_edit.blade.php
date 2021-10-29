@@ -15,7 +15,7 @@
 			<div class="box-header with-border">
 			  <h4 class="box-title">Edit Product </h4>
 
-                <a href="{{ route('product.edit.media',$products->id) }}" class="btn btn-info" title="Edit Media"><i class="fa fa-youtube"></i> </a>
+                <a href="{{ route('product.view.video.lessons.list',$products->id) }}" class="btn btn-info" title="Show Video Lesson List"><i class="fa fa-youtube"></i> </a>
 
 			</div>
 			<!-- /.box-header -->
