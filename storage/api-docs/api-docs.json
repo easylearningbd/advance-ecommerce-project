@@ -1,0 +1,473 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Green Shop Api Documentaion By Swagger",
+        "description": "Green Shop Service Api Documentation (BehAndam Admin Services)",
+        "contact": {
+            "email": "saber.tabatabaee@gmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "https://beitak.ir",
+            "description": "LOCAL API Server"
+        },
+        {
+            "url": "http://localhost:8000",
+            "description": "LOCAL API Server"
+        }
+    ],
+    "paths": {
+        "/api/users/profile/me": {
+            "get": {
+                "tags": [
+                    "User Management"
+                ],
+                "summary": "Get profile infos",
+                "description": "Get profile infos",
+                "operationId": "getProfileInformations",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/users/token/refresh": {
+            "post": {
+                "tags": [
+                    "User Management"
+                ],
+                "summary": "refresh token",
+                "description": "refresh token",
+                "operationId": "refresh token",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RefreshTokenRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/login": {
+            "post": {
+                "tags": [
+                    "User Management"
+                ],
+                "summary": "login with email",
+                "description": "login with email",
+                "operationId": "login",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/LoginRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/register": {
+            "post": {
+                "tags": [
+                    "User Management"
+                ],
+                "summary": "register with email",
+                "description": "register with email",
+                "operationId": "register",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RegisterRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/logout": {
+            "post": {
+                "tags": [
+                    "User Management"
+                ],
+                "summary": "logout with token",
+                "description": "logout with token",
+                "operationId": "logout",
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/blog-posts": {
+            "get": {
+                "tags": [
+                    "BlogPosts"
+                ],
+                "summary": "Returns BlogPost as json",
+                "description": "Returns BlogPost",
+                "operationId": "getBlogPost",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/blog-posts/{blogPostId}": {
+            "get": {
+                "tags": [
+                    "BlogPosts"
+                ],
+                "summary": "Returns BlogPost by id as json",
+                "description": "Returns BlogPost by id",
+                "operationId": "getBlogPostById",
+                "parameters": [
+                    {
+                        "name": "blogPostId",
+                        "in": "path",
+                        "description": "ID of BlogPost",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/brands": {
+            "get": {
+                "tags": [
+                    "Brands"
+                ],
+                "summary": "Returns brands as json",
+                "description": "Returns brands",
+                "operationId": "getBrands",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/brands/{brandId}": {
+            "get": {
+                "tags": [
+                    "Brands"
+                ],
+                "summary": "Returns Brand by id as json",
+                "description": "Returns Brand by id",
+                "operationId": "getBrandById",
+                "parameters": [
+                    {
+                        "name": "brandId",
+                        "in": "path",
+                        "description": "ID of BlobrandgPost",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/categories": {
+            "get": {
+                "tags": [
+                    "Categories"
+                ],
+                "summary": "Returns categories as json",
+                "description": "Returns categories",
+                "operationId": "getCategories",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/categories/{categoryId}": {
+            "get": {
+                "tags": [
+                    "Categories"
+                ],
+                "summary": "Returns category by id as json",
+                "description": "Returns category by id",
+                "operationId": "getCategoryById",
+                "parameters": [
+                    {
+                        "name": "categoryId",
+                        "in": "path",
+                        "description": "ID of category",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/orders": {
+            "get": {
+                "tags": [
+                    "Orders"
+                ],
+                "summary": "Returns orders as json",
+                "description": "Returns orders",
+                "operationId": "getOrders",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/orders/{orderId}": {
+            "get": {
+                "tags": [
+                    "Orders"
+                ],
+                "summary": "Returns order by id as json",
+                "description": "Returns orders by id",
+                "operationId": "getOrdersById",
+                "parameters": [
+                    {
+                        "name": "orderId",
+                        "in": "path",
+                        "description": "ID of order",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/products": {
+            "get": {
+                "tags": [
+                    "Products"
+                ],
+                "summary": "Returns products as json",
+                "description": "Returns products",
+                "operationId": "getProducts",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/products/{productId}": {
+            "get": {
+                "tags": [
+                    "Products"
+                ],
+                "summary": "Returns product by id as json",
+                "description": "Returns products by id",
+                "operationId": "getProductsbyid",
+                "parameters": [
+                    {
+                        "name": "productId",
+                        "in": "path",
+                        "description": "ID of product",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/users/reviews": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Returns reviews for current users as json",
+                "description": "Returns reviews",
+                "operationId": "getReviews",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "LoginRequest": {
+                "title": "LoginRequest",
+                "description": "Login Request",
+                "required": [
+                    "email",
+                    "password",
+                    "device_name"
+                ],
+                "type": "object",
+                "example": {
+                    "email": "saber.tabataba@gmail.com",
+                    "password": "adminadmin",
+                    "device_name": "flutter"
+                }
+            },
+            "RefreshTokenRequest": {
+                "title": "RefreshTokenRequest",
+                "description": "Refresh Token Request",
+                "required": [
+                    "token_name"
+                ],
+                "type": "object",
+                "example": {
+                    "token_name": "web:read"
+                }
+            },
+            "RegisterRequest": {
+                "title": "RegisterRequest",
+                "description": "Register Request",
+                "required": [
+                    "name",
+                    "email",
+                    "password",
+                    "password_confirmation",
+                    "device_name"
+                ],
+                "type": "object",
+                "example": {
+                    "name": "saber.tabataba@gmail.com",
+                    "email": "saber.tabataba@gmail.com",
+                    "password": "adminadmin",
+                    "password_confirmation": "adminadmin",
+                    "device_name": "flutter"
+                }
+            }
+        },
+        "securitySchemes": {
+            "bearer": {
+                "type": "http",
+                "description": "Use username & password for token",
+                "name": "BearerAuth",
+                "scheme": "bearer"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Green Shop Service",
+            "description": "API Endpoints of Green Shop Service"
+        }
+    ],
+    "security": [
+        []
+    ]
+}

@@ -22,7 +22,7 @@ class SiteSettingsTableSeeder extends Seeder
             0 => 
             array (
                 'id' => 1,
-                'logo' => 'logo.png',
+                'logo' => 'upload/logo/1708279183450497.jpg',
                 'phone_one' => '876786',
                 'phone_two' => '869768',
                 'email' => 'saber@domain.com',
@@ -33,7 +33,7 @@ class SiteSettingsTableSeeder extends Seeder
                 'linkedin' => 'linkedin',
                 'youtube' => 'youtube',
                 'created_at' => NULL,
-                'updated_at' => NULL,
+                'updated_at' => '2021-08-16 19:26:22',
             ),
         ));
         

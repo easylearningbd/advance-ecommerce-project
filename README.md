@@ -1,12 +1,3 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
-
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
-
 ## About This Project
 
 This project use Laravel. 
@@ -43,6 +34,37 @@ then login in admin panel with localhost:8000/admin/login
 
 user:admin@admin.com
 pass:1234567890
+=======
+install composer 
+
+run composer install
+
+run cp .env.example .env
+
+create db and config DB_.. key in .env file
+
+run php artisan key:gen
+
+run php artisan migrate
+
+run php artisan serve
+
+if you want to use it as microservice read [As Microservice] of this readme file below.
+
+## As Microservice
+
+if you use this app as microservice you should config
+``` AS_MICROSERVICE=1 ``` in your project .env file
+
+## Documentation
+
+For swagger documentations please open : localhost:8000/api/documentation
+
+## CPANEL
+
+ - your php version should be 7.4
+ - mbstring and fileinfo installed in extension tab
+ - composer update needed if upgrade
 
 
 ## License

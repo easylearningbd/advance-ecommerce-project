@@ -10,7 +10,7 @@ use Carbon\Carbon;
 
 class WishlistController extends Controller
 {
-    
+
 	public function ViewWishlist(){
 		return view('frontend.wishlist.view_wishlist');
 	}
@@ -19,7 +19,7 @@ class WishlistController extends Controller
 
 		$wishlist = Wishlist::with('product')->where('user_id',Auth::id())->latest()->get();
 		return response()->json($wishlist);
-	} // end mehtod 
+	}
 
 
 	public function RemoveWishlistProduct($id){
@@ -29,8 +29,7 @@ class WishlistController extends Controller
 	}
 
 
-	
+
 
 
 }
- 

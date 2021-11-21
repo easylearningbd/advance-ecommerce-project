@@ -14,7 +14,7 @@ class ReturnController extends Controller
     	return view('backend.return_order.return_request',compact('orders'));
 
     }
-  
+
 
     public function ReturnRequestApprove($order_id){
 
@@ -28,7 +28,7 @@ class ReturnController extends Controller
         return redirect()->back()->with($notification);
 
 
-    } // end mehtod 
+    }
 
 
     public function ReturnAllRequest(){
@@ -40,4 +40,3 @@ class ReturnController extends Controller
 
 
 }
- 

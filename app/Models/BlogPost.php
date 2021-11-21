@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use BFilters\Traits\HasFilter;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Blog\BlogPostCategory;
@@ -9,6 +10,8 @@ use App\Models\Blog\BlogPostCategory;
 class BlogPost extends Model
 {
     use HasFactory;
+    use HasFilter;
+
     protected $guarded = [];
 
 
@@ -19,4 +22,3 @@ class BlogPost extends Model
 
 
 }
-   

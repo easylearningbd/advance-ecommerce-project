@@ -29,7 +29,7 @@ class CartPageController extends Controller
 
     	));
 
-    } //end method 
+    } //end method
 
 
 
@@ -44,7 +44,7 @@ class CartPageController extends Controller
     }
 
 
- // Cart Increment 
+ // Cart Increment
     public function CartIncrement($rowId){
         $row = Cart::get($rowId);
         Cart::update($rowId, $row->qty + 1);
@@ -57,18 +57,18 @@ class CartPageController extends Controller
            Session::put('coupon',[
                 'coupon_name' => $coupon->coupon_name,
                 'coupon_discount' => $coupon->coupon_discount,
-                'discount_amount' => round(Cart::total() * $coupon->coupon_discount/100), 
-                'total_amount' => round(Cart::total() - Cart::total() * $coupon->coupon_discount/100)  
+                'discount_amount' => round(Cart::total() * $coupon->coupon_discount/100),
+                'total_amount' => round(Cart::total() - Cart::total() * $coupon->coupon_discount/100)
             ]);
         }
- 
+
 
         return response()->json('increment');
 
-    } // end mehtod 
+    }
 
 
-   // Cart Decrement  
+   // Cart Decrement
     public function CartDecrement($rowId){
 
         $row = Cart::get($rowId);
@@ -82,17 +82,17 @@ class CartPageController extends Controller
            Session::put('coupon',[
                 'coupon_name' => $coupon->coupon_name,
                 'coupon_discount' => $coupon->coupon_discount,
-                'discount_amount' => round(Cart::total() * $coupon->coupon_discount/100), 
-                'total_amount' => round(Cart::total() - Cart::total() * $coupon->coupon_discount/100)  
+                'discount_amount' => round(Cart::total() * $coupon->coupon_discount/100),
+                'total_amount' => round(Cart::total() - Cart::total() * $coupon->coupon_discount/100)
             ]);
         }
 
         return response()->json('Decrement');
 
-    }// end mehtod 
+    }// end mehtod
 
 
 
-} 
+}
 
 

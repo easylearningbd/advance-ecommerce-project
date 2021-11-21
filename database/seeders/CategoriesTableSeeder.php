@@ -23,8 +23,8 @@ class CategoriesTableSeeder extends Seeder
             array (
                 'id' => 1,
                 'category_name_en' => 'Sea Fish',
-                'category_name_hin' => '',
-                'category_slug_en' => '',
+                'category_name_hin' => 'ماهی دریا',
+                'category_slug_en' => 'sea_fish',
                 'category_slug_hin' => '',
                 'category_icon' => '',
                 'user_id' => NULL,
@@ -36,7 +36,7 @@ class CategoriesTableSeeder extends Seeder
             array (
                 'id' => 2,
                 'category_name_en' => 'Woman',
-                'category_name_hin' => '',
+                'category_name_hin' => 'خانم',
                 'category_slug_en' => '',
                 'category_slug_hin' => '',
                 'category_icon' => '',
@@ -49,7 +49,7 @@ class CategoriesTableSeeder extends Seeder
             array (
                 'id' => 3,
                 'category_name_en' => 'Man Item',
-                'category_name_hin' => '',
+                'category_name_hin' => 'لوازم مردانه',
                 'category_slug_en' => '',
                 'category_slug_hin' => '',
                 'category_icon' => '',
@@ -62,7 +62,7 @@ class CategoriesTableSeeder extends Seeder
             array (
                 'id' => 4,
                 'category_name_en' => 'Fish',
-                'category_name_hin' => '',
+                'category_name_hin' => 'ماهی',
                 'category_slug_en' => '',
                 'category_slug_hin' => '',
                 'category_icon' => '',
@@ -75,7 +75,7 @@ class CategoriesTableSeeder extends Seeder
             array (
                 'id' => 6,
                 'category_name_en' => 'hello1',
-                'category_name_hin' => '',
+                'category_name_hin' => 'سلام',
                 'category_slug_en' => '',
                 'category_slug_hin' => '',
                 'category_icon' => '',
@@ -88,7 +88,7 @@ class CategoriesTableSeeder extends Seeder
             array (
                 'id' => 7,
                 'category_name_en' => 'Car',
-                'category_name_hin' => '',
+                'category_name_hin' => 'ماشین',
                 'category_slug_en' => '',
                 'category_slug_hin' => '',
                 'category_icon' => '',
@@ -101,8 +101,8 @@ class CategoriesTableSeeder extends Seeder
             array (
                 'id' => 8,
                 'category_name_en' => 'Ariyan',
-                'category_name_hin' => '',
-                'category_slug_en' => '',
+                'category_name_hin' => 'آرین',
+                'category_slug_en' => 'arian',
                 'category_slug_hin' => '',
                 'category_icon' => '',
                 'user_id' => NULL,
@@ -114,8 +114,8 @@ class CategoriesTableSeeder extends Seeder
             array (
                 'id' => 9,
                 'category_name_en' => 'Woman222',
-                'category_name_hin' => '',
-                'category_slug_en' => '',
+                'category_name_hin' => 'زنان222',
+                'category_slug_en' => 'woman222',
                 'category_slug_hin' => '',
                 'category_icon' => '',
                 'user_id' => NULL,

@@ -11,7 +11,7 @@ use App\Models\ShipState;
 
 class ShippingAreaController extends Controller
 {
-    
+
 	public function DivisionView(){
 		$divisions = ShipDivision::orderBy('id','DESC')->get();
 		return view('backend.ship.division.view_division',compact('divisions'));
@@ -22,13 +22,13 @@ class ShippingAreaController extends Controller
 public function DivisionStore(Request $request){
 
     	$request->validate([
-    		'division_name' => 'required',   	 
-    	 
+    		'division_name' => 'required',
+
     	]);
-    	 
+
 
 	ShipDivision::insert([
-	 
+
 		'division_name' => $request->division_name,
 		'created_at' => Carbon::now(),
 
@@ -41,7 +41,7 @@ public function DivisionStore(Request $request){
 
 		return redirect()->back()->with($notification);
 
-    } // end method 
+    }
 
 
 
@@ -56,7 +56,7 @@ public function DivisionStore(Request $request){
     public function DivisionUpdate(Request $request,$id){
 
     	ShipDivision::findOrFail($id)->update([
-	 
+
 		'division_name' => $request->division_name,
 		'created_at' => Carbon::now(),
 
@@ -70,7 +70,7 @@ public function DivisionStore(Request $request){
 		return redirect()->route('manage-division')->with($notification);
 
 
-    } // end mehtod 
+    }
 
 
     public function DivisionDelete($id){
@@ -84,11 +84,11 @@ public function DivisionStore(Request $request){
 
 		return redirect()->back()->with($notification);
 
-    } // end method 
+    }
 
 
 
-    //// Start Ship District 
+    //// Start Ship District
 
     public function DistrictView(){
     $division = ShipDivision::orderBy('division_name','ASC')->get();
@@ -100,14 +100,14 @@ public function DivisionStore(Request $request){
 public function DistrictStore(Request $request){
 
     	$request->validate([
-    		'division_id' => 'required',  
-    		'district_name' => 'required',  	 
-    	 
+    		'division_id' => 'required',
+    		'district_name' => 'required',
+
     	]);
-    	 
+
 
 	ShipDistrict::insert([
-	 
+
 		'division_id' => $request->division_id,
 		'district_name' => $request->district_name,
 		'created_at' => Carbon::now(),
@@ -121,7 +121,7 @@ public function DistrictStore(Request $request){
 
 		return redirect()->back()->with($notification);
 
-    } // end method 
+    }
 
 
 
@@ -138,7 +138,7 @@ public function DistrictEdit($id){
  public function DistrictUpdate(Request $request,$id){
 
     	ShipDistrict::findOrFail($id)->update([
-	 
+
 		'division_id' => $request->division_id,
 		'district_name' => $request->district_name,
 		'created_at' => Carbon::now(),
@@ -153,7 +153,7 @@ public function DistrictEdit($id){
 		return redirect()->route('manage-district')->with($notification);
 
 
-    } // end mehtod 
+    }
 
 
 
@@ -170,8 +170,8 @@ public function DistrictEdit($id){
 
 		return redirect()->back()->with($notification);
 
-    } // end method 
- 
+    }
+
 
    //// End Ship District
 
@@ -191,15 +191,15 @@ public function DistrictEdit($id){
     public function StateStore(Request $request){
 
     	$request->validate([
-    		'division_id' => 'required',  
-    		'district_id' => 'required', 
-    		'state_name' => 'required', 	 
-    	 
+    		'division_id' => 'required',
+    		'district_id' => 'required',
+    		'state_name' => 'required',
+
     	]);
-    	 
+
 
 	ShipState::insert([
-	 
+
 		'division_id' => $request->division_id,
 		'district_id' => $request->district_id,
 		'state_name' => $request->state_name,
@@ -214,7 +214,7 @@ public function DistrictEdit($id){
 
 		return redirect()->back()->with($notification);
 
-    } // end method 
+    }
 
 
 public function StateEdit($id){
@@ -230,7 +230,7 @@ public function StateEdit($id){
  public function StateUpdate(Request $request,$id){
 
     	ShipState::findOrFail($id)->update([
-	 
+
 		'division_id' => $request->division_id,
 		'district_id' => $request->district_id,
 		'state_name' => $request->state_name,
@@ -246,7 +246,7 @@ public function StateEdit($id){
 		return redirect()->route('manage-state')->with($notification);
 
 
-    } // end mehtod 
+    }
 
 
 public function StateDelete($id){
@@ -260,7 +260,7 @@ public function StateDelete($id){
 
 		return redirect()->back()->with($notification);
 
-    } // end method 
+    }
 
 
     //////////////// End Ship State ////////////
@@ -271,8 +271,7 @@ public function StateDelete($id){
 
 
 
-    
+
 
 
 }
- 

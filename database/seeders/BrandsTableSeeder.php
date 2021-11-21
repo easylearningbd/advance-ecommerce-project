@@ -23,12 +23,12 @@ class BrandsTableSeeder extends Seeder
             array (
                 'id' => 1,
                 'brand_name_en' => 'Apple',
-                'brand_name_hin' => '',
-                'brand_slug_en' => '',
-                'brand_slug_hin' => '',
-                'brand_image' => 'image/brand/1679749232360186.png',
+                'brand_name_hin' => 'سیب',
+                'brand_slug_en' => 'apple',
+                'brand_slug_hin' => 'سیب',
+                'brand_image' => 'upload/brand/1708281442402207.jpg',
                 'created_at' => '2020-10-01 17:57:16',
-                'updated_at' => '2020-10-05 19:05:00',
+                'updated_at' => '2021-08-16 20:02:16',
             ),
             1 => 
             array (

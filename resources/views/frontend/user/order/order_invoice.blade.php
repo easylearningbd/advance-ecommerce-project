@@ -56,7 +56,7 @@
                Email:support@easylearningbd.com <br>
                Mob: 1245454545 <br>
                Dhaka 1207,Dhanmondi:#4 <br>
-              
+
             </pre>
         </td>
     </tr>
@@ -79,7 +79,7 @@
             $dis = $order->district->district_name;
             $state = $order->state->state_name;
            @endphp
-            
+
            <strong>Address:</strong> {{ $div }},{{ $dis }}.{{ $state }} <br>
            <strong>Post Code:</strong> {{ $order->post_code }}
          </p>
@@ -126,7 +126,7 @@
           @else
             {{ $item->size }}
           @endif
-            
+
         </td>
         <td align="center">{{ $item->color }}</td>
         <td align="center">{{ $item->product->product_code }}</td>
@@ -135,7 +135,7 @@
         <td align="center">${{ $item->price * $item->qty }} </td>
       </tr>
       @endforeach
-      
+
     </tbody>
   </table>
   <br>
@@ -143,7 +143,7 @@
     <tr>
         <td align="right" >
             <h2><span style="color: green;">Subtotal:</span>${{ $order->amount }}</h2>
-            <h2><span style="color: green;">Total:</span> ${{ $order->amount }}</h2>
+            <h2><span style="color: green;">Total:</span> {{ $order->amount }} {{trans('site.CURRENCYTYPE')}} </h2>
             {{-- <h2><span style="color: green;">Full Payment PAID</h2> --}}
         </td>
     </tr>

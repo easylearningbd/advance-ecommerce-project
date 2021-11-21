@@ -46,6 +46,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
 
     <script src="https://js.stripe.com/v3/"></script>
+
 </head>
 <body class="cnt-home">
 <!-- ============================================== HEADER ============================================== -->
@@ -131,7 +132,6 @@
 
                     </div><!-- // end col md -->
 
-
                     <div class="col-md-4">
 
                         <ul class="list-group">
@@ -151,6 +151,7 @@
                         </ul>
 
                     </div><!-- // end col md -->
+
 
 
                     <div class="col-md-4">
@@ -222,6 +223,7 @@
                 $('#product_id').val(id);
                 $('#qty').val(1);
 
+
                 // Product Price
                 if (data.product.discount_price == null) {
                     $('#pprice').text('');
@@ -254,6 +256,7 @@
                     $('select[name="color"]').append('<option value=" ' + value + ' ">' + value + ' </option>')
                 }) // end color
 
+
                 // Size
                 $('select[name="size"]').empty();
                 $.each(data.size, function (key, value) {
@@ -265,6 +268,7 @@
                     }
 
                 }) // end size
+
 
 
             }
@@ -328,6 +332,7 @@
 
     // End Add To Cart Product
 
+
 </script>
 
 <script type="text/javascript">
@@ -349,8 +354,8 @@
               <div class="image"> <a href="detail.html"><img src="/${value.options.image}" alt=""></a> </div>
             </div>
             <div class="col-xs-7">
-              <h3 class="name"><a href="index.php?page-detail">${value.name}</a></h3>
-              <div class="price"> ${value.price} * ${value.qty} </div>
+              <h3 class="name"><a href="index.php?page-detail"> {value.name} {{trans('site.CURRENCYTYPE')}}</a></h3>
+              <div class="price"> {value.price} * ${value.qty} {{trans('site.CURRENCYTYPE')}}  </div>
             </div>
             <div class="col-xs-1 action">
             <button type="submit" id="${value.rowId}" onclick="miniCartRemove(this.id)"><i class="fa fa-trash"></i></button> </div>
@@ -384,6 +389,7 @@
                     icon: 'success',
                     showConfirmButton: false,
                     timer: 3000
+
                     })
                     if ($.isEmptyObject(data.error)) {
                     Toast.fire({
@@ -409,11 +415,13 @@
                     //  end mini cart remove
 
 
+
 </script>
 
 <!--  /// Start Add Wishlist Page  //// -->
 
 <script type="text/javascript">
+
 
     function addToWishList(product_id) {
         $.ajax({
@@ -431,6 +439,7 @@
                     showConfirmButton: false,
                     timer: 3000
                 })
+
                 if ($.isEmptyObject(data.error)) {
                     Toast.fire({
                         type: 'success',
@@ -497,6 +506,7 @@
                 </tr>`
                 });
 
+
                 $('#wishlist').html(rows);
             }
         })
@@ -508,6 +518,7 @@
 
     ///  Wishlist remove Start
     function wishlistRemove(id) {
+
         $.ajax({
             type: 'GET',
             url: '/user/wishlist-remove/' + id,
@@ -523,6 +534,7 @@
                     showConfirmButton: false,
                     timer: 3000
                 })
+
                 if ($.isEmptyObject(data.error)) {
                     Toast.fire({
                         type: 'success',
@@ -550,6 +562,7 @@
 
 
 </script>
+
 
 <!-- /// End Load Wisch list Data  -->
 
@@ -588,6 +601,7 @@
                         :
                         `<strong>${value.options.size} </strong>`
                     }
+
             </td>
 
            <td class="col-md-2">
@@ -598,6 +612,7 @@
 
                         : `<button type="submit" class="btn btn-danger btn-sm" disabled >-</button> `
                     }
+
 
 
         <input type="text" value="${value.qty}" min="1" max="100" disabled="" style="width:25px;" >
@@ -616,6 +631,7 @@
         </td>
                 </tr>`
                 });
+
 
                 $('#cartPage').html(rows);
             }
@@ -709,6 +725,7 @@
 
 
     // ---------- END CART Decrement -----///
+
 
 
 </script>
@@ -835,7 +852,6 @@
                 $('#couponField').show();
                 $('#coupon_name').val('');
 
-
                 // Start Message
                 const Toast = Swal.mixin({
                     toast: true,
@@ -844,6 +860,7 @@
                     showConfirmButton: false,
                     timer: 3000
                 })
+
                 if ($.isEmptyObject(data.error)) {
                     Toast.fire({
                         type: 'success',

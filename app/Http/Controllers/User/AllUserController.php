@@ -11,7 +11,7 @@ use App\Models\OrderItem;
 use Illuminate\Support\Facades\Session;
 use Auth;
 use Carbon\Carbon;
- 
+
 use App\Mail\OrderMail;
 use PDF;
 
@@ -22,7 +22,7 @@ class AllUserController extends Controller
     	$orders = Order::where('user_id',Auth::id())->orderBy('id','DESC')->get();
     	return view('frontend.user.order.order_view',compact('orders'));
 
-    } // end mehtod 
+    }
 
 
 
@@ -32,7 +32,7 @@ class AllUserController extends Controller
     	$orderItem = OrderItem::with('product')->where('order_id',$order_id)->orderBy('id','DESC')->get();
     	return view('frontend.user.order.order_details',compact('order','orderItem'));
 
-    } // end mehtod 
+    }
 
 
 
@@ -48,7 +48,7 @@ class AllUserController extends Controller
 
 
 
-    } // end mehtod 
+    }
 
 
     public function ReturnOrder(Request $request,$order_id){
@@ -67,7 +67,7 @@ class AllUserController extends Controller
 
         return redirect()->route('my.orders')->with($notification);
 
-    } // end method 
+    }
 
 
 
@@ -76,7 +76,7 @@ class AllUserController extends Controller
         $orders = Order::where('user_id',Auth::id())->where('return_reason','!=',NULL)->orderBy('id','DESC')->get();
         return view('frontend.user.order.return_order_view',compact('orders'));
 
-    } // end method 
+    }
 
 
 
@@ -85,7 +85,7 @@ class AllUserController extends Controller
         $orders = Order::where('user_id',Auth::id())->where('status','cancel')->orderBy('id','DESC')->get();
         return view('frontend.user.order.cancel_order_view',compact('orders'));
 
-    } // end method 
+    }
 
 
 
@@ -98,7 +98,7 @@ class AllUserController extends Controller
         $track = Order::where('invoice_no',$invoice)->first();
 
         if ($track) {
-            
+
             // echo "<pre>";
             // print_r($track);
 
@@ -115,10 +115,9 @@ class AllUserController extends Controller
 
         }
 
-    } // end mehtod 
+    }
 
 
 
 
 }
- 
