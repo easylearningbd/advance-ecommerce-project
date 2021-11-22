@@ -118,9 +118,16 @@ class ProductController extends Controller
      *   )
      * )
      */
-    public function show(int $id)
+    public function show(int $productId)
     {
-        $entry = Product::query()->findOrFail($id);
+        $entry = Product::query()->findOrFail($productId);
+        $videoLessons = VideoLesson::query()->where('product_id', $productId)->get();
+        $entry['lessons'] = $videoLessons;
+
+        foreach ($entry['lessons'] as $key => $lesson) {
+            $entry['lessons'][$key]['video'] = $entry['lessons'][$key]['is_free'] == 0 ? null : $lesson->getFirstMediaUrl('videoList');
+        }
+
         return response(new ProductResource(['data' => $entry]));
     }
 
@@ -252,7 +259,7 @@ class ProductController extends Controller
 
     public function UploadVideoLesson($productId)
     {
-        return view('backend.product.product_edit_media', compact( 'productId'));
+        return view('backend.product.product_edit_media', compact('productId'));
     }
 
     public function MultiMediaUpdate(Request $request, int $productId)
