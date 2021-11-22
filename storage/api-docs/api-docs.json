@@ -299,6 +299,22 @@
                 }
             }
         },
+        "/api/homepage": {
+            "get": {
+                "tags": [
+                    "Homepage"
+                ],
+                "summary": "Returns homepage as json",
+                "description": "Returns homepage",
+                "operationId": "getHomepage",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
         "/api/orders": {
             "get": {
                 "tags": [
