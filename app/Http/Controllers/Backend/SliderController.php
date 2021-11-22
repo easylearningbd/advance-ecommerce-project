@@ -3,12 +3,40 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Filters\SliderFilter;
+use App\Http\Resources\SliderResourceCollection;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 use Image;
 
 class SliderController extends Controller
 {
+
+    /**
+     * @OA\Get(path="/api/sliders",
+     *   tags={"Sliders"},
+     *   summary="Returns sliders as json",
+     *   description="Returns sliders",
+     *   operationId="getSliders",
+     *   parameters={},
+     *   @OA\Response(
+     *     response=200,
+     *     description="successful operation",
+     *     @OA\Schema(
+     *       additionalProperties={
+     *         "type":"integer",
+     *         "format":"int32"
+     *       }
+     *     )
+     *   )
+     * )
+     */
+    public function index(SliderFilter $filters)
+    {
+        [$entries, $count, $sum] = Slider::filter($filters);
+        $entries = $entries->get();
+        return response(new SliderResourceCollection(['data' => $entries, 'count' => $count]));
+    }
 
     public function SliderView()
     {
