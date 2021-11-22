@@ -387,6 +387,22 @@
                 }
             }
         },
+        "/api/sliders": {
+            "get": {
+                "tags": [
+                    "Sliders"
+                ],
+                "summary": "Returns sliders as json",
+                "description": "Returns sliders",
+                "operationId": "getSliders",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
         "/api/users/reviews": {
             "get": {
                 "tags": [

@@ -15,6 +15,13 @@ run php artisan migrate
 
 run php artisan serve
 
+if you want to use it as microservice read [As Microservice] of this readme file below.
+
+## As Microservice
+
+if you use this app as microservice you should config
+``` AS_MICROSERVICE=1 ``` in your project .env file
+
 ## Documentation
 
 For swagger documentations please open : localhost:8000/api/documentation
