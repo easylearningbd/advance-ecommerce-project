@@ -33,6 +33,11 @@ Route::prefix('sliders')->group(function () {
     Route::get('/', [\App\Http\Controllers\Backend\SliderController::class, 'index'])->name('sliders.index');
 });
 
+// Homepage Client
+Route::prefix('homepage')->group(function () {
+    Route::get('/', [\App\Http\Controllers\Backend\HomePageController::class, 'index'])->name('homepage.index');
+});
+
 // BlogPosts
 Route::prefix('blog-posts')->group(function () {
     Route::get('/', [\App\Http\Controllers\Backend\BlogController::class, 'index'])->name('blog.posts.index');
