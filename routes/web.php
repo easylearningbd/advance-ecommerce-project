@@ -549,3 +549,11 @@ Route::post('search-product', [IndexController::class, 'SearchProduct']);
 // Shop Page Route
 Route::get('/shop', [ShopController::class, 'ShopPage'])->name('shop.page');
 Route::post('/shop/filter', [ShopController::class, 'ShopFilter'])->name('shop.filter');
+
+
+
+// download
+Route::prefix('download')->group(function () {
+    Route::get('/{orderItemHashedKey}/{productId}/{lessonId}', [\App\Http\Controllers\Backend\MediaController::class, 'download'])->name('download.video');
+});
+

@@ -14,6 +14,7 @@ use App\Models\Product;
 use App\Models\SubCategory;
 use App\Models\SubSubCategory;
 use App\Models\VideoLesson;
+use App\Services\MediaHelper;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
@@ -124,8 +125,10 @@ class ProductController extends Controller
         $videoLessons = VideoLesson::query()->where('product_id', $productId)->get();
         $entry['lessons'] = $videoLessons;
 
-        foreach ($entry['lessons'] as $key => $lesson) {
-            $entry['lessons'][$key]['video'] = $entry['lessons'][$key]['is_free'] == 0 ? null : $lesson->getFirstMediaUrl('videoList');
+        foreach ($entry['lessons'] as $key => $videoLesson) {
+            $medias = $videoLesson->getMedia('videoList');
+            $mediaItem = $medias->first();
+            $entry['lessons'][$key]['video'] = $entry['lessons'][$key]['is_free'] == 0 ? MediaHelper::getHashedMediaUrlByLessonId($videoLesson->id) : $videoLesson->getFirstMediaUrl('videoList');
         }
 
         return response(new ProductResource(['data' => $entry]));
