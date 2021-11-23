@@ -419,6 +419,34 @@
                 }
             }
         },
+        "/api/users/{userId}/products/payed": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Returns payed products",
+                "description": "Returns payed products",
+                "operationId": "getPayedProducts",
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "description": "userId",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
         "/api/users/reviews": {
             "get": {
                 "tags": [
