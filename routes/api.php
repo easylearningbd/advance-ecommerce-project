@@ -57,6 +57,7 @@ Route::prefix('categories')->group(function () {
     Route::get('/{id}', [\App\Http\Controllers\Backend\CategoryController::class, 'show'])->name('category.show');
 });
 
+
 Route::middleware('auth:sanctum')->group(function () {
 
     Route::prefix('users')->group(function () {
@@ -73,6 +74,13 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 });
 
+
+Route::prefix('users/{userId}')->group(function () {
+    // product that payed
+    Route::prefix('products/payed')->group(function () {
+        Route::get('/', [\App\Http\Controllers\Backend\UserController::class, 'payedProducts'])->name('users.payed.products');
+    });
+});
 
 Route::post('/login', [AuthenticationController::class, 'loginEmail']);
 //register new user
