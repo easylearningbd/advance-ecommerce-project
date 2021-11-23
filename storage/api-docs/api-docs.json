@@ -315,6 +315,55 @@
                 }
             }
         },
+        "/download/{orderItemHashedKey}/{productId}/{lessonId}": {
+            "get": {
+                "tags": [
+                    "Media"
+                ],
+                "summary": "Returns download link",
+                "description": "Returns  download link",
+                "operationId": "getDownloadLink",
+                "parameters": [
+                    {
+                        "name": "orderItemHashedKey",
+                        "in": "path",
+                        "description": "orderItemHashedKey",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "d167774a-5b88-434d-861d-70a16a0b3d54"
+                    },
+                    {
+                        "name": "productId",
+                        "in": "path",
+                        "description": "productId",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        },
+                        "example": "1"
+                    },
+                    {
+                        "name": "lessonId",
+                        "in": "path",
+                        "description": "lessonId",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
         "/api/orders": {
             "get": {
                 "tags": [
