@@ -1,8 +1,7 @@
 <?php
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthenticationController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -89,5 +88,6 @@ Route::post('/register', [AuthenticationController::class, 'register']);
 Route::post('/login', [AuthenticationController::class, 'login']);
 
 
-
-
+Route::prefix('test')->group(function () {
+    Route::get('/{videoLessonId}', [\App\Services\MediaHelper::class, 'getHashedMediaUrlByLessonId'])->name('test');
+});
