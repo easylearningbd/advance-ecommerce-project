@@ -20,6 +20,7 @@ pipeline{
     }
     
     post{
+        
         success{
             mattermostSend color: 'good', message: "$LOG_OUTPUT_URL", text: "job #$BUILD_NUMBER $GIT_BRANCH@$PROJECT_NAME succeed"
         }
