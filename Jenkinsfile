@@ -1,6 +1,5 @@
 pipeline{
     agent any
-    
     environment{
         PROJECT_NAME = env.JOB_NAME.minus("/${env.JOB_BASE_NAME}").minus("behamin/");
         LOG_OUTPUT_URL = "${BUILD_URL}display/redirect";
