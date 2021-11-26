@@ -5,9 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Http\Filters\SliderFilter;
 use App\Http\Resources\SliderResourceCollection;
-use App\Models\Category;
-use App\Models\Product;
-use App\Models\Slider;
+use App\Services\HomePagePlaceHolderService;
 use Image;
 
 class HomePageController extends Controller
@@ -34,32 +32,11 @@ class HomePageController extends Controller
      */
     public function index(SliderFilter $filters)
     {
-        $config = config('homepage');
-//        dd($config['sliders'][0]);
+        $homePagePlaceHolderConfigs = config('homepage');
+
         $data = [];
-
-        foreach ($config['sliders'] as $item) {
-            $sliders = Slider::query()->whereIn('id', $item);
-            $slidersItems = $sliders->get();
-            $data['sliders'][] = $slidersItems;
-        }
-
-        foreach ($config['categories'] as $item) {
-            $products = Product::query()->where('category_id', $item);
-            $productItems = $products->get();
-            $data['product_categories']['products'][] = $productItems;
-        }
-
-//        foreach ($config['categories'] as $key => $item) {
-//            $categories = Category::query()->where('id', $item);
-//            $categoryItems = $categories->get();
-//            $data['products'][$key]['category'] = $categoryItems;
-//        }
-
-        foreach ($config['categories'] as $key => $item) {
-            $categories = Category::query()->where('id', $item);
-            $categoryItems = $categories->get();
-            $data['product_categories']['categories'][] = $categoryItems;
+        foreach ($homePagePlaceHolderConfigs as $config){
+            $data[] = HomePagePlaceHolderService::getContent($config);
         }
 
         return response(new SliderResourceCollection(['data' => $data]));

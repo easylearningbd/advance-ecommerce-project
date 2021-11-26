@@ -4,13 +4,13 @@
 namespace App\Interfaces\Repositories;
 
 
-use App\Http\Filters\ReviewFilter;
-
-interface ReviewRepository
+interface SliderRepository
 {
     public function index();
 
-    public function get(ReviewFilter $filters, int $userId);
+    public function get(int $id);
+
+    public function getGroup(int $group_id);
 
     public function show();
 
