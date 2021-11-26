@@ -39,6 +39,8 @@ class HomePagePlaceHolderService
     {
         $data = array();
         $data['type'] = $config['type'];
+        $data['key'] = $config['user'];
+        $data['value'] = $config['my_orders'];
         return $data;
     }
 
