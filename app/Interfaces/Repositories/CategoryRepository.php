@@ -4,15 +4,11 @@
 namespace App\Interfaces\Repositories;
 
 
-use App\Http\Filters\ReviewFilter;
-
-interface ReviewRepository
+interface CategoryRepository
 {
     public function index();
 
-    public function get(ReviewFilter $filters, int $userId);
-
-    public function show();
+    public function show(int $category_id);
 
     public function store();
 

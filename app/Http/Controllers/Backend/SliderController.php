@@ -64,6 +64,9 @@ class SliderController extends Controller
         Slider::insert([
             'title' => $request->title,
             'description' => $request->description,
+            'group_id' => $request->group_id,
+            'model_id' => $request->model_id,
+            'model_name' => $request->model_name,
             'slider_img' => $save_url,
 
         ]);

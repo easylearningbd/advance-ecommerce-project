@@ -3,16 +3,16 @@
 
 
   <!-- Content Wrapper. Contains page content -->
-  
+
 	  <div class="container-full">
 		<!-- Content Header (Page header) -->
-		 
+
 
 		<!-- Main content -->
 		<section class="content">
 		  <div class="row">
-			   
-		 
+
+
 
 			<div class="col-8">
 
@@ -29,9 +29,12 @@
 								<th>Slider Image </th>
 								<th>Title</th>
 								<th>Decription</th>
-								<th>Status</th>
+                                <th>Model ID</th>
+                                <th>Model Name</th>
+                                <th>Status</th>
+                                <th>Group</th>
 								<th>Action</th>
-								 
+
 							</tr>
 						</thead>
 						<tbody>
@@ -47,7 +50,9 @@
 		 	@endif
 			</td>
 
-		<td>{{ $item->description }}</td>
+         <td>{{ $item->description }}</td>
+         <td>{{ $item->model_id }}</td>
+         <td>{{ $item->model_name }}</td>
 		<td>
 		 	@if($item->status == 1)
 		 	<span class="badge badge-pill badge-success"> Active </span>
@@ -56,7 +61,9 @@
 		 	@endif
 
 		 </td>
-		
+
+         <td>{{ $item->group_id }}</td>
+
 		<td width="30%">
  <a href="{{ route('slider.edit',$item->id) }}" class="btn btn-info btn-sm" title="Edit Data"><i class="fa fa-pencil"></i> </a>
 
@@ -70,11 +77,11 @@
 	 @endif
 
 		</td>
-							 
+
 	 </tr>
 	  @endforeach
 						</tbody>
-						 
+
 					  </table>
 					</div>
 				</div>
@@ -82,7 +89,7 @@
 			  </div>
 			  <!-- /.box -->
 
-			          
+
 			</div>
 			<!-- /.col -->
 
@@ -103,64 +110,83 @@
 
  <form method="post" action="{{ route('slider.store') }}" enctype="multipart/form-data">
 	 	@csrf
-					   
 
-	 <div class="form-group">
-		<h5>Slider Title  <span class="text-danger">*</span></h5>
-		<div class="controls">
-	 <input type="text"  name="title" class="form-control" > 
-	 
-	</div>
-	</div>
+
+     <div class="form-group">
+         <h5>Slider Title  <span class="text-danger">*</span></h5>
+         <div class="controls">
+             <input type="text"  name="title" class="form-control" >
+
+         </div>
+     </div>
 
 
 	<div class="form-group">
 		<h5>Slider Decription <span class="text-danger">*</span></h5>
 		<div class="controls">
 	 <input type="text" name="description" class="form-control" >
-     
+
 	  </div>
 	</div>
 
+
+     <div class="form-group">
+         <h5>Slider Group ID  <span class="text-danger"></span></h5>
+         <div class="controls">
+             <input type="text"  name="group_id" class="form-control" >
+         </div>
+     </div>
+     <div class="form-group">
+         <h5>Slider Link Model ID <span class="text-danger"></span></h5>
+         <div class="controls">
+             <input type="text"  name="model_id" class="form-control" >
+         </div>
+     </div>
+     <div class="form-group">
+         <h5>Slider Link Model Name  <span class="text-danger"></span></h5>
+         <div class="controls">
+             <input type="text"  name="model_name" class="form-control" >
+         </div>
+     </div>
 
 
 	<div class="form-group">
 		<h5>Slider Image <span class="text-danger">*</span></h5>
 		<div class="controls">
 	 <input type="file" name="slider_img" class="form-control" >
-     @error('slider_img') 
+     @error('slider_img')
 	 <span class="text-danger">{{ $message }}</span>
-	 @enderror 
+	 @enderror
 	  </div>
 	</div>
-					 
+
 
 			 <div class="text-xs-right">
-	<input type="submit" class="btn btn-rounded btn-primary mb-5" value="Add New">					 
+	<input type="submit" class="btn btn-rounded btn-primary mb-5" value="Add New">
 						</div>
 					</form>
 
 
 
 
-					  
+
 					</div>
 				</div>
 				<!-- /.box-body -->
 			  </div>
-			  <!-- /.box --> 
+			  <!-- /.box -->
 			</div>
 
- 
+
 
 
 		  </div>
 		  <!-- /.row -->
 		</section>
 		<!-- /.content -->
-	  
+
 	  </div>
-  
+
 
 
 
