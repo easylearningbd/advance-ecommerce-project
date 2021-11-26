@@ -1,6 +1,24 @@
 <?php
 
 return [
-    'sliders' => [[2, 3], [4, 5]],
-    'categories' => [1, 2],
+    [
+        'type' => 'slider',
+        'key' => 'group_id',
+        'value' => 1
+    ],
+    [
+        'type' => 'user_action',
+        'key' => 'user',
+        'value' => 'my_orders'
+    ],
+    [
+        'type' => 'product_category',
+        'category_id' => 1,
+        'product_ids' => [1, 2]
+    ],
+    [
+        'type' => 'slider',
+        'key' => 'group_id',
+        'value' => 2
+    ],
 ];

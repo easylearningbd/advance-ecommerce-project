@@ -17,9 +17,23 @@ class ShopServiceProvider extends ServiceProvider
     {
         $this->app->bind(
             Interfaces\Repositories\ReviewRepository::class,
-            Repositories\ReviewRepositoryImp::class
+            Repositories\ReviewRepositoryImpl::class
         );
 
+        $this->app->bind(
+            Interfaces\Repositories\SliderRepository::class,
+            Repositories\SliderRepositoryImpl::class
+        );
+
+        $this->app->bind(
+            Interfaces\Repositories\CategoryRepository::class,
+            Repositories\CategoryRepositoryImpl::class
+        );
+
+        $this->app->bind(
+            Interfaces\Repositories\ProductRepository::class,
+            Repositories\ProductRepositoryImpl::class
+        );
     }
 
     /**
