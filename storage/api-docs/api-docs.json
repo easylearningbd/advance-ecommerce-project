@@ -14,8 +14,24 @@
     },
     "servers": [
         {
+            "url": "https://develop.behaminplus.ir/shop-service",
+            "description": "develop behaminplus API Server"
+        },
+        {
+            "url": "https://behaminplus.ir/shop-service",
+            "description": "stage behaminplus API Server"
+        },
+        {
+            "url": "https://behandam.kermany.com/shop-service",
+            "description": "PRODUCTION behaminplus API Server"
+        },
+        {
+            "url": "https://shop.pardisania.ir",
+            "description": "pardisania API Server"
+        },
+        {
             "url": "https://beitak.ir",
-            "description": "LOCAL API Server"
+            "description": "beitak API Server"
         },
         {
             "url": "http://localhost:8000",
