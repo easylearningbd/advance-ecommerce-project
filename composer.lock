@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2106bd12fbdab3200d9a97fdf90528d5",
+    "content-hash": "24f2b4dfe669e27104482aa5d3af8f43",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7672,6 +7672,92 @@
                 "source": "https://github.com/tijsverkoyen/CssToInlineStyles/tree/2.2.3"
             },
             "time": "2020-07-13T06:12:54+00:00"
+        },
+        {
+            "name": "ukfast/laravel-health-check",
+            "version": "v1.13.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ukfast/laravel-health-check.git",
+                "reference": "62e35026a684d45bb774c559b889f6e28c198f09"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ukfast/laravel-health-check/zipball/62e35026a684d45bb774c559b889f6e28c198f09",
+                "reference": "62e35026a684d45bb774c559b889f6e28c198f09",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "illuminate/console": "^5.4|^6.0|^7.0|^8.0",
+                "illuminate/http": "^5.4|^6.0|^7.0|^8.0",
+                "illuminate/support": "^5.4|^6.0|^7.0|^8.0",
+                "nesbot/carbon": "^1.26.3|^2.0",
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "guzzlehttp/guzzle": ">=5.6.3",
+                "illuminate/database": "^5.4|^6.0|^7.0|^8.0",
+                "illuminate/log": "^5.4|^6.0|^7.0|^8.0",
+                "illuminate/redis": "^5.4|^6.0|^7.0|^8.0",
+                "mockery/mockery": "^1.0",
+                "orchestra/testbench": "^3.0|^4.0|^5.0|^6.0",
+                "phpunit/phpunit": ">=5.0"
+            },
+            "suggest": {
+                "guzzlehttp/guzzle": "Allows the http health check to function.",
+                "illuminate/database": "Allows the database health check to function.",
+                "illuminate/log": "Allows the log health check to function.",
+                "illuminate/redis": "Allows the redis health check to function.",
+                "league/flysystem": "Allows the ftp health check to function.",
+                "sensiolabs/security-checker": "Allows the package security health check to function."
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "UKFast\\HealthCheck\\HealthCheckServiceProvider"
+                    ],
+                    "aliases": {
+                        "HealthCheck": "UKFast\\HealthCheck\\Facade\\HealthCheck"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "UKFast\\HealthCheck\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "George Kelly",
+                    "email": "george.kelly@ukfast.co.uk",
+                    "role": "Author & Maintainer"
+                },
+                {
+                    "name": "Tyler Woonton",
+                    "email": "tyler.woonton@ukfast.co.uk",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "A package for checking the health of your Laravel/Lumen applications.",
+            "keywords": [
+                "laravel",
+                "laravel-health-check",
+                "lumen",
+                "lumen-health-check",
+                "ukfast",
+                "ukfast-health-check"
+            ],
+            "support": {
+                "issues": "https://github.com/ukfast/laravel-health-check/issues",
+                "source": "https://github.com/ukfast/laravel-health-check/tree/master"
+            },
+            "time": "2021-10-13T08:06:50+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
