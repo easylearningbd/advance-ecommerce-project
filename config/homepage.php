@@ -21,4 +21,9 @@ return [
         'key' => 'group_id',
         'value' => 2
     ],
+    [
+        'type' => 'deep_link',
+        'key' => 'fitamin',
+        'value' => '/fitamin/landing'
+    ],
 ];
