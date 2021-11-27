@@ -24,7 +24,7 @@
 
 			 <div class="box">
 				<div class="box-header with-border">
-				  <h3 class="box-title">Search By Date </h3>
+				  <h3 class="box-title">{{ trans("admin.Search By Date")   }} </h3>
 				</div>
 				<!-- /.box-header -->
 				<div class="box-body">
@@ -36,7 +36,7 @@
 					   
 
 	 <div class="form-group">
-		<h5>Select Date <span class="text-danger">*</span></h5>
+		<h5>{{ trans("admin.Select Date")   }} <span class="text-danger">*</span></h5>
 		<div class="controls">
 	 <input type="date" name="date" class="form-control" > 
 	 @error('date') 
@@ -66,7 +66,7 @@
 
 			 <div class="box">
 				<div class="box-header with-border">
-				  <h3 class="box-title">Search By Month </h3>
+				  <h3 class="box-title">{{ trans("admin.Search By Month")   }}</h3>
 				</div>
 				<!-- /.box-header -->
 				<div class="box-body">
@@ -78,7 +78,7 @@
 					   
 
 	 <div class="form-group">
-		<h5>Select Month  <span class="text-danger">*</span></h5>
+		<h5>{{ trans("admin.Select Month")   }}  <span class="text-danger">*</span></h5>
 		<div class="controls">
 	
 		<select name="month" class="form-control">
@@ -107,7 +107,7 @@
 
 
  <div class="form-group">
-		<h5>Select Year  <span class="text-danger">*</span></h5>
+		<h5>{{ trans("admin.Select Year")   }}<span class="text-danger">*</span></h5>
 		<div class="controls">
 	
 		<select name="year_name" class="form-control">
@@ -148,7 +148,7 @@
 
 			 <div class="box">
 				<div class="box-header with-border">
-				  <h3 class="box-title">Select Year </h3>
+				  <h3 class="box-title">{{ trans("admin.Select Year")   }} </h3>
 				</div>
 				<!-- /.box-header -->
 				<div class="box-body">
@@ -159,7 +159,7 @@
 	 	@csrf
 					   
 <div class="form-group">
-		<h5>Select Year  <span class="text-danger">*</span></h5>
+		<h5>{{ trans("admin.Select Year")   }}<span class="text-danger">*</span></h5>
 		<div class="controls">
 	
 		<select name="year" class="form-control">

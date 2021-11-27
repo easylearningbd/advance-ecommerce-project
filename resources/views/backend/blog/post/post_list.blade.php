@@ -18,7 +18,7 @@
 
 			 <div class="box">
 				<div class="box-header with-border">
-				  <h3 class="box-title">Blog Post List <span class="badge badge-pill badge-danger"> {{ count($blogpost) }} </span></h3>
+				  <h3 class="box-title">{{ trans("admin.Blog Post List")   }} <span class="badge badge-pill badge-danger"> {{ count($blogpost) }} </span></h3>
 <a href="{{ route('add.post') }}" class="btn btn-success" style="float: right;">Add Post</a>				  
 				</div>
 				<!-- /.box-header -->
@@ -28,11 +28,11 @@
 						<thead>
 							<tr>
 								 
-								<th>Post Category  </th>
-								<th>Post Image </th>
-								<th>Post Title En </th>
-								<th>Post Title Hin </th>
-								<th>Action</th>
+								<th>{{ trans("admin.Post Category")   }}  </th>
+								<th>{{ trans("admin.Post Image")   }} </th>
+								<th>{{ trans("admin.Post Title En")   }} </th>
+								<th>{{ trans("admin.Post Title Hin")   }} </th>
+								<th>{{ trans("admin.Action")   }}</th>
 								 
 							</tr>
 						</thead>

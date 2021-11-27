@@ -9,7 +9,7 @@
 		 <!-- Basic Forms -->
 		  <div class="box">
 			<div class="box-header with-border">
-			  <h4 class="box-title">Seo Setting Page </h4>
+			  <h4 class="box-title">{{ trans("admin.Seo Setting Page")   }} </h4>
 			  
 			</div>
 			<!-- /.box-header -->
@@ -28,7 +28,7 @@
  
 
 	<div class="form-group">
-		<h5>Meta Title <span class="text-danger">*</span></h5>
+		<h5>{{ trans("admin.Meta Title")   }} <span class="text-danger">*</span></h5>
 		<div class="controls">
 	 <input type="text" name="meta_title" class="form-control" value="{{ $seo->meta_title }}" > </div>
 	</div>
@@ -36,19 +36,19 @@
 
 
 	<div class="form-group">
-		<h5>Meta Author <span class="text-danger">*</span></h5>
+		<h5>{{ trans("admin.Meta Author")   }} <span class="text-danger">*</span></h5>
 		<div class="controls">
 	 <input type="text" name="meta_author" class="form-control"  value="{{ $seo->meta_author }}"  > </div>
 	</div>
 
 	<div class="form-group">
-		<h5>Meta Keyword <span class="text-danger">*</span></h5>
+		<h5>{{ trans("admin.Meta Keyword")   }} <span class="text-danger">*</span></h5>
 		<div class="controls">
 	 <input type="text" name="meta_keyword" class="form-control" value="{{ $seo->meta_keyword }}"   > </div>
 	</div>
 
  <div class="form-group">
-			<h5>Meta Description <span class="text-danger">*</span></h5>
+			<h5>{{ trans("admin.Meta Description")   }} <span class="text-danger">*</span></h5>
 			<div class="controls">
 	<textarea name="meta_description" id="textarea" class="form-control" required placeholder="Textarea text">
 		{{ $seo->meta_description }}
@@ -58,7 +58,7 @@
 
 
 	<div class="form-group">
-			<h5>Google Analytics <span class="text-danger">*</span></h5>
+			<h5>{{ trans("admin.Google Analytics")   }} <span class="text-danger">*</span></h5>
 			<div class="controls">
 	<textarea name="google_analytics" id="textarea" class="form-control" required placeholder="Textarea text">
 		{{ $seo->google_analytics }}

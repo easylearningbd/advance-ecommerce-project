@@ -126,7 +126,7 @@
                             <a href="{{ route('add-product') }}">
                                 <i class="ti-more">
                                 </i>
-                                {{ __("admin.Add Products") }}
+                                {{ __("admin.Add Product") }}
                             </a>
                         </li>
 

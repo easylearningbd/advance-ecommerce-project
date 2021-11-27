@@ -18,7 +18,7 @@
 
 			 <div class="box">
 				<div class="box-header with-border">
-				  <h3 class="box-title">Sub->SubCategory List <span class="badge badge-pill badge-danger"> {{ count($subsubcategory) }} </span></h3>
+				  <h3 class="box-title">{{ trans("admin.Sub->SubCategory List")   }} <span class="badge badge-pill badge-danger"> {{ count($subsubcategory) }} </span></h3>
 				</div>
 				<!-- /.box-header -->
 				<div class="box-body">
@@ -26,10 +26,10 @@
 					  <table id="example1" class="table table-bordered table-striped">
 						<thead>
 							<tr>
-								<th>Category </th>
-								<th>SubCategory Name</th>
-								<th>Sub-Subcategory English </th>
-								<th>Action</th>
+								<th>{{ trans("admin.Category")   }} </th>
+								<th>{{ trans("admin.SubCategory Name")   }}</th>
+								<th>{{ trans("admin.Sub-Subcategory English")   }} </th>
+								<th>{{ trans("admin.Action")   }}</th>
 								 
 							</tr>
 						</thead>
@@ -69,7 +69,7 @@
 
 			 <div class="box">
 				<div class="box-header with-border">
-				  <h3 class="box-title">Add Sub-SubCategory </h3>
+				  <h3 class="box-title">{{ trans("admin.Add Sub-SubCategory")   }} </h3>
 				</div>
 				<!-- /.box-header -->
 				<div class="box-body">
@@ -81,7 +81,7 @@
 					   
 
 	 <div class="form-group">
-	<h5>Category Select <span class="text-danger">*</span></h5>
+	<h5>{{ trans("admin.Category Select")   }} <span class="text-danger">*</span></h5>
 	<div class="controls">
 		<select name="category_id" class="form-control"  >
 			<option value="" selected="" disabled="">Select Category</option>
@@ -97,7 +97,7 @@
 
 
 		  <div class="form-group">
-	<h5>SubCategory Select <span class="text-danger">*</span></h5>
+	<h5>{{ trans("admin.SubCategory Select")   }} <span class="text-danger">*</span></h5>
 	<div class="controls">
 		<select name="subcategory_id" class="form-control"  >
 			<option value="" selected="" disabled="">Select SubCategory</option>
@@ -111,7 +111,7 @@
 
 
 	<div class="form-group">
-		<h5>Sub-SubCategory English <span class="text-danger">*</span></h5>
+		<h5>{{ trans("admin.Sub-SubCategory English")   }} <span class="text-danger">*</span></h5>
 		<div class="controls">
 	 <input type="text" name="subsubcategory_name_en" class="form-control" >
      @error('subsubcategory_name_en') 
@@ -122,7 +122,7 @@
 
 
 	<div class="form-group">
-		<h5>Sub-SubCategory Hindi  <span class="text-danger">*</span></h5>
+		<h5>{{ trans("admin.Sub-SubCategory Hindi")   }}  <span class="text-danger">*</span></h5>
 		<div class="controls">
 	 <input type="text" name="subsubcategory_name_hin" class="form-control" >
      @error('subsubcategory_name_hin') 

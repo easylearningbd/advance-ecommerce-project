@@ -18,7 +18,7 @@
 
 			 <div class="box">
 				<div class="box-header with-border">
-				  <h3 class="box-title">Category List <span class="badge badge-pill badge-danger"> {{ count($category) }} </span></h3>
+				  <h3 class="box-title">{{ trans("admin.Category List")   }} <span class="badge badge-pill badge-danger"> {{ count($category) }} </span></h3>
 				</div>
 				<!-- /.box-header -->
 				<div class="box-body">
@@ -26,10 +26,10 @@
 					  <table id="example1" class="table table-bordered table-striped">
 						<thead>
 							<tr>
-								<th>Category Icon </th>
-								<th>Category En</th>
-								<th>Category Hin </th>
-								<th>Action</th>
+								<th>{{ trans("admin.Category Icon")   }} </th>
+								<th>{{ trans("admin.Category En")   }}</th>
+								<th>{{ trans("admin.Category Hin")   }} </th>
+								<th>>{{ trans("admin.Action")   }}</th>
 								 
 							</tr>
 						</thead>
@@ -68,7 +68,7 @@
 
 			 <div class="box">
 				<div class="box-header with-border">
-				  <h3 class="box-title">Add Category </h3>
+				  <h3 class="box-title">{{ trans("admin.Add Category")   }} </h3>
 				</div>
 				<!-- /.box-header -->
 				<div class="box-body">
@@ -80,7 +80,7 @@
 					   
 
 	 <div class="form-group">
-		<h5>Category English  <span class="text-danger">*</span></h5>
+		<h5>{{ trans("admin.Category English")   }}  <span class="text-danger">*</span></h5>
 		<div class="controls">
 	 <input type="text"  name="category_name_en" class="form-control" > 
 	 @error('category_name_en') 
@@ -91,7 +91,7 @@
 
 
 	<div class="form-group">
-		<h5>Category Hindi <span class="text-danger">*</span></h5>
+		<h5>{{ trans("admin.Category Hindi")   }} <span class="text-danger">*</span></h5>
 		<div class="controls">
 	 <input type="text" name="category_name_hin" class="form-control" >
      @error('category_name_hin') 
@@ -102,7 +102,7 @@
 
 
 	<div class="form-group">
-		<h5>Category Icon  <span class="text-danger">*</span></h5>
+		<h5>{{ trans("admin.Category Icon")   }}  <span class="text-danger">*</span></h5>
 		<div class="controls">
 	 <input type="text" name="category_icon" class="form-control" >
      @error('category_icon') 
