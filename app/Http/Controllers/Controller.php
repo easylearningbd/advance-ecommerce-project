@@ -21,8 +21,28 @@ use Illuminate\Routing\Controller as BaseController;
  * )
  *
  * @OA\Server(
+ *      url="https://develop.behaminplus.ir/shop-service",
+ *      description="develop behaminplus API Server"
+ * )
+ *
+ * @OA\Server(
+ *      url="https://behaminplus.ir/shop-service",
+ *      description="stage behaminplus API Server"
+ * )
+ *
+ * @OA\Server(
+ *      url="https://behandam.kermany.com/shop-service",
+ *      description="PRODUCTION behaminplus API Server"
+ * )
+ *
+ * @OA\Server(
+ *      url="https://shop.pardisania.ir",
+ *      description="pardisania API Server"
+ * )
+ *
+ * @OA\Server(
  *      url="https://beitak.ir",
- *      description="LOCAL API Server"
+ *      description="beitak API Server"
  * )
  *
  * @OA\Server(
