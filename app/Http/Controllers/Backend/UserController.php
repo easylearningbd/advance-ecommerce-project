@@ -57,7 +57,7 @@ class UserController extends Controller
         $entries = Product::query()
             ->whereIn('id', $payedProductsIds)
             ->get();
-        return response(new ProductResourceCollection(['data' => $entries]));
+        return response(new ProductResourceCollection(['data' => $entries], true));
 
     }
 
