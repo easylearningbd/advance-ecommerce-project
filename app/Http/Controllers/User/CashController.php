@@ -45,7 +45,7 @@ class CashController extends Controller
             'payment_type' => 'Cash On Delivery',
             'payment_method' => 'Cash On Delivery',
 
-            'currency' => 'Usd',
+            'currency' => 'Tomans',
             'amount' => $total_amount,
 
 
