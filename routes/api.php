@@ -43,7 +43,7 @@ Route::prefix('blog-posts')->group(function () {
     Route::get('/{id}', [\App\Http\Controllers\Backend\BlogController::class, 'show'])->name('blog.posts.show');
 });
 
-// 
+// Brands
 Route::prefix('brands')->group(function () {
     Route::get('/', [\App\Http\Controllers\Backend\BrandController::class, 'index'])->name('brands.index');
     Route::get('/{id}', [\App\Http\Controllers\Backend\BrandController::class, 'show'])->name('brands.show');
