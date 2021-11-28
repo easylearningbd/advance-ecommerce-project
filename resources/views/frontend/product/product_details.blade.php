@@ -404,7 +404,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-6">
                                                                     <img style="border-radius: 50%"
-                                                                         src="{{ (!empty($item->user->profile_photo_path))? url('upload/user_images/'.$item->user->profile_photo_path):url('upload/no_image.jpg') }}"
+                                                                         src="{{ (!empty($item->user->profile_photo_path))? url('storage/upload/user_images/'.$item->user->profile_photo_path):url('storage/upload/no_image.jpg') }}"
                                                                          width="40px;"
                                                                          height="40px;"><b> {{ $item->user->name }}</b>
 

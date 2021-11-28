@@ -98,8 +98,8 @@ class BrandController extends Controller
 
         $image = $request->file('brand_image');
         $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
-        Image::make($image)->resize(300, 300)->save('upload/brand/' . $name_gen);
-        $save_url = 'upload/brand/' . $name_gen;
+        Image::make($image)->resize(300, 300)->save('storage/upload/brand/' . $name_gen);
+        $save_url = 'storage/upload/brand/' . $name_gen;
 
         Brand::insert([
             'brand_name_en' => $request->brand_name_en,
@@ -142,8 +142,8 @@ class BrandController extends Controller
 
             $image = $request->file('brand_image');
             $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->resize(300, 300)->save('upload/brand/' . $name_gen);
-            $save_url = 'upload/brand/' . $name_gen;
+            Image::make($image)->resize(300, 300)->save('storage/upload/brand/' . $name_gen);
+            $save_url = 'storage/upload/brand/' . $name_gen;
 
             Brand::findOrFail($brand_id)->update([
                 'brand_name_en' => $request->brand_name_en,
