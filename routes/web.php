@@ -98,114 +98,127 @@ Route::get('/user/change/password', [IndexController::class, 'UserChangePassword
 Route::post('/user/password/update', [IndexController::class, 'UserPasswordUpdate'])->name('user.password.update');
 
 
+Route::middleware(['auth:admin'])->group(function () {
 // Admin Brand All Routes
 
-Route::prefix('brand')->group(function () {
+    Route::prefix('brand')->group(function () {
 
-    Route::get('/view', [BrandController::class, 'BrandView'])->name('all.brand');
+        Route::get('/view', [BrandController::class, 'BrandView'])->name('all.brand');
 
-    Route::post('/store', [BrandController::class, 'BrandStore'])->name('brand.store');
+        Route::post('/store', [BrandController::class, 'BrandStore'])->name('brand.store');
 
-    Route::get('/edit/{id}', [BrandController::class, 'BrandEdit'])->name('brand.edit');
+        Route::get('/edit/{id}', [BrandController::class, 'BrandEdit'])->name('brand.edit');
 
-    Route::post('/update', [BrandController::class, 'BrandUpdate'])->name('brand.update');
+        Route::post('/update', [BrandController::class, 'BrandUpdate'])->name('brand.update');
 
-    Route::get('/delete/{id}', [BrandController::class, 'BrandDelete'])->name('brand.delete');
+        Route::get('/delete/{id}', [BrandController::class, 'BrandDelete'])->name('brand.delete');
 
-});
+    });
 
 // Admin Category all Routes
-Route::prefix('category')->group(function () {
+    Route::prefix('category')->group(function () {
 
-    Route::get('/view', [CategoryController::class, 'CategoryView'])->name('all.category');
+        Route::get('/view', [CategoryController::class, 'CategoryView'])->name('all.category');
 
-    Route::post('/store', [CategoryController::class, 'CategoryStore'])->name('category.store');
+        Route::post('/store', [CategoryController::class, 'CategoryStore'])->name('category.store');
 
-    Route::get('/edit/{id}', [CategoryController::class, 'CategoryEdit'])->name('category.edit');
+        Route::get('/edit/{id}', [CategoryController::class, 'CategoryEdit'])->name('category.edit');
 
-    Route::post('/update/{id}', [CategoryController::class, 'CategoryUpdate'])->name('category.update');
+        Route::post('/update/{id}', [CategoryController::class, 'CategoryUpdate'])->name('category.update');
 
-    Route::get('/delete/{id}', [CategoryController::class, 'CategoryDelete'])->name('category.delete');
+        Route::get('/delete/{id}', [CategoryController::class, 'CategoryDelete'])->name('category.delete');
 
 // Admin Sub Category All Routes
 
-    Route::get('/sub/view', [SubCategoryController::class, 'SubCategoryView'])->name('all.subcategory');
+        Route::get('/sub/view', [SubCategoryController::class, 'SubCategoryView'])->name('all.subcategory');
 
-    Route::post('/sub/store', [SubCategoryController::class, 'SubCategoryStore'])->name('subcategory.store');
+        Route::post('/sub/store', [SubCategoryController::class, 'SubCategoryStore'])->name('subcategory.store');
 
-    Route::get('/sub/edit/{id}', [SubCategoryController::class, 'SubCategoryEdit'])->name('subcategory.edit');
+        Route::get('/sub/edit/{id}', [SubCategoryController::class, 'SubCategoryEdit'])->name('subcategory.edit');
 
-    Route::post('/update', [SubCategoryController::class, 'SubCategoryUpdate'])->name('subcategory.update');
+        Route::post('/update', [SubCategoryController::class, 'SubCategoryUpdate'])->name('subcategory.update');
 
-    Route::get('/sub/delete/{id}', [SubCategoryController::class, 'SubCategoryDelete'])->name('subcategory.delete');
+        Route::get('/sub/delete/{id}', [SubCategoryController::class, 'SubCategoryDelete'])->name('subcategory.delete');
 
 
 // Admin Sub->Sub Category All Routes
 
-    Route::get('/sub/sub/view', [SubCategoryController::class, 'SubSubCategoryView'])->name('all.subsubcategory');
+        Route::get('/sub/sub/view', [SubCategoryController::class, 'SubSubCategoryView'])->name('all.subsubcategory');
 
-    Route::get('/subcategory/ajax/{category_id}', [SubCategoryController::class, 'GetSubCategory']);
+        Route::get('/subcategory/ajax/{category_id}', [SubCategoryController::class, 'GetSubCategory']);
 
-    Route::get('/sub-subcategory/ajax/{subcategory_id}', [SubCategoryController::class, 'GetSubSubCategory']);
+        Route::get('/sub-subcategory/ajax/{subcategory_id}', [SubCategoryController::class, 'GetSubSubCategory']);
 
-    Route::post('/sub/sub/store', [SubCategoryController::class, 'SubSubCategoryStore'])->name('subsubcategory.store');
+        Route::post('/sub/sub/store', [SubCategoryController::class, 'SubSubCategoryStore'])->name('subsubcategory.store');
 
-    Route::get('/sub/sub/edit/{id}', [SubCategoryController::class, 'SubSubCategoryEdit'])->name('subsubcategory.edit');
+        Route::get('/sub/sub/edit/{id}', [SubCategoryController::class, 'SubSubCategoryEdit'])->name('subsubcategory.edit');
 
-    Route::post('/sub/update', [SubCategoryController::class, 'SubSubCategoryUpdate'])->name('subsubcategory.update');
+        Route::post('/sub/update', [SubCategoryController::class, 'SubSubCategoryUpdate'])->name('subsubcategory.update');
 
-    Route::get('/sub/sub/delete/{id}', [SubCategoryController::class, 'SubSubCategoryDelete'])->name('subsubcategory.delete');
+        Route::get('/sub/sub/delete/{id}', [SubCategoryController::class, 'SubSubCategoryDelete'])->name('subsubcategory.delete');
 
-});
+    });
 
 // Admin Products All Routes
 
-Route::prefix('product')->group(function () {
+    Route::prefix('product')->group(function () {
 
-    Route::get('/add', [ProductController::class, 'AddProduct'])->name('add-product');
+        Route::get('/add', [ProductController::class, 'AddProduct'])->name('add-product');
 
-    Route::post('/store', [ProductController::class, 'StoreProduct'])->name('product-store');
-    Route::get('/manage', [ProductController::class, 'ManageProduct'])->name('manage-product');
+        Route::post('/store', [ProductController::class, 'StoreProduct'])->name('product-store');
+        Route::get('/manage', [ProductController::class, 'ManageProduct'])->name('manage-product');
 
-    Route::get('/edit/{id}', [ProductController::class, 'EditProduct'])->name('product.edit');
+        Route::get('/edit/{product_id}/video-lessons', [ProductController::class, 'viewVideoLessonsList'])->name('product.view.video.lessons.list');
+        Route::get('/edit/{product_id}/upload-video-lesson', [ProductController::class, 'UploadVideoLesson'])->name('product.edit.media');
+        Route::post('/media/update/{product_id}', [ProductController::class, 'MultiMediaUpdate'])->name('update-product-media');
+        Route::get('/multiMedia/delete/{video_lesson_id}', [ProductController::class, 'MultiMediaDelete'])->name('product.multiMedia.delete');
 
-    Route::post('/data/update', [ProductController::class, 'ProductDataUpdate'])->name('product-update');
+        // media library sample for future
+        Route::get('product', [ProductController::class, 'index2'])->name('product');
+        Route::get('product/create', [ProductController::class, 'create'])->name('product.create');
+        Route::post('product/store', [ProductController::class, 'store'])->name('product.store');
 
-    Route::post('/image/update', [ProductController::class, 'MultiImageUpdate'])->name('update-product-image');
 
-    Route::post('/thambnail/update', [ProductController::class, 'ThambnailImageUpdate'])->name('update-product-thambnail');
+        Route::get('/edit/{id}', [ProductController::class, 'EditProduct'])->name('product.edit');
 
-    Route::get('/multiimg/delete/{id}', [ProductController::class, 'MultiImageDelete'])->name('product.multiimg.delete');
+        Route::post('/data/update', [ProductController::class, 'ProductDataUpdate'])->name('product-update');
 
-    Route::get('/inactive/{id}', [ProductController::class, 'ProductInactive'])->name('product.inactive');
+        Route::post('/image/update', [ProductController::class, 'MultiImageUpdate'])->name('update-product-image');
 
-    Route::get('/active/{id}', [ProductController::class, 'ProductActive'])->name('product.active');
+        Route::post('/thambnail/update', [ProductController::class, 'ThambnailImageUpdate'])->name('update-product-thambnail');
 
-    Route::get('/delete/{id}', [ProductController::class, 'ProductDelete'])->name('product.delete');
+        Route::get('/multiimg/delete/{id}', [ProductController::class, 'MultiImageDelete'])->name('product.multiimg.delete');
 
-});
+        Route::get('/inactive/{id}', [ProductController::class, 'ProductInactive'])->name('product.inactive');
+
+        Route::get('/active/{id}', [ProductController::class, 'ProductActive'])->name('product.active');
+
+        Route::get('/delete/{id}', [ProductController::class, 'ProductDelete'])->name('product.delete');
+
+    });
 
 
 // Admin Slider All Routes
 
-Route::prefix('slider')->group(function () {
+    Route::prefix('slider')->group(function () {
 
-    Route::get('/view', [SliderController::class, 'SliderView'])->name('manage-slider');
+        Route::get('/view', [SliderController::class, 'SliderView'])->name('manage-slider');
 
-    Route::post('/store', [SliderController::class, 'SliderStore'])->name('slider.store');
+        Route::post('/store', [SliderController::class, 'SliderStore'])->name('slider.store');
 
-    Route::get('/edit/{id}', [SliderController::class, 'SliderEdit'])->name('slider.edit');
+        Route::get('/edit/{id}', [SliderController::class, 'SliderEdit'])->name('slider.edit');
 
-    Route::post('/update', [SliderController::class, 'SliderUpdate'])->name('slider.update');
+        Route::post('/update', [SliderController::class, 'SliderUpdate'])->name('slider.update');
 
-    Route::get('/delete/{id}', [SliderController::class, 'SliderDelete'])->name('slider.delete');
+        Route::get('/delete/{id}', [SliderController::class, 'SliderDelete'])->name('slider.delete');
 
-    Route::get('/inactive/{id}', [SliderController::class, 'SliderInactive'])->name('slider.inactive');
+        Route::get('/inactive/{id}', [SliderController::class, 'SliderInactive'])->name('slider.inactive');
 
-    Route::get('/active/{id}', [SliderController::class, 'SliderActive'])->name('slider.active');
+        Route::get('/active/{id}', [SliderController::class, 'SliderActive'])->name('slider.active');
+
+    });
 
 });
-
 
 //// Frontend All Routes /////
 /// Multi Language All Routes ////
@@ -536,3 +549,11 @@ Route::post('search-product', [IndexController::class, 'SearchProduct']);
 // Shop Page Route
 Route::get('/shop', [ShopController::class, 'ShopPage'])->name('shop.page');
 Route::post('/shop/filter', [ShopController::class, 'ShopFilter'])->name('shop.filter');
+
+
+
+// download
+Route::prefix('download')->group(function () {
+    Route::get('/{orderItemHashedKey}/{productId}/{lessonId}', [\App\Http\Controllers\Backend\MediaController::class, 'download'])->name('download.video');
+});
+

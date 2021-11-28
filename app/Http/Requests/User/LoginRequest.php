@@ -1,9 +1,22 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\User;
 
 use Behamin\BResources\Requests\BasicRequest;
 
+/**
+ * @OA\Schema(
+ *      title="LoginRequest",
+ *      description="Login Request",
+ *      type="object",
+ *      required={"email", "password", "device_name"},
+ *      example={
+ *           "email": "saber.tabataba@gmail.com",
+ *           "password": "adminadmin",
+ *           "device_name": "flutter"
+ *      }
+ * )
+ */
 class LoginRequest extends BasicRequest
 {
     /**

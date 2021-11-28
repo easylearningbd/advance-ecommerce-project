@@ -4,11 +4,10 @@
 namespace App\Repositories;
 
 
-use App\Http\Filters\ReviewFilter;
-use App\Models\Review;
-use phpDocumentor\Reflection\Types\Integer;
+use App\Interfaces\Repositories\SliderRepository;
+use App\Models\Slider;
 
-class ReviewRepositoryImp implements \App\Interfaces\Repositories\ReviewRepository
+class SliderRepositoryImpl implements SliderRepository
 {
 
     public function index()
@@ -16,14 +15,20 @@ class ReviewRepositoryImp implements \App\Interfaces\Repositories\ReviewReposito
         // TODO: Implement index() method.
     }
 
-    public function get(ReviewFilter $filters, int $userId)
+    public function get(int $id)
     {
-        return Review::query()
-            ->where('status', 1)
-            ->where('user_id', $userId)
-//            ->whereIn('product_id', $product_id)
+        return Slider::query()
+            ->where('id', $id)
             ->orderBy('id', 'DESC')
-            ->filter($filters);
+            ->get();
+    }
+
+    public function getGroup(int $group_id)
+    {
+        return Slider::query()
+            ->where('group_id', $group_id)
+            ->orderBy('id', 'DESC')
+            ->get();
     }
 
     public function show()

@@ -49,7 +49,7 @@ class SubCategoryController extends Controller
 
 		return redirect()->back()->with($notification);
 
-    } // end method
+    }
 
 
 
@@ -82,7 +82,7 @@ class SubCategoryController extends Controller
 
 		return redirect()->route('all.subcategory')->with($notification);
 
-    }  // end method
+    }
 
 
 
@@ -158,7 +158,7 @@ public function SubSubCategoryStore(Request $request){
 
 		return redirect()->back()->with($notification);
 
-    } // end method
+    }
 
 
 
@@ -194,7 +194,7 @@ public function SubSubCategoryStore(Request $request){
 
 		return redirect()->route('all.subsubcategory')->with($notification);
 
-    } // end method
+    }
 
 
     public function SubSubCategoryDelete($id){

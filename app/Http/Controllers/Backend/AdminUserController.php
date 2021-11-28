@@ -18,7 +18,7 @@ class AdminUserController extends Controller
     	$adminuser = Admin::where('type',2)->latest()->get();
     	return view('backend.role.admin_role_all',compact('adminuser'));
 
-    } // end method
+    }
 
 
     public function AddAdminRole(){
@@ -71,7 +71,7 @@ class AdminUserController extends Controller
 
 		return redirect()->route('all.admin.user')->with($notification);
 
-    } // end method
+    }
 
 
 
@@ -80,7 +80,7 @@ class AdminUserController extends Controller
     	$adminuser = Admin::findOrFail($id);
     	return view('backend.role.admin_role_edit',compact('adminuser'));
 
-    } // end method
+    }
 
 
 
@@ -175,14 +175,17 @@ class AdminUserController extends Controller
 
     	} // end else
 
-    } // end method
+    }
 
 
  	public function DeleteAdminRole($id){
 
  		$adminimg = Admin::findOrFail($id);
  		$img = $adminimg->profile_photo_path;
- 		unlink($img);
+
+        if (file_exists($img)) {
+            unlink($img);
+        }
 
  		Admin::findOrFail($id)->delete();
 
@@ -193,7 +196,7 @@ class AdminUserController extends Controller
 
 		return redirect()->back()->with($notification);
 
- 	} // end method
+ 	}
 
 
 }

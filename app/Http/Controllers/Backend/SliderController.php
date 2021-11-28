@@ -3,12 +3,40 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Filters\SliderFilter;
+use App\Http\Resources\SliderResourceCollection;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 use Image;
 
 class SliderController extends Controller
 {
+
+    /**
+     * @OA\Get(path="/api/sliders",
+     *   tags={"Sliders"},
+     *   summary="Returns sliders as json",
+     *   description="Returns sliders",
+     *   operationId="getSliders",
+     *   parameters={},
+     *   @OA\Response(
+     *     response=200,
+     *     description="successful operation",
+     *     @OA\Schema(
+     *       additionalProperties={
+     *         "type":"integer",
+     *         "format":"int32"
+     *       }
+     *     )
+     *   )
+     * )
+     */
+    public function index(SliderFilter $filters)
+    {
+        [$entries, $count, $sum] = Slider::filter($filters);
+        $entries = $entries->get();
+        return response(new SliderResourceCollection(['data' => $entries, 'count' => $count]));
+    }
 
     public function SliderView()
     {
@@ -36,6 +64,9 @@ class SliderController extends Controller
         Slider::insert([
             'title' => $request->title,
             'description' => $request->description,
+            'group_id' => $request->group_id,
+            'model_id' => $request->model_id,
+            'model_name' => $request->model_name,
             'slider_img' => $save_url,
 
         ]);
@@ -47,7 +78,7 @@ class SliderController extends Controller
 
         return redirect()->back()->with($notification);
 
-    } // end method
+    }
 
 
     public function SliderEdit($id)
@@ -103,14 +134,18 @@ class SliderController extends Controller
             return redirect()->route('manage-slider')->with($notification);
 
         } // end else
-    } // end method
+    }
 
 
     public function SliderDelete($id)
     {
         $slider = Slider::findOrFail($id);
         $img = $slider->slider_img;
-        unlink($img);
+
+        if (file_exists($img)) {
+            unlink($img);
+        }
+
         Slider::findOrFail($id)->delete();
 
         $notification = array(
@@ -120,7 +155,7 @@ class SliderController extends Controller
 
         return redirect()->back()->with($notification);
 
-    } // end method
+    }
 
 
     public function SliderInactive($id)
@@ -134,7 +169,7 @@ class SliderController extends Controller
 
         return redirect()->back()->with($notification);
 
-    } // end method
+    }
 
 
     public function SliderActive($id)
@@ -148,7 +183,7 @@ class SliderController extends Controller
 
         return redirect()->back()->with($notification);
 
-    } // end method
+    }
 
 
 }

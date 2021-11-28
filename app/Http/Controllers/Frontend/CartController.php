@@ -59,7 +59,7 @@ class CartController extends Controller
             return response()->json(['success' => 'Successfully Added on Your Cart']);
         }
 
-    } // end mehtod
+    }
 
 
     // Mini Cart Section
@@ -76,7 +76,7 @@ class CartController extends Controller
             'cartTotal' => round($cartTotal),
 
         ));
-    } // end method
+    }
 
 
 /// remove mini cart
@@ -85,7 +85,7 @@ class CartController extends Controller
         Cart::remove($rowId);
         return response()->json(['success' => 'Product Remove from Cart']);
 
-    } // end mehtod
+    }
 
 
     // add to wishlist mehtod
@@ -117,7 +117,7 @@ class CartController extends Controller
 
         }
 
-    } // end method
+    }
 
 
     public function CouponApply(Request $request)
@@ -142,7 +142,7 @@ class CartController extends Controller
             return response()->json(['error' => 'Invalid Coupon']);
         }
 
-    } // end method
+    }
 
 
     public function CouponCalculation()
@@ -162,7 +162,7 @@ class CartController extends Controller
             ));
 
         }
-    } // end method
+    }
 
 
     // Remove Coupon
@@ -211,7 +211,7 @@ class CartController extends Controller
 
         }
 
-    } // end method
+    }
 
 
 }

@@ -15,6 +15,8 @@
 			<div class="box-header with-border">
 			  <h4 class="box-title">Edit Product </h4>
 
+                <a href="{{ route('product.view.video.lessons.list',$products->id) }}" class="btn btn-info" title="Show Video Lesson List"><i class="fa fa-youtube"></i> </a>
+
 			</div>
 			<!-- /.box-header -->
 			<div class="box-body">
@@ -102,7 +104,7 @@
 		<select name="subsubcategory_id" class="form-control" required="" >
 			<option value="" selected="" disabled="">Select SubSubCategory</option>
 
-		 @foreach($subsubcategory as $subsub)
+		 @foreach($subSubCategory as $subsub)
  <option value="{{ $subsub->id }}" {{ $subsub->id == $products->subsubcategory_id ? 'selected': '' }} >{{ $subsub->subsubcategory_name_en }}</option>
 			@endforeach
 

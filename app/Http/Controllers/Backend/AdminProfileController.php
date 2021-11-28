@@ -8,17 +8,17 @@ use App\Models\Admin;
 use App\Models\User;
 use Auth;
 use Illuminate\Support\Facades\Hash;
- 
+
 class AdminProfileController extends Controller
-{ 
-   
+{
+
 	public function AdminProfile(){
 
 		$id = Auth::user()->id;
 		$adminData = Admin::find($id);
 		return view('admin.admin_profile_view',compact('adminData'));
 	}
- 
+
 
 	public function AdminProfileEdit(){
 
@@ -53,7 +53,7 @@ class AdminProfileController extends Controller
 
 		return redirect()->route('admin.profile')->with($notification);
 
-	} // end method 
+	}
 
 
 

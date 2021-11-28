@@ -113,7 +113,7 @@ class BlogController extends Controller
 
 		return redirect()->back()->with($notification);
 
-    } // end method
+    }
 
 
 
@@ -148,7 +148,7 @@ public function BlogCategoryUpdate(Request $request){
 
 		return redirect()->route('blog.category')->with($notification);
 
-    } // end method
+    }
 
 
 
@@ -206,7 +206,7 @@ public function BlogCategoryUpdate(Request $request){
 
 		return redirect()->route('list.post')->with($notification);
 
-  } // end mehtod
+  }
 
 
 

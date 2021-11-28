@@ -25,7 +25,9 @@
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^2.0",
         "orangehill/iseed": "^3.0",
-        "stripe/stripe-php": "^7.75"
+        "spatie/laravel-medialibrary": "^9.8",
+        "stripe/stripe-php": "^7.75",
+        "ukfast/laravel-health-check": "^1.13"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

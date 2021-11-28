@@ -5,7 +5,6 @@ namespace App\Interfaces\Repositories;
 
 
 use App\Http\Filters\ReviewFilter;
-use phpDocumentor\Reflection\Types\Integer;
 
 interface ReviewRepository
 {

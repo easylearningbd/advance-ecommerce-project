@@ -9,13 +9,17 @@ use App\Http\Resources\ProductResourceCollection;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\MultiImg;
+use App\Models\Prod;
 use App\Models\Product;
 use App\Models\SubCategory;
 use App\Models\SubSubCategory;
-use Behamin\BResources\Traits\CollectionResource;
+use App\Models\VideoLesson;
+use App\Services\MediaHelper;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 use Image;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class ProductController extends Controller
 {
@@ -45,6 +49,45 @@ class ProductController extends Controller
         $entries = $entries->get();
         return response(new ProductResourceCollection(['data' => $entries, 'count' => $count]));
     }
+
+    public function index2(ProductFilter $filters)
+    {
+        $products = Prod::latest()->get();
+        return view('backend.product.index', compact('products'));
+    }
+
+    public function create(ProductFilter $filters)
+    {
+        return view('backend.product.create');
+    }
+
+    /**
+     * Write Your Code..
+     *
+     * @return string
+     */
+    public function store(Request $request)
+    {
+        $input = $request->all();
+        $valiator = $request->validate([
+            'name' => 'required',
+//            'detail' => 'required',
+            'image' => 'required',
+        ]);
+
+        $videoLesson = new VideoLesson();
+        $videoLesson->lesson_name = $request->name;
+        $videoLesson->product_id = $request->product_id;
+        $videoLesson->save();
+
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
+            $videoLesson->addMediaFromRequest('image')->toMediaCollection('videoList');
+        }
+
+        return redirect()->route('product.view.video.lessons.list', $request->product_id);
+
+    }
+
     /**
      * @OA\Get(path="/api/products/{productId}",
      *   tags={"Products"},
@@ -76,9 +119,18 @@ class ProductController extends Controller
      *   )
      * )
      */
-    public function show(int $id)
+    public function show(int $productId)
     {
-        $entry = Product::query()->findOrFail($id);
+        $entry = Product::query()->findOrFail($productId);
+        $videoLessons = VideoLesson::query()->where('product_id', $productId)->get();
+        $entry['lessons'] = $videoLessons;
+
+        foreach ($entry['lessons'] as $key => $videoLesson) {
+            $medias = $videoLesson->getMedia('videoList');
+            $mediaItem = $medias->first();
+            $entry['lessons'][$key]['video'] = $entry['lessons'][$key]['is_free'] == 0 ? MediaHelper::getHashedMediaUrlByLessonId($videoLesson->id) : $videoLesson->getFirstMediaUrl('videoList');
+        }
+
         return response(new ProductResource(['data' => $entry]));
     }
 
@@ -177,14 +229,11 @@ class ProductController extends Controller
         );
 
         return redirect()->route('manage-product')->with($notification);
-
-
-    } // end method
+    }
 
 
     public function ManageProduct()
     {
-
         $products = Product::latest()->get();
         return view('backend.product.product_view', compact('products'));
     }
@@ -192,18 +241,70 @@ class ProductController extends Controller
 
     public function EditProduct($id)
     {
-
         $multiImgs = MultiImg::where('product_id', $id)->get();
 
         $categories = Category::latest()->get();
         $brands = Brand::latest()->get();
         $subcategory = SubCategory::latest()->get();
-        $subsubcategory = SubSubCategory::latest()->get();
+        $subSubCategory = SubSubCategory::latest()->get();
         $products = Product::findOrFail($id);
-        return view('backend.product.product_edit', compact('categories', 'brands', 'subcategory', 'subsubcategory', 'products', 'multiImgs'));
-
+        return view('backend.product.product_edit', compact('categories', 'brands', 'subcategory', 'subSubCategory', 'products', 'multiImgs'));
     }
 
+
+    public function viewVideoLessonsList($productId)
+    {
+        $videoLessons = VideoLesson::where('product_id', $productId)->get();
+
+        return view('backend.product.product_view_video_lessons_list', compact('videoLessons', 'productId'));
+    }
+
+
+    public function UploadVideoLesson($productId)
+    {
+        return view('backend.product.product_edit_media', compact('productId'));
+    }
+
+    public function MultiMediaUpdate(Request $request, int $productId)
+    {
+//        dd($productId);
+        $products = Product::query()->findOrFail($productId);
+        if ($request->hasFile('video') && $request->file('video')->isValid()) {
+            $products->addMediaFromRequest('video')->toMediaCollection('videoList');
+            $notification = array(
+                'message' => 'Product Media Updated Successfully',
+                'alert-type' => 'success'
+            );
+
+            return redirect()->route('product.view.video.lessons.list', $productId)->with($notification);
+        }
+        $notification = array(
+            'message' => 'Product Media Failed',
+            'alert-type' => 'error'
+        );
+
+        return redirect()->route('product.edit.media', $productId)->with($notification);
+    }
+
+    public function MultiMediaDelete($videoLessonId)
+    {
+        $videoLesson = VideoLesson::query()->findOrFail($videoLessonId);
+        $videoLesson->delete();
+
+        $medias = $videoLesson->getMedia('videoList');
+        $media = $medias->first();
+        $myMedia = Media::find($media->id);
+        $myMedia->update(['collection_name' => 'videoListDeleted']);
+        Artisan::call('media-library:regenerate --ids=' . $myMedia->id);
+
+
+        $notification = array(
+            'message' => 'Product Media Deleted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('product.view.video.lessons.list', $videoLesson->product_id)->with($notification);
+    }
 
     public function ProductDataUpdate(Request $request)
     {
@@ -251,9 +352,7 @@ class ProductController extends Controller
         );
 
         return redirect()->route('manage-product')->with($notification);
-
-
-    } // end method
+    }
 
 
 /// Multiple Image Update
@@ -263,7 +362,10 @@ class ProductController extends Controller
 
         foreach ($imgs as $id => $img) {
             $imgDel = MultiImg::findOrFail($id);
-            unlink($imgDel->photo_name);
+
+            if (file_exists($imgDel->photo_name)) {
+                unlink($imgDel->photo_name);
+            }
 
             $make_name = hexdec(uniqid()) . '.' . $img->getClientOriginalExtension();
             Image::make($img)->resize(917, 1000)->save('upload/products/multi-image/' . $make_name);
@@ -272,10 +374,8 @@ class ProductController extends Controller
             MultiImg::where('id', $id)->update([
                 'photo_name' => $uploadPath,
                 'updated_at' => Carbon::now(),
-
             ]);
-
-        } // end foreach
+        }
 
         $notification = array(
             'message' => 'Product Image Updated Successfully',
@@ -284,7 +384,7 @@ class ProductController extends Controller
 
         return redirect()->back()->with($notification);
 
-    } // end mehtod
+    }
 
 
     /// Product Main Thambnail Update ///
@@ -315,7 +415,7 @@ class ProductController extends Controller
 
         return redirect()->back()->with($notification);
 
-    } // end method
+    }
 
 
     //// Multi Image Delete ////
@@ -336,7 +436,7 @@ class ProductController extends Controller
 
         return redirect()->back()->with($notification);
 
-    } // end method
+    }
 
 
     public function ProductInactive($id)
@@ -367,12 +467,19 @@ class ProductController extends Controller
     public function ProductDelete($id)
     {
         $product = Product::findOrFail($id);
-        unlink($product->product_thambnail);
+
+        if (file_exists($product->product_thambnail)) {
+            unlink($product->product_thambnail);
+        }
+
         Product::findOrFail($id)->delete();
 
         $images = MultiImg::where('product_id', $id)->get();
         foreach ($images as $img) {
-            unlink($img->photo_name);
+            if (file_exists($img->photo_name)) {
+                unlink($img->photo_name);
+            }
+
             MultiImg::where('product_id', $id)->delete();
         }
 
