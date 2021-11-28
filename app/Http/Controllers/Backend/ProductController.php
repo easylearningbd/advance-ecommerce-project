@@ -47,7 +47,7 @@ class ProductController extends Controller
     {
         [$entries, $count, $sum] = Product::filter($filters);
         $entries = $entries->get();
-        return response(new ProductResourceCollection(['data' => $entries, 'count' => $count]));
+        return response(new ProductResourceCollection(['data' => $entries, 'count' => $count], true));
     }
 
     public function index2(ProductFilter $filters)
@@ -122,6 +122,7 @@ class ProductController extends Controller
     public function show(int $productId)
     {
         $entry = Product::query()->findOrFail($productId);
+        $entry['order_date'] = $entry->user_order_date;
         $videoLessons = VideoLesson::query()->where('product_id', $productId)->get();
         $entry['lessons'] = $videoLessons;
 
