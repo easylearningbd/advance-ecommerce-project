@@ -18,7 +18,7 @@
 
 			 <div class="box">
 				<div class="box-header with-border">
-				  <h3 class="box-title">Publish All Reviews </h3>
+				  <h3 class="box-title">{{ trans("admin.Publish All Reviews")   }}</h3>
 				</div>
 				<!-- /.box-header -->
 				<div class="box-body">
@@ -26,12 +26,12 @@
 					  <table id="example1" class="table table-bordered table-striped">
 						<thead>
 							<tr>
-								<th>Summary  </th>
-								<th>Comment </th>
-								<th>User </th>
-								<th>Product  </th>
-								<th>Status </th>
-								<th>Action</th>
+								<th>{{ trans("admin.Summary")   }}  </th>
+								<th>{{ trans("admin.Comment")   }} </th>
+								<th>{{ trans("admin.User")   }} </th>
+								<th>{{ trans("admin.Product")   }}  </th>
+								<th>{{ trans("admin.Status")   }} </th>
+								<th>{{ trans("admin.Action")   }}</th>
 								 
 							</tr>
 						</thead>
