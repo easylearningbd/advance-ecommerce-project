@@ -14,7 +14,7 @@
                 <a href="index.html">
                     <!-- logo for regular state and mobile devices -->
                     <div class="d-flex align-items-center justify-content-center">
-                        <img style="height: 60px" src="{{ asset('backend/images/logo/green-shop-.png') }}" alt="">
+                        <img style="height: 60px" src="{{ asset('assets/backend/images/logo/green-shop-.png') }}" alt="">
                         <h3 style="margin-top: 17px;"><b>reen</b> Shop</h3>
                     </div>
                 </a>
