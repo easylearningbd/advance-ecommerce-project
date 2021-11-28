@@ -183,8 +183,8 @@ public function BlogCategoryUpdate(Request $request){
 
     	$image = $request->file('post_image');
     	$name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-    	Image::make($image)->resize(780,433)->save('upload/post/'.$name_gen);
-    	$save_url = 'upload/post/'.$name_gen;
+    	Image::make($image)->resize(780,433)->save('storage/upload/post/'.$name_gen);
+    	$save_url = 'storage/upload/post/'.$name_gen;
 
 	BlogPost::insert([
 		'category_id' => $request->category_id,
