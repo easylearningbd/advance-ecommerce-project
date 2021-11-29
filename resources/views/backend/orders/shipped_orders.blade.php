@@ -18,7 +18,7 @@
 
 			 <div class="box">
 				<div class="box-header with-border">
-				  <h3 class="box-title">Shipped Orders List</h3>
+				  <h3 class="box-title">{{ trans("admin.Shipped Orders List")   }}</h3>
 				</div>
 				<!-- /.box-header -->
 				<div class="box-body">
@@ -26,12 +26,12 @@
 					  <table id="example1" class="table table-bordered table-striped">
 						<thead>
 							<tr>
-								<th>Date </th>
-								<th>Invoice </th>
-								<th>Amount </th>
-								<th>Payment </th>
-								<th>Status </th>
-								<th>Action</th>
+								<th>{{ trans("admin.Date")   }} </th>
+								<th>{{ trans("admin.Invoice")   }} </th>
+								<th>{{ trans("admin.Amount")   }} </th>
+								<th>{{ trans("admin.Payment")   }} </th>
+								<th>{{ trans("admin.Status")   }} </th>
+								<th>{{ trans("admin.Action")   }}</th>
 
 							</tr>
 						</thead>

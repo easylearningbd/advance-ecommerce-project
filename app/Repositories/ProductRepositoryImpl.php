@@ -17,7 +17,11 @@ class ProductRepositoryImpl implements ProductRepository
 
     public function getByIds(array $productIds)
     {
-        return Product::query()->whereIn('id', $productIds)->get();
+        return Product::query()
+            ->whereIn('id', $productIds)
+            ->orderBy('updated_at', 'desc')
+            ->take(10)
+            ->get();
     }
 
     public function show(int $category_id)

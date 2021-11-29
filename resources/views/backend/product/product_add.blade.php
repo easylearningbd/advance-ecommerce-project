@@ -13,7 +13,7 @@
 		 <!-- Basic Forms -->
 		  <div class="box">
 			<div class="box-header with-border">
-			  <h4 class="box-title">Add Product </h4>
+			  <h4 class="box-title">{{ trans("admin.Add Product")   }} </h4>
 
 			</div>
 			<!-- /.box-header -->
@@ -32,7 +32,7 @@
 			<div class="col-md-4">
 
 	 <div class="form-group">
-	<h5>Brand Select <span class="text-danger">*</span></h5>
+	<h5>{{ trans("admin.Brand Select")   }} <span class="text-danger">*</span></h5>
 	<div class="controls">
 		<select name="brand_id" class="form-control" required="" >
 			<option value="" selected="" disabled="">Select Brand</option>
@@ -51,7 +51,7 @@
 			<div class="col-md-4">
 
 				 <div class="form-group">
-	<h5>Category Select <span class="text-danger">*</span></h5>
+	<h5>{{ trans("admin.Category Select")   }} <span class="text-danger">*</span></h5>
 	<div class="controls">
 		<select name="category_id" class="form-control" required="" >
 			<option value="" selected="" disabled="">Select Category</option>
@@ -71,7 +71,7 @@
 			<div class="col-md-4">
 
 				 <div class="form-group">
-	<h5>SubCategory Select <span class="text-danger">*</span></h5>
+	<h5>{{ trans("admin.SubCategory Select")   }} <span class="text-danger">*</span></h5>
 	<div class="controls">
 		<select name="subcategory_id" class="form-control" required="" >
 			<option value="" selected="" disabled="">Select SubCategory</option>
@@ -93,7 +93,7 @@
 			<div class="col-md-4">
 
 	 <div class="form-group">
-	<h5>SubSubCategory Select <span class="text-danger">*</span></h5>
+	<h5>{{ trans("admin.SubSubCategory Select")   }} <span class="text-danger">*</span></h5>
 	<div class="controls">
 		<select name="subsubcategory_id" class="form-control" required="" >
 			<option value="" selected="" disabled="">Select SubSubCategory</option>
@@ -110,7 +110,7 @@
 			<div class="col-md-4">
 
 				 <div class="form-group">
-			<h5>Product Name En <span class="text-danger">*</span></h5>
+			<h5>{{ trans("admin.Product Name En")   }} <span class="text-danger">*</span></h5>
 			<div class="controls">
 				<input type="text" name="product_name_en" class="form-control" required="">
      @error('product_name_en')
@@ -125,7 +125,7 @@
 			<div class="col-md-4">
 
 				 <div class="form-group">
-			<h5>Product Name Hin <span class="text-danger">*</span></h5>
+			<h5>{{ trans("admin.Product Name Hin")   }} <span class="text-danger">*</span></h5>
 			<div class="controls">
 				<input type="text" name="product_name_hin" class="form-control" required="">
      @error('product_name_hin')
@@ -144,7 +144,7 @@
 			<div class="col-md-4">
 
 	  <div class="form-group">
-			<h5>Product Code <span class="text-danger">*</span></h5>
+			<h5>{{ trans("admin.Product Code")   }} <span class="text-danger">*</span></h5>
 			<div class="controls">
 				<input type="text" name="product_code" class="form-control" required="">
      @error('product_code')
@@ -158,7 +158,7 @@
 			<div class="col-md-4">
 
 				 <div class="form-group">
-			<h5>Product Quantity <span class="text-danger">*</span></h5>
+			<h5>{{ trans("admin.Product Quantity")   }} <span class="text-danger">*</span></h5>
 			<div class="controls">
 				<input type="text" name="product_qty" class="form-control" required="">
      @error('product_qty')
@@ -173,7 +173,7 @@
 			<div class="col-md-4">
 
 				 <div class="form-group">
-			<h5>Product Tags En <span class="text-danger">*</span></h5>
+			<h5>{{ trans("admin.Product Tags En")   }} <span class="text-danger">*</span></h5>
 			<div class="controls">
 	 <input type="text" name="product_tags_en" class="form-control" value="Lorem,Ipsum,Amet" data-role="tagsinput" required="">
      @error('product_tags_en')
@@ -195,7 +195,7 @@
 			<div class="col-md-4">
 
 	    <div class="form-group">
-			<h5>Product Tags Hin <span class="text-danger">*</span></h5>
+			<h5>{{ trans("admin.Product Tags Hin")   }} <span class="text-danger">*</span></h5>
 			<div class="controls">
 	 <input type="text" name="product_tags_hin" class="form-control" value="Lorem,Ipsum,Amet" data-role="tagsinput" required="">
      @error('product_tags_hin')
@@ -209,7 +209,7 @@
 			<div class="col-md-4">
 
 				 <div class="form-group">
-			<h5>Product Size En <span class="text-danger">*</span></h5>
+			<h5>{{ trans("admin.Product Size En")   }} <span class="text-danger">*</span></h5>
 			<div class="controls">
 	 <input type="text" name="product_size_en" class="form-control" value="Small,Midium,Large" data-role="tagsinput" required="">
      @error('product_size_en')
@@ -224,7 +224,7 @@
 			<div class="col-md-4">
 
 				 <div class="form-group">
-			<h5>Product Size Hin <span class="text-danger">*</span></h5>
+			<h5>{{ trans("admin.Product Size Hin")   }} <span class="text-danger">*</span></h5>
 			<div class="controls">
 	 <input type="text" name="product_size_hin" class="form-control" value="Small,Midium,Large" data-role="tagsinput" required="">
      @error('product_size_hin')
@@ -243,7 +243,7 @@
 			<div class="col-md-4">
 
 	    <div class="form-group">
-			<h5>Product Color En <span class="text-danger">*</span></h5>
+			<h5>{{ trans("admin.Product Color En")   }} <span class="text-danger">*</span></h5>
 			<div class="controls">
 	 <input type="text" name="product_color_en" class="form-control" value="red,Black,Amet" data-role="tagsinput" required="">
      @error('product_color_en')
@@ -257,7 +257,7 @@
 			<div class="col-md-4">
 
 				 <div class="form-group">
-			<h5>Product Color Hin <span class="text-danger">*</span></h5>
+			<h5>{{ trans("admin.Product Color Hin")   }} <span class="text-danger">*</span></h5>
 			<div class="controls">
 	 <input type="text" name="product_color_hin" class="form-control" value="red,Black,Large" data-role="tagsinput" required="">
      @error('product_color_hin')
@@ -272,7 +272,7 @@
 			<div class="col-md-4">
 
 				<div class="form-group">
-			<h5>Product Selling Price <span class="text-danger">*</span></h5>
+			<h5>{{ trans("admin.Product Selling Price")   }} <span class="text-danger">*</span></h5>
 			<div class="controls">
 				<input type="text" name="selling_price" class="form-control" required="">
      @error('selling_price')
@@ -292,7 +292,7 @@
 			<div class="col-md-4">
 
 	    <div class="form-group">
-			<h5>Product Discount Price <span class="text-danger">*</span></h5>
+			<h5>{{ trans("admin.Product Discount Price")   }} <span class="text-danger">*</span></h5>
 			<div class="controls">
 	 <input type="text" name="discount_price" class="form-control"  required="">
      @error('discount_price')
@@ -306,7 +306,7 @@
 			<div class="col-md-4">
 
 	    <div class="form-group">
-			<h5>Main Thambnail <span class="text-danger">*</span></h5>
+			<h5>{{ trans("admin.Main Thambnail")   }} <span class="text-danger">*</span></h5>
 			<div class="controls">
 	 <input type="file" name="product_thambnail" class="form-control" onChange="mainThamUrl(this)" required="" >
      @error('product_thambnail')
@@ -323,7 +323,7 @@
 			<div class="col-md-4">
 
 	    <div class="form-group">
-			<h5>Multiple Image <span class="text-danger">*</span></h5>
+			<h5>{{ trans("admin.Multiple Image")   }} <span class="text-danger">*</span></h5>
 			<div class="controls">
 	 <input type="file" name="multi_img[]" class="form-control" multiple="" id="multiImg" required="" >
      @error('multi_img')
@@ -347,7 +347,7 @@
 			<div class="col-md-6">
 
 	    <div class="form-group">
-			<h5>Short Description English <span class="text-danger">*</span></h5>
+			<h5>{{ trans("admin.Short Description English")   }} <span class="text-danger">*</span></h5>
 			<div class="controls">
 	<textarea name="short_descp_en" id="textarea" class="form-control" required placeholder="Textarea text"></textarea>
 	 		 </div>
@@ -358,7 +358,7 @@
 			<div class="col-md-6">
 
 	     <div class="form-group">
-			<h5>Short Description Hindi <span class="text-danger">*</span></h5>
+			<h5>{{ trans("admin.Short Description Hindi")   }}  <span class="text-danger">*</span></h5>
 			<div class="controls">
 	<textarea name="short_descp_hin" id="textarea" class="form-control" required placeholder="Textarea text"></textarea>
 	 		 </div>
@@ -377,7 +377,7 @@
 			<div class="col-md-6">
 
 	    <div class="form-group">
-			<h5>Long Description English <span class="text-danger">*</span></h5>
+			<h5>{{ trans("admin.Long Description English")   }} <span class="text-danger">*</span></h5>
 			<div class="controls">
 	<textarea id="editor1" name="long_descp_en" rows="10" cols="80" required="">
 		Long Description English
@@ -390,7 +390,7 @@
 			<div class="col-md-6">
 
 	     <div class="form-group">
-			<h5>Long Description Hindi <span class="text-danger">*</span></h5>
+			<h5>{{ trans("admin.Long Description Hindi")   }} <span class="text-danger">*</span></h5>
 			<div class="controls">
 	<textarea id="editor2" name="long_descp_hin" rows="10" cols="80">
 		Long Description Hindi

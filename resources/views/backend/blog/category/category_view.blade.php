@@ -18,7 +18,7 @@
 
 			 <div class="box">
 				<div class="box-header with-border">
-				  <h3 class="box-title">Blog Category List <span class="badge badge-pill badge-danger"> {{ count($blogcategory) }} </span></h3>
+				  <h3 class="box-title">{{ trans("admin.Blog Category List")   }} <span class="badge badge-pill badge-danger"> {{ count($blogcategory) }} </span></h3>
 				</div>
 				<!-- /.box-header -->
 				<div class="box-body">
@@ -27,9 +27,9 @@
 						<thead>
 							<tr>
 								 
-								<th>Blog Category En</th>
-								<th>Blog Category Hin </th>
-								<th>Action</th>
+								<th>{{ trans("admin.Blog Category En")   }}</th>
+								<th>{{ trans("admin.Blog Category Hin")   }} </th>
+								<th>{{ trans("admin.Action")   }}</th>
 								 
 							</tr>
 						</thead>
@@ -68,7 +68,7 @@
 
 			 <div class="box">
 				<div class="box-header with-border">
-				  <h3 class="box-title">Add Blog Category </h3>
+				  <h3 class="box-title">{{ trans("admin.Add Blog Category")   }} </h3>
 				</div>
 				<!-- /.box-header -->
 				<div class="box-body">
@@ -80,7 +80,7 @@
 					   
 
 	 <div class="form-group">
-		<h5>Blog Category English  <span class="text-danger">*</span></h5>
+		<h5>{{ trans("admin.}Blog Category English")   }}  <span class="text-danger">*</span></h5>
 		<div class="controls">
 	 <input type="text"  name="blog_category_name_en" class="form-control" > 
 	 @error('blog_category_name_en') 
@@ -91,7 +91,7 @@
 
 
 	<div class="form-group">
-		<h5>Blog Category Hindi <span class="text-danger">*</span></h5>
+		<h5>{{ trans("admin.Blog Category Hindi")   }} <span class="text-danger">*</span></h5>
 		<div class="controls">
 	 <input type="text" name="blog_category_name_hin" class="form-control" >
      @error('blog_category_name_hin') 

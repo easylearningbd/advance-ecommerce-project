@@ -47,7 +47,7 @@ class ProductController extends Controller
     {
         [$entries, $count, $sum] = Product::filter($filters);
         $entries = $entries->get();
-        return response(new ProductResourceCollection(['data' => $entries, 'count' => $count]));
+        return response(new ProductResourceCollection(['data' => $entries, 'count' => $count], true));
     }
 
     public function index2(ProductFilter $filters)
@@ -122,6 +122,7 @@ class ProductController extends Controller
     public function show(int $productId)
     {
         $entry = Product::query()->findOrFail($productId);
+        $entry['order_date'] = $entry->user_order_date;
         $videoLessons = VideoLesson::query()->where('product_id', $productId)->get();
         $entry['lessons'] = $videoLessons;
 
@@ -151,7 +152,7 @@ class ProductController extends Controller
         ]);
 
         if ($files = $request->file('file')) {
-            $destinationPath = 'upload/pdf'; // upload path
+            $destinationPath = 'storage/upload/pdf'; // upload path
             $digitalItem = date('YmdHis') . "." . $files->getClientOriginalExtension();
             $files->move($destinationPath, $digitalItem);
         }
@@ -159,8 +160,8 @@ class ProductController extends Controller
 
         $image = $request->file('product_thambnail');
         $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
-        Image::make($image)->resize(917, 1000)->save('upload/products/thambnail/' . $name_gen);
-        $save_url = 'upload/products/thambnail/' . $name_gen;
+        Image::make($image)->resize(917, 1000)->save('storage/upload/products/thambnail/' . $name_gen);
+        $save_url = 'storage/upload/products/thambnail/' . $name_gen;
 
         $product_id = Product::insertGetId([
             'brand_id' => $request->brand_id,
@@ -207,8 +208,8 @@ class ProductController extends Controller
         $images = $request->file('multi_img');
         foreach ($images as $img) {
             $make_name = hexdec(uniqid()) . '.' . $img->getClientOriginalExtension();
-            Image::make($img)->resize(917, 1000)->save('upload/products/multi-image/' . $make_name);
-            $uploadPath = 'upload/products/multi-image/' . $make_name;
+            Image::make($img)->resize(917, 1000)->save('storage/upload/products/multi-image/' . $make_name);
+            $uploadPath = 'storage/upload/products/multi-image/' . $make_name;
 
             MultiImg::insert([
 
@@ -368,8 +369,8 @@ class ProductController extends Controller
             }
 
             $make_name = hexdec(uniqid()) . '.' . $img->getClientOriginalExtension();
-            Image::make($img)->resize(917, 1000)->save('upload/products/multi-image/' . $make_name);
-            $uploadPath = 'upload/products/multi-image/' . $make_name;
+            Image::make($img)->resize(917, 1000)->save('storage/upload/products/multi-image/' . $make_name);
+            $uploadPath = 'storage/upload/products/multi-image/' . $make_name;
 
             MultiImg::where('id', $id)->update([
                 'photo_name' => $uploadPath,
@@ -399,8 +400,8 @@ class ProductController extends Controller
 
         $image = $request->file('product_thambnail');
         $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
-        Image::make($image)->resize(917, 1000)->save('upload/products/thambnail/' . $name_gen);
-        $save_url = 'upload/products/thambnail/' . $name_gen;
+        Image::make($image)->resize(917, 1000)->save('storage/upload/products/thambnail/' . $name_gen);
+        $save_url = 'storage/upload/products/thambnail/' . $name_gen;
 
         Product::findOrFail($pro_id)->update([
             'product_thambnail' => $save_url,

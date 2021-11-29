@@ -190,7 +190,7 @@ Sub - Subcategory Product
 
 
 
-            <div class="home-banner"> <img src="{{ asset('frontend/assets/images/banners/LHS-banner.jpg') }}" alt="Image"> </div>
+            <div class="home-banner"> <img src="{{ asset('assets/frontend/assets/images/banners/LHS-banner.jpg') }}" alt="Image"> </div>
           </div>
           <!-- /.sidebar-filter -->
         </div>
@@ -205,7 +205,7 @@ Sub - Subcategory Product
 
         <div id="category" class="category-carousel hidden-xs">
           <div class="item">
-            <div class="image"> <img src="{{ asset('frontend/assets/images/banners/cat-banner-1.jpg') }}" alt="" class="img-responsive"> </div>
+            <div class="image"> <img src="{{ asset('assets/frontend/assets/images/banners/cat-banner-1.jpg') }}" alt="" class="img-responsive"> </div>
             <div class="container-fluid">
               <div class="caption vertical-top text-left">
                 <div class="big-text"> Big Sale </div>

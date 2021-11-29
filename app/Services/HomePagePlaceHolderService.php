@@ -21,6 +21,9 @@ class HomePagePlaceHolderService
         } else if ($config['type'] == 'product_category') {
             return self::generateData($config);
         }
+
+        return self::generateUserActionData($config);
+
     }
 
     private static function generateSliderData(array $config): array
@@ -29,7 +32,7 @@ class HomePagePlaceHolderService
         $data['type'] = $config['type'];
         $group_id = (integer)$config['value'];
 
-        $data['data']['items'] = app()->make(SliderRepository::class)
+        $data['items'] = app()->make(SliderRepository::class)
             ->getGroup($group_id);
         // TODO : can we use bfliter as
         return $data;
@@ -39,8 +42,9 @@ class HomePagePlaceHolderService
     {
         $data = array();
         $data['type'] = $config['type'];
-        $data['key'] = $config['key'];
-        $data['value'] = $config['value'];
+        $data['title'] = $config['title'] ?? "";
+        $data['key'] = $config['key'] ?? "";
+        $data['value'] = $config['value'] ?? "";
         return $data;
     }
 
@@ -52,10 +56,10 @@ class HomePagePlaceHolderService
         $categoryId = (integer)$config['category_id'];
         $productIds = (array)$config['product_ids'];
 
-        $data['data']['items']['category'] = app()->make(CategoryRepository::class)
+        $data['category'] = app()->make(CategoryRepository::class)
             ->show($categoryId);
 
-        $data['data']['items']['products'] = app()->make(ProductRepository::class)
+        $data['category']['products'] = app()->make(ProductRepository::class)
             ->getByIds($productIds);
 
         return $data;
