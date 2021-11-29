@@ -250,19 +250,19 @@
                                     <div class="col-md-4" style="visibility: hidden">
                                         <label for="">Stripe</label>
                                         <input type="radio" name="payment_method" value="stripe">
-                                        <img src="{{ asset('frontend/assets/images/payments/4.png') }}">
+                                        <img src="{{ asset('assets/frontend/assets/images/payments/4.png') }}">
                                     </div> <!-- end col md 4 -->
 
                                     <div class="col-md-4" style="visibility: hidden">
                                         <label for="">Card</label>
                                         <input type="radio" name="payment_method" value="card">
-                                        <img src="{{ asset('frontend/assets/images/payments/3.png') }}">
+                                        <img src="{{ asset('assets/frontend/assets/images/payments/3.png') }}">
                                     </div> <!-- end col md 4 -->
 
                                     <div class="col-md-4">
                                         <label for="">Cash</label>
                                         <input type="radio" name="payment_method" value="cash">
-                                        <img src="{{ asset('frontend/assets/images/payments/6.png') }}">
+                                        <img src="{{ asset('assets/frontend/assets/images/payments/6.png') }}">
                                     </div> <!-- end col md 4 -->
 
 

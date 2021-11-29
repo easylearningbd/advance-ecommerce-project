@@ -31,7 +31,7 @@
             <div class='col-md-3 sidebar'>
                 <div class="sidebar-module-container">
                     <div class="home-banner outer-top-n">
-                        <img src="{{ asset('frontend/assets/images/banners/LHS-banner.jpg') }}" alt="Image">
+                        <img src="{{ asset('assets/frontend/assets/images/banners/LHS-banner.jpg') }}" alt="Image">
                     </div>
 
 
@@ -61,7 +61,7 @@
                         <div id="advertisement" class="advertisement">
                             <div class="item">
                                 <div class="avatar"><img
-                                        src="{{ asset('frontend/assets/images/testimonials/member1.png') }} "
+                                        src="{{ asset('assets/frontend/assets/images/testimonials/member1.png') }} "
                                         alt="Image"></div>
                                 <div class="testimonials"><em>"</em> Vtae sodales aliq uam morbi non sem lacus port
                                     mollis. Nunc condime tum metus eud molest sed consectetuer.<em>"</em></div>
@@ -71,7 +71,7 @@
 
                             <div class="item">
                                 <div class="avatar"><img
-                                        src="{{ asset('frontend/assets/images/testimonials/member3.png') }} "
+                                        src="{{ asset('assets/frontend/assets/images/testimonials/member3.png') }} "
                                         alt="Image"></div>
                                 <div class="testimonials"><em>"</em>Vtae sodales aliq uam morbi non sem lacus port
                                     mollis. Nunc condime tum metus eud molest sed consectetuer.<em>"</em></div>
@@ -80,7 +80,7 @@
 
                             <div class="item">
                                 <div class="avatar"><img
-                                        src="{{ asset('frontend/assets/images/testimonials/member2.png') }} "
+                                        src="{{ asset('assets/frontend/assets/images/testimonials/member2.png') }} "
                                         alt="Image"></div>
                                 <div class="testimonials"><em>"</em> Vtae sodales aliq uam morbi non sem lacus port
                                     mollis. Nunc condime tum metus eud molest sed consectetuer.<em>"</em></div>
@@ -404,7 +404,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-6">
                                                                     <img style="border-radius: 50%"
-                                                                         src="{{ (!empty($item->user->profile_photo_path))? url('upload/user_images/'.$item->user->profile_photo_path):url('upload/no_image.jpg') }}"
+                                                                         src="{{ (!empty($item->user->profile_photo_path))? url('storage/upload/user_images/'.$item->user->profile_photo_path):url('storage/upload/no_image.jpg') }}"
                                                                          width="40px;"
                                                                          height="40px;"><b> {{ $item->user->name }}</b>
 

@@ -1,11 +1,11 @@
 @extends('frontend.main_master')
 @section('content')
 @section('title')
-Subcategory Product 
+Subcategory Product
 @endsection
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
- 
+
 
 
 <div class="breadcrumb">
@@ -23,15 +23,15 @@ Subcategory Product
         @endforeach
       </ul>
     </div>
-    <!-- /.breadcrumb-inner --> 
+    <!-- /.breadcrumb-inner -->
   </div>
-  <!-- /.container --> 
+  <!-- /.container -->
 </div>
 <!-- /.breadcrumb -->
 <div class="body-content outer-top-xs">
   <div class='container'>
     <div class='row'>
-      <div class='col-md-3 sidebar'> 
+      <div class='col-md-3 sidebar'>
 
         <!-- ===== == TOP NAVIGATION ======= ==== -->
         @include('frontend.common.vertical_menu')
@@ -41,7 +41,7 @@ Subcategory Product
 
 
         <div class="sidebar-module-container">
-          <div class="sidebar-filter"> 
+          <div class="sidebar-filter">
             <!-- ============================================== SIDEBAR CATEGORY ============================================== -->
             <div class="sidebar-widget wow fadeInUp">
               <h3 class="section-title">shop by</h3>
@@ -54,33 +54,32 @@ Subcategory Product
 
  @foreach($categories as $category)
 	<div class="accordion-group">
-	<div class="accordion-heading"> <a href="#collapse{{ $category->id }}" data-toggle="collapse" class="accordion-toggle collapsed"> 
+	<div class="accordion-heading"> <a href="#collapse{{ $category->id }}" data-toggle="collapse" class="accordion-toggle collapsed">
 		@if(session()->get('language') == 'hindi') {{ $category->category_name_hin }} @else {{ $category->category_name_en }} @endif </a> </div>
 	<!-- /.accordion-heading -->
 	<div class="accordion-body collapse" id="collapse{{ $category->id }}" style="height: 0px;">
 	  <div class="accordion-inner">
-	   
+
  @php
   $subcategories = App\Models\SubCategory::where('category_id',$category->id)->orderBy('subcategory_name_en','ASC')->get();
-  @endphp 
+  @endphp
 
    @foreach($subcategories as $subcategory)
 	    <ul>
 	      <li><a href="{{ url('subcategory/product/'.$subcategory->id.'/'.$subcategory->subcategory_slug_en ) }}">
 	      	@if(session()->get('language') == 'hindi') {{ $subcategory->subcategory_name_hin }} @else {{ $subcategory->subcategory_name_en }} @endif</a></li>
-	      
+
 	    </ul>
-	@endforeach 
+	@endforeach
 
 
 	  </div>
-	  <!-- /.accordion-inner --> 
+	  <!-- /.accordion-inner -->
 	</div>
-	<!-- /.accordion-body --> 
+	<!-- /.accordion-body -->
 	</div>
 	<!-- /.accordion-group -->
-    @endforeach              
-                
+    @endforeach
 
 
 
@@ -90,15 +89,16 @@ Subcategory Product
 
 
 
-                  
+
+
                 </div>
-                <!-- /.accordion --> 
+                <!-- /.accordion -->
               </div>
-              <!-- /.sidebar-widget-body --> 
+              <!-- /.sidebar-widget-body -->
             </div>
-            <!-- /.sidebar-widget --> 
-            <!-- ============================================== SIDEBAR CATEGORY : END ============================================== --> 
-            
+            <!-- /.sidebar-widget -->
+            <!-- ============================================== SIDEBAR CATEGORY : END ============================================== -->
+
             <!-- ============================================== PRICE SILDER============================================== -->
             <div class="sidebar-widget wow fadeInUp">
               <div class="widget-header">
@@ -109,12 +109,12 @@ Subcategory Product
                   <input type="text" id="amount" style="border:0; color:#666666; font-weight:bold;text-align:center;">
                   <input type="text" class="price-slider" value="" >
                 </div>
-                <!-- /.price-range-holder --> 
+                <!-- /.price-range-holder -->
                 <a href="#" class="lnk btn btn-primary">Show Now</a> </div>
-              <!-- /.sidebar-widget-body --> 
+              <!-- /.sidebar-widget-body -->
             </div>
-            <!-- /.sidebar-widget --> 
-            <!-- ============================================== PRICE SILDER : END ============================================== --> 
+            <!-- /.sidebar-widget -->
+            <!-- ============================================== PRICE SILDER : END ============================================== -->
             <!-- ============================================== MANUFACTURES============================================== -->
             <div class="sidebar-widget wow fadeInUp">
               <div class="widget-header">
@@ -129,12 +129,12 @@ Subcategory Product
                   <li><a href="#">Chanel</a></li>
                   <li><a href="#">Other Brand</a></li>
                 </ul>
-                <!--<a href="#" class="lnk btn btn-primary">Show Now</a>--> 
+                <!--<a href="#" class="lnk btn btn-primary">Show Now</a>-->
               </div>
-              <!-- /.sidebar-widget-body --> 
+              <!-- /.sidebar-widget-body -->
             </div>
-            <!-- /.sidebar-widget --> 
-            <!-- ============================================== MANUFACTURES: END ============================================== --> 
+            <!-- /.sidebar-widget -->
+            <!-- ============================================== MANUFACTURES: END ============================================== -->
             <!-- ============================================== COLOR============================================== -->
             <div class="sidebar-widget wow fadeInUp">
               <div class="widget-header">
@@ -150,10 +150,10 @@ Subcategory Product
                   <li><a href="#">Teal</a></li>
                 </ul>
               </div>
-              <!-- /.sidebar-widget-body --> 
+              <!-- /.sidebar-widget-body -->
             </div>
-            <!-- /.sidebar-widget --> 
-            <!-- ============================================== COLOR: END ============================================== --> 
+            <!-- /.sidebar-widget -->
+            <!-- ============================================== COLOR: END ============================================== -->
             <!-- == ======= COMPARE==== ==== -->
             <div class="sidebar-widget wow fadeInUp outer-top-vs">
               <h3 class="section-title">Compare products</h3>
@@ -161,12 +161,12 @@ Subcategory Product
                 <div class="compare-report">
                   <p>You have no <span>item(s)</span> to compare</p>
                 </div>
-                <!-- /.compare-report --> 
+                <!-- /.compare-report -->
               </div>
-              <!-- /.sidebar-widget-body --> 
+              <!-- /.sidebar-widget-body -->
             </div>
-            <!-- /.sidebar-widget --> 
-            <!-- ============================================== COMPARE: END ============================================== --> 
+            <!-- /.sidebar-widget -->
+            <!-- ============================================== COMPARE: END ============================================== -->
 
 
             <!-- == ====== PRODUCT TAGS ==== ======= -->
@@ -180,50 +180,50 @@ Subcategory Product
 
 
           <!----------- Testimonials------------->
-          
+
             @include('frontend.common.testimonials')
             <!-- == ========== Testimonials: END ======== ========= -->
 
 
-            
-            <div class="home-banner"> <img src="{{ asset('frontend/assets/images/banners/LHS-banner.jpg') }}" alt="Image"> </div>
+
+            <div class="home-banner"> <img src="{{ asset('assets/frontend/assets/images/banners/LHS-banner.jpg') }}" alt="Image"> </div>
           </div>
-          <!-- /.sidebar-filter --> 
+          <!-- /.sidebar-filter -->
         </div>
-        <!-- /.sidebar-module-container --> 
+        <!-- /.sidebar-module-container -->
       </div>
       <!-- /.sidebar -->
-      <div class='col-md-9'> 
+      <div class='col-md-9'>
 
 
 
         <!-- == ==== SECTION – HERO === ====== -->
-        
+
         <div id="category" class="category-carousel hidden-xs">
           <div class="item">
-            <div class="image"> <img src="{{ asset('frontend/assets/images/banners/cat-banner-1.jpg') }}" alt="" class="img-responsive"> </div>
+            <div class="image"> <img src="{{ asset('assets/frontend/assets/images/banners/cat-banner-1.jpg') }}" alt="" class="img-responsive"> </div>
             <div class="container-fluid">
               <div class="caption vertical-top text-left">
                 <div class="big-text"> Big Sale </div>
                 <div class="excerpt hidden-sm hidden-md"> Save up to 49% off </div>
                 <div class="excerpt-normal hidden-sm hidden-md"> Lorem ipsum dolor sit amet, consectetur adipiscing elit </div>
               </div>
-              <!-- /.caption --> 
+              <!-- /.caption -->
             </div>
-            <!-- /.container-fluid --> 
+            <!-- /.container-fluid -->
           </div>
         </div>
-      
+
        @foreach($breadsubcat as $item)
-        
+
  <span class="badge badge-danger" style="background: #808080">{{ $item->category->category_name_en }} </span>
         @endforeach
 /
         @foreach($breadsubcat as $item)
  <span class="badge badge-danger" style="background: #FF0000">{{ $item->subcategory_name_en }} </span>
-        
-        @endforeach  
-     
+
+        @endforeach
+
         <div class="clearfix filters-container m-t-10">
           <div class="row">
             <div class="col col-sm-6 col-md-2">
@@ -233,7 +233,7 @@ Subcategory Product
                   <li><a data-toggle="tab" href="#list-container"><i class="icon fa fa-th-list"></i>List</a></li>
                 </ul>
               </div>
-              <!-- /.filter-tabs --> 
+              <!-- /.filter-tabs -->
             </div>
             <!-- /.col -->
             <div class="col col-sm-12 col-md-6">
@@ -250,9 +250,9 @@ Subcategory Product
                       </ul>
                     </div>
                   </div>
-                  <!-- /.fld --> 
+                  <!-- /.fld -->
                 </div>
-                <!-- /.lbl-cnt --> 
+                <!-- /.lbl-cnt -->
               </div>
               <!-- /.col -->
               <div class="col col-sm-3 col-md-6 no-padding">
@@ -274,19 +274,19 @@ Subcategory Product
                       </ul>
                     </div>
                   </div>
-                  <!-- /.fld --> 
+                  <!-- /.fld -->
                 </div>
-                <!-- /.lbl-cnt --> 
+                <!-- /.lbl-cnt -->
               </div>
-              <!-- /.col --> 
+              <!-- /.col -->
             </div>
             <!-- /.col -->
             <div class="col col-sm-6 col-md-4 text-right">
-              
+
               <!-- /.pagination-container --> </div>
-            <!-- /.col --> 
+            <!-- /.col -->
           </div>
-          <!-- /.row --> 
+          <!-- /.row -->
         </div>
 
 
@@ -298,16 +298,16 @@ Subcategory Product
               <div class="category-product">
                 <div class="row" id="grid_view_product">
 
- 
+
              @include('frontend.product.grid_view_product')
 
 
- 
+
                 </div>
-                <!-- /.row --> 
+                <!-- /.row -->
               </div>
-              <!-- /.category-product --> 
-              
+              <!-- /.category-product -->
+
             </div>
             <!-- /.tab-pane -->
 
@@ -317,7 +317,7 @@ Subcategory Product
 
 
  <!--            //////////////////// Product List View Start ////////////// -->
-            
+
 
 
             <div class="tab-pane "  id="list-container">
@@ -327,45 +327,45 @@ Subcategory Product
 
       @include('frontend.product.list_view_product')
 
-                
+
 
  <!--            //////////////////// Product List View END ////////////// -->
 
- 
 
 
-                
+
+
               </div>
-              <!-- /.category-product --> 
+              <!-- /.category-product -->
             </div>
-            <!-- /.tab-pane #list-container --> 
+            <!-- /.tab-pane #list-container -->
           </div>
           <!-- /.tab-content -->
           <div class="clearfix filters-container">
             <div class="text-right">
               <div class="pagination-container">
                 <ul class="list-inline list-unstyled">
-                  
+
                 </ul>
-                <!-- /.list-inline --> 
+                <!-- /.list-inline -->
               </div>
               <!-- /.pagination-container --> </div>
-            <!-- /.text-right --> 
-            
+            <!-- /.text-right -->
+
           </div>
-          <!-- /.filters-container --> 
-          
+          <!-- /.filters-container -->
+
         </div>
-        <!-- /.search-result-container --> 
-        
+        <!-- /.search-result-container -->
+
       </div>
-      <!-- /.col --> 
+      <!-- /.col -->
 
 
 
 
     <div class="ajax-loadmore-product text-center" style="display: none;">
-      <img src="{{ asset('frontend/assets/images/loader.svg') }}" style="width: 120px; height: 120px;">
+      <img src="{{ asset('assets/frontend/assets/images/loader.svg') }}" style="width: 120px; height: 120px;">
 
     </div>
 
@@ -375,52 +375,52 @@ Subcategory Product
 
 
     </div>
-    <!-- /.row --> 
+    <!-- /.row -->
     <!-- ============================================== BRANDS CAROUSEL ============================================== -->
     <div id="brands-carousel" class="logo-slider wow fadeInUp">
       <div class="logo-slider-inner">
         <div id="brand-slider" class="owl-carousel brand-slider custom-carousel owl-theme">
           <div class="item m-t-15"> <a href="#" class="image"> <img data-echo="assets/images/brands/brand1.png" src="assets/images/blank.gif" alt=""> </a> </div>
           <!--/.item-->
-          
+
           <div class="item m-t-10"> <a href="#" class="image"> <img data-echo="assets/images/brands/brand2.png" src="assets/images/blank.gif" alt=""> </a> </div>
           <!--/.item-->
-          
+
           <div class="item"> <a href="#" class="image"> <img data-echo="assets/images/brands/brand3.png" src="assets/images/blank.gif" alt=""> </a> </div>
           <!--/.item-->
-          
+
           <div class="item"> <a href="#" class="image"> <img data-echo="assets/images/brands/brand4.png" src="assets/images/blank.gif" alt=""> </a> </div>
           <!--/.item-->
-          
+
           <div class="item"> <a href="#" class="image"> <img data-echo="assets/images/brands/brand5.png" src="assets/images/blank.gif" alt=""> </a> </div>
           <!--/.item-->
-          
+
           <div class="item"> <a href="#" class="image"> <img data-echo="assets/images/brands/brand6.png" src="assets/images/blank.gif" alt=""> </a> </div>
           <!--/.item-->
-          
+
           <div class="item"> <a href="#" class="image"> <img data-echo="assets/images/brands/brand2.png" src="assets/images/blank.gif" alt=""> </a> </div>
           <!--/.item-->
-          
+
           <div class="item"> <a href="#" class="image"> <img data-echo="assets/images/brands/brand4.png" src="assets/images/blank.gif" alt=""> </a> </div>
           <!--/.item-->
-          
+
           <div class="item"> <a href="#" class="image"> <img data-echo="assets/images/brands/brand1.png" src="assets/images/blank.gif" alt=""> </a> </div>
           <!--/.item-->
-          
+
           <div class="item"> <a href="#" class="image"> <img data-echo="assets/images/brands/brand5.png" src="assets/images/blank.gif" alt=""> </a> </div>
-          <!--/.item--> 
+          <!--/.item-->
         </div>
-        <!-- /.owl-carousel #logo-slider --> 
+        <!-- /.owl-carousel #logo-slider -->
       </div>
-      <!-- /.logo-slider-inner --> 
-      
+      <!-- /.logo-slider-inner -->
+
     </div>
-    <!-- /.logo-slider --> 
+    <!-- /.logo-slider -->
     <!-- ============================================== BRANDS CAROUSEL : END ============================================== --> </div>
-  <!-- /.container --> 
-  
+  <!-- /.container -->
+
 </div>
-<!-- /.body-content --> 
+<!-- /.body-content -->
 
 
 <script>
@@ -465,7 +465,7 @@ Subcategory Product
 
 
 </script>
- 
+
 
 
 

@@ -8,6 +8,7 @@ return [
     ],
     [
         'type' => 'user_action',
+        'title' => 'سفارشات من',
         'key' => 'user',
         'value' => 'my_orders'
     ],
@@ -20,5 +21,11 @@ return [
         'type' => 'slider',
         'key' => 'group_id',
         'value' => 2
+    ],
+    [
+        'type' => 'deep_link',
+        'title' => 'فیتامین',
+        'key' => 'fitamin',
+        'value' => '/fitamin/landing'
     ],
 ];

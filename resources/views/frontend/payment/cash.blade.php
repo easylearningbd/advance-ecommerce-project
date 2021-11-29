@@ -96,7 +96,7 @@
                                     @csrf
                                     <div class="form-row">
 
-                                        <img src="{{ asset('frontend/assets/images/payments/cash.png') }}">
+                                        <img src="{{ asset('assets/frontend/assets/images/payments/cash.png') }}">
 
                                         <label for="card-element">
 
