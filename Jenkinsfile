@@ -12,7 +12,7 @@ pipeline{
                 ansiblePlaybook(
                 installation: 'ansible',
                 credentialsId: 'cm-sa',
-                extraVars: [branch: '$GIT_BRANCH',project: '$PROJECT_NAME', organization: '${OWNER}'],
+                extraVars: [branch: '$GIT_BRANCH',project: '$PROJECT_NAME', organization: '${OWNER}', SH_ST: "yes"],
                 inventory: '/home/cm-sa/behaminplus.ir/cloud/inventories/inventory.ini',
                 playbook: '/home/cm-sa/behaminplus.ir/cloud/playbooks/deploy.yaml')
             }
