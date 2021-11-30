@@ -48,14 +48,94 @@ body {
   margin: 0;
 }
 
+
+
+@font-face {
+    font-family: 'iranyekan-extrabold';
+    font-style: normal;
+    font-weight: bold;
+    src: url('../assets/fonts/IranYekan/Normal/eot/iranyekanwebextraboldfanum.eot');
+    src: url('../assets/fonts/IranYekan/Normal/woff/iranyekanwebextraboldfanum.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../assets/fonts/IranYekan/Normal/ttf/iranyekanwebextraboldfanum.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'iranyekan-bold';
+    font-style: normal;
+    font-weight: bold;
+    src: url('../assets/fonts/IranYekan/Normal/eot/iranyekanwebboldfanum.eot');
+    src: url('../assets/fonts/IranYekan/Normal/woff/iranyekanwebboldfanum.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../assets/fonts/IranYekan/Normal/ttf/iranyekanwebboldfanum.ttf') format('truetype');
+}
+
+
+@font-face {
+    font-family: 'iranyekan-light';
+    font-style: normal;
+    font-weight: 300;
+    src: url('../assets/fonts/IranYekan/Normal/eot/iranyekanweblightfanum.eot');
+    src: url('../assets/fonts/IranYekan/Normal/woff/iranyekanweblightfanum.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../assets/fonts/IranYekan/Normal/ttf/iranyekanweblightfanum.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'iranyekan-regular';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../assets/fonts/IranYekan/Normal/eot/iranyekanwebregularfanum.eot');
+    src: url('../assets/fonts/IranYekan/Normal/woff/iranyekanwebregularfanum.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../assets/fonts/IranYekan/Normal/ttf/iranyekanwebregularfanum.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'iranyekan-regular-en-num';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../assets/fonts/IranYekan/Normal/eot/iranyekanwebregular.eot');
+    src: url('../assets/fonts/IranYekan/Normal/woff/iranyekanwebregular.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../assets/fonts/IranYekan/Normal/ttf/iranyekanwebregular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat-Thin';
+    font-style: normal;
+    font-weight: 200;
+    src: url('../assets/fonts/Montserrat/Montserrat-Thin.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url('../assets/fonts/Montserrat/Montserrat-Regular.woff2') format('woff2'), url('../assets/fonts/Montserrat/Montserrat-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat-ExtraBold';
+    src: url('../assets/fonts/Montserrat/Montserrat-Bold.ttf') format('truetype');
+}
+
+
+/* --------------------------------------------------------------------
+                Montserrat :: End
+--------------------------------------------------------------------*/
+
+body {
+    color: #5c6873;
+    font-family: "iranyekan-regular", 'Montserrat-Regular' !important;
+    padding: 0px !important;
+    margin: 0px !important;
+    font-weight: 100;
+    font-size: 17px;
+}
 /**
 Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
 */
-
+/**
 body {
   font-family:
 		system-ui,
-		-apple-system, /* Firefox supports this but not yet `system-ui` */
+		-apple-system, /* Firefox supports this but not yet `system-ui` */ /**
 		'Segoe UI',
 		Roboto,
 		Helvetica,
@@ -64,6 +144,7 @@ body {
 		'Apple Color Emoji',
 		'Segoe UI Emoji';
 }
+*/
 
 /*
 Grouping content

@@ -898,7 +898,9 @@ Theme Primary Color
 .theme-primary .hover-primary:hover, .theme-primary .hover-primary:focus {
   color: #0F5EF7 !important; }
 .theme-primary .text-info {
-  color: #7a15f7 !important; }
+    color: #7a15f7 !important; }
+.theme-primary .text {
+    color: #ffffff !important; }
 .theme-primary a.text-info:hover, .theme-primary a.text-info:focus {
   color: #7a15f7 !important; }
 .theme-primary .hover-info:hover, .theme-primary .hover-info:focus {

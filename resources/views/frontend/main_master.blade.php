@@ -23,7 +23,10 @@ $seo = App\Models\Seo::find(1);
 <title>@yield('title') </title>
 
 <!-- Bootstrap Core CSS -->
-<link rel="stylesheet" href="{{ asset('frontend/assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/bootstrap.min.css') }}">
+<!--
+<link rel="stylesheet" href="{{ asset('frontend/assets/css/bootstrap-rtl.min.css') }}">
+-->
 
 <!-- Customizable CSS -->
 <link rel="stylesheet" href="{{ asset('frontend/assets/css/main.css') }}">
@@ -52,28 +55,28 @@ $seo = App\Models\Seo::find(1);
 
 <!-- ============================================== HEADER : END ============================================== -->
 @yield('content')
-<!-- /#top-banner-and-menu --> 
+<!-- /#top-banner-and-menu -->
 
 <!-- ============================================================= FOOTER ============================================================= -->
 @include('frontend.body.footer')
-<!-- ============================================================= FOOTER : END============================================================= --> 
+<!-- ============================================================= FOOTER : END============================================================= -->
 
-<!-- For demo purposes – can be removed on production --> 
+<!-- For demo purposes – can be removed on production -->
 
-<!-- For demo purposes – can be removed on production : End --> 
+<!-- For demo purposes – can be removed on production : End -->
 
-<!-- JavaScripts placed at the end of the document so the pages load faster --> 
-<script src="{{ asset('frontend/assets/js/jquery-1.11.1.min.js') }}"></script> 
-<script src="{{ asset('frontend/assets/js/bootstrap.min.js') }}"></script> 
-<script src="{{ asset('frontend/assets/js/bootstrap-hover-dropdown.min.js') }}"></script> 
-<script src="{{ asset('frontend/assets/js/owl.carousel.min.js') }}"></script> 
-<script src="{{ asset('frontend/assets/js/echo.min.js') }}"></script> 
-<script src="{{ asset('frontend/assets/js/jquery.easing-1.3.min.js') }}"></script> 
-<script src="{{ asset('frontend/assets/js/bootstrap-slider.min.js') }}"></script> 
-<script src="{{ asset('frontend/assets/js/jquery.rateit.min.js') }}"></script> 
-<script type="text/javascript" src="{{ asset('frontend/assets/js/lightbox.min.js') }}"></script> 
-<script src="{{ asset('frontend/assets/js/bootstrap-select.min.js') }}"></script> 
-<script src="{{ asset('frontend/assets/js/wow.min.js') }}"></script> 
+<!-- JavaScripts placed at the end of the document so the pages load faster -->
+<script src="{{ asset('frontend/assets/js/jquery-1.11.1.min.js') }}"></script>
+<script src="{{ asset('frontend/assets/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('frontend/assets/js/bootstrap-hover-dropdown.min.js') }}"></script>
+<script src="{{ asset('frontend/assets/js/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('frontend/assets/js/echo.min.js') }}"></script>
+<script src="{{ asset('frontend/assets/js/jquery.easing-1.3.min.js') }}"></script>
+<script src="{{ asset('frontend/assets/js/bootstrap-slider.min.js') }}"></script>
+<script src="{{ asset('frontend/assets/js/jquery.rateit.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('frontend/assets/js/lightbox.min.js') }}"></script>
+<script src="{{ asset('frontend/assets/js/bootstrap-select.min.js') }}"></script>
+<script src="{{ asset('frontend/assets/js/wow.min.js') }}"></script>
 <script src="{{ asset('frontend/assets/js/scripts.js') }}"></script>
 
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
@@ -98,9 +101,9 @@ $seo = App\Models\Seo::find(1);
 
     case 'error':
     toastr.error(" {{ Session::get('message') }} ");
-    break; 
+    break;
  }
- @endif 
+ @endif
 </script>
 
 
@@ -117,7 +120,7 @@ $seo = App\Models\Seo::find(1);
       </div>
 
       <div class="modal-body">
-       
+
        <div class="row">
 
         <div class="col-md-4">
@@ -125,67 +128,71 @@ $seo = App\Models\Seo::find(1);
             <div class="card" style="width: 18rem;">
 
   <img src=" " class="card-img-top" alt="..." style="height: 200px; width: 200px;" id="pimage">
-  
+
 </div>
-            
+
         </div><!-- // end col md -->
 
 
         <div class="col-md-4">
 
      <ul class="list-group">
-  <li class="list-group-item">Product Price: <strong class="text-danger">$<span id="pprice"></span></strong>
-<del id="oldprice">$</del>
-   </li>
-  <li class="list-group-item">Product Code: <strong id="pcode"></strong></li>
-  <li class="list-group-item">Category: <strong id="pcategory"></strong></li>
-  <li class="list-group-item">Brand: <strong id="pbrand"></strong></li>
-  <li class="list-group-item">Stock: <span class="badge badge-pill badge-success" id="aviable" style="background: green; color: white;"></span> 
-<span class="badge badge-pill badge-danger" id="stockout" style="background: red; color: white;"></span> 
+         <li class="list-group-item">{{trans('site.Product Price')}}:
+             <strong class="text-danger"><span id="pprice"></span> {{trans('site.CURRENCYTYPE')}} </strong>
+         </li>
+         <li class="list-group-item">قیمت بدون تخفیف:
+              <del id="oldprice"> </del> <del> {{trans('site.CURRENCYTYPE')}} </del>
+         </li>
+  <li class="list-group-item">{{trans('site.Product Code')}}: <strong id="pcode"></strong></li>
+  <li class="list-group-item">{{trans('site.Category')}}: <strong id="pcategory"></strong></li>
+  <li class="list-group-item">{{trans('site.Brand')}}: <strong id="pbrand"></strong></li>
+  <li class="list-group-item">
+      <span class="badge badge-pill badge-success" id="aviable" style="background: green; color: white;"></span>
+      <span class="badge badge-pill badge-danger" id="stockout" style="background: red; color: white;"></span>
 
   </li>
 </ul>
-            
+
         </div><!-- // end col md -->
 
 
         <div class="col-md-4">
 
             <div class="form-group">
-    <label for="color">Choose Color</label>
+    <label for="color">{{trans('site.Choose Color')}}</label>
     <select class="form-control" id="color" name="color">
-      
-      
+
+
     </select>
   </div>  <!-- // end form group -->
 
 
     <div class="form-group" id="sizeArea">
-    <label for="size">Choose Size</label>
+    <label for="size">{{trans('site.Choose Size')}}</label>
     <select class="form-control" id="size" name="size">
       <option>1</option>
-       
+
     </select>
   </div>  <!-- // end form group -->
 
        <div class="form-group">
-    <label for="qty">Quantity</label>
+    <label for="qty">{{trans('site.Quantity')}}</label>
     <input type="number" class="form-control" id="qty" value="1" min="1" >
   </div> <!-- // end form group -->
 
 <input type="hidden" id="product_id">
-<button type="submit" class="btn btn-primary mb-2" onclick="addToCart()" >Add to Cart</button>
+<button type="submit" class="btn btn-primary mb-2" onclick="addToCart()" >{{trans('site.Add to Cart')}}</button>
 
-            
+
         </div><!-- // end col md -->
 
-           
+
        </div> <!-- // end row -->
 
- 
+
 
       </div> <!-- // end modal Body -->
-      
+
     </div>
   </div>
 </div>
@@ -199,7 +206,7 @@ $seo = App\Models\Seo::find(1);
         }
     })
 
-// Start Product View with Modal 
+// Start Product View with Modal
 
 function productView(id){
     // alert(id)
@@ -219,7 +226,7 @@ function productView(id){
             $('#product_id').val(id);
             $('#qty').val(1);
 
-            // Product Price 
+            // Product Price
             if (data.product.discount_price == null) {
                 $('#pprice').text('');
                 $('#oldprice').text('');
@@ -230,29 +237,29 @@ function productView(id){
                 $('#pprice').text(data.product.discount_price);
                 $('#oldprice').text(data.product.selling_price);
 
-            } // end prodcut price 
+            } // end prodcut price
 
             // Start Stock opiton
 
             if (data.product.product_qty > 0) {
                 $('#aviable').text('');
                 $('#stockout').text('');
-                $('#aviable').text('aviable');
+                $('#aviable').text('موجود');
 
             }else{
                 $('#aviable').text('');
                 $('#stockout').text('');
-                $('#stockout').text('stockout');
-            } // end Stock Option 
+                $('#stockout').text('موجود نیست');
+            } // end Stock Option
 
             // Color
-    $('select[name="color"]').empty();        
+    $('select[name="color"]').empty();
     $.each(data.color,function(key,value){
         $('select[name="color"]').append('<option value=" '+value+' ">'+value+' </option>')
     }) // end color
 
      // Size
-    $('select[name="size"]').empty();        
+    $('select[name="size"]').empty();
     $.each(data.size,function(key,value){
         $('select[name="size"]').append('<option value=" '+value+' ">'+value+' </option>')
         if (data.size == "") {
@@ -262,18 +269,18 @@ function productView(id){
         }
 
     }) // end size
- 
+
 
         }
 
     })
- 
+
 
 }
-// Eend Product View with Modal 
+// Eend Product View with Modal
 
 
- // Start Add To Cart Product 
+ // Start Add To Cart Product
 
     function addToCart(){
         var product_name = $('#pname').text();
@@ -294,7 +301,7 @@ function productView(id){
                 $('#closeModel').click();
                 // console.log(data)
 
-                // Start Message 
+                // Start Message
                 const Toast = Swal.mixin({
                       toast: true,
                       position: 'top-end',
@@ -316,13 +323,13 @@ function productView(id){
 
                 }
 
-                // End Message 
+                // End Message
             }
         })
 
     }
-  
-// End Add To Cart Product 
+
+// End Add To Cart Product
 
 </script>
 
@@ -345,10 +352,10 @@ function productView(id){
               <div class="image"> <a href="detail.html"><img src="/${value.options.image}" alt=""></a> </div>
             </div>
             <div class="col-xs-7">
-              <h3 class="name"><a href="index.php?page-detail">${value.name}</a></h3>
-              <div class="price"> ${value.price} * ${value.qty} </div>
+              <h3 class="name"><a href="index.php?page-detail"> {value.name} {{trans('site.CURRENCYTYPE')}}</a></h3>
+              <div class="price"> {value.price} * ${value.qty} {{trans('site.CURRENCYTYPE')}}  </div>
             </div>
-            <div class="col-xs-1 action"> 
+            <div class="col-xs-1 action">
             <button type="submit" id="${value.rowId}" onclick="miniCartRemove(this.id)"><i class="fa fa-trash"></i></button> </div>
           </div>
         </div>
@@ -356,7 +363,7 @@ function productView(id){
         <div class="clearfix"></div>
         <hr>`
         });
-                
+
                 $('#miniCart').html(miniCart);
             }
         })
@@ -364,7 +371,7 @@ function productView(id){
      }
  miniCart();
 
- /// mini cart remove Start 
+ /// mini cart remove Start
     function miniCartRemove(rowId){
         $.ajax({
             type: 'GET',
@@ -373,7 +380,7 @@ function productView(id){
             success:function(data){
             miniCart();
 
-             // Start Message 
+             // Start Message
                 const Toast = Swal.mixin({
                       toast: true,
                       position: 'top-end',
@@ -395,14 +402,14 @@ function productView(id){
 
                 }
 
-                // End Message 
+                // End Message
 
             }
         });
 
     }
 
- //  end mini cart remove 
+ //  end mini cart remove
 
 
 </script>
@@ -410,7 +417,7 @@ function productView(id){
 <!--  /// Start Add Wishlist Page  //// -->
 
 <script type="text/javascript">
-    
+
 function addToWishList(product_id){
     $.ajax({
         type: "POST",
@@ -419,11 +426,11 @@ function addToWishList(product_id){
 
         success:function(data){
 
-             // Start Message 
+             // Start Message
                 const Toast = Swal.mixin({
                       toast: true,
                       position: 'top-end',
-                      
+
                       showConfirmButton: false,
                       timer: 3000
                     })
@@ -443,16 +450,16 @@ function addToWishList(product_id){
 
                 }
 
-                // End Message 
+                // End Message
 
 
         }
 
     })
 
-} 
+}
 
-</script> 
+</script>
 
  <!--  /// End Add Wishlist Page  ////   -->
 
@@ -473,7 +480,7 @@ function addToWishList(product_id){
                     <td class="col-md-2"><img src="/${value.product.product_thambnail} " alt="imga"></td>
                     <td class="col-md-7">
                         <div class="product-name"><a href="#">${value.product.product_name_en}</a></div>
-                         
+
                         <div class="price">
                         ${value.product.discount_price == null
                             ? `${value.product.selling_price}`
@@ -481,7 +488,7 @@ function addToWishList(product_id){
                             `${value.product.discount_price} <span>${value.product.selling_price}</span>`
                         }
 
-                            
+
                         </div>
                     </td>
         <td class="col-md-2">
@@ -492,7 +499,7 @@ function addToWishList(product_id){
         </td>
                 </tr>`
         });
-                
+
                 $('#wishlist').html(rows);
             }
         })
@@ -502,7 +509,7 @@ function addToWishList(product_id){
 
 
 
- ///  Wishlist remove Start 
+ ///  Wishlist remove Start
     function wishlistRemove(id){
         $.ajax({
             type: 'GET',
@@ -511,11 +518,11 @@ function addToWishList(product_id){
             success:function(data){
             wishlist();
 
-             // Start Message 
+             // Start Message
                 const Toast = Swal.mixin({
                       toast: true,
                       position: 'top-end',
-                      
+
                       showConfirmButton: false,
                       timer: 3000
                     })
@@ -535,17 +542,17 @@ function addToWishList(product_id){
 
                 }
 
-                // End Message 
+                // End Message
 
             }
         });
 
     }
 
- // End Wishlist remove   
+ // End Wishlist remove
 
 
- </script>  
+ </script>
 
 <!-- /// End Load Wisch list Data  -->
 
@@ -564,26 +571,26 @@ function addToWishList(product_id){
     $.each(response.carts, function(key,value){
         rows += `<tr>
         <td class="col-md-2"><img src="/${value.options.image} " alt="imga" style="width:60px; height:60px;"></td>
-        
+
         <td class="col-md-2">
             <div class="product-name"><a href="#">${value.name}</a></div>
-             
-            <div class="price"> 
+
+            <div class="price">
                             ${value.price}
                         </div>
                     </td>
 
 
           <td class="col-md-2">
-            <strong>${value.options.color} </strong> 
+            <strong>${value.options.color} </strong>
             </td>
 
          <td class="col-md-2">
           ${value.options.size == null
             ? `<span> .... </span>`
             :
-          `<strong>${value.options.size} </strong>` 
-          }           
+          `<strong>${value.options.size} </strong>`
+          }
             </td>
 
            <td class="col-md-2">
@@ -594,25 +601,25 @@ function addToWishList(product_id){
 
             : `<button type="submit" class="btn btn-danger btn-sm" disabled >-</button> `
             }
-        
 
-        <input type="text" value="${value.qty}" min="1" max="100" disabled="" style="width:25px;" >  
 
-         <button type="submit" class="btn btn-success btn-sm" id="${value.rowId}" onclick="cartIncrement(this.id)" >+</button>    
-         
+        <input type="text" value="${value.qty}" min="1" max="100" disabled="" style="width:25px;" >
+
+         <button type="submit" class="btn btn-success btn-sm" id="${value.rowId}" onclick="cartIncrement(this.id)" >+</button>
+
             </td>
 
              <td class="col-md-2">
-            <strong>$${value.subtotal} </strong> 
+            <strong>$${value.subtotal} </strong>
             </td>
 
-         
+
         <td class="col-md-1 close-btn">
             <button type="submit" class="" id="${value.rowId}" onclick="cartRemove(this.id)"><i class="fa fa-times"></i></button>
         </td>
                 </tr>`
         });
-                
+
                 $('#cartPage').html(rows);
             }
         })
@@ -622,7 +629,7 @@ function addToWishList(product_id){
 
 
 
- ///  Cart remove Start 
+ ///  Cart remove Start
     function cartRemove(id){
         $.ajax({
             type: 'GET',
@@ -635,11 +642,11 @@ function addToWishList(product_id){
             $('#couponField').show();
             $('#coupon_name').val('');
 
-             // Start Message 
+             // Start Message
                 const Toast = Swal.mixin({
                       toast: true,
                       position: 'top-end',
-                      
+
                       showConfirmButton: false,
                       timer: 3000
                     })
@@ -659,14 +666,14 @@ function addToWishList(product_id){
 
                 }
 
-                // End Message 
+                // End Message
 
             }
         });
 
     }
 
- // End Cart remove   
+ // End Cart remove
 
 
  // -------- CART INCREMENT --------//
@@ -706,9 +713,9 @@ function addToWishList(product_id){
 
 
  // ---------- END CART Decrement -----///
- 
 
- </script>  
+
+ </script>
 
 <!-- //End Load My cart / -->
 
@@ -728,12 +735,12 @@ function addToWishList(product_id){
                if (data.validity == true) {
                 $('#couponField').hide();
                }
-               
-             // Start Message 
+
+             // Start Message
                 const Toast = Swal.mixin({
                       toast: true,
                       position: 'top-end',
-                      
+
                       showConfirmButton: false,
                       timer: 3000
                     })
@@ -753,12 +760,12 @@ function addToWishList(product_id){
 
                 }
 
-                // End Message 
+                // End Message
 
         }
 
     })
-  }  
+  }
 
 
   function couponCalculation(){
@@ -814,14 +821,14 @@ function addToWishList(product_id){
  couponCalculation();
 
 </script>
- 
+
 <!--  //////////////// =========== End Coupon Apply Start ================= ////  -->
- 
+
 
 <!--  //////////////// =========== Start Coupon Remove================= ////  -->
- 
+
 <script type="text/javascript">
-     
+
      function couponRemove(){
         $.ajax({
             type:'GET',
@@ -833,11 +840,11 @@ function addToWishList(product_id){
                 $('#coupon_name').val('');
 
 
-                 // Start Message 
+                 // Start Message
                 const Toast = Swal.mixin({
                       toast: true,
                       position: 'top-end',
-                      
+
                       showConfirmButton: false,
                       timer: 3000
                     })
@@ -857,7 +864,7 @@ function addToWishList(product_id){
 
                 }
 
-                // End Message 
+                // End Message
 
             }
         });
@@ -869,7 +876,7 @@ function addToWishList(product_id){
 
 
 <!--  //////////////// =========== End Coupon Remove================= ////  -->
- 
+
 
 
 
