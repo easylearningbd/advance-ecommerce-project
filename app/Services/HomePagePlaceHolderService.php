@@ -4,9 +4,11 @@
 namespace App\Services;
 
 
+use App\Http\Resources\ProductResourceCollection;
 use App\Interfaces\Repositories\CategoryRepository;
 use App\Interfaces\Repositories\ProductRepository;
 use App\Interfaces\Repositories\SliderRepository;
+use Behamin\BResources\Traits\CollectionResource;
 
 class HomePagePlaceHolderService
 {
@@ -58,9 +60,9 @@ class HomePagePlaceHolderService
 
         $data['category'] = app()->make(CategoryRepository::class)
             ->show($categoryId);
-
-        $data['category']['products'] = app()->make(ProductRepository::class)
+        $products = app()->make(ProductRepository::class)
             ->getByIds($productIds);
+        $data['category']['products'] = new ProductResourceCollection(['data' => $products], true);
 
         return $data;
     }
