@@ -47,6 +47,8 @@ class ProductResource extends BasicResource
             "updated_at" => $resource->updated_at,
             "digital_file" => $resource->digital_file,
             "user_order_date" => $resource->user_order_date,
+            "action_type" => $resource->action_type,
+            "action" => $resource->action,
         ];
     }
 }

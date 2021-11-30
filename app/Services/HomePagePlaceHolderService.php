@@ -16,22 +16,22 @@ class HomePagePlaceHolderService
     public static function getContent(array $config): array
     {
 //        dd($config);
-        if ($config['type'] == 'slider') {
+        if ($config['style_type'] == 'slider') {
             return self::generateSliderData($config);
-        } else if ($config['type'] == 'user_action') {
+        } else if ($config['style_type'] == 'user_action') {
             return self::generateUserActionData($config);
-        } else if ($config['type'] == 'product_category') {
+        } else if ($config['style_type'] == 'product_category') {
             return self::generateData($config);
         }
 
-        return self::generateUserActionData($config);
+        return $config;
 
     }
 
     private static function generateSliderData(array $config): array
     {
         $data = array();
-        $data['type'] = $config['type'];
+        $data['style_type'] = $config['style_type'];
         $group_id = (integer)$config['value'];
 
         $data['items'] = app()->make(SliderRepository::class)
@@ -43,17 +43,19 @@ class HomePagePlaceHolderService
     private static function generateUserActionData(array $config): array
     {
         $data = array();
-        $data['type'] = $config['type'];
+        $data['style_type'] = $config['style_type'];
         $data['title'] = $config['title'] ?? "";
-        $data['key'] = $config['key'] ?? "";
-        $data['value'] = $config['value'] ?? "";
+        $data['action_type'] = $config['action_type'] ?? "";
+        $data['action'] = $config['action'] ?? "";
         return $data;
     }
 
     private static function generateData(array $config): array
     {
         $data = array();
-        $data['type'] = $config['type'];
+        $data['style_type'] = $config['style_type'];
+        $data['action_type'] = $config['action_type'] ?? "";
+        $data['action'] = $config['action'] ?? "";
 
         $categoryId = (integer)$config['category_id'];
         $productIds = (array)$config['product_ids'];

@@ -131,6 +131,8 @@ return [
     "Group" => "گروه",
     "Model Name" => "نام مدل",
     "Model ID" => "شماره مدل",
+    "Action Type" => "action type",
+    "Action" => "action",
     "Slider Image" => "تصویر اسلایدر",
     "Title" => "عنوان",
     "Description" => "شرح",

@@ -26,16 +26,18 @@
 					  <table id="example1" class="table table-bordered table-striped">
 						<thead>
 							<tr>
-              
+
 								<th>{{ trans("admin.Slider Image")   }}</th>
 								<th>{{ trans("admin.Title")   }}</th>
 								<th>{{ trans("admin.Decription")   }}</th>
-								<th>{{ trans("admin.Model ID")   }}</th>
-								<th>{{ trans("admin.Model Name")   }}</th>
+                                <th>{{ trans("admin.Model ID")   }}</th>
+                                <th>{{ trans("admin.Model Name")   }}</th>
+                                <th>{{ trans("admin.Action Type")   }}</th>
+                                <th>{{ trans("admin.Action")   }}</th>
 								<th>{{ trans("admin.Status")   }}</th>
 								<th>{{ trans("admin.Group")   }}</th>
 								<th>{{ trans("admin.Action")   }}</th>
-								 
+
 							</tr>
 						</thead>
 						<tbody>
@@ -54,6 +56,8 @@
          <td>{{ $item->description }}</td>
          <td>{{ $item->model_id }}</td>
          <td>{{ $item->model_name }}</td>
+         <td>{{ $item->action_type }}</td>
+         <td>{{ $item->action }}</td>
 		<td>
 		 	@if($item->status == 1)
 		 	<span class="badge badge-pill badge-success"> Active </span>
@@ -115,8 +119,8 @@
 	 <div class="form-group">
 		<h5>{{ trans("admin.Slider Title")   }}  <span class="text-danger">*</span></h5>
 		<div class="controls">
-	 <input type="text"  name="title" class="form-control" > 
-	 
+	 <input type="text"  name="title" class="form-control" >
+
 	</div>
 	</div>
 
@@ -147,6 +151,19 @@
          <h5>Slider Link Model Name  <span class="text-danger"></span></h5>
          <div class="controls">
              <input type="text"  name="model_name" class="form-control" >
+         </div>
+     </div>
+
+     <div class="form-group">
+         <h5>Slider Action Type <span class="text-danger"></span></h5>
+         <div class="controls">
+             <input type="text"  name="action_type" class="form-control" >
+         </div>
+     </div>
+     <div class="form-group">
+         <h5>Slider Action  <span class="text-danger"></span></h5>
+         <div class="controls">
+             <input type="text"  name="action" class="form-control" >
          </div>
      </div>
 

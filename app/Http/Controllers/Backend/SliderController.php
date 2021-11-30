@@ -67,6 +67,8 @@ class SliderController extends Controller
             'group_id' => $request->group_id,
             'model_id' => $request->model_id,
             'model_name' => $request->model_name,
+            'action_type' => $request->action_type,
+            'action' => $request->action,
             'slider_img' => $save_url,
 
         ]);
