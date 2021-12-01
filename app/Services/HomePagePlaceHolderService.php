@@ -16,11 +16,11 @@ class HomePagePlaceHolderService
     public static function getContent(array $config): array
     {
 //        dd($config);
-        if ($config['style_type'] == 'slider') {
+        if ($config['style_type'] === 'slider') {
             return self::generateSliderData($config);
-        } else if ($config['style_type'] == 'user_action') {
+        } else if ($config['style_type'] === 'user_action') {
             return self::generateUserActionData($config);
-        } else if ($config['style_type'] == 'product_category') {
+        } else if ($config['style_type'] === 'product_category') {
             return self::generateData($config);
         }
 
@@ -47,6 +47,8 @@ class HomePagePlaceHolderService
         $data['title'] = $config['title'] ?? "";
         $data['action_type'] = $config['action_type'] ?? "";
         $data['action'] = $config['action'] ?? "";
+        $data['icon'] = $config['icon'] ?? "";
+        $data['icon_url'] = $config['icon_url'] ?? "";
         return $data;
     }
 
