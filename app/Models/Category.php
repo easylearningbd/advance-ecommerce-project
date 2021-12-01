@@ -20,6 +20,7 @@ class Category extends Model
         'category_slug_en',
         'category_slug_hin',
         'category_icon',
+        'image',
     ];
 
 }
