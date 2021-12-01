@@ -21,6 +21,11 @@ use Illuminate\Routing\Controller as BaseController;
  * )
  *
  * @OA\Server(
+ *      url="https://debug.behaminplus.ir/shop-service",
+ *      description="debug behaminplus API Server"
+ * )
+ *
+ * @OA\Server(
  *      url="https://develop.behaminplus.ir/shop-service",
  *      description="develop behaminplus API Server"
  * )
