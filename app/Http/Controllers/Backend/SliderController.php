@@ -117,8 +117,6 @@ class SliderController extends Controller
                 'alert-type' => 'info'
             );
 
-            return redirect()->route('manage-slider')->with($notification);
-
         } else {
 
             Slider::findOrFail($slider_id)->update([
@@ -133,9 +131,8 @@ class SliderController extends Controller
                 'alert-type' => 'info'
             );
 
-            return redirect()->route('manage-slider')->with($notification);
-
-        } // end else
+        }// end else
+        return redirect()->route('manage-slider')->with($notification);
     }
 
 
