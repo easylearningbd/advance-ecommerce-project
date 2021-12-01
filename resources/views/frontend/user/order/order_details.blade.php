@@ -51,14 +51,14 @@
               <th> Order Date : </th>
                <th> {{ $order->order_date }} </th>
             </tr>
-             
+
            </table>
 
 
-         </div> 
-          
+         </div>
+
         </div>
-        
+
       </div> <!-- // end col md -5 -->
 
 
@@ -103,19 +103,19 @@
 
             <tr>
               <th> Order : </th>
-               <th>   
+               <th>
                 <span class="badge badge-pill badge-warning" style="background: #418DB9;">{{ $order->status }} </span> </th>
             </tr>
 
-           
-             
+
+
            </table>
 
 
-         </div> 
-          
+         </div>
+
         </div>
-        
+
       </div> <!-- // 2ND end col md -5 -->
 
 
@@ -128,7 +128,7 @@
         <div class="table-responsive">
           <table class="table">
             <tbody>
-  
+
               <tr style="background: #e2e2e2;">
                 <td class="col-md-1">
                   <label for=""> Image</label>
@@ -162,7 +162,7 @@
                  <td class="col-md-1">
                   <label for=""> Download </label>
                 </td>
-                
+
               </tr>
 
 
@@ -194,25 +194,25 @@
                 </td>
 
           <td class="col-md-2">
-                  <label for=""> ${{ $item->price }}  ( $ {{ $item->price * $item->qty}} ) </label>
+                  <label for=""> {{ $item->price }} {{trans('site.CURRENCYTYPE')}}  ( {{ $item->price * $item->qty}} {{trans('site.CURRENCYTYPE')}} ) </label>
                 </td>
 
 
-@php 
+@php
 
 $file = App\Models\Product::where('id',$item->product_id)->first();
 @endphp
 
              <td class="col-md-1">
-              @if($order->status == 'pending')  
+              @if($order->status == 'pending')
               <strong>
- <span class="badge badge-pill badge-success" style="background: #418DB9;"> No File</span>  </strong> 
-                
-              @elseif($order->status == 'confirm')  
+ <span class="badge badge-pill badge-success" style="background: #418DB9;"> No File</span>  </strong>
 
-<a target="_blank" href="{{ asset('upload/pdf/'.$file->digital_file) }}">  
+              @elseif($order->status == 'confirm')
+
+<a target="_blank" href="{{ asset('upload/pdf/'.$file->digital_file) }}">
   <strong>
- <span class="badge badge-pill badge-success" style="background: #FF0000;"> Download Ready</span>  </strong> </a> 
+ <span class="badge badge-pill badge-success" style="background: #FF0000;"> Download Ready</span>  </strong> </a>
               @endif
 
 
@@ -221,7 +221,7 @@ $file = App\Models\Product::where('id',$item->product_id)->first();
 
 
 
-                
+
               </tr>
               @endforeach
 
@@ -230,21 +230,21 @@ $file = App\Models\Product::where('id',$item->product_id)->first();
 
 
             </tbody>
-            
+
           </table>
-          
+
         </div>
- 
-         
-       </div> <!-- / end col md 8 --> 
-        
+
+
+       </div> <!-- / end col md 8 -->
+
       </div> <!-- // END ORDER ITEM ROW -->
 
       @if($order->status !== "delivered")
-      
+
       @else
 
-      @php 
+      @php
       $order = App\Models\Order::where('id',$order->id)->where('return_reason','=',NULL)->first();
       @endphp
 
@@ -255,7 +255,7 @@ $file = App\Models\Product::where('id',$item->product_id)->first();
 
   <div class="form-group">
     <label for="label"> Order Return Reason:</label>
-    <textarea name="return_reason" id="" class="form-control" cols="30" rows="05">Return Reason</textarea>    
+    <textarea name="return_reason" id="" class="form-control" cols="30" rows="05">Return Reason</textarea>
   </div>
 
   <button type="submit" class="btn btn-danger">Order Return</button>
@@ -264,8 +264,8 @@ $file = App\Models\Product::where('id',$item->product_id)->first();
    @else
 
    <span class="badge badge-pill badge-warning" style="background: red">You Have send return request for this product</span>
-   
-   @endif 
+
+   @endif
 
 
 
@@ -273,13 +273,13 @@ $file = App\Models\Product::where('id',$item->product_id)->first();
 <br><br>
 
 
-		 
-			
+
+
 		</div> <!-- // end row -->
-		
+
 	</div>
-	
+
 </div>
- 
+
 
 @endsection

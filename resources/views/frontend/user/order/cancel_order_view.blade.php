@@ -14,7 +14,7 @@
         <div class="table-responsive">
           <table class="table">
             <tbody>
-  
+
               <tr style="background: #e2e2e2;">
                 <td class="col-md-1">
                   <label for=""> Date</label>
@@ -40,7 +40,7 @@
                  <td class="col-md-1">
                   <label for=""> Action </label>
                 </td>
-                
+
               </tr>
 
 
@@ -51,7 +51,7 @@
                 </td>
 
                 <td class="col-md-3">
-                  <label for=""> ${{ $order->amount }}</label>
+                  <label for=""> {{ $order->amount }} {{trans('site.CURRENCYTYPE')}} </label>
                 </td>
 
 
@@ -64,7 +64,7 @@
                 </td>
 
                  <td class="col-md-2">
-                  <label for=""> 
+                  <label for="">
                     <span class="badge badge-pill badge-warning" style="background: #418DB9;">{{ $order->status }} </span>
 
                     </label>
@@ -74,9 +74,9 @@
           <a href="{{ url('user/order_details/'.$order->id ) }}" class="btn btn-sm btn-primary"><i class="fa fa-eye"></i> View</a>
 
            <a target="_blank" href="{{ url('user/invoice_download/'.$order->id ) }}" class="btn btn-sm btn-danger" style="margin-top: 5px;"><i class="fa fa-download" style="color: white;"></i> Invoice </a>
-          
+
         </td>
-                
+
               </tr>
 
               @empty
@@ -89,26 +89,26 @@
 
 
             </tbody>
-            
+
           </table>
-          
+
         </div>
 
 
 
 
-         
+
        </div> <!-- / end col md 8 -->
 
-		 
 
-		 
-			
+
+
+
 		</div> <!-- // end row -->
-		
+
 	</div>
-	
+
 </div>
- 
+
 
 @endsection

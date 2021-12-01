@@ -18,7 +18,7 @@ class AdminUserController extends Controller
     	$adminuser = Admin::where('type',2)->latest()->get();
     	return view('backend.role.admin_role_all',compact('adminuser'));
 
-    } // end method 
+    }
 
 
     public function AddAdminRole(){
@@ -28,12 +28,12 @@ class AdminUserController extends Controller
 
 
  public function StoreAdminRole(Request $request){
-   	 
+
 
     	$image = $request->file('profile_photo_path');
     	$name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-    	Image::make($image)->resize(225,225)->save('upload/admin_images/'.$name_gen);
-    	$save_url = 'upload/admin_images/'.$name_gen;
+    	Image::make($image)->resize(225,225)->save('storage/upload/admin_images/'.$name_gen);
+    	$save_url = 'storage/upload/admin_images/'.$name_gen;
 
 	Admin::insert([
 		'name' => $request->name,
@@ -60,7 +60,7 @@ class AdminUserController extends Controller
 		'type' => 2,
 		'profile_photo_path' => $save_url,
 		'created_at' => Carbon::now(),
-		 
+
 
     	]);
 
@@ -71,7 +71,7 @@ class AdminUserController extends Controller
 
 		return redirect()->route('all.admin.user')->with($notification);
 
-    } // end method 
+    }
 
 
 
@@ -80,28 +80,31 @@ class AdminUserController extends Controller
     	$adminuser = Admin::findOrFail($id);
     	return view('backend.role.admin_role_edit',compact('adminuser'));
 
-    } // end method 
+    }
 
 
 
 
  public function UpdateAdminRole(Request $request){
-    	
+
     	$admin_id = $request->id;
     	$old_img = $request->old_image;
 
     	if ($request->file('profile_photo_path')) {
 
-    	unlink($old_img);
+            if (file_exists($old_img)) {
+                unlink($old_img);
+            }
+
     	$image = $request->file('profile_photo_path');
     	$name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-    	Image::make($image)->resize(225,225)->save('upload/admin_images/'.$name_gen);
-    	$save_url = 'upload/admin_images/'.$name_gen;
+    	Image::make($image)->resize(225,225)->save('storage/upload/admin_images/'.$name_gen);
+    	$save_url = 'storage/upload/admin_images/'.$name_gen;
 
 	Admin::findOrFail($admin_id)->update([
 		'name' => $request->name,
 		'email' => $request->email,
-		 
+
 		'phone' => $request->phone,
 		'brand' => $request->brand,
 		'category' => $request->category,
@@ -138,7 +141,7 @@ class AdminUserController extends Controller
     	Admin::findOrFail($admin_id)->update([
 		'name' => $request->name,
 		'email' => $request->email,
-		 
+
 		'phone' => $request->phone,
 		'brand' => $request->brand,
 		'category' => $request->category,
@@ -158,7 +161,7 @@ class AdminUserController extends Controller
 		'alluser' => $request->alluser,
 		'adminuserrole' => $request->adminuserrole,
 		'type' => 2,
-		 
+
 		'created_at' => Carbon::now(),
 
     	]);
@@ -170,16 +173,19 @@ class AdminUserController extends Controller
 
 		return redirect()->route('all.admin.user')->with($notification);
 
-    	} // end else 
+    	} // end else
 
-    } // end method 
+    }
 
 
  	public function DeleteAdminRole($id){
 
  		$adminimg = Admin::findOrFail($id);
  		$img = $adminimg->profile_photo_path;
- 		unlink($img);
+
+        if (file_exists($img)) {
+            unlink($img);
+        }
 
  		Admin::findOrFail($id)->delete();
 
@@ -190,8 +196,7 @@ class AdminUserController extends Controller
 
 		return redirect()->back()->with($notification);
 
- 	} // end method 
+ 	}
 
 
 }
- 

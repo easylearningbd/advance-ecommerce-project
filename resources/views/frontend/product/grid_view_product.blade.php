@@ -9,8 +9,8 @@
            @php
         $amount = $product->selling_price - $product->discount_price;
         $discount = ($amount/$product->selling_price) * 100;
-        @endphp     
-          
+        @endphp
+
           <div>
             @if ($product->discount_price == NULL)
             <div class="tag new"><span>new</span></div>
@@ -22,7 +22,7 @@
 
         </div>
         <!-- /.product-image -->
-        
+
         <div class="product-info text-left">
           <h3 class="name"><a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en ) }}">
           	@if(session()->get('language') == 'hindi') {{ $product->product_name_hin }} @else {{ $product->product_name_en }} @endif</a></h3>
@@ -31,18 +31,18 @@
 
 
 @if ($product->discount_price == NULL)
-<div class="product-price"> <span class="price"> ${{ $product->selling_price }} </span>   </div>
+<div class="product-price"> <span class="price"> {{ $product->selling_price }} {{trans('site.CURRENCYTYPE')}} </span>   </div>
 
 @else
 
-<div class="product-price"> <span class="price"> ${{ $product->discount_price }} </span> <span class="price-before-discount">$ {{ $product->selling_price }}</span> </div>
+<div class="product-price"> <span class="price"> {{ $product->discount_price }} {{trans('site.CURRENCYTYPE')}} </span> <span class="price-before-discount">$ {{ $product->selling_price }}</span> </div>
 @endif
 
 
 
-          
-          <!-- /.product-price --> 
-          
+
+          <!-- /.product-price -->
+
         </div>
         <!-- /.product-info -->
         <div class="cart clearfix animate-effect">
@@ -56,15 +56,14 @@
               <li class="lnk"> <a class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal"></i> </a> </li>
             </ul>
           </div>
-          <!-- /.action --> 
+          <!-- /.action -->
         </div>
-        <!-- /.cart --> 
+        <!-- /.cart -->
       </div>
-      <!-- /.product --> 
-      
+      <!-- /.product -->
+
     </div>
-    <!-- /.products --> 
+    <!-- /.products -->
   </div>
   <!-- /.item -->
   @endforeach
-               
