@@ -78,6 +78,22 @@
          </div>
      </div>
 
+     <div class="form-group">
+         <h5>Slider Action Type <span class="text-danger">*</span></h5>
+         <div class="controls">
+             <input type="text"  name="action_type" class="form-control" value="{{ $sliders->action_type }}" >
+
+         </div>
+     </div>
+
+     <div class="form-group">
+         <h5>Slider Action <span class="text-danger">*</span></h5>
+         <div class="controls">
+             <input type="text"  name="action" class="form-control" value="{{ $sliders->action }}" >
+
+         </div>
+     </div>
+
 	<div class="form-group">
 		<h5>Slider Image <span class="text-danger">*</span></h5>
 		<div class="controls">

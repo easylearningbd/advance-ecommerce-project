@@ -122,7 +122,7 @@ class ProductController extends Controller
     public function show(int $productId)
     {
         $entry = Product::query()->findOrFail($productId);
-        $entry['order_date'] = $entry->user_order_date;
+        $entry['user_order_date'] = $entry->user_order_date;
         $videoLessons = VideoLesson::query()->where('product_id', $productId)->get();
         $entry['lessons'] = $videoLessons;
 

@@ -2,30 +2,29 @@
 
 return [
     [
-        'type' => 'slider',
+        'style_type' => 'slider',
         'key' => 'group_id',
         'value' => 1
     ],
     [
-        'type' => 'user_action',
+        'style_type' => 'user_action',
         'title' => 'سفارشات من',
-        'key' => 'user',
-        'value' => 'my_orders'
+        'action_type' => 'link',
+        'action' => 'shop/myorders'
     ],
     [
-        'type' => 'product_category',
+        'style_type' => 'product_category',
         'category_id' => 1,
-        'product_ids' => [1, 2]
+        'product_ids' => [1, 2],
+        'action_type' => 'link',
+        'action' => 'shop/category'
     ],
     [
-        'type' => 'slider',
+        'style_type' => 'slider',
         'key' => 'group_id',
-        'value' => 2
-    ],
-    [
-        'type' => 'deep_link',
+        'value' => 2,
         'title' => 'فیتامین',
-        'key' => 'fitamin',
-        'value' => '/fitamin/landing'
+        'action_type' => 'fitamin',
+        'action' => '/fitamin/landing'
     ],
 ];
