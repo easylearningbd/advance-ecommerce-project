@@ -18,6 +18,8 @@ class HomePagePlaceHolderService
 //        dd($config);
         if ($config['style_type'] === 'slider') {
             return self::generateSliderData($config);
+        } else if ($config['style_type'] === 'banner') {
+            return self::generateBannerData($config);
         } else if ($config['style_type'] === 'user_action') {
             return self::generateUserActionData($config);
         } else if ($config['style_type'] === 'product_category') {
@@ -36,6 +38,18 @@ class HomePagePlaceHolderService
 
         $data['items'] = app()->make(SliderRepository::class)
             ->getGroup($group_id);
+        // TODO : can we use bfliter as
+        return $data;
+    }
+
+    private static function generateBannerData(array $config): array
+    {
+        $data = array();
+        $data['style_type'] = $config['style_type'];
+        $banner_id = (integer)$config['value'];
+
+        $data['banner'] = app()->make(SliderRepository::class)
+            ->get($banner_id);
         // TODO : can we use bfliter as
         return $data;
     }
@@ -66,7 +80,7 @@ class HomePagePlaceHolderService
             ->show($categoryId);
         $products = app()->make(ProductRepository::class)
             ->getByIds($productIds);
-        $data['category']['products'] = new ProductResourceCollection(['data' => $products], true);
+        $data['category']['products'] = (new ProductResourceCollection(['data' => $products], true))['data'];
 
         return $data;
     }

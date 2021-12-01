@@ -22,11 +22,18 @@ return [
         'action' => 'shop/category'
     ],
     [
-        'style_type' => 'slider',
-        'key' => 'group_id',
+        'style_type' => 'banner',
+        'key' => 'id',
         'value' => 2,
         'title' => 'فیتامین',
         'action_type' => 'fitamin',
         'action' => '/fitamin/landing'
+    ],
+    [
+        'style_type' => 'product_category',
+        'category_id' => 3,
+        'product_ids' => [3, 4],
+        'action_type' => 'link',
+        'action' => 'shop/category'
     ],
 ];
