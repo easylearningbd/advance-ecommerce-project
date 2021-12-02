@@ -18,9 +18,7 @@ class SliderRepositoryImpl implements SliderRepository
     public function get(int $id)
     {
         return Slider::query()
-            ->where('id', $id)
-            ->orderBy('id', 'DESC')
-            ->get();
+            ->findOrFail($id);
     }
 
     public function getGroup(int $group_id)
