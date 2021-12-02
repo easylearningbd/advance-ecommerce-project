@@ -9,7 +9,7 @@ return [
     [
         'style_type' => 'user_action',
         'icon' => 'tasks',
-        'icon_url' => '/storage/upload/icons/checklist.png',
+        'icon_url' => '/storage/upload/icons/checklist.svg',
         'title' => 'سفارشات من',
         'action_type' => 'link',
         'action' => 'shop/myorders'
