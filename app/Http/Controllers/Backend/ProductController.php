@@ -129,7 +129,8 @@ class ProductController extends Controller
         foreach ($entry['lessons'] as $key => $videoLesson) {
             $medias = $videoLesson->getMedia('videoList');
             $mediaItem = $medias->first();
-            $entry['lessons'][$key]['video'] = $entry['lessons'][$key]['is_free'] == 0 ? MediaHelper::getHashedMediaUrlByLessonId($videoLesson->id) : $videoLesson->getFirstMediaUrl('videoList');
+            $videoLink = $this->getLessonVideoDownloadLink($videoLesson);
+            $entry['lessons'][$key]['video'] = $videoLink;
         }
 
         return response(new ProductResource(['data' => $entry]));
@@ -500,6 +501,17 @@ class ProductController extends Controller
 
         $products = Product::latest()->get();
         return view('backend.product.product_stock', compact('products'));
+    }
+
+    /**
+     * @param $isFreeLesson
+     * @param $videoLesson
+     * @return string
+     */
+    private function getLessonVideoDownloadLink($videoLesson): string
+    {
+        $isFreeLesson = $videoLesson->is_free;
+        return $isFreeLesson === 0 ? MediaHelper::getHashedMediaUrlByLessonId($videoLesson->id) : $videoLesson->getFirstMediaUrl('videoList');
     }
 
 

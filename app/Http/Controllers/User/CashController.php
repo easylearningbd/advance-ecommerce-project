@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Http\Repositories\OrderRepositoriesImpl;
 use Illuminate\Http\Request;
 
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -18,6 +19,13 @@ use Illuminate\Support\Str;
 
 class CashController extends Controller
 {
+    private OrderRepositoriesImpl $orderRepositoriesImpl;
+
+    public function __construct()
+    {
+        $this->orderRepositoriesImpl = new OrderRepositoriesImpl();
+    }
+
     public function CashOrder(Request $request)
     {
 
@@ -31,32 +39,7 @@ class CashController extends Controller
 
         // dd($charge);
 
-        $order_id = Order::insertGetId([
-            'user_id' => Auth::id(),
-            'division_id' => $request->division_id,
-            'district_id' => $request->district_id,
-            'state_id' => $request->state_id,
-            'name' => $request->name,
-            'email' => $request->email,
-            'phone' => $request->phone,
-            'post_code' => $request->post_code,
-            'notes' => $request->notes,
-
-            'payment_type' => 'Cash On Delivery',
-            'payment_method' => 'Cash On Delivery',
-
-            'currency' => 'Tomans',
-            'amount' => $total_amount,
-
-
-            'invoice_no' => 'EOS' . mt_rand(10000000, 99999999),
-            'order_date' => Carbon::now()->format('d F Y'),
-            'order_month' => Carbon::now()->format('F'),
-            'order_year' => Carbon::now()->format('Y'),
-            'status' => 'pending',
-            'created_at' => Carbon::now(),
-
-        ]);
+        $order_id = $this->orderRepositoriesImpl->store($request->all(), $total_amount, null, null, null);
 
         // Start Send Email
         $invoice = Order::findOrFail($order_id);
