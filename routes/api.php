@@ -25,6 +25,7 @@ Route::prefix('products')->group(function () {
 Route::prefix('orders')->group(function () {
     Route::get('/', [\App\Http\Controllers\Backend\OrderController::class, 'index'])->name('orders.index');
     Route::get('/{id}', [\App\Http\Controllers\Backend\OrderController::class, 'show'])->name('orders.show');
+    Route::post('/', [\App\Http\Controllers\Backend\OrderController::class, 'setOrderWithOrderItem'])->name('orders.post');
 });
 
 // Sliders

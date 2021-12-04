@@ -4,23 +4,15 @@
 namespace App\Http\Repositories;
 
 
-use App\Mail\OrderMail;
 use App\Models\Order;
-use App\Models\OrderItem;
-use Auth;
 use Carbon\Carbon;
-use Gloudemans\Shoppingcart\Facades\Cart;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Str;
 
 class OrderRepositoriesImpl
 {
-    public function store(array $data, $total_amount, $payment_type = 'Cash On Delivery', $currency = 'Tomans', $status = 'pending')
+    public function store(array $data, $user_id, $total_amount, ?string $status = 'pending', ?string $payment_type = 'Cash On Delivery', ?string $currency = 'Tomans')
     {
         return Order::insertGetId([
-            'user_id' => Auth::id(),
+            'user_id' => $user_id,
             'division_id' => $data['division_id'],
             'district_id' => $data['district_id'],
             'state_id' => $data['state_id'],

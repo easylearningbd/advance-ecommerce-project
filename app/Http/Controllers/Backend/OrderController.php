@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\User\CashController;
 use App\Http\Filters\OrderFilter;
+use App\Http\Repositories\OrderRepositoriesImpl;
+use App\Http\Requests\OrderWithOrderItemRequest;
 use App\Http\Resources\OrderResource;
 use App\Http\Resources\OrderResourceCollection;
 use App\Models\Order;
@@ -15,6 +18,13 @@ use PDF;
 
 class OrderController extends Controller
 {
+
+    private OrderRepositoriesImpl $orderRepositoriesImpl;
+
+    public function __construct()
+    {
+        $this->orderRepositoriesImpl = new OrderRepositoriesImpl();
+    }
 
     /**
      * @OA\Get(path="/api/orders",
@@ -77,6 +87,65 @@ class OrderController extends Controller
     {
         $entry = Order::query()->findOrFail($id);
         return response(new OrderResource(['data' => $entry]));
+    }
+
+
+    /**
+     * @OA\Post (
+     *      path="/api/orders",
+     *      operationId="setOrderWithOrderItem",
+     *      tags={"Orders"},
+     *      summary="set order with order item",
+     *      description="set order with order item",
+     *      security={ {"bearer": {} }},
+     *
+     *     @OA\RequestBody(
+     *         description="set order by microservice without cart",
+     *         required=true,
+     *         @OA\JsonContent(ref="#/components/schemas/OrderWithOrderItemRequest")
+     *     ),
+     *
+     *      @OA\Response(
+     *          response=400,
+     *          description="Bad Request"
+     *      ),
+     *
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *      ),
+     *
+     *      @OA\Response(
+     *          response=403,
+     *          description="Forbidden"
+     *      )
+     * )
+     *
+     * @throws \Illuminate\Validation\ValidationException
+     */
+    public function setOrderWithOrderItem(OrderWithOrderItemRequest $request)
+    {
+        $data = [
+            'division_id' => 1,
+            'district_id' => 1,
+            'state_id' => 1,
+            'name' => $request->user_id,
+            'email' => $request->user_id,
+            'phone' => $request->user_id,
+            'post_code' => $request->user_id,
+            'notes' => $request->user_id,
+        ];
+        $order_id = $this->orderRepositoriesImpl->store($data, $request->user_id, $request->total_amount, 'Payed', 'Behandam-Product-Service');
+
+        $object = new OrderItem();
+        $object->order_id = $order_id;
+        $object->product_id = $request->product_id;
+        $object->price = $request->total_amount;
+        $object->qty = 1;
+
+        $orderItem = CashController::storeOrderItem($order_id, $object);
+
+        return $orderItem;
     }
 
     // Pending Orders
