@@ -8,17 +8,17 @@ use App\Models\Admin;
 use App\Models\User;
 use Auth;
 use Illuminate\Support\Facades\Hash;
- 
+
 class AdminProfileController extends Controller
-{ 
-   
+{
+
 	public function AdminProfile(){
 
 		$id = Auth::user()->id;
 		$adminData = Admin::find($id);
 		return view('admin.admin_profile_view',compact('adminData'));
 	}
- 
+
 
 	public function AdminProfileEdit(){
 
@@ -39,9 +39,9 @@ class AdminProfileController extends Controller
 
 		if ($request->file('profile_photo_path')) {
 			$file = $request->file('profile_photo_path');
-			@unlink(public_path('upload/admin_images/'.$data->profile_photo_path));
+			@unlink(public_path('storage/upload/admin_images/'.$data->profile_photo_path));
 			$filename = date('YmdHi').$file->getClientOriginalName();
-			$file->move(public_path('upload/admin_images'),$filename);
+			$file->move(public_path('storage/upload/admin_images'),$filename);
 			$data['profile_photo_path'] = $filename;
 		}
 		$data->save();
@@ -53,7 +53,7 @@ class AdminProfileController extends Controller
 
 		return redirect()->route('admin.profile')->with($notification);
 
-	} // end method 
+	}
 
 
 

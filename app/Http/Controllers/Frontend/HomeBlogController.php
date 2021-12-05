@@ -15,7 +15,7 @@ class HomeBlogController extends Controller
     	$blogpost = BlogPost::latest()->get();
     	return view('frontend.blog.blog_list',compact('blogpost','blogcategory'));
 
-    } // end method 
+    }
 
 
     public function DetailsBlogPost($id){
@@ -33,8 +33,7 @@ class HomeBlogController extends Controller
     	$blogpost = BlogPost::where('category_id',$category_id)->orderBy('id','DESC')->get();
     	return view('frontend.blog.blog_cat_list',compact('blogpost','blogcategory'));
 
-    } // end mehtod 
+    }
 
 
 }
- 

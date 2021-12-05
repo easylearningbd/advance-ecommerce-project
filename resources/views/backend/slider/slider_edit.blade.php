@@ -2,96 +2,133 @@
 @section('admin')
 
 
-  <!-- Content Wrapper. Contains page content -->
-  
-	  <div class="container-full">
-		<!-- Content Header (Page header) -->
-		 
+    <!-- Content Wrapper. Contains page content -->
 
-		<!-- Main content -->
-		<section class="content">
-		  <div class="row">
-			   
-		 
-
-			 
+    <div class="container-full">
+        <!-- Content Header (Page header) -->
 
 
-<!--   ------------ Edit Slider Page -------- -->
+        <!-- Main content -->
+        <section class="content">
+            <div class="row">
 
 
-          <div class="col-12">
-
-			 <div class="box">
-				<div class="box-header with-border">
-				  <h3 class="box-title">Edit Slider </h3>
-				</div>
-				<!-- /.box-header -->
-				<div class="box-body">
-					<div class="table-responsive">
+                <!--   ------------ Edit Slider Page -------- -->
 
 
- <form method="post" action="{{ route('slider.update') }}" enctype="multipart/form-data">
-	 	@csrf
-	 <input type="hidden" name="id" value="{{ $sliders->id }}">	
-	 <input type="hidden" name="old_image" value="{{ $sliders->slider_img }}">			   
+                <div class="col-12">
 
-	 <div class="form-group">
-		<h5>Slider Title <span class="text-danger">*</span></h5>
-		<div class="controls">
-	 <input type="text"  name="title" class="form-control" value="{{ $sliders->title }}" > 
-	 
-	</div>
-	</div>
+                    <div class="box">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Edit Slider </h3>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                            <div class="table-responsive">
 
 
-	<div class="form-group">
-		<h5>Slider Decription <span class="text-danger">*</span></h5>
-		<div class="controls">
-	 <input type="text" name="description" class="form-control" value="{{ $sliders->description }}" >
-     
-	  </div>
-	</div>
+                                <form method="post" action="{{ route('slider.update') }}" enctype="multipart/form-data">
+                                    @csrf
+                                    <input type="hidden" name="id" value="{{ $sliders->id }}">
+                                    <input type="hidden" name="old_image" value="{{ $sliders->slider_img }}">
+
+                                    <div class="form-group">
+                                        <h5>Slider Title <span class="text-danger">*</span></h5>
+                                        <div class="controls">
+                                            <input type="text" name="title" class="form-control"
+                                                   value="{{ $sliders->title }}">
+
+                                        </div>
+                                    </div>
 
 
+                                    <div class="form-group">
+                                        <h5>Slider Decription <span class="text-danger">*</span></h5>
+                                        <div class="controls">
+                                            <input type="text" name="description" class="form-control"
+                                                   value="{{ $sliders->description }}">
 
-	<div class="form-group">
-		<h5>Slider Image <span class="text-danger">*</span></h5>
-		<div class="controls">
-	 <input type="file" name="slider_img" class="form-control" >
-     @error('slider_img') 
-	 <span class="text-danger">{{ $message }}</span>
-	 @enderror 
-	  </div>
-	</div>
-					 
-
-			 <div class="text-xs-right">
-	<input type="submit" class="btn btn-rounded btn-primary mb-5" value="Update">					 
-						</div>
-					</form>
+                                        </div>
+                                    </div>
 
 
+                                    <div class="form-group">
+                                        <h5>Slider Group ID <span class="text-danger">*</span></h5>
+                                        <div class="controls">
+                                            <input type="text" name="group_id" class="form-control"
+                                                   value="{{ $sliders->group_id }}">
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <h5>Slider model ID <span class="text-danger">*</span></h5>
+                                        <div class="controls">
+                                            <input type="text" name="model_id" class="form-control"
+                                                   value="{{ $sliders->model_id }}">
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <h5>Slider model Name <span class="text-danger">*</span></h5>
+                                        <div class="controls">
+                                            <input type="text" name="model_name" class="form-control"
+                                                   value="{{ $sliders->model_name }}">
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <h5>Slider Action Type <span class="text-danger">*</span></h5>
+                                        <div class="controls">
+                                            <input type="text" name="action_type" class="form-control"
+                                                   value="{{ $sliders->action_type }}">
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <h5>Slider Action <span class="text-danger">*</span></h5>
+                                        <div class="controls">
+                                            <input type="text" name="action" class="form-control"
+                                                   value="{{ $sliders->action }}">
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <h5>Slider Image <span class="text-danger">*</span></h5>
+                                        <div class="controls">
+                                            <input type="file" name="slider_img" class="form-control">
+                                            @error('slider_img')
+                                            <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
 
 
-					  
-					</div>
-				</div>
-				<!-- /.box-body -->
-			  </div>
-			  <!-- /.box --> 
-			</div>
-
- 
+                                    <div class="text-xs-right">
+                                        <input type="submit" class="btn btn-rounded btn-primary mb-5" value="Update">
+                                    </div>
+                                </form>
 
 
-		  </div>
-		  <!-- /.row -->
-		</section>
-		<!-- /.content -->
-	  
-	  </div>
-  
+                            </div>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.box -->
+                </div>
+
+
+            </div>
+            <!-- /.row -->
+        </section>
+        <!-- /.content -->
+
+    </div>
+
 
 
 

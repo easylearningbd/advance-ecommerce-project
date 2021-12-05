@@ -25,7 +25,7 @@ class ReportController extends Controller
 
 
 
-   } // end mehtod 
+   }
 
 
 
@@ -34,7 +34,7 @@ class ReportController extends Controller
    	$orders = Order::where('order_month',$request->month)->where('order_year',$request->year_name)->latest()->get();
    	return view('backend.report.report_show',compact('orders'));
 
-   } // end mehtod 
+   }
 
 
       public function ReportByYear(Request $request){
@@ -42,8 +42,7 @@ class ReportController extends Controller
    	$orders = Order::where('order_year',$request->year)->latest()->get();
    	return view('backend.report.report_show',compact('orders'));
 
-   } // end mehtod 
+   }
 
 
 }
- 

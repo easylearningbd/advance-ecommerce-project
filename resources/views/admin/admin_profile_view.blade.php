@@ -21,7 +21,7 @@
 					<div class="widget-user-image">
 
 
-  <img class="rounded-circle" src="{{ (!empty($adminData->profile_photo_path))? url('upload/admin_images/'.$adminData->profile_photo_path):url('upload/no_image.jpg') }}" alt="User Avatar">
+  <img class="rounded-circle" src="{{ (!empty($adminData->profile_photo_path))? url('storage/upload/admin_images/'.$adminData->profile_photo_path):url('storage/upload/no_image.jpg') }}" alt="User Avatar">
 
 
 					</div>
@@ -57,10 +57,10 @@
 				  </div>
 
 
- 
 
 
-				 
+
+
 			</div>
 		</section>
 		<!-- /.content -->

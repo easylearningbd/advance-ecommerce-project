@@ -14,7 +14,7 @@
         <div class="table-responsive">
           <table class="table">
             <tbody>
-  
+
               <tr style="background: #e2e2e2;">
                 <td class="col-md-1">
                   <label for=""> Date</label>
@@ -41,8 +41,8 @@
                   <label for=""> Order Status</label>
                 </td>
 
-                
-                
+
+
               </tr>
 
 
@@ -53,7 +53,7 @@
                 </td>
 
                 <td class="col-md-3">
-                  <label for=""> ${{ $order->amount }}</label>
+                  <label for=""> {{ $order->amount }} {{trans('site.CURRENCYTYPE')}} </label>
                 </td>
 
 
@@ -70,9 +70,9 @@
                 </td>
 
                  <td class="col-md-2">
-                  <label for=""> 
+                  <label for="">
 
-   @if($order->return_order == 0) 
+   @if($order->return_order == 0)
  <span class="badge badge-pill badge-warning" style="background: #418DB9;"> No Return Request </span>
  @elseif($order->return_order == 1)
  <span class="badge badge-pill badge-warning" style="background: #800000;"> Pedding </span>
@@ -81,13 +81,13 @@
  @elseif($order->return_order == 2)
   <span class="badge badge-pill badge-warning" style="background: #008000;">Success </span>
   @endif
-                    
+
 
                     </label>
                 </td>
 
-         
-                
+
+
               </tr>
               @endforeach
 
@@ -96,26 +96,26 @@
 
 
             </tbody>
-            
+
           </table>
-          
+
         </div>
 
 
 
 
-         
+
        </div> <!-- / end col md 8 -->
 
-		 
 
-		 
-			
+
+
+
 		</div> <!-- // end row -->
-		
+
 	</div>
-	
+
 </div>
- 
+
 
 @endsection

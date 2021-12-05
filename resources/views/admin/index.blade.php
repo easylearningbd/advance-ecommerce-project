@@ -13,7 +13,7 @@
 
     $pending = App\Models\Order::where('status','pending')->get();
 
-@endphp 
+@endphp
 <div class="container-full">
 
 		<!-- Main content -->
@@ -21,64 +21,63 @@
 			<div class="row">
 				<div class="col-xl-3 col-6">
 					<div class="box overflow-hidden pull-up">
-						<div class="box-body">							
+						<div class="box-body">
 		<div class="icon bg-primary-light rounded w-60 h-60">
 			<i class="text-primary mr-0 font-size-24 mdi mdi-account-multiple"></i>
 		</div>
 		<div>
-			<p class="text-mute mt-20 mb-0 font-size-16">Today's Sale</p>
-			<h3 class="text-white mb-0 font-weight-500">${{ $today  }} <small class="text-success"><i class="fa fa-caret-up"></i> Usd</small></h3>
+			<p class="text-mute mt-20 mb-0 font-size-16">{{ trans('admin.Todays Sale')}}</p>
+			<h3 class="text-white mb-0 font-weight-500">${{ $today  }} <small class="text-success"><i class="fa fa-caret-up"></i> {{ trans('admin.Usd')}} </small></h3>
 		</div>
 	</div>
 </div>
 </div>
 <div class="col-xl-3 col-6">
 <div class="box overflow-hidden pull-up">
-	<div class="box-body">							
+	<div class="box-body">
 		<div class="icon bg-warning-light rounded w-60 h-60">
 			<i class="text-warning mr-0 font-size-24 mdi mdi-car"></i>
 		</div>
 		<div>
-			<p class="text-mute mt-20 mb-0 font-size-16">Monthly Sale </p>
-			<h3 class="text-white mb-0 font-weight-500">${{ $month }} <small class="text-success"><i class="fa fa-caret-up"></i> Usd</small></h3>
+			<p class="text-mute mt-20 mb-0 font-size-16">{{ trans('admin.Monthly Sale')}} </p>
+			<h3 class="text-white mb-0 font-weight-500">${{ $month }} <small class="text-success"><i class="fa fa-caret-up"></i>  {{ trans('admin.Usd')}}</small></h3>
 		</div>
 	</div>
 </div>
 </div>
 <div class="col-xl-3 col-6">
 <div class="box overflow-hidden pull-up">
-	<div class="box-body">							
+	<div class="box-body">
 		<div class="icon bg-info-light rounded w-60 h-60">
 			<i class="text-info mr-0 font-size-24 mdi mdi-sale"></i>
 		</div>
 		<div>
-			<p class="text-mute mt-20 mb-0 font-size-16">Yearly Sale </p>
-			<h3 class="text-white mb-0 font-weight-500">${{ $year }} <small class="text-danger"><i class="fa fa-caret-down"></i> Usd</small></h3>
+			<p class="text-mute mt-20 mb-0 font-size-16">{{ trans('admin.Yearly Sale')}} </p>
+			<h3 class="text-white mb-0 font-weight-500">${{ $year }} <small class="text-danger"><i class="fa fa-caret-down"></i> {{ trans('admin.Usd')}}</small></h3>
 		</div>
 	</div>
 </div>
 </div>
 <div class="col-xl-3 col-6">
 <div class="box overflow-hidden pull-up">
-	<div class="box-body">							
+	<div class="box-body">
 		<div class="icon bg-danger-light rounded w-60 h-60">
 			<i class="text-danger mr-0 font-size-24 mdi mdi-phone-incoming"></i>
 		</div>
 		<div>
-			<p class="text-mute mt-20 mb-0 font-size-16">Pending Orders </p>
-			<h3 class="text-white mb-0 font-weight-500">{{ count($pending) }} <small class="text-danger"><i class="fa fa-caret-up"></i> Order </small></h3>
+			<p class="text-mute mt-20 mb-0 font-size-16">{{ trans('admin.Pending Orders')}} </p>
+			<h3 class="text-white mb-0 font-weight-500">{{ count($pending) }} <small class="text-danger"><i class="fa fa-caret-up"></i> {{ trans('admin.Order')}} </small></h3>
 		</div>
 	</div>
 </div>
 </div>
- 
- 
+
+
 <div class="col-12">
 <div class="box">
 	<div class="box-header">
 		<h4 class="box-title align-items-start flex-column">
-		 Recent All Orders 
-			 
+		 {{ trans('admin.Recent All Orders')}}
 		</h4>
 	</div>
 
@@ -93,18 +92,19 @@ $orders = App\Models\Order::where('status','pending')->orderBy('id','DESC')->get
 				<thead>
 
 <tr class="text-uppercase bg-lightest">
-	<th style="min-width: 250px"><span class="text-white">Date</span></th>
-	<th style="min-width: 100px"><span class="text-fade">Invoice</span></th>
-	<th style="min-width: 100px"><span class="text-fade">Amount</span></th>
-	<th style="min-width: 150px"><span class="text-fade">Payment</span></th>
-	<th style="min-width: 130px"><span class="text-fade">Status</span></th>
-	<th style="min-width: 120px"><span class="text-fade">Process</span> </th>
+	<th style="min-width: 250px"><span class="text-white">{{ trans('admin.Date')}}</span></th>
+	<th style="min-width: 100px"><span class="text-fade">{{ trans('admin.Invoice')}}</span></th>
+	<th style="min-width: 100px"><span class="text-fade">{{ trans('admin.Amount')}}</span></th>
+	<th style="min-width: 150px"><span class="text-fade">{{ trans('admin.Payment')}}</span></th>
+	<th style="min-width: 130px"><span class="text-fade">{{ trans('admin.Status')}}</span></th>
+	<th style="min-width: 120px"><span class="text-fade">{{ trans('admin.Process')}}</span> </th>
+
 </tr>
 				</thead>
 				<tbody>
-		
+
     @foreach($orders as $item)
-		<tr>										
+		<tr>
 			<td class="pl-0 py-8">
 				 <span class="text-white font-weight-600 d-block font-size-16">
 					{{ Carbon\Carbon::parse($item->order_date)->diffForHumans()  }}
@@ -112,7 +112,7 @@ $orders = App\Models\Order::where('status','pending')->orderBy('id','DESC')->get
 			</td>
 
 			<td>
-				 
+
 				<span class="text-white font-weight-600 d-block font-size-16">
 					{{ $item->invoice_no }}
 				</span>
@@ -122,11 +122,11 @@ $orders = App\Models\Order::where('status','pending')->orderBy('id','DESC')->get
 				<span class="text-fade font-weight-600 d-block font-size-16">
 					$ {{ $item->amount }}
 				</span>
-				 
+
 			</td>
 
 			<td>
-				 
+
 				<span class="text-white font-weight-600 d-block font-size-16">
 					{{ $item->payment_method }}
 				</span>
@@ -144,12 +144,12 @@ $orders = App\Models\Order::where('status','pending')->orderBy('id','DESC')->get
 
 
 
-					 
+
 				</tbody>
 			</table>
 		</div>
 	</div>
-					</div>  
+					</div>
 				</div>
 			</div>
 		</section>
